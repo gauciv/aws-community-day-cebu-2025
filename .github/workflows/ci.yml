@@ -1,6 +1,8 @@
 # .github/workflows/ci.yml
 
 name: Continuous Integration
+permissions:
+  contents: read
 
 # This workflow runs on every push or pull request to the 'main' branch
 on:
