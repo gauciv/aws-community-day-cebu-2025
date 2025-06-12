@@ -124,10 +124,6 @@ This project is made possible by the passion and dedication of our amazing commu
 - **Sponsors:** `[To be added]`
 - **Contributors:** Thank you to everyone who has contributed!
 
-#### Contributors ✨
-
-*This project follows the [all-contributors](https://allcontributors.org) specification. We welcome contributions of any kind!*
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
