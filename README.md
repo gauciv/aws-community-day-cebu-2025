@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Website for AWS Community Day - Cebu Roadshow 2025
 
-## Getting Started
+![AWS Community Day Cebu Banner](https://your-image-host.com/banner.png) <div align="center">
 
-First, run the development server:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-v2.1-ff69b4.svg)](./CODE_OF_CONDUCT.md)
+<br />
+[![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?logo=next.js)](https://nextjs.org)
+[![Styled with Tailwind CSS](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
+[![Deployed on AWS Amplify](https://img.shields.io/badge/Deployed%20on-AWS%20Amplify-FF9900?logo=aws-amplify)](https://aws.amazon.com/amplify/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Welcome to the official open-source repository for the **AWS Community Day - Cebu Roadshow 2025** website! This project is a collaborative effort by the AWS community, for the community. Our mission is to build a welcoming, informative, and engaging digital home for our event.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**🚀 Live Website:** [`[your-amplify-url.com]`](https://your-amplify-url.com)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### Table of Contents
 
-To learn more about Next.js, take a look at the following resources:
+- [About the Event](#about-the-event)
+- [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+- [How to Contribute](#how-to-contribute)
+- [Deployment](#deployment)
+- [Security](#security)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### About the Event
 
-## Deploy on Vercel
+**AWS Community Day** is a community-led conference that empowers AWS users to connect, collaborate, and learn from each other. The **Cebu Roadshow 2025** brings this experience to our local community, featuring technical sessions, workshops, and networking opportunities led by expert speakers and community leaders.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Date:** `[Event Date, e.g., September 27, 2025]`
+- **Venue:** `[Event Venue, e.g., Cebu City, Philippines]`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### Technology Stack
+
+This website is built with a modern, community-friendly tech stack to ensure a great developer experience.
+
+- **Framework:** **Next.js (React)** with App Router
+- **Styling:** **Tailwind CSS**
+- **Deployment:** **AWS Amplify**
+- **Package Manager:** **npm**
+
+---
+
+### Getting Started
+
+You can get a local copy of the project up and running in two ways:
+
+#### A) Using GitHub Codespaces (Recommended)
+This is the fastest way to get started, as it requires no local installation.
+
+1.  Click the **`< > Code`** button on the repository's main page.
+2.  Select the **`Codespaces`** tab.
+3.  Click **`Create codespace on main`**.
+4.  Once the Codespace loads, the project dependencies will be automatically installed. In the terminal, run `npm run dev` to start the server.
+
+#### B) Local Development
+1.  **Fork** the repository.
+2.  **Clone** your fork to your local machine:
+    ```sh
+    git clone [https://github.com/](https://github.com/)[YOUR_GITHUB_USERNAME]/[your-repo-name].git
+    ```
+3.  **Navigate** into the project directory:
+    ```sh
+    cd [your-repo-name]
+    ```
+4.  **Install** dependencies:
+    ```sh
+    npm install
+    ```
+5.  **Run** the development server:
+    ```sh
+    npm run dev
+    ```
+The website will be running at `http://localhost:3000`.
+
+---
+
+### How to Contribute
+
+We are thrilled that you want to contribute! This project thrives on community participation.
+
+1.  **Read our Contribution Guidelines:** Start by reading our **[CONTRIBUTING.md](./CONTRIBUTING.md)** file to learn about our development process and how to submit pull requests.
+
+2.  **Adhere to the Code of Conduct:** We are committed to a welcoming environment. Please review our **[Code of Conduct](./CODE_OF_CONDUCT.md)**.
+
+3.  **Find an Issue:** Head over to the **[Issues Tab](https://github.com/[your-org]/[your-repo-name]/issues)** to find tasks. Look for issues tagged `good first issue` if you are new to the project.
+
+---
+
+### Deployment
+
+This project is deployed and hosted on **AWS Amplify**. A Continuous Integration/Continuous Deployment (CI/CD) pipeline is active. Every push or merge to the `main` branch will automatically trigger a new build and deploy the changes to the live website.
+
+---
+
+### Security
+If you discover a security vulnerability, please report it responsibly. For details, please see our **[Security Policy](./SECURITY.md)**.
+
+---
+
+### License
+This project is licensed under the **MIT License**. See the **[LICENSE](./LICENSE)** file for more details.
+
+---
+
+### Acknowledgements
+
+This project is made possible by the passion and dedication of our amazing community.
+- **Organizers:** **AWS User Group Philippines - Cebu Chapter**
+- **Sponsors:** `[To be added]`
+- **Contributors:** Thank you to everyone who has contributed!
+
+#### Contributors ✨
+
+*This project follows the [all-contributors](https://allcontributors.org) specification. We welcome contributions of any kind!*
