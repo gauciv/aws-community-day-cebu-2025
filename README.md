@@ -14,7 +14,7 @@
 
 Welcome to the official open-source repository for the **AWS Community Day - Cebu Roadshow 2025** website! This project is a collaborative effort by the AWS community, for the community. Our mission is to build a welcoming, informative, and engaging digital home for our event.
 
-**🚀 Live Website:** [`[your-amplify-url.com]`](https://your-amplify-url.com)
+**🚀 Live Website:** [`https://main.d3qya03l6igwcl.amplifyapp.com/`](https://main.d3qya03l6igwcl.amplifyapp.com/)
 
 ---
 
@@ -35,8 +35,9 @@ Welcome to the official open-source repository for the **AWS Community Day - Ceb
 
 **AWS Community Day** is a community-led conference that empowers AWS users to connect, collaborate, and learn from each other. The **Cebu Roadshow 2025** brings this experience to our local community, featuring technical sessions, workshops, and networking opportunities led by expert speakers and community leaders.
 
-- **Date:** `[Event Date, e.g., September 27, 2025]`
-- **Venue:** `[Event Venue, e.g., Cebu City, Philippines]`
+- **Date:** `September 13, 2025 (Saturday)`
+- **Venue:** `University of the Philippines Cebu Performing Arts Hall
+Gorordo Avenue, Lahug, Cebu City 6000, Philippines`
 
 ---
 
