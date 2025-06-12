@@ -1,0 +1,3 @@
+# Set the default owner for all files in the repository.
+# This ensures the technical lead is requested for review on all pull requests.
+* @gauciv
