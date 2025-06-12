@@ -1,0 +1,41 @@
+# This is the configuration file for Dependabot version updates.
+# It tells Dependabot what to update, where to find it, and how often.
+
+version: 2
+updates:
+
+  # Rule 1: Configuration for npm (your Next.js project dependencies)
+  - package-ecosystem: "npm"
+    # Look for package.json and lock files in the root directory
+    directory: "/"
+    # Check for updates on a weekly schedule to avoid daily noise
+    schedule:
+      interval: "weekly"
+      # You can specify a day, e.g., "monday"
+      day: "monday"
+    # Add a "dependencies" label to all PRs for easy filtering
+    labels:
+      - "dependencies"
+    # Customize the commit messages for a cleaner git history
+    commit-message:
+      # Prefix all commit messages with "chore(deps): "
+      prefix: "chore(deps)"
+      include: "scope"
+
+  # Rule 2: Configuration for GitHub Actions (your CI/CD workflows)
+  - package-ecosystem: "github-actions"
+    # Look for workflow files in the .github/workflows directory
+    directory: "/"
+    # Check for updates on the same weekly schedule
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    # Add labels to the PRs
+    labels:
+      - "dependencies"
+      - "github_actions"
+    # Customize the commit messages
+    commit-message:
+      # Prefix all commit messages with "chore(actions): "
+      prefix: "chore(actions)"
+      include: "scope"
