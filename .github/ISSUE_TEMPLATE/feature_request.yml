@@ -1,0 +1,51 @@
+name: "🚀 Feature Request"
+description: "Have an idea for a new feature or an improvement? Suggest it here!"
+title: "[FEAT] - "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ![AWS Community Day Cebu Banner](https://your-image-host.com/banner-small.png)
+        **Thank you for contributing your ideas to our community project!**
+        A well-defined feature request helps us understand and build it correctly.
+
+  - type: textarea
+    id: related-problem
+    attributes:
+      label: "🧩 Is your feature request related to a problem?"
+      description: "A clear and concise description of what the problem is. Ex. 'I'm always frustrated when...'"
+      placeholder: "It's hard to see which talk is happening at what time because there is no visual timeline."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "💡 Describe the solution you'd like"
+      description: "A clear and concise description of what you want to happen."
+      placeholder: "I would like a new 'Timeline View' on the agenda page that visually lays out the sessions in time slots."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "🤔 Describe alternatives you've considered"
+      description: "A clear and concise description of any alternative solutions or features you've considered."
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "🖼️ Mockups & Additional Context"
+      description: "Add any other context, links, or screenshots about the feature request here. You can drag and drop images."
+
+  - type: checkboxes
+    id: final-checks
+    attributes:
+      label: "Final Checks"
+      options:
+        - label: "I have searched for existing feature requests and this is not a duplicate."
+          required: true
+        - label: "I agree to follow this project's Code of Conduct."
+          required: true
