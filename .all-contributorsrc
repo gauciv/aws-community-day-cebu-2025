@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "gauciv",
+      "name": "Gauciv",
+      "avatar_url": "https://avatars.githubusercontent.com/u/194622060?v=4",
+      "profile": "https://github.com/gauciv",
+      "contributions": [
+        "maintenance",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "awscommunity-day-cebu-2025",
+  "projectOwner": "gauciv"
+}
