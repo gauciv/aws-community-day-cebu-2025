@@ -55,7 +55,7 @@ Ready to contribute code? Here is the workflow to follow:
 
 5.  **Commit your changes.** Please follow our commit message guidelines (see below).
     ```sh
-    git commit -m "feat: Add speaker profile modal"
+    git commit -m "feat: add speaker profile modal"
     ```
 
 6.  **Push your changes** to your forked repository:
