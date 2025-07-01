@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# Build outputs
+.next/
+dist/
+build/
+
+# Config files
+next.config.js
+
+# Lock files
+package-lock.json
+yarn.lock
