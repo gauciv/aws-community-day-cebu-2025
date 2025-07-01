@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Lock issue when 'status: blocked' label is added
         # This 'if' condition checks if the action was 'labeled' AND if the label name is 'status: blocked'
-        if: github.event.action == 'labeled' && github.event.label.name == 'status: blocked'
+        if: github.event.action == 'labeled' && github.event.label.name == 'blocked'
         # This uses a pre-made action to easily interact with the GitHub API
         uses: actions/github-script@v7
         with:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Unlock issue when 'status: blocked' label is removed
         # This 'if' condition checks if the action was 'unlabeled' AND if the label name is 'status: blocked'
-        if: github.event.action == 'unlabeled' && github.event.label.name == 'status: blocked'
+        if: github.event.action == 'unlabeled' && github.event.label.name == 'blocked'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -44,4 +44,4 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
-            console.log(`Unlocked issue #${context.issue.number} because the 'status: blocked' label was removed.`);
+            console.log(`Unlocked issue #${context.issue.number} because the 'blocked' label was removed.`);
