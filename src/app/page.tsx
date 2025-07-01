@@ -5,12 +5,8 @@ export default function Home() {
         <g filter="url(#filter0_f_479_493)">
           <path d="M1014 225.674C1014 273.189 882.148 187.286 719.5 187.286C556.852 187.286 425 273.189 425 225.674C425 178.16 556.852 124 719.5 124C882.148 124 1014 178.16 1014 225.674Z" fill="url(#paint0_linear_479_493)"/>
         </g>
-        <g filter="url(#filter1_df_479_493)">
-          <path d="M1440 874C1440 1271.65 1117.65 1594 720 1594C322.355 1594 0 1271.65 0 874C0 476.355 322.355 154 720 154C1117.65 154 1440 476.355 1440 874ZM133.83 874C133.83 1197.73 396.267 1460.17 720 1460.17C1043.73 1460.17 1306.17 1197.73 1306.17 874C1306.17 550.267 1043.73 287.83 720 287.83C396.267 287.83 133.83 550.267 133.83 874Z" fill="url(#paint1_radial_479_493)"/>
-        </g>
-        <g filter="url(#filter2_if_479_493)">
-          <ellipse cx="720" cy="929" rx="649" ry="619" fill="#0A0E12"/>
-        </g>
+        <path d="M1440 874C1440 1271.65 1117.65 1594 720 1594C322.355 1594 0 1271.65 0 874C0 476.355 322.355 154 720 154C1117.65 154 1440 476.355 1440 874ZM133.83 874C133.83 1197.73 396.267 1460.17 720 1460.17C1043.73 1460.17 1306.17 1197.73 1306.17 874C1306.17 550.267 1043.73 287.83 720 287.83C396.267 287.83 133.83 550.267 133.83 874Z" fill="url(#paint1_radial_479_493)"/>
+        <ellipse cx="720" cy="929" rx="649" ry="619" fill="#0A0E12"/>
         <g filter="url(#filter3_f_479_493)">
           <path d="M1041 230.192C1041 282.622 897.06 187.833 719.5 187.833C541.94 187.833 398 282.622 398 230.192C398 177.762 541.94 118 719.5 118C897.06 118 1041 177.762 1041 230.192Z" fill="#F9841A"/>
         </g>
@@ -32,17 +28,6 @@ export default function Home() {
             <feColorMatrix type="matrix" values="0 0 0 0 0.596078 0 0 0 0 0.317647 0 0 0 0 0.827451 0 0 0 0.08 0"/>
             <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_479_493"/>
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_479_493"/>
-            <feGaussianBlur stdDeviation="50" result="effect2_foregroundBlur_479_493"/>
-          </filter>
-          <filter id="filter2_if_479_493" x="-29" y="210" width="1498" height="1438" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-            <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-            <feOffset dy="4"/>
-            <feGaussianBlur stdDeviation="18"/>
-            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0.596078 0 0 0 0 0.317647 0 0 0 0 0.827451 0 0 0 0.24 0"/>
-            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_479_493"/>
             <feGaussianBlur stdDeviation="50" result="effect2_foregroundBlur_479_493"/>
           </filter>
           <filter id="filter3_f_479_493" x="98" y="-182" width="1243" height="728" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
