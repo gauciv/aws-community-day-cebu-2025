@@ -1,5 +1,7 @@
 # This is the name of the GitHub Action workflow
 name: Lock Blocked Issues
+permissions:
+  issues: write
 
 # This section defines when the workflow will run
 on:
