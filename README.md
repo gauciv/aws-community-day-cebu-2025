@@ -1,6 +1,6 @@
 # Website for AWS Community Day - Cebu Roadshow 2025
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![AWS Community Day Cebu Banner](https://your-image-host.com/banner.png) <div align="center">
@@ -135,6 +135,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/gauciv"><img src="https://avatars.githubusercontent.com/u/194622060?v=4?s=100" width="100px;" alt="Gauciv"/><br /><sub><b>Gauciv</b></sub></a><br /><a href="#maintenance-gauciv" title="Maintenance">🚧</a> <a href="https://github.com/gauciv/awscommunity-day-cebu-2025/commits?author=gauciv" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/georfojoanne"><img src="https://avatars.githubusercontent.com/u/159895689?v=4?s=100" width="100px;" alt="Joanne R. Georfo"/><br /><sub><b>Joanne R. Georfo</b></sub></a><br /><a href="https://github.com/gauciv/awscommunity-day-cebu-2025/commits?author=georfojoanne" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
