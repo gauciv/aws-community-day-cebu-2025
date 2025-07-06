@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Russo_One } from 'next/font/google'
 import localFont from 'next/font/local'
+import Image from 'next/image'
 import './globals.css'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
@@ -76,9 +77,11 @@ export default function RootLayout() {
             zIndex: 11,
           }}
         >
-          <img
+          <Image
             src="/arc.png"
             alt="Decorative Arc"
+            width={1200}
+            height={400}
             style={{
               width: '120%',
               maxWidth: '1200px',
@@ -96,9 +99,11 @@ export default function RootLayout() {
             zIndex: 10,
           }}
         >
-          <img
+          <Image
             src="/blur.png"
             alt="Blur Layer"
+            width={1400}
+            height={800}
             style={{
               width: '140%',
               maxWidth: 'none',
