@@ -1,15 +1,51 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Russo_One } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
+import Tagline from '@/components/Tagline'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const russoOne = Russo_One({
+  weight: '400',
   subsets: ['latin'],
+  variable: '--font-russo-one',
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const amazonEmber = localFont({
+  src: [
+    {
+      path: '../../public/fonts/AmazonEmber_Bd.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/AmazonEmberDisplay_Rg.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/AmazonEmberDisplay_RgIt.ttf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/AmazonEmberDisplay_Bd.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/AmazonEmberDisplay_BdIt.ttf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-amazon-ember',
+})
+
+const amazonEmberMono = localFont({
+  src: '../../public/fonts/AmazonEmberMono_Bd.ttf',
+  variable: '--font-amazon-ember-mono',
 })
 
 export const metadata: Metadata = {
@@ -21,24 +57,22 @@ export default function RootLayout() {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${amazonEmber.variable} ${amazonEmberMono.variable} ${russoOne.variable} antialiased`}
         style={{
           position: 'relative',
           minHeight: '100vh',
           overflowX: 'hidden',
         }}
       >
-        <div style={{ position: 'relative', zIndex: 1 }}></div>
+        <div style={{ position: 'relative', zIndex: 12 }}>
+          <Header />
+          <Hero />
+          <Tagline />
+        </div>
         {/* Arc image layer, layer on top of the page */}
         <div
+          className="absolute left-0 w-full flex justify-center pointer-events-none z-10 top-4 md:top-[-10px]"
           style={{
-            position: 'absolute',
-            top: '-10x',
-            left: 0,
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            pointerEvents: 'none',
             zIndex: 11,
           }}
         >
@@ -57,14 +91,8 @@ export default function RootLayout() {
         </div>
         {/* Blur image layer, layer below the arc image */}
         <div
+          className="absolute left-0 w-[110%] flex justify-center pointer-events-none z-10 top-40 md:top-[220px]"
           style={{
-            position: 'absolute',
-            top: '220px',
-            left: 0,
-            width: '110%',
-            display: 'flex',
-            justifyContent: 'center',
-            pointerEvents: 'none',
             zIndex: 10,
           }}
         >
