@@ -34,6 +34,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "dnachavez",
+      "name": "Dan Chavez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/121655211?v=4",
+      "profile": "https://dnachavez.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
