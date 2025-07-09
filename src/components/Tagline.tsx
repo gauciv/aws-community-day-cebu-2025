@@ -1,8 +1,14 @@
 export default function Tagline() {
   return (
-    <p className="font-sans font-normal text-center pt-10 md:pt-30 text-sm md:text-base px-4 md:px-8">
-      Step into a community of cloud pioneers, where expertise meets limitless
-      potential.
-    </p>
+    <div className="w-full max-w-4xl mx-auto px-4 mt-12 md:mt-16 text-center">
+      <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed">
+        Step into a community of cloud pioneers, where expertise meets limitless
+        potential.
+      </p>
+      <p className="mt-4 text-base md:text-lg text-white/60">
+        Join us for a day of learning, sharing, and connecting with cloud
+        enthusiasts.
+      </p>
+    </div>
   )
 }
