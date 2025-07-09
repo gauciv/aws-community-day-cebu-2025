@@ -9,6 +9,10 @@ export default function Tagline() {
         Join us for a day of learning, sharing, and connecting with cloud
         enthusiasts.
       </p>
+      <p className="mt-6 text-sm text-gray-400 border-t border-gray-800 pt-4">
+        This is a temporary splash page. The full website is currently under
+        construction.
+      </p>
     </div>
   )
 }
