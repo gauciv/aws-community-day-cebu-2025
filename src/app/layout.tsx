@@ -3,7 +3,6 @@ import { Russo_One } from 'next/font/google'
 import localFont from 'next/font/local'
 import Image from 'next/image'
 import './globals.css'
-import Header from '@/components/Header'
 
 const russoOne = Russo_One({
   weight: '400',
@@ -68,10 +67,7 @@ export default function RootLayout({
           overflowX: 'hidden',
         }}
       >
-        <div style={{ position: 'relative', zIndex: 12 }}>
-          <Header />
-          {children}
-        </div>
+        <div style={{ position: 'relative', zIndex: 12 }}>{children}</div>
       </body>
     </html>
   )
