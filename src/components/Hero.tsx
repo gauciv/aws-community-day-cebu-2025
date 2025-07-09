@@ -1,9 +1,9 @@
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center pt-20 md:pt-32 px-4">
+    <div className="flex flex-col items-center justify-center pt-20 md:pt-55 px-4">
       <div className="mb-8 px-6 py-3 bg-gradient-to-r from-[#FF6B35]/20 to-[#4A90E2]/20 border border-[#FF6B35] rounded-lg">
         <span className="text-[#FF6B35] text-sm md:text-base font-bold uppercase tracking-wider">
-          🚧 Website Under Development
+          🚧 Actual Website Is Under Development
         </span>
       </div>
       <div className="w-full max-w-6xl mx-auto text-center space-y-8">
