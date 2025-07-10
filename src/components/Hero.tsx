@@ -54,11 +54,9 @@ export default function Hero() {
       <div className="space-y-8">
         {/* Event Branding */}
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight font-display">
-            <span className="block text-slate-100">AWS</span>
-            <span className="block bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400 bg-clip-text text-transparent">
-              COMMUNITY DAY
-            </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight font-display bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="block">AWS</span>
+            <span className="block">COMMUNITY DAY</span>
           </h1>
 
           <div className="flex items-center justify-center gap-4 text-lg md:text-xl text-slate-300">
@@ -80,43 +78,40 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Launch Countdown - countdown.png Style */}
-      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-        <div className="text-center space-y-8">
-          {/* Clean Header */}
-          <div className="space-y-2">
-            <h3 className="text-xl md:text-2xl font-bold text-white">
-              Website Launch
-            </h3>
-            <p className="text-slate-300 text-sm font-mono">
-              July 25, 2025 at 12:00 PM PHT
-            </p>
-          </div>
+      {/* Launch Countdown - Minimalist Sketched Style */}
+      <div className="text-center space-y-8">
+        {/* Handwritten Title */}
+        <h3 className="text-2xl md:text-3xl text-blue-300 font-mono italic">
+          Website Launch
+        </h3>
 
-          {/* Minimalist Countdown */}
-          <div className="flex justify-center items-center gap-6 md:gap-8">
-            {[
-              { value: timeLeft.days, label: 'DAYS' },
-              { value: timeLeft.hours, label: 'HOURS' },
-              { value: timeLeft.minutes, label: 'MINUTES' },
-              { value: timeLeft.seconds, label: 'SECONDS' },
-            ].map(({ value, label }, index) => (
-              <div key={label} className="text-center">
-                <div className="text-4xl md:text-6xl lg:text-7xl font-light text-white tabular-nums mb-2">
+        {/* Individual Time Boxes */}
+        <div className="flex justify-center items-end gap-4 md:gap-6">
+          {[
+            { value: timeLeft.days, label: 'days' },
+            { value: timeLeft.hours, label: 'hours' },
+            { value: timeLeft.minutes, label: 'minutes' },
+            { value: timeLeft.seconds, label: 'seconds' },
+          ].map(({ value, label }) => (
+            <div key={label} className="text-center">
+              {/* Light Blue Rounded Box */}
+              <div className="bg-blue-200/90 rounded-3xl p-4 md:p-6 mb-3 min-w-[60px] md:min-w-[80px]">
+                <div className="text-2xl md:text-4xl font-bold text-slate-800 tabular-nums">
                   {value.toString().padStart(2, '0')}
                 </div>
-                <div className="text-xs md:text-sm text-slate-200 font-medium tracking-[0.2em] uppercase">
-                  {label}
-                </div>
-                {index < 3 && (
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 text-2xl md:text-4xl text-slate-600 font-light">
-                    :
-                  </div>
-                )}
               </div>
-            ))}
-          </div>
+              {/* Handwritten Label */}
+              <p className="text-blue-300 text-sm md:text-base font-mono italic lowercase">
+                {label}
+              </p>
+            </div>
+          ))}
         </div>
+
+        {/* Date Info */}
+        <p className="text-slate-400 text-sm font-mono">
+          July 25, 2025 at 12:00 PM PHT
+        </p>
       </div>
     </section>
   )
