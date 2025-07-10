@@ -5,6 +5,7 @@ interface TimeLeft {
   days: number
   hours: number
   minutes: number
+  seconds: number
 }
 
 export default function Hero() {
@@ -12,6 +13,7 @@ export default function Hero() {
     days: 0,
     hours: 0,
     minutes: 0,
+    seconds: 0,
   })
 
   useEffect(() => {
@@ -28,12 +30,13 @@ export default function Hero() {
             (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
           ),
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
         })
       }
     }
 
     updateCountdown()
-    const interval = setInterval(updateCountdown, 60000)
+    const interval = setInterval(updateCountdown, 1000)
     return () => clearInterval(interval)
   }, [])
 
@@ -51,7 +54,7 @@ export default function Hero() {
       <div className="space-y-8">
         {/* Event Branding */}
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight font-display">
             <span className="block text-slate-100">AWS</span>
             <span className="block bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400 bg-clip-text text-transparent">
               COMMUNITY DAY
@@ -67,10 +70,10 @@ export default function Hero() {
 
         {/* Value Proposition */}
         <div className="max-w-2xl mx-auto space-y-3">
-          <h2 className="text-xl md:text-2xl text-slate-200 font-light">
+          <h2 className="text-xl md:text-2xl text-slate-200 font-bold">
             Official Website Launching Soon
           </h2>
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+          <p className="text-slate-200 text-base md:text-lg leading-relaxed font-medium">
             Connect with cloud pioneers and unlock limitless potential in the
             AWS community.
           </p>
@@ -82,7 +85,7 @@ export default function Hero() {
         <div className="text-center space-y-8">
           {/* Clean Header */}
           <div className="space-y-2">
-            <h3 className="text-xl md:text-2xl font-semibold text-white">
+            <h3 className="text-xl md:text-2xl font-bold text-white">
               Website Launch
             </h3>
             <p className="text-slate-300 text-sm font-mono">
@@ -91,20 +94,21 @@ export default function Hero() {
           </div>
 
           {/* Minimalist Countdown */}
-          <div className="flex justify-center items-center gap-8 md:gap-12">
+          <div className="flex justify-center items-center gap-6 md:gap-8">
             {[
               { value: timeLeft.days, label: 'DAYS' },
               { value: timeLeft.hours, label: 'HOURS' },
               { value: timeLeft.minutes, label: 'MINUTES' },
+              { value: timeLeft.seconds, label: 'SECONDS' },
             ].map(({ value, label }, index) => (
               <div key={label} className="text-center">
                 <div className="text-4xl md:text-6xl lg:text-7xl font-light text-white tabular-nums mb-2">
                   {value.toString().padStart(2, '0')}
                 </div>
-                <div className="text-xs md:text-sm text-slate-300 font-medium tracking-[0.2em] uppercase">
+                <div className="text-xs md:text-sm text-slate-200 font-medium tracking-[0.2em] uppercase">
                   {label}
                 </div>
-                {index < 2 && (
+                {index < 3 && (
                   <div className="absolute right-0 top-1/2 -translate-y-1/2 text-2xl md:text-4xl text-slate-600 font-light">
                     :
                   </div>

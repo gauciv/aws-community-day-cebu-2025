@@ -76,7 +76,7 @@ export default function NotificationForm() {
             </svg>
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-emerald-400">
+            <h3 className="text-xl font-bold text-emerald-400">
               You're all set!
             </h3>
             <p className="text-slate-300">
@@ -93,7 +93,7 @@ export default function NotificationForm() {
       <div className="space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h3 className="text-xl font-semibold text-slate-200">
+          <h3 className="text-xl font-bold text-slate-200">
             Get Launch Notification
           </h3>
           <p className="text-slate-300 text-sm font-medium">
@@ -168,7 +168,7 @@ export default function NotificationForm() {
 
         {/* Social Proof */}
         <div className="text-center">
-          <p className="text-slate-400 text-xs font-medium">
+          <p className="text-slate-300 text-sm font-semibold">
             Join 500+ developers waiting for the launch
           </p>
         </div>
