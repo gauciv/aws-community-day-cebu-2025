@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { subscribeToNotifications } from '@/lib/api'
+import SubscriberCount from './SubscriberCount'
 
 interface FormData {
   name: string
@@ -170,8 +171,8 @@ export default function NotificationForm() {
           </button>
         </form>
 
-        {/* Social Proof */}
-        <div className="text-center"></div>
+        {/* Live Subscriber Count */}
+        <SubscriberCount />
       </div>
     </section>
   )

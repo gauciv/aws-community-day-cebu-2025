@@ -47,9 +47,40 @@ const amazonEmberMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'AWS Community Day Cebu 2025',
+  title: 'AWS Community Day Cebu 2025 | Official Website Launching Soon',
   description:
-    'Join us for AWS Community Day Cebu 2025 - A community-led conference featuring technical discussions and networking in the AWS cloud computing community.',
+    'Join us for AWS Community Day Cebu 2025 - A community-led conference featuring technical discussions and networking in the AWS cloud computing community. September 13, 2025 at UP Cebu.',
+  keywords:
+    'AWS, Community Day, Cebu, 2025, Cloud Computing, Conference, Philippines, Amazon Web Services',
+  authors: [{ name: 'AWS User Group Philippines - Cebu Chapter' }],
+  openGraph: {
+    title: 'AWS Community Day Cebu 2025',
+    description:
+      'Connect with cloud pioneers and unlock limitless potential in the AWS community. September 13, 2025 at UP Cebu.',
+    url: 'https://main.d3qya03l6igwcl.amplifyapp.com',
+    siteName: 'AWS Community Day Cebu 2025',
+    images: [
+      {
+        url: '/aws-logo.svg',
+        width: 1200,
+        height: 630,
+        alt: 'AWS Community Day Cebu 2025',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AWS Community Day Cebu 2025',
+    description:
+      'Connect with cloud pioneers and unlock limitless potential in the AWS community.',
+    images: ['/aws-logo.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
