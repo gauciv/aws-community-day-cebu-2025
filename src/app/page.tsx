@@ -47,9 +47,9 @@ export default function Home() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="relative z-10 min-h-screen grid grid-rows-[1fr_auto] max-w-7xl mx-auto">
+      <div className="relative z-10 min-h-screen grid grid-rows-[1fr_auto]">
         {/* Content Area */}
-        <div className="flex items-center justify-center px-6 py-20">
+        <div className="flex items-center justify-center px-6 py-20 max-w-7xl mx-auto">
           <div className="w-full max-w-4xl">
             <Hero />
             <NotificationForm />
@@ -57,7 +57,9 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <Footer />
+        <div className="col-span-full">
+          <Footer />
+        </div>
       </div>
     </main>
   )
