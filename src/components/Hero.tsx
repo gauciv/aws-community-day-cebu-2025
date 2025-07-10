@@ -86,25 +86,33 @@ export default function Hero() {
         </h3>
 
         {/* Individual Time Boxes */}
-        <div className="flex justify-center items-end gap-4 md:gap-6">
+        <div className="flex justify-center items-center gap-2 md:gap-4">
           {[
             { value: timeLeft.days, label: 'days' },
             { value: timeLeft.hours, label: 'hours' },
             { value: timeLeft.minutes, label: 'minutes' },
             { value: timeLeft.seconds, label: 'seconds' },
-          ].map(({ value, label }) => (
-            <div key={label} className="text-center">
-              {/* Light Blue Rounded Box */}
-              <div className="bg-blue-200/90 rounded-3xl p-4 md:p-6 mb-3 min-w-[60px] md:min-w-[80px]">
-                <div className="text-2xl md:text-4xl font-bold text-slate-800 tabular-nums">
-                  {value.toString().padStart(2, '0')}
+          ].map(({ value, label }, index) => (
+            <>
+              <div key={label} className="text-center">
+                {/* Frosted Glass Box */}
+                <div className="bg-blue-200/20 backdrop-blur-md border border-blue-300/30 rounded-3xl p-4 md:p-6 mb-3 min-w-[60px] md:min-w-[80px] shadow-lg">
+                  <div className="text-2xl md:text-4xl font-mono font-bold text-white tabular-nums">
+                    {value.toString().padStart(2, '0')}
+                  </div>
                 </div>
+                {/* Handwritten Label */}
+                <p className="text-blue-300 text-sm md:text-base font-mono italic lowercase">
+                  {label}
+                </p>
               </div>
-              {/* Handwritten Label */}
-              <p className="text-blue-300 text-sm md:text-base font-mono italic lowercase">
-                {label}
-              </p>
-            </div>
+              {/* Colon Separator */}
+              {index < 3 && (
+                <div className="text-3xl md:text-5xl text-blue-300/50 font-mono font-bold mb-12">
+                  :
+                </div>
+              )}
+            </>
           ))}
         </div>
 
