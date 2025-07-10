@@ -5,7 +5,8 @@
   --foreground: #ededed;
 }
 
-@theme inline {
+/* Custom theme variables */
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-amazon-ember);
