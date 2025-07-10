@@ -9,7 +9,7 @@ export default function Home() {
     <main className="relative w-full bg-black text-white">
       {/* Arc Background - CORRECTED */}
       {/* This places the arc at the top and allows it to scale proportionally without being cut off. */}
-      <div className="absolute top-0 left-0 w-full z-0 pointer-events-none">
+      <div className="absolute -top-10 left-0 w-full z-0 pointer-events-none">
         <Image
           src="/arc.png"
           alt="Arc Background"
