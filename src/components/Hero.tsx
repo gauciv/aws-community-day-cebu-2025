@@ -77,43 +77,38 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Launch Countdown */}
-      <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-        <div className="space-y-6">
+      {/* Launch Countdown - countdown.png Style */}
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
+        <div className="text-center space-y-8">
+          {/* Clean Header */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-slate-200">
+            <h3 className="text-xl md:text-2xl font-semibold text-white">
               Website Launch
             </h3>
-            <p className="text-slate-400 text-sm">
-              July 25, 2025 • 12:00 PM PHT
+            <p className="text-slate-400 text-sm font-mono">
+              July 25, 2025 at 12:00 PM PHT
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          {/* Minimalist Countdown */}
+          <div className="flex justify-center items-center gap-8 md:gap-12">
             {[
-              { value: timeLeft.days, label: 'Days', color: 'orange' },
-              { value: timeLeft.hours, label: 'Hours', color: 'blue' },
-              { value: timeLeft.minutes, label: 'Minutes', color: 'orange' },
-            ].map(({ value, label, color }) => (
+              { value: timeLeft.days, label: 'DAYS' },
+              { value: timeLeft.hours, label: 'HOURS' },
+              { value: timeLeft.minutes, label: 'MINUTES' },
+            ].map(({ value, label }, index) => (
               <div key={label} className="text-center">
-                <div
-                  className={`
-                  bg-slate-800/50 border rounded-xl p-4 mb-2
-                  ${color === 'orange' ? 'border-orange-500/20' : 'border-blue-500/20'}
-                `}
-                >
-                  <div
-                    className={`
-                    text-3xl md:text-4xl font-bold tabular-nums
-                    ${color === 'orange' ? 'text-orange-400' : 'text-blue-400'}
-                  `}
-                  >
-                    {value}
-                  </div>
+                <div className="text-4xl md:text-6xl lg:text-7xl font-light text-white tabular-nums mb-2">
+                  {value.toString().padStart(2, '0')}
                 </div>
-                <p className="text-slate-400 text-xs uppercase tracking-wider font-medium">
+                <div className="text-xs md:text-sm text-slate-400 font-medium tracking-[0.2em] uppercase">
                   {label}
-                </p>
+                </div>
+                {index < 2 && (
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 text-2xl md:text-4xl text-slate-600 font-light">
+                    :
+                  </div>
+                )}
               </div>
             ))}
           </div>
