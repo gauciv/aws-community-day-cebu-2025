@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Russo_One } from 'next/font/google'
 import localFont from 'next/font/local'
-import Image from 'next/image'
 import './globals.css'
 
 const russoOne = Russo_One({

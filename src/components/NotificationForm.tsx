@@ -48,7 +48,7 @@ export default function NotificationForm() {
     try {
       await subscribeToNotifications(formData.name, formData.email)
       setIsSubmitted(true)
-    } catch (error) {
+    } catch {
       setErrors({ name: '', email: 'Failed to subscribe. Please try again.' })
     }
     setIsLoading(false)
@@ -82,10 +82,10 @@ export default function NotificationForm() {
           </div>
           <div className="space-y-2">
             <h3 className="text-xl font-bold text-emerald-400">
-              You're all set!
+              You&apos;re all set!
             </h3>
             <p className="text-slate-300">
-              We'll notify you when the website launches on July 25th.
+              We&apos;ll notify you when the website launches on July 25th.
             </p>
           </div>
         </div>

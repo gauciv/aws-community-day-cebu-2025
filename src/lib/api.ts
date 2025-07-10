@@ -28,7 +28,7 @@ export async function getSubscriberCount() {
     }
 
     return response.json()
-  } catch (error) {
+  } catch {
     // Return fallback data if API not available
     return { count: 0 }
   }

@@ -59,11 +59,11 @@ export default function FirstToKnowForm() {
             </svg>
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">
-            You're All Set!
+            You&apos;re All Set!
           </h3>
           <p className="text-white/70 text-lg">
-            We'll notify you as soon as the official website goes live on July
-            25!
+            We&apos;ll notify you as soon as the official website goes live on
+            July 25!
           </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ export default function Tagline() {
         </h3>
         <p className="text-white/70 text-base md:text-lg leading-relaxed">
           Be among the first to access the official AWS Community Day Cebu
-          website. We'll notify you the moment it goes live with all event
+          website. We&apos;ll notify you the moment it goes live with all event
           details, registration, and more.
         </p>
       </div>
