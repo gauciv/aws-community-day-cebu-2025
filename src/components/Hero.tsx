@@ -41,9 +41,9 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="text-center space-y-12 mb-16">
+    <section className="text-center space-y-12 mb-16 animate-fade-in">
       {/* Status Indicator */}
-      <div className="inline-flex items-center gap-3 px-4 py-2 bg-amber-500/5 backdrop-blur-sm border border-amber-500/10 rounded-full">
+      <div className="inline-flex items-center gap-3 px-4 py-2 bg-amber-500/5 backdrop-blur-sm border border-amber-500/10 rounded-full animate-float">
         <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
         <span className="text-amber-400 text-sm font-medium tracking-wide">
           WEBSITE IN DEVELOPMENT
@@ -96,7 +96,7 @@ export default function Hero() {
             <React.Fragment key={label}>
               <div className="text-center">
                 {/* Frosted Glass Box */}
-                <div className="bg-blue-200/20 backdrop-blur-md border border-blue-300/30 rounded-3xl p-4 md:p-6 mb-3 min-w-[60px] md:min-w-[80px] shadow-lg">
+                <div className="bg-blue-200/20 backdrop-blur-md border border-blue-300/30 rounded-3xl p-4 md:p-6 mb-3 min-w-[60px] md:min-w-[80px] shadow-lg hover:scale-105 transition-transform duration-300">
                   <div className="text-2xl md:text-4xl font-mono font-bold text-white tabular-nums">
                     {value.toString().padStart(2, '0')}
                   </div>

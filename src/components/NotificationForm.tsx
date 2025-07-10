@@ -63,9 +63,9 @@ export default function NotificationForm() {
 
   if (isSubmitted) {
     return (
-      <section className="bg-emerald-900/20 border border-emerald-500/20 rounded-2xl p-8 text-center">
+      <section className="bg-emerald-900/20 border border-emerald-500/20 rounded-2xl p-8 text-center animate-fade-in">
         <div className="space-y-4">
-          <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto animate-bounce">
             <svg
               className="w-6 h-6 text-white"
               fill="none"
@@ -94,7 +94,7 @@ export default function NotificationForm() {
   }
 
   return (
-    <section className="bg-slate-900/30 border border-slate-700/50 rounded-2xl p-8">
+    <section className="bg-slate-900/30 border border-slate-700/50 rounded-2xl p-8 animate-fade-in hover:bg-slate-900/40 transition-colors duration-300">
       <div className="space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
@@ -154,10 +154,10 @@ export default function NotificationForm() {
             className="
               w-full bg-gradient-to-r from-orange-500 to-blue-600 
               text-white font-medium py-3 px-6 rounded-lg
-              hover:from-orange-600 hover:to-blue-700
+              hover:from-orange-600 hover:to-blue-700 hover:scale-105
               focus:outline-none focus:ring-2 focus:ring-blue-500/50
               disabled:opacity-50 disabled:cursor-not-allowed
-              transition-all duration-200
+              transition-all duration-300 transform
             "
           >
             {isLoading ? (
