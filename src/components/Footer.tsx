@@ -1,17 +1,17 @@
-import SocialLinks from './SocialLinks'
-
 export default function Footer() {
   return (
-    <footer className="w-full mt-20 py-8 border-t border-gray-800">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <SocialLinks />
-        <p className="text-gray-400 text-sm">
-          © 2025 AWS User Group Philippines - Cebu Chapter. All rights
-          reserved.
-        </p>
-        <p className="text-gray-500 text-xs mt-2">
-          Built with ❤️ by the community, for the community
-        </p>
+    <footer className="border-t border-slate-800/50 bg-slate-900/20 backdrop-blur-sm">
+      <div className="px-6 py-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <div className="text-slate-400">
+              © 2025 AWS User Group Philippines - Cebu Chapter
+            </div>
+            <div className="flex items-center gap-4 text-slate-500">
+              <span>Built with ❤️ by the community</span>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   )

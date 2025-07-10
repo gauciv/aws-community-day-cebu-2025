@@ -1,14 +1,24 @@
 'use client'
 import { useState, useEffect } from 'react'
 
+interface TimeLeft {
+  days: number
+  hours: number
+  minutes: number
+}
+
 export default function Hero() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 })
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+  })
 
   useEffect(() => {
-    const targetDate = new Date('2025-07-25T12:00:00+08:00') // July 25, 12:00 PM PHT
+    const targetDate = new Date('2025-07-25T12:00:00+08:00')
 
     const updateCountdown = () => {
-      const now = new Date().getTime()
+      const now = Date.now()
       const distance = targetDate.getTime() - now
 
       if (distance > 0) {
@@ -23,80 +33,92 @@ export default function Hero() {
     }
 
     updateCountdown()
-    const interval = setInterval(updateCountdown, 60000) // Update every minute
-
+    const interval = setInterval(updateCountdown, 60000)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center pt-20 md:pt-32 px-4">
-      <div className="mb-6 px-6 py-3 bg-gradient-to-r from-[#FF6B35]/20 to-[#4A90E2]/20 border border-[#FF6B35] rounded-lg">
-        <span className="text-[#FF6B35] text-sm md:text-base font-bold uppercase tracking-wider">
-          🚧 Official Website Coming Soon
+    <section className="text-center space-y-12 mb-16">
+      {/* Status Indicator */}
+      <div className="inline-flex items-center gap-3 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full">
+        <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+        <span className="text-amber-400 text-sm font-medium tracking-wide">
+          WEBSITE IN DEVELOPMENT
         </span>
       </div>
 
-      {/* Progress Bar */}
-      <div className="mb-8 w-full max-w-md">
-        <div className="flex justify-between text-sm text-white/60 mb-2">
-          <span>Website Development</span>
-          <span>75%</span>
+      {/* Primary Content Block */}
+      <div className="space-y-8">
+        {/* Event Branding */}
+        <div className="space-y-4">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+            <span className="block text-slate-100">AWS</span>
+            <span className="block bg-gradient-to-r from-blue-400 via-orange-400 to-blue-400 bg-clip-text text-transparent">
+              COMMUNITY DAY
+            </span>
+          </h1>
+
+          <div className="flex items-center justify-center gap-4 text-lg md:text-xl text-slate-300">
+            <span className="text-blue-400 font-medium">Cebu</span>
+            <span className="w-1 h-1 bg-slate-400 rounded-full" />
+            <span className="text-orange-400 font-medium">Q4 2025</span>
+          </div>
         </div>
-        <div className="w-full bg-white/10 rounded-full h-2">
-          <div
-            className="bg-gradient-to-r from-[#FF6B35] to-[#4A90E2] h-2 rounded-full transition-all duration-1000 ease-out"
-            style={{ width: '75%' }}
-          />
+
+        {/* Value Proposition */}
+        <div className="max-w-2xl mx-auto space-y-3">
+          <h2 className="text-xl md:text-2xl text-slate-200 font-light">
+            Official Website Launching Soon
+          </h2>
+          <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+            Connect with cloud pioneers and unlock limitless potential in the
+            AWS community.
+          </p>
         </div>
       </div>
 
-      <div className="w-full max-w-6xl mx-auto text-center space-y-8">
-        <h1 className="font-display text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-[#FF6B35] via-[#F7931E] to-[#4A90E2] inline-block text-transparent bg-clip-text hover:scale-105 transition-transform duration-300">
-          AWS COMMUNITY DAY
-        </h1>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-xl md:text-2xl font-light tracking-wide">
-          <span className="text-[#4A90E2] hover:text-[#F7931E] transition-colors">
-            CEBU
-          </span>
-          <span className="hidden md:block text-[#FF6B35]">•</span>
-          <span className="text-[#F7931E] hover:text-[#4A90E2] transition-colors">
-            Q4 2025
-          </span>
-        </div>
+      {/* Launch Countdown */}
+      <div className="bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-slate-200">
+              Website Launch
+            </h3>
+            <p className="text-slate-400 text-sm">
+              July 25, 2025 • 12:00 PM PHT
+            </p>
+          </div>
 
-        {/* Countdown Timer */}
-        <div className="mt-8 p-6 bg-gradient-to-r from-black/20 to-black/10 backdrop-blur-sm rounded-xl border border-white/10">
-          <p className="text-white/60 text-sm mb-4 uppercase tracking-wide">
-            Website Launch Countdown
-          </p>
-          <div className="flex justify-center gap-6 md:gap-8">
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#FF6B35]">
-                {timeLeft.days}
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              { value: timeLeft.days, label: 'Days', color: 'orange' },
+              { value: timeLeft.hours, label: 'Hours', color: 'blue' },
+              { value: timeLeft.minutes, label: 'Minutes', color: 'orange' },
+            ].map(({ value, label, color }) => (
+              <div key={label} className="text-center">
+                <div
+                  className={`
+                  bg-slate-800/50 border rounded-xl p-4 mb-2
+                  ${color === 'orange' ? 'border-orange-500/20' : 'border-blue-500/20'}
+                `}
+                >
+                  <div
+                    className={`
+                    text-3xl md:text-4xl font-bold tabular-nums
+                    ${color === 'orange' ? 'text-orange-400' : 'text-blue-400'}
+                  `}
+                  >
+                    {value}
+                  </div>
+                </div>
+                <p className="text-slate-400 text-xs uppercase tracking-wider font-medium">
+                  {label}
+                </p>
               </div>
-              <div className="text-xs md:text-sm text-white/60 uppercase">
-                Days
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#F7931E]">
-                {timeLeft.hours}
-              </div>
-              <div className="text-xs md:text-sm text-white/60 uppercase">
-                Hours
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#4A90E2]">
-                {timeLeft.minutes}
-              </div>
-              <div className="text-xs md:text-sm text-white/60 uppercase">
-                Minutes
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
