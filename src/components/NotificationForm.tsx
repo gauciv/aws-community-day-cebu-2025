@@ -96,7 +96,7 @@ export default function NotificationForm() {
           <h3 className="text-xl font-semibold text-slate-200">
             Get Launch Notification
           </h3>
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-300 text-sm font-medium">
             Be the first to know when the official website goes live
           </p>
         </div>
@@ -147,9 +147,9 @@ export default function NotificationForm() {
             type="submit"
             disabled={isLoading}
             className="
-              w-full bg-gradient-to-r from-blue-600 to-orange-500 
+              w-full bg-gradient-to-r from-orange-500 to-blue-600 
               text-white font-medium py-3 px-6 rounded-lg
-              hover:from-blue-700 hover:to-orange-600
+              hover:from-orange-600 hover:to-blue-700
               focus:outline-none focus:ring-2 focus:ring-blue-500/50
               disabled:opacity-50 disabled:cursor-not-allowed
               transition-all duration-200
@@ -168,7 +168,7 @@ export default function NotificationForm() {
 
         {/* Social Proof */}
         <div className="text-center">
-          <p className="text-slate-500 text-xs">
+          <p className="text-slate-400 text-xs font-medium">
             Join 500+ developers waiting for the launch
           </p>
         </div>

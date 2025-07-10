@@ -70,7 +70,7 @@ export default function Hero() {
           <h2 className="text-xl md:text-2xl text-slate-200 font-light">
             Official Website Launching Soon
           </h2>
-          <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
             Connect with cloud pioneers and unlock limitless potential in the
             AWS community.
           </p>
@@ -85,7 +85,7 @@ export default function Hero() {
             <h3 className="text-xl md:text-2xl font-semibold text-white">
               Website Launch
             </h3>
-            <p className="text-slate-400 text-sm font-mono">
+            <p className="text-slate-300 text-sm font-mono">
               July 25, 2025 at 12:00 PM PHT
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function Hero() {
                 <div className="text-4xl md:text-6xl lg:text-7xl font-light text-white tabular-nums mb-2">
                   {value.toString().padStart(2, '0')}
                 </div>
-                <div className="text-xs md:text-sm text-slate-400 font-medium tracking-[0.2em] uppercase">
+                <div className="text-xs md:text-sm text-slate-300 font-medium tracking-[0.2em] uppercase">
                   {label}
                 </div>
                 {index < 2 && (
