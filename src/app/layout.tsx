@@ -47,6 +47,7 @@ const amazonEmberMono = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://main.d3qya03l6igwcl.amplifyapp.com'),
   title: 'AWS Community Day Cebu 2025 | Official Website Launching Soon',
   description:
     'Join us for AWS Community Day Cebu 2025 - A community-led conference featuring technical discussions and networking in the AWS cloud computing community. September 13, 2025 at UP Cebu.',
