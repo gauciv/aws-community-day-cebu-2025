@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { subscribeToNotifications } from '@/lib/api'
 
 interface FormData {
   name: string
@@ -43,10 +44,13 @@ export default function NotificationForm() {
     }
 
     setIsLoading(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1200))
+    try {
+      await subscribeToNotifications(formData.name, formData.email)
+      setIsSubmitted(true)
+    } catch (error) {
+      setErrors({ name: '', email: 'Failed to subscribe. Please try again.' })
+    }
     setIsLoading(false)
-    setIsSubmitted(true)
   }
 
   const handleInputChange = (field: keyof FormData, value: string) => {
@@ -167,11 +171,7 @@ export default function NotificationForm() {
         </form>
 
         {/* Social Proof */}
-        <div className="text-center">
-          <p className="text-slate-300 text-sm font-semibold">
-            Join 500+ developers waiting for the launch
-          </p>
-        </div>
+        <div className="text-center"></div>
       </div>
     </section>
   )

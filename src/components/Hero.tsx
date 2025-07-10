@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface TimeLeft {
   days: number
@@ -93,8 +93,8 @@ export default function Hero() {
             { value: timeLeft.minutes, label: 'minutes' },
             { value: timeLeft.seconds, label: 'seconds' },
           ].map(({ value, label }, index) => (
-            <>
-              <div key={label} className="text-center">
+            <React.Fragment key={label}>
+              <div className="text-center">
                 {/* Frosted Glass Box */}
                 <div className="bg-blue-200/20 backdrop-blur-md border border-blue-300/30 rounded-3xl p-4 md:p-6 mb-3 min-w-[60px] md:min-w-[80px] shadow-lg">
                   <div className="text-2xl md:text-4xl font-mono font-bold text-white tabular-nums">
@@ -112,7 +112,7 @@ export default function Hero() {
                   :
                 </div>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
 
