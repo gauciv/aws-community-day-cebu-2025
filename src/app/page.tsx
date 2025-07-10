@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Hero from '@/components/Hero'
 import Tagline from '@/components/Tagline'
 import FirstToKnowForm from '@/components/FirstToKnowForm'
+import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
             <Hero />
             <Tagline />
             <FirstToKnowForm />
+            <FAQ />
           </div>
 
           {/* Footer */}
