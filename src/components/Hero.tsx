@@ -43,7 +43,7 @@ export default function Hero() {
   return (
     <section className="text-center space-y-12 mb-16">
       {/* Status Indicator */}
-      <div className="inline-flex items-center gap-3 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full">
+      <div className="inline-flex items-center gap-3 px-4 py-2 bg-amber-500/5 backdrop-blur-sm border border-amber-500/10 rounded-full">
         <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
         <span className="text-amber-400 text-sm font-medium tracking-wide">
           WEBSITE IN DEVELOPMENT
