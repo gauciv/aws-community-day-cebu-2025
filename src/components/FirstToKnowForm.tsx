@@ -64,7 +64,8 @@ export default function FirstToKnowForm() {
             You're all set!
           </h3>
           <p className="text-white/70">
-            We'll notify you when the website launches and share event updates.
+            We'll notify you as soon as the official website goes live on July
+            25!
           </p>
         </div>
       </div>
@@ -78,10 +79,10 @@ export default function FirstToKnowForm() {
           Be the first to know
         </h2>
         <p className="text-white/60 text-base md:text-lg mb-2">
-          Sign up to get updates about AWS Community Day Cebu
+          Get notified when the official website launches
         </p>
         <p className="text-[#4A90E2] text-sm font-medium">
-          Join 500+ cloud enthusiasts already signed up
+          Join 500+ people waiting for the launch
         </p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">

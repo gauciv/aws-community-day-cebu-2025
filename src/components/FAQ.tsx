@@ -6,24 +6,24 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'When will the full website be ready?',
+      question: 'When will the official website be ready?',
       answer:
-        'The complete website will launch in early 2025, featuring full event details, speaker lineup, and registration.',
+        'The complete website will launch on July 25, 2025 at 12:00 PM PHT, featuring full event details, speaker lineup, and registration.',
+    },
+    {
+      question: 'What can I expect from the final website?',
+      answer:
+        'The official website will include event schedules, speaker profiles, registration system, venue information, and all event updates.',
     },
     {
       question: 'How can I stay updated?',
       answer:
-        'Sign up for our newsletter above to receive updates about the website launch and event announcements.',
+        'Sign up for our newsletter above to receive notifications when the official website launches and for important announcements.',
     },
     {
-      question: 'What is AWS Community Day?',
+      question: 'Is this the official event website?',
       answer:
-        'AWS Community Day is a community-led conference featuring technical sessions, workshops, and networking opportunities for cloud enthusiasts.',
-    },
-    {
-      question: 'Where will the event be held?',
-      answer:
-        'The event will be held at University of the Philippines Cebu Performing Arts Hall, Gorordo Avenue, Lahug, Cebu City.',
+        'No, this is a temporary splash page. The official AWS Community Day Cebu website is currently under development and will launch soon.',
     },
   ]
 

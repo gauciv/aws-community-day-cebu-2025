@@ -5,7 +5,7 @@ export default function Hero() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 })
 
   useEffect(() => {
-    const targetDate = new Date('2025-09-13T00:00:00')
+    const targetDate = new Date('2025-07-25T12:00:00+08:00') // July 25, 12:00 PM PHT
 
     const updateCountdown = () => {
       const now = new Date().getTime()
@@ -32,14 +32,14 @@ export default function Hero() {
     <div className="flex flex-col items-center justify-center pt-20 md:pt-32 px-4">
       <div className="mb-6 px-6 py-3 bg-gradient-to-r from-[#FF6B35]/20 to-[#4A90E2]/20 border border-[#FF6B35] rounded-lg">
         <span className="text-[#FF6B35] text-sm md:text-base font-bold uppercase tracking-wider">
-          🚧 Website Under Development
+          🚧 Official Website Coming Soon
         </span>
       </div>
 
       {/* Progress Bar */}
       <div className="mb-8 w-full max-w-md">
         <div className="flex justify-between text-sm text-white/60 mb-2">
-          <span>Development Progress</span>
+          <span>Website Development</span>
           <span>75%</span>
         </div>
         <div className="w-full bg-white/10 rounded-full h-2">
@@ -60,14 +60,14 @@ export default function Hero() {
           </span>
           <span className="hidden md:block text-[#FF6B35]">•</span>
           <span className="text-[#F7931E] hover:text-[#4A90E2] transition-colors">
-            SEPTEMBER 13, 2025
+            Q4 2025
           </span>
         </div>
 
         {/* Countdown Timer */}
         <div className="mt-8 p-6 bg-gradient-to-r from-black/20 to-black/10 backdrop-blur-sm rounded-xl border border-white/10">
           <p className="text-white/60 text-sm mb-4 uppercase tracking-wide">
-            Event Countdown
+            Website Launch Countdown
           </p>
           <div className="flex justify-center gap-6 md:gap-8">
             <div className="text-center">
