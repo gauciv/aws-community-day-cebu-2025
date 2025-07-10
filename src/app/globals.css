@@ -18,3 +18,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-amazon-ember), sans-serif;
 }
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
