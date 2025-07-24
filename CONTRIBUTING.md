@@ -38,30 +38,30 @@ Ready to contribute code? Here is the workflow to follow:
 1.  **Fork the repository** to your own GitHub account.
 
 2.  **Clone your fork** to your local machine:
-    ```sh
+    \`\`\`sh
     git clone [https://github.com/](https://github.com/)<YOUR-USERNAME>/[your-repo].git
-    ```
+    \`\`\`
 
 3.  **Create a new branch** for your changes. Use a descriptive name:
-    ```sh
+    \`\`\`sh
     # For a new feature
     git checkout -b feat/describe-your-feature
 
     # For a bug fix
     git checkout -b fix/describe-the-bug-fix
-    ```
+    \`\`\`
 
 4.  **Make your changes!** Code, test, and ensure everything works as expected.
 
 5.  **Commit your changes.** Please follow our commit message guidelines (see below).
-    ```sh
+    \`\`\`sh
     git commit -m "feat: add speaker profile modal"
-    ```
+    \`\`\`
 
 6.  **Push your changes** to your forked repository:
-    ```sh
+    \`\`\`sh
     git push origin feat/describe-your-feature
-    ```
+    \`\`\`
 
 7.  **Open a Pull Request (PR)** to the `main` branch of the original repository.
     - When you open the PR, our **Pull Request template** will automatically appear.

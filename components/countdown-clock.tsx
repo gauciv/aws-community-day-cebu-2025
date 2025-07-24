@@ -1,0 +1,154 @@
+"use client"
+
+import { useState, useEffect } from "react"
+
+interface TimeLeft {
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+}
+
+export function CountdownClock() {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+  const [mounted, setMounted] = useState(false)
+  const [prevSeconds, setPrevSeconds] = useState(0)
+  const [isFlipping, setIsFlipping] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+
+    const calculateTimeLeft = (): TimeLeft => {
+      const eventDate = new Date("2025-09-13T13:00:00+08:00") // 1PM Philippine time
+      const now = new Date()
+      const difference = eventDate.getTime() - now.getTime()
+
+      if (difference > 0) {
+        return {
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        }
+      }
+
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+    }
+
+    const timer = setInterval(() => {
+      const newTime = calculateTimeLeft()
+
+      // Trigger flip animation for seconds
+      if (newTime.seconds !== prevSeconds) {
+        setIsFlipping(true)
+        setTimeout(() => setIsFlipping(false), 300)
+        setPrevSeconds(newTime.seconds)
+      }
+
+      setTimeLeft(newTime)
+    }, 1000)
+
+    setTimeLeft(calculateTimeLeft())
+
+    return () => clearInterval(timer)
+  }, [prevSeconds])
+
+  if (!mounted) {
+    return (
+      <div className="flex items-center justify-center gap-2 sm:gap-4 py-6 sm:py-8">
+        <div className="animate-pulse bg-white/10 rounded-xl w-12 h-12 sm:w-20 sm:h-20" />
+        <div className="animate-pulse bg-white/10 rounded-xl w-12 h-12 sm:w-20 sm:h-20" />
+        <div className="animate-pulse bg-white/10 rounded-xl w-12 h-12 sm:w-20 sm:h-20" />
+        <div className="animate-pulse bg-white/10 rounded-xl w-12 h-12 sm:w-20 sm:h-20" />
+      </div>
+    )
+  }
+
+  const TimeCard = ({ value, label, isActive = false }: { value: number; label: string; isActive?: boolean }) => (
+    <div className="flex flex-col items-center group">
+      <div className="relative">
+        <div
+          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-orange-400/30 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-105 ${
+            isActive ? "animate-pulse border-orange-400/60 shadow-orange-400/20" : ""
+          } ${isFlipping && isActive ? "animate-flip" : ""}`}
+        >
+          <span className="text-xl sm:text-2xl md:text-4xl font-black font-mono text-white drop-shadow-lg">
+            {value.toString().padStart(2, "0")}
+          </span>
+        </div>
+
+        {/* Glassmorphism overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 via-transparent to-white/5 rounded-xl" />
+
+        {/* Orange glow effect */}
+        <div
+          className={`absolute inset-0 rounded-xl transition-opacity duration-300 ${
+            isActive ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="absolute inset-0 bg-orange-400/20 rounded-xl blur-sm" />
+        </div>
+
+        {/* Constellation pattern */}
+        <div className="absolute -top-1 -right-1 text-orange-400/60 text-xs animate-twinkle">✦</div>
+        <div className="absolute -bottom-1 -left-1 text-orange-300/40 text-xs animate-twinkle-delayed">★</div>
+      </div>
+
+      <span className="text-xs sm:text-sm text-white/80 mt-2 sm:mt-3 font-bold uppercase tracking-widest">{label}</span>
+    </div>
+  )
+
+  const AnimatedColon = () => (
+    <div className="flex flex-col items-center justify-center h-14 sm:h-18 md:h-24">
+      <div className="flex flex-col gap-1 sm:gap-2">
+        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full animate-pulse" />
+        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full animate-pulse delay-500" />
+      </div>
+    </div>
+  )
+
+  return (
+    <div className="flex flex-col items-center py-6 sm:py-8 relative">
+      {/* Background constellation */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-4 left-1/4 text-orange-400 text-sm animate-twinkle">✧</div>
+        <div className="absolute bottom-4 right-1/4 text-orange-300 text-sm animate-float-slow">✦</div>
+        <div className="absolute top-1/2 left-1/6 text-orange-400 text-xs animate-twinkle-delayed">★</div>
+        <div className="absolute top-1/2 right-1/6 text-orange-300 text-xs animate-float">✧</div>
+      </div>
+
+      {/* Enhanced title */}
+      <div className="text-center mb-4 sm:mb-6 relative z-10">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-black text-white mb-2 tracking-wide">Event Starts In</h3>
+        <div className="w-24 h-0.5 bg-gradient-to-r from-orange-400 to-yellow-500 mx-auto rounded-full opacity-80" />
+      </div>
+
+      {/* Countdown display */}
+      <div className="flex items-center gap-3 sm:gap-4 md:gap-8 relative z-10">
+        <TimeCard value={timeLeft.days} label="Days" />
+        <AnimatedColon />
+        <TimeCard value={timeLeft.hours} label="Hours" />
+        <AnimatedColon />
+        <TimeCard value={timeLeft.minutes} label="Minutes" />
+        <AnimatedColon />
+        <TimeCard value={timeLeft.seconds} label="Seconds" isActive={true} />
+      </div>
+
+      {/* Enhanced event info */}
+      <div className="mt-4 sm:mt-6 text-center relative z-10">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-orange-400/20">
+          <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
+          <p className="text-white/90 text-xs sm:text-sm font-medium">September 13, 2025 • 1:00 PM - 7:00 PM (PHT)</p>
+          <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse delay-1000" />
+        </div>
+
+        <p className="text-white/60 text-xs mt-2">University of the Philippines Cebu • Performing Arts Hall</p>
+      </div>
+    </div>
+  )
+}

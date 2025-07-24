@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "npm run dev",
+			"group": "build",
+			"label": "Run Dev Server",
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"isBackground": true
+		}
+	]
+}
