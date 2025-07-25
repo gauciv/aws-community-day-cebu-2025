@@ -68,7 +68,7 @@ export function Speakers() {
     },
     {
       name: "Louie Miguel",
-      position: "Fullstack Engineer/Project Lead @ TutoriasDojoNote",
+      position: "Fullstack Engineer/Project Lead @ TutorialsDojo",
       image: "/images/speakers/rafael-louie-miguel.jpg",
     },
   ]

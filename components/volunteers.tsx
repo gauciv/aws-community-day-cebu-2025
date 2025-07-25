@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Search, ChevronDown } from "lucide-react"
+import Image from "next/image"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export function Volunteers() {
@@ -31,51 +32,154 @@ export function Volunteers() {
   }, [])
 
   const volunteers = [
-    { name: "Yurii Onein T. Yankin", categories: ["Finance and Sponsorship"] },
-    { name: "Mikaela Vianca Molina", categories: ["Programs and Activity"] },
-    { name: "James Gabriel Elijah P. Ty", categories: ["Logistics/Venue"] },
-    { name: "Luis Andrei Ouano", categories: ["Registration/Ushers"] },
-    { name: "Erik James M. Caliskis", categories: ["Logistics/Venue"] },
-    { name: "Spyke Matthew Lim", categories: ["Documentation and Publicity"] },
-    { name: "Trixie T. Dolera", categories: ["Documentation and Publicity"] },
-    { name: "Gio Christian D. Macatual", categories: ["Documentation and Publicity"] },
-    { name: "Shan Michael V. Raboy", categories: ["Documentation and Publicity"] },
-    { name: "Maica C. Eupinado", categories: ["Documentation and Publicity"] },
-    { name: "Princess Mikaela E. Borbajo", categories: ["Documentation and Publicity"] },
-    { name: "Tyrone Tabormal", categories: ["Finance and Sponsorship"] },
-    { name: "Arnold Joseph Najera", categories: ["Documentation and Publicity"] },
-    { name: "Zoie Estorba", categories: ["Documentation and Publicity"] },
-    { name: "Liv Jewel Monsalud", categories: ["Registration/Ushers"] },
-    { name: "Chriscia Xanelle Llamas", categories: ["Logistics/Venue"] },
+    { 
+      name: "Yurii Onein T. Yankin", 
+      categories: ["Finance and Sponsorship"],
+      image: "/images/volunteers/yurii-yankin.jpg"
+    },
+    { 
+      name: "Mikaela Vianca Molina", 
+      categories: ["Programs and Activity"],
+      image: "/images/volunteers/mikae-molina.jpg"
+    },
+    { 
+      name: "James Gabriel Elijah P. Ty", 
+      categories: ["Logistics/Venue", "Technical"],
+      image: "/images/volunteers/james-ty.jpg"
+    },
+    { 
+      name: "Erik James M. Caliskis",
+      categories: ["Logistics/Venue"]
+    },
+    { 
+      name: "John Vincent Augusto", 
+      categories: ["Technical"],
+      image: "/images/volunteers/augusto-john-vincent.jpeg"
+    },
+    { 
+      name: "Luis Andrei Ouano", 
+      categories: ["Registration/Ushers"],
+      image: "/images/volunteers/luis-andrei-ouano.jpeg"
+    },
+    { 
+      name: "Spyke Matthew Lim", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/spyke-matthew-lim.jpeg"
+    },
+    { 
+      name: "Trixie T. Dolera", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/trixie-dolera.png"
+    },
+    { 
+      name: "Gio Christian D. Macatual", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/gio-macatual.jpg"
+    },
+    { 
+      name: "Shan Michael V. Raboy", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/shan-raboy.png"
+    },
+    { 
+      name: "Maica C. Eupinado", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/eupinado-maica.jpg"
+    },
+    { 
+      name: "Princess Mikaela E. Borbajo", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/princess-mikaelaa-borbajo.jpeg"
+    },
+    { 
+      name: "Tyrone Tabormal", 
+      categories: ["Finance and Sponsorship"],
+      image: "/images/volunteers/tyrone-tabornal.jpg"
+    },
+    { 
+      name: "Arnold Joseph Najera", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/arnold-najera.png"
+    },
+    { 
+      name: "Zoie Estorba", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/zoie-estorba.png"
+    },
     { name: "Daniel Ian Macalisang", categories: ["Registration/Ushers"] },
     { name: "Mhart Nuera", categories: ["Documentation and Publicity"] },
     { name: "Elijah Luis Bes", categories: ["Documentation and Publicity"] },
-    { name: "John Emmanuel O. Pacres", categories: ["Documentation and Publicity"] },
-    { name: "Shaira Mae O. Ma-asin", categories: ["Finance and Sponsorship"] },
-    { name: "Rhon Dwyane De Gracia", categories: ["Programs and Activity"] },
-    { name: "Adrian Say", categories: ["Registration/Ushers"] },
+    { 
+      name: "John Emmanuel O. Pacres", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/john-emmanuel-pacres.png" 
+    },
+    { 
+      name: "Shaira Mae O. Ma-asin", 
+      categories: ["Finance and Sponsorship"],
+      image: "/images/volunteers/shaira-mae-maasin.jpg" 
+    },
+    { 
+      name: "Rhon Dwyane De Gracia", 
+      categories: ["Programs and Activity"],
+      image: "/images/volunteers/rhon-de-gracia.jpeg"
+    },
+    { 
+      name: "Adrian Say", 
+      categories: ["Registration/Ushers"],
+      image: "/images/volunteers/adrian-say.png"
+    },
     { name: "Andre Salonga", categories: ["Documentation and Publicity"] },
     { name: "Heart Alvern Sumicad", categories: ["Registration/Ushers"] },
-    { name: "Lady Bridget Erica L. Alegre", categories: ["Finance and Sponsorship"] },
+    { 
+      name: "Lady Bridget Erica L. Alegre", 
+      categories: ["Finance and Sponsorship"],
+      image: "/images/volunteers/lady-bridget-alegre.jpg" 
+    },
     { name: "Josh Edward Lui", categories: ["Emcee/Host"] },
-    { name: "Princess Jaena Marie O. De La Pena", categories: ["Logistics/Venue"] },
-    { name: "Bren D. Sohon", categories: ["Logistics/Venue"] },
-    { name: "Wilfred Justin D. Peteros", categories: ["Documentation and Publicity"] },
-    { name: "Chrys Sean T. Sevilla", categories: ["Documentation and Publicity"] },
+    { 
+      name: "Princess Jaena Marie O. De La Pena", 
+      categories: ["Logistics/Venue"],
+      image: "/images/volunteers/princess-jaena-marie-de-la-pena.jpeg" 
+    },
+    { 
+      name: "Bren D. Sohon", 
+      categories: ["Logistics/Venue"],
+      image: "/images/volunteers/bren-sohon.jpg" 
+    },
+    { 
+      name: "Wilfred Justin D. Peteros", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/wilfred-peteros.jpg" 
+    },
+    { 
+      name: "Chrys Sean T. Sevilla", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/chrys-sean-sevilla.jpg" 
+    },
     { name: "Cris Villem P. Saniel", categories: ["Documentation and Publicity"] },
     { name: "Annissa Freida Ramones Balaga", categories: ["Documentation and Publicity"] },
     { name: "Lev Altair Imetri S. Aguirre", categories: ["Documentation and Publicity"] },
-    { name: "James Earl Ryan Cometa", categories: ["Finance and Sponsorship"] },
+    { 
+      name: "James Earl Ryan Cometa", 
+      categories: ["Finance and Sponsorship"], 
+      image: "/images/volunteers/james-cometa.png"
+    },
     { name: "Charles Vincent Montero", categories: ["Emcee/Host"] },
     { name: "Trishia Mae G. Basmayor", categories: ["Logistics/Venue", "Registration/Ushers"] },
     { name: "Jezreel Chad Lumbab", categories: ["Logistics/Venue"] },
-    { name: "John Vincent Augusto", categories: ["Technical"] },
-    { name: "Dan Chavez", categories: ["Technical"] },
+    { 
+      name: "Dan Chavez", 
+      categories: ["Technical"],
+      image: "/images/volunteers/dan-chavez.jpeg"
+    },
     { name: "Fabiola Villanueva", categories: ["Technical"] },
+    { name: "Liv Jewel Monsalud", categories: ["Registration/Ushers"] },
+    { name: "Chriscia Xanelle Llamas", categories: ["Logistics/Venue"] },
   ]
 
   const categoryColors = {
-    Technical: "bg-blue-500 text-white",
+    "Technical": "bg-blue-500 text-white",
     "Programs and Activity": "bg-green-500 text-white",
     "Emcee/Host": "bg-purple-500 text-white",
     "Logistics/Venue": "bg-orange-500 text-white",
@@ -151,15 +255,25 @@ export function Volunteers() {
         {/* Volunteers Grid */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {displayedVolunteers.map((volunteer, index) => (
-            <div
+            <Card
               key={index}
-              className={`transition-all duration-1000 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
+              className={`transition-all duration-1000 overflow-hidden ${
+                isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
+              }`}
               style={{ animationDelay: `${(index % 20) * 50}ms` }}
             >
-              <Card className="border-border/50 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-200 hover:scale-105">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-lg">
+              <div className="relative aspect-square overflow-hidden bg-muted">
+                {volunteer.image ? (
+                  <Image
+                    src={volunteer.image}
+                    alt={volunteer.name}
+                    fill
+                    className="object-cover transition-transform hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 to-yellow-500/20">
+                    <span className="text-4xl font-bold text-orange-500/50">
                       {volunteer.name
                         .split(" ")
                         .map((n) => n[0])
@@ -167,25 +281,27 @@ export function Volunteers() {
                         .slice(0, 2)}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-3 text-sm leading-tight">{volunteer.name}</h3>
-                  <div className="flex flex-wrap gap-1 justify-center">
-                    {volunteer.categories.map((category, categoryIndex) => (
-                      <Badge
-                        key={categoryIndex}
-                        className={`text-xs px-2 py-1 ${categoryColors[category as keyof typeof categoryColors]} border-0`}
-                      >
-                        {category}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                )}
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-sm truncate mb-2">{volunteer.name}</h3>
+                <div className="flex flex-wrap gap-1">
+                  {volunteer.categories.map((category, idx) => (
+                    <Badge
+                      key={idx}
+                      className={`text-xs ${categoryColors[category as keyof typeof categoryColors]}`}
+                    >
+                      {category}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
         {/* Show More Button */}
-        {hasMore && (
+        {hasMore ? (
           <div className="text-center mt-12">
             <Button
               onClick={() => setShowAll(true)}
@@ -196,7 +312,7 @@ export function Volunteers() {
               Show More Volunteers ({filteredVolunteers.length - displayedVolunteers.length} remaining)
             </Button>
           </div>
-        )}
+        ) : null}
 
         {filteredVolunteers.length === 0 && (
           <div className="text-center py-12">
