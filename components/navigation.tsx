@@ -66,7 +66,7 @@ export function Navigation() {
   }
 
   const handleRegisterClick = () => {
-    window.open("https://ticketnation.ph/events/aws_community_day_cebu_-_2025", "_blank", "noopener,noreferrer")
+    window.open("https://ticketnation.ph/events/aws_community_day_cebu_2025", "_blank", "noopener,noreferrer")
   }
 
   return (
@@ -79,9 +79,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">AWS</span>
-            </div>
+             <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}

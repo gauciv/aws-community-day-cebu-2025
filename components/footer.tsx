@@ -17,9 +17,7 @@ export function Footer() {
           {/* Logo and Description - Centered */}
           <div className="md:col-span-1 space-y-6 flex flex-col items-center md:items-start">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">AWS</span>
-              </div>
+              <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
               <div>
                 <h3 className="font-bold text-xl text-white">COMMUNITY DAY</h3>
                 <p className="text-sm text-orange-400 font-medium">Philippines</p>

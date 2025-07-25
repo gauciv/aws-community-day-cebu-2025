@@ -26,50 +26,50 @@ export function Speakers() {
   const keynoteSpeaker = {
     name: "Raphael Quisumbing",
     position: "AWS Community Hero | IT & Cloud Advisor | Head of Product Innovation MediaTrack",
-    image: "/placeholder.svg?height=400&width=400&text=Raphael+Quisumbing",
+    image: "/images/speakers/raphael-quisumbing.jpg", // Updated image path
     isKeynote: true,
-  }
+};
 
   const speakers = [
     {
       name: "Raphael Jambalos",
       position: "AWS Community Hero | Head of Modernization and Security, eCloudValley Technology Philippines",
-      image: "/placeholder.svg?height=300&width=300&text=Raphael+Jambalos",
+      image: "/images/speakers/raphael-jambalos.jpg",
     },
     {
       name: "Joshua Arvin Lat",
       position: "AWS Machine Learning Hero | Chief Technology Officer (CTO) of NuWorks Interactive Labs, Inc",
-      image: "/placeholder.svg?height=300&width=300&text=Joshua+Arvin+Lat",
+      image: "/images/speakers/joshua-arvin-lat.jpg",
     },
     {
       name: "Aldwyn Cabarrubias",
       position: "Senior Ops Engineer at ING Hubs Philippines",
-      image: "/placeholder.svg?height=300&width=300&text=Aldwyn+Cabarrubias",
+      image: "/images/speakers/aldwyn-cabarrubias.jpg",
     },
     {
       name: "Cyrus Pastelero",
       position: "Senior Software Engineer | Reap | Certified AWS Solution Architect | Ex-Founder",
-      image: "/placeholder.svg?height=300&width=300&text=Cyrus+Pastelero",
+      image: "/images/speakers/cyrus-pastelero.jpeg",
     },
     {
       name: "Andrew Matheu",
       position: "Founder and CEO of TechStart TV",
-      image: "/placeholder.svg?height=300&width=300&text=Andrew+Matheu",
+      image: "/images/speakers/andrew-matheu.jpg",
     },
     {
       name: "Cleo Credo",
       position: "CTO of Full Scale | Google Developer Expert | Co-lead PizzaPy",
-      image: "/placeholder.svg?height=300&width=300&text=Cleo+Credo",
+      image: "/images/speakers/cleo-credo.jpg",
     },
     {
       name: "Ron Michael Khu",
       position: "Java Developer/Sr. Software Architect at LegalMatch | Co-lead PizzaPy | Community Elder CeGnuLug",
-      image: "/placeholder.svg?height=300&width=300&text=Ron+Michael+Khu",
+      image: "/images/speakers/ron-michael-khu.jpeg",
     },
     {
       name: "Louie Miguel",
       position: "Fullstack Engineer/Project Lead @ TutoriasDojoNote",
-      image: "/placeholder.svg?height=300&width=300&text=Louie+Miguel",
+      image: "/images/speakers/rafael-louie-miguel.jpg",
     },
   ]
 
