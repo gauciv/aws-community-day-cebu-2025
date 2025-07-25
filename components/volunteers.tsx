@@ -48,10 +48,6 @@ export function Volunteers() {
       image: "/images/volunteers/james-ty.jpg"
     },
     { 
-      name: "Erik James M. Caliskis",
-      categories: ["Logistics/Venue"]
-    },
-    { 
       name: "John Vincent Augusto", 
       categories: ["Technical"],
       image: "/images/volunteers/augusto-john-vincent.jpeg"
@@ -106,11 +102,18 @@ export function Volunteers() {
       categories: ["Documentation and Publicity"],
       image: "/images/volunteers/zoie-estorba.png"
     },
-    { name: "Daniel Ian Macalisang", categories: ["Registration/Ushers"] },
-    { name: "Mhart Nuera", categories: ["Documentation and Publicity"] },
-    { name: "Elijah Luis Bes", categories: ["Documentation and Publicity"] },
     { 
-      name: "John Emmanuel O. Pacres", 
+      name: "Daniel Ian Macalisang", 
+      categories: ["Registration/Ushers"],
+      image: "/images/volunteers/daniel-ian-macalisang.png" 
+    },
+    { 
+      name: "Mhart Nuera", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/nuera-mhart.png" 
+    },
+    { 
+      name: "John Emmanuel O. Pacres",
       categories: ["Documentation and Publicity"],
       image: "/images/volunteers/john-emmanuel-pacres.png" 
     },
@@ -129,14 +132,16 @@ export function Volunteers() {
       categories: ["Registration/Ushers"],
       image: "/images/volunteers/adrian-say.png"
     },
-    { name: "Andre Salonga", categories: ["Documentation and Publicity"] },
-    { name: "Heart Alvern Sumicad", categories: ["Registration/Ushers"] },
     { 
       name: "Lady Bridget Erica L. Alegre", 
       categories: ["Finance and Sponsorship"],
       image: "/images/volunteers/lady-bridget-alegre.jpg" 
     },
-    { name: "Josh Edward Lui", categories: ["Emcee/Host"] },
+    { 
+      name: "Josh Edward Lui", 
+      categories: ["Emcee/Host"],
+      image: "/images/volunteers/lui-josh.jpg" 
+    },
     { 
       name: "Princess Jaena Marie O. De La Pena", 
       categories: ["Logistics/Venue"],
@@ -157,17 +162,26 @@ export function Volunteers() {
       categories: ["Documentation and Publicity"],
       image: "/images/volunteers/chrys-sean-sevilla.jpg" 
     },
-    { name: "Cris Villem P. Saniel", categories: ["Documentation and Publicity"] },
-    { name: "Annissa Freida Ramones Balaga", categories: ["Documentation and Publicity"] },
-    { name: "Lev Altair Imetri S. Aguirre", categories: ["Documentation and Publicity"] },
+    { 
+      name: "Annissa Freida Ramones Balaga", 
+      categories: ["Documentation and Publicity"],
+      image: "/images/volunteers/annissa-balaga.jpg" 
+    },
     { 
       name: "James Earl Ryan Cometa", 
       categories: ["Finance and Sponsorship"], 
       image: "/images/volunteers/james-cometa.png"
     },
-    { name: "Charles Vincent Montero", categories: ["Emcee/Host"] },
-    { name: "Trishia Mae G. Basmayor", categories: ["Logistics/Venue", "Registration/Ushers"] },
-    { name: "Jezreel Chad Lumbab", categories: ["Logistics/Venue"] },
+    { 
+      name: "Trishia Mae G. Basmayor", 
+      categories: ["Logistics/Venue", "Registration/Ushers"],
+      image: "/images/volunteers/trishia-mae-basmayor.jpeg" 
+    },
+    { 
+      name: "Jezreel Chad Lumbab", 
+      categories: ["Logistics/Venue"],
+      image: "/images/volunteers/jezreel-chad-lumbab.jpg" 
+    },
     { 
       name: "Dan Chavez", 
       categories: ["Technical"],
@@ -176,6 +190,16 @@ export function Volunteers() {
     { name: "Fabiola Villanueva", categories: ["Technical"] },
     { name: "Liv Jewel Monsalud", categories: ["Registration/Ushers"] },
     { name: "Chriscia Xanelle Llamas", categories: ["Logistics/Venue"] },
+    { 
+      name: "Erik James M. Caliskis",
+      categories: ["Logistics/Venue"]
+    },
+    { name: "Elijah Luis Bes", categories: ["Documentation and Publicity"] },
+    { name: "Andre Salonga", categories: ["Documentation and Publicity"] },
+    { name: "Heart Alvern Sumicad", categories: ["Registration/Ushers"] },
+    { name: "Cris Villem P. Saniel", categories: ["Documentation and Publicity"] },
+    { name: "Lev Altair Imetri S. Aguirre", categories: ["Documentation and Publicity"] },
+    { name: "Charles Vincent Montero", categories: ["Emcee/Host"] }
   ]
 
   const categoryColors = {

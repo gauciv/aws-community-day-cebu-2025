@@ -187,7 +187,7 @@ export function Sponsors() {
                   <div className="mt-8 pt-6 border-t border-border/50">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Mail className="w-4 h-4" />
-                      <span>awscloudclubctu@gmail.com</span>
+                      <span>For inquiries, email us at: awscloudclubctu@gmail.com</span>
                     </div>
                   </div>
                 </CardContent>
