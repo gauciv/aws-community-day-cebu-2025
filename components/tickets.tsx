@@ -58,7 +58,7 @@ export function Tickets() {
   }, [])
 
   const handleRegisterClick = () => {
-    window.open("https://ticketnation.ph/events/aws_community_day_cebu_-_2025", "_blank", "noopener,noreferrer")
+    window.open("https://ticketnation.ph/events/aws_community_day_cebu_2025/tickets", "_blank", "noopener,noreferrer")
   }
 
   const ticketTypes = [
@@ -89,7 +89,6 @@ export function Tickets() {
         "Main Event access (1:00 PM–7:00 PM)",
         "General merchandise",
         "Hands-on learning experience",
-        "Full afternoon program",
       ],
       badge: "Best Value",
       badgeColor: "bg-blue-500",
