@@ -276,56 +276,125 @@ export function Volunteers() {
           </Select>
         </div>
 
-        {/* Volunteers Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-          {displayedVolunteers.map((volunteer, index) => (
-            <Card
-              key={index}
-              className={`transition-all duration-1000 overflow-hidden ${
-                isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
-              }`}
-              style={{ animationDelay: `${(index % 20) * 50}ms` }}
-            >
-              <div className="relative aspect-square overflow-hidden bg-muted">
-                {volunteer.image ? (
-                  <Image
-                    src={volunteer.image}
-                    alt={volunteer.name}
-                    fill
-                    className="object-cover transition-transform hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                    loading={index < 10 ? "eager" : "lazy"}
-                    priority={index < 4}
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+I/wDPtdd7WVvGvLI2eUZKMuc7+kzxE4PY3T3IQ7EY2jr1CU1RFp5vRc="
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 to-yellow-500/20">
-                    <span className="text-4xl font-bold text-orange-500/50">
-                      {volunteer.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")
-                        .slice(0, 2)}
-                    </span>
-                  </div>
-                )}
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-sm truncate mb-2">{volunteer.name}</h3>
-                <div className="flex flex-wrap gap-1">
-                  {volunteer.categories.map((category, idx) => (
-                    <Badge
-                      key={idx}
-                      className={`text-xs ${categoryColors[category as keyof typeof categoryColors]}`}
-                    >
-                      {category}
-                    </Badge>
-                  ))}
+        {/* Modern Volunteers Grid with Staggered Layout */}
+        <div className="max-w-7xl mx-auto">
+          {/* Featured volunteers in larger cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {displayedVolunteers.slice(0, 3).map((volunteer, index) => (
+              <Card
+                key={index}
+                className={`group relative overflow-hidden bg-gradient-to-br from-background to-muted/50 border-border/50 hover:border-orange-500/30 transition-all duration-700 transform hover:scale-105 hover:-translate-y-2 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 ${
+                  isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  {volunteer.image ? (
+                    <Image
+                      src={volunteer.image}
+                      alt={volunteer.name}
+                      fill
+                      className="object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading={index < 3 ? "eager" : "lazy"}
+                      priority={index < 3}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 via-yellow-500/15 to-orange-600/20">
+                      <span className="text-6xl font-bold text-orange-500/60">
+                        {volunteer.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .slice(0, 2)}
+                      </span>
+                    </div>
+                  )}
+                  
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Floating decoration */}
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-orange-400/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-bounce" />
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+                
+                <CardContent className="p-6 relative">
+                  <div className="absolute -top-6 left-6 right-6">
+                    <div className="bg-background/95 backdrop-blur-sm rounded-xl p-4 border border-border/50 shadow-lg transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="font-bold text-lg mb-3 text-foreground group-hover:text-orange-400 transition-colors duration-300">{volunteer.name}</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {volunteer.categories.map((category, idx) => (
+                          <Badge
+                            key={idx}
+                            className={`text-xs transition-all duration-300 hover:scale-110 ${categoryColors[category as keyof typeof categoryColors]}`}
+                          >
+                            {category}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="h-16" />
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Regular volunteers in compact masonry-style grid */}
+          <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-6 space-y-6">
+            {displayedVolunteers.slice(3).map((volunteer, index) => (
+              <Card
+                key={index + 3}
+                className={`group break-inside-avoid relative overflow-hidden bg-gradient-to-br from-background to-muted/30 border-border/50 hover:border-orange-500/30 transition-all duration-500 transform hover:scale-105 shadow-md hover:shadow-xl hover:shadow-orange-500/10 ${
+                  isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
+                }`}
+                style={{ animationDelay: `${((index + 3) % 20) * 75}ms` }}
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  {volunteer.image ? (
+                    <Image
+                      src={volunteer.image}
+                      alt={volunteer.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 to-yellow-500/20">
+                      <span className="text-3xl font-bold text-orange-500/60">
+                        {volunteer.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .slice(0, 2)}
+                      </span>
+                    </div>
+                  )}
+                  
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-orange-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-sm mb-3 group-hover:text-orange-400 transition-colors duration-300 line-clamp-2">{volunteer.name}</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {volunteer.categories.map((category, idx) => (
+                      <Badge
+                        key={idx}
+                        className={`text-xs transition-all duration-300 hover:scale-110 ${categoryColors[category as keyof typeof categoryColors]}`}
+                      >
+                        {category}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-0 h-0 border-l-[20px] border-l-transparent border-t-[20px] border-t-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Show More Button */}

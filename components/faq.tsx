@@ -85,9 +85,9 @@ export function FAQ() {
     <section id="faq" className="py-20 lg:py-32 relative overflow-hidden">
       {/* Enhanced Moving Question Marks Background with More Movement */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Large floating question marks with enhanced movement */}
+        {/* Subtle floating question marks */}
         <div
-          className="absolute text-orange-400/12 text-8xl font-bold question-mark-bounce"
+          className="absolute text-orange-400/5 text-8xl font-bold question-mark-bounce"
           style={{
             top: "8%",
             left: "3%",
@@ -97,7 +97,7 @@ export function FAQ() {
           ?
         </div>
         <div
-          className="absolute text-orange-400/15 text-9xl font-bold question-mark-bounce"
+          className="absolute text-orange-400/6 text-9xl font-bold question-mark-bounce"
           style={{
             top: "15%",
             right: "5%",
@@ -107,7 +107,7 @@ export function FAQ() {
           ?
         </div>
         <div
-          className="absolute text-orange-400/18 text-6xl font-bold question-mark-bounce"
+          className="absolute text-orange-400/4 text-6xl font-bold question-mark-bounce"
           style={{
             bottom: "20%",
             left: "8%",
@@ -117,7 +117,7 @@ export function FAQ() {
           ?
         </div>
         <div
-          className="absolute text-orange-400/10 text-7xl font-bold question-mark-bounce"
+          className="absolute text-orange-400/3 text-7xl font-bold question-mark-bounce"
           style={{
             top: "35%",
             right: "12%",
@@ -127,7 +127,7 @@ export function FAQ() {
           ?
         </div>
         <div
-          className="absolute text-orange-400/20 text-5xl font-bold question-mark-bounce"
+          className="absolute text-orange-400/4 text-5xl font-bold question-mark-bounce"
           style={{
             bottom: "12%",
             right: "8%",
@@ -137,7 +137,7 @@ export function FAQ() {
           ?
         </div>
         <div
-          className="absolute text-orange-400/8 text-10xl font-bold question-mark-bounce"
+          className="absolute text-orange-400/2 text-10xl font-bold question-mark-bounce"
           style={{
             top: "55%",
             left: "2%",
