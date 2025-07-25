@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Crown, Star, Sparkles } from "lucide-react"
+import Image from 'next/image'
 
 export function Speakers() {
   const [isVisible, setIsVisible] = useState(false)
@@ -90,35 +91,43 @@ export function Speakers() {
         </div>
 
         {/* Keynote Speaker */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-500/30">
-              <Crown className="w-4 h-4 text-orange-500" />
-              <span className="text-orange-500 font-semibold text-sm">Keynote Speaker</span>
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-400 border border-yellow-500/20 text-sm font-medium mb-4">
+              <Crown className="w-4 h-4 mr-2" />
+              Keynote Speaker
             </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground">Opening the Future</h3>
           </div>
 
           <div className="max-w-2xl mx-auto">
             <div className="relative text-center group">
-              {/* Keynote Speaker Design */}
-              <div className="relative mx-auto mb-6 w-64 h-64">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
-                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-orange-500 to-yellow-500 shadow-2xl group-hover:shadow-orange-500/40 transition-all duration-500">
-                  <img
+              {/* Keynote Speaker Enhanced Design */}
+              <div className="relative mx-auto mb-8 w-56 h-56 md:w-64 md:h-64">
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-yellow-400 to-orange-500 shadow-2xl group-hover:shadow-yellow-500/40 transition-all duration-700">
+                  <Image
                     src={keynoteSpeaker.image || "/placeholder.svg"}
                     alt={keynoteSpeaker.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 224px, 256px"
+                    priority={true}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+I/wDPtdd7WVvGvLI2eUZKMuc7+kzxE4PY3T3IQ7EY2jr1CU1RFp5vRc="
                   />
-                </div>
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center shadow-lg">
-                  <Crown className="w-8 h-8 text-white" />
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-yellow-500 text-black p-2 rounded-full shadow-lg">
+                      <Crown className="w-6 h-6" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-4 group-hover:from-orange-400 group-hover:via-yellow-400 group-hover:to-orange-400 transition-all duration-300">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-yellow-500 transition-colors duration-300">
                 {keynoteSpeaker.name}
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
+              <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                 {keynoteSpeaker.position}
               </p>
             </div>
