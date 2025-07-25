@@ -1,17 +1,19 @@
+"use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
 interface OptimizedImageProps {
   src: string
   alt: string
+  className?: string
+  priority?: boolean
+  fill?: boolean
+  sizes?: string
   width?: number
   height?: number
-  fill?: boolean
-  className?: string
-  sizes?: string
-  priority?: boolean
+  lazy?: boolean
   loading?: "eager" | "lazy"
   placeholder?: "blur" | "empty"
   blurDataURL?: string
@@ -24,21 +26,46 @@ const defaultBlurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2
 export function OptimizedImage({
   src,
   alt,
+  className = "",
+  priority = false,
+  fill = false,
+  sizes,
   width,
   height,
-  fill = false,
-  className,
-  sizes,
-  priority = false,
+  lazy = true,
   loading = "lazy",
   placeholder = "blur",
   blurDataURL = defaultBlurDataURL,
   onLoad,
   onError,
-  ...props
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
+  const [isInView, setIsInView] = useState(!lazy || priority)
+  const imgRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!lazy || priority) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    )
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [lazy, priority])
 
   const handleLoad = () => {
     setIsLoading(false)
@@ -51,48 +78,37 @@ export function OptimizedImage({
     onError?.()
   }
 
-  if (hasError) {
-    return (
-      <div className={cn(
-        "flex items-center justify-center bg-muted text-muted-foreground",
-        fill ? "absolute inset-0" : "",
-        className
-      )}>
-        <span className="text-sm">Failed to load image</span>
-      </div>
-    )
-  }
 
   return (
-    <div className={cn("relative", fill ? "" : "inline-block")}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        fill={fill}
-        className={cn(
-          "transition-opacity duration-300",
-          isLoading ? "opacity-0" : "opacity-100",
-          className
-        )}
-        sizes={sizes}
-        priority={priority}
-        loading={loading}
-        placeholder={placeholder}
-        blurDataURL={blurDataURL}
-        onLoad={handleLoad}
-        onError={handleError}
-        {...props}
-      />
-      {isLoading && (
-        <div className={cn(
-          "flex items-center justify-center bg-muted animate-pulse",
-          fill ? "absolute inset-0" : "w-full h-full",
-          className
-        )}>
-          <div className="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
+    <div ref={imgRef} className={`relative overflow-hidden ${className}`}>
+      {isLoading && !hasError && (
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse" />
+      )}
+
+      {hasError ? (
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-yellow-500/20 flex items-center justify-center">
+          <span className="text-orange-500/60 font-bold text-2xl">
+            {alt.split(" ").map(word => word[0]).join("").slice(0, 2)}
+          </span>
         </div>
+      ) : isInView ? (
+        <Image
+          src={src}
+          alt={alt}
+          fill={fill}
+          width={!fill ? width : undefined}
+          height={!fill ? height : undefined}
+          sizes={sizes}
+          priority={priority}
+          loading={loading}
+          placeholder={placeholder}
+          blurDataURL={blurDataURL}
+          className={`transition-all duration-700 ease-out ${isLoading ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}
+          onLoad={handleLoad}
+          onError={handleError}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-200" />
       )}
     </div>
   )
