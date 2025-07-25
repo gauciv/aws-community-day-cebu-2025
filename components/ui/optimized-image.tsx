@@ -100,7 +100,7 @@ export function OptimizedImage({
           height={!fill ? height : undefined}
           sizes={sizes}
           priority={priority}
-          loading={loading}
+          loading={priority ? "eager" : loading}
           placeholder={placeholder}
           blurDataURL={blurDataURL}
           className={`transition-all duration-700 ease-out ${isLoading ? 'opacity-0 scale-105' : 'opacity-100 scale-100'}`}
