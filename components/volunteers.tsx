@@ -407,32 +407,38 @@ export function Volunteers() {
                   </div>
                 )}
                 
-                {/* Overlay with floating elements */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                {/* Enhanced overlay with name and category on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  {/* Floating decorative elements */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                     <Star className="w-5 h-5 text-orange-400 animate-twinkle" />
                   </div>
-                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150">
+                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150">
                     <Sparkles className="w-4 h-4 text-yellow-400 animate-twinkle" />
                   </div>
+                  
+                  {/* Name and category overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-white font-bold text-sm mb-2 line-clamp-2 leading-tight">
+                      {volunteer.name}
+                    </h4>
+                    <div className="flex flex-wrap gap-1">
+                      {volunteer.categories.slice(0, 2).map((category, idx) => (
+                        <Badge
+                          key={idx}
+                          className={`text-xs font-bold shadow-lg ${categoryColors[category as keyof typeof categoryColors]} opacity-90`}
+                        >
+                          {category.length > 15 ? category.substring(0, 12) + '...' : category}
+                        </Badge>
+                      ))}
+                      {volunteer.categories.length > 2 && (
+                        <Badge className="text-xs font-bold bg-white/20 text-white border-0">
+                          +{volunteer.categories.length - 2}
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              <CardContent className="p-4 sm:p-6 bg-gradient-to-t from-slate-900/50 to-transparent h-32 flex flex-col justify-center items-center text-center">
-                <h3 className="font-black text-sm sm:text-base text-white mb-3 group-hover:text-orange-400 transition-colors duration-200 leading-tight min-h-[2.5rem] flex items-center justify-center">
-                  <span className="line-clamp-2 text-center">{volunteer.name}</span>
-                </h3>
-                <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
-                  {volunteer.categories.map((category, idx) => (
-                    <Badge
-                      key={idx}
-                      className={`text-xs font-bold shadow-lg transition-all duration-200 group-hover:scale-105 ${categoryColors[category as keyof typeof categoryColors]}`}
-                    >
-                      {category}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
             </Card>
           ))}
         </div>
