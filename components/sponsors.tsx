@@ -154,7 +154,7 @@ export function Sponsors() {
                         Sponsorship Primer
                       </h3>
                       
-                      <p className="text-gray-300 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed group-hover:text-white transition-colors duration-500"></p>
+                      <p className="text-gray-300 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                         Download our comprehensive sponsorship primer to learn about all available packages, benefits, and
                         opportunities to partner with AWS Community Day Cebu 2025.
                       </p>
