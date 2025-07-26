@@ -1065,4 +1065,16 @@
       background: linear-gradient(180deg, #051029 0%, #0a1a40 25%, #0f2554 50%, #0a1a40 75%, #051029 100%);
     }
   }
+
+  /* Line Clamp Utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Custom Constellation Animations */
 }
