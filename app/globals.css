@@ -111,13 +111,13 @@
 
   /* Enhanced hero gradient with multiple stops and depth */
   .hero-gradient {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 15%, #3b82f6 35%, #1e40af 55%, #1e3a8a 75%, #0f172a 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 25%, #3b82f6 50%, #2563eb 75%, #1e3a8a 100%);
     position: relative;
   }
 
   /* Darker hero gradient inspired by the banner */
   .hero-gradient-dark {
-    background: linear-gradient(135deg, #051029 0%, #0a1a40 25%, #0f2554 50%, #0a1a40 75%, #051029 100%);
+    background: linear-gradient(135deg, #1a365d 0%, #1e3a8a 25%, #2563eb 50%, #1e3a8a 75%, #1a365d 100%);
     position: relative;
   }
 
