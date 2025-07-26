@@ -11,7 +11,6 @@ import { Mail, Download, FileText, Zap, Sparkles, Star, Crown } from "lucide-rea
 
 export function Sponsors() {
   const [isVisible, setIsVisible] = useState(false)
-  const [packageType, setPackageType] = useState("national")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,76 +36,70 @@ export function Sponsors() {
     )
   }
 
-  const nationalPackages = [
-    { value: "platinum", label: "Platinum Package" },
-    { value: "gold", label: "Gold Package" },
-    { value: "silver", label: "Silver Package" },
-  ]
-
-  const localPackages = [
-    { value: "gold", label: "Gold Package" },
-    { value: "silver", label: "Silver Package" },
-    { value: "bronze", label: "Bronze Package" },
-  ]
-
   return (
     <section id="sponsors" className="py-12 md:py-20 lg:py-32 hero-gradient-dark relative overflow-hidden">
       {/* Enhanced Constellation Background */}
       <div className="absolute inset-0 constellation-background">
         <div className="constellation-container">
-          {/* Soft constellation elements */}
-          <div className="absolute top-20 left-16 text-orange-400/20 text-6xl animate-twinkle-slow">✧</div>
-          <div className="absolute bottom-32 right-20 text-orange-300/15 text-5xl animate-float-slow">✦</div>
-          <div className="absolute top-1/2 right-1/4 text-orange-400/25 text-4xl animate-twinkle-delayed">★</div>
-          <div className="absolute bottom-1/4 left-1/3 text-orange-300/20 text-6xl animate-float">✧</div>
+          {/* Enhanced constellation elements */}
+          <div className="absolute top-20 left-16 text-orange-400/25 text-8xl animate-twinkle">✧</div>
+          <div className="absolute bottom-32 right-20 text-orange-300/20 text-6xl animate-float-slow">✦</div>
+          <div className="absolute top-1/2 right-1/4 text-orange-400/30 text-5xl animate-twinkle-delayed">★</div>
+          <div className="absolute bottom-1/4 left-1/3 text-orange-300/25 text-7xl animate-float">✧</div>
           
-          {/* Soft glowing orbs */}
-          <div className="absolute top-40 right-1/5 w-36 h-36 bg-gradient-to-r from-orange-500/8 to-yellow-500/6 rounded-full blur-3xl animate-pulse-slow"></div>
-          <div className="absolute bottom-56 left-1/4 w-24 h-24 bg-gradient-to-r from-blue-500/6 to-purple-500/8 rounded-full blur-2xl animate-pulse-slow delay-1000"></div>
+          {/* Enhanced glowing orbs */}
+          <div className="absolute top-40 right-1/5 w-48 h-48 bg-gradient-to-r from-orange-500/10 to-yellow-500/15 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-56 left-1/4 w-36 h-36 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          {/* Network constellation dots */}
+          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '20%', left: '15%'}}></div>
+          <div className="constellation-dot constellation-dot-small" style={{top: '35%', right: '20%'}}></div>
+          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '40%', left: '12%'}}></div>
+          <div className="constellation-dot constellation-dot-small" style={{bottom: '25%', right: '18%'}}></div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 md:mb-20">
-          <div className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-sm font-bold mb-6 md:mb-8 shadow-lg transition-all duration-300 hover:scale-105">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-sm font-bold mb-8 shadow-lg">
             <Crown className="w-4 h-4 mr-2 animate-pulse" />
             Sponsorship Opportunities
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 md:mb-8 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-8 tracking-tight">
             Partner with{" "}
             <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
               AWS Community Day
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Join us in building the largest AWS community event in Cebu. Support local developers and showcase your
             commitment to cloud innovation.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
           {/* Enhanced Sponsorship Information */}
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-8">
             <div
-              className={`transition-all duration-700 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
+              className={`transition-all duration-1000 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
                 <Card className="relative border-2 border-white/20 hover:border-orange-500/30 shadow-2xl hover:shadow-orange-500/20 transition-all duration-700 bg-white/5 backdrop-blur-sm">
-                  <CardContent className="p-6 md:p-10">
-                    <div className="text-center mb-8 md:mb-10">
+                  <CardContent className="p-10">
+                    <div className="text-center mb-10">
                       <div className="relative mb-6">
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full blur-xl opacity-60 animate-pulse-slow"></div>
-                        <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
-                          <FileText className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
+                        <div className="relative w-20 h-20 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
+                          <FileText className="w-10 h-10 text-white" />
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 md:mb-6 group-hover:text-orange-400 transition-colors duration-500">
+                      <h3 className="text-3xl md:text-4xl font-black text-white mb-6 group-hover:text-orange-400 transition-colors duration-500">
                         Sponsorship Primer
                       </h3>
                       
-                      <p className="text-gray-300 mb-6 md:mb-8 text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                      <p className="text-gray-300 mb-8 text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                         Download our comprehensive sponsorship primer to learn about all available packages, benefits, and
                         opportunities to partner with AWS Community Day Cebu 2025.
                       </p>
@@ -115,21 +108,21 @@ export function Sponsors() {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-yellow-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <Button
                           onClick={handleDownloadPrimer}
-                          className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black px-6 md:px-10 py-3 md:py-4 text-lg md:text-xl shadow-2xl hover:shadow-orange-500/50 hover:scale-105 duration-500"
+                          className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black px-10 py-4 text-xl shadow-2xl hover:shadow-orange-500/50 hover:scale-105 duration-500"
                         >
-                          <Download className="w-5 h-5 md:w-6 md:h-6 mr-3" />
+                          <Download className="w-6 h-6 mr-3" />
                           Download Sponsorship Primer
                         </Button>
                       </div>
                     </div>
 
-                    <div className="space-y-6 md:space-y-8">
+                    <div className="space-y-8">
                       <div className="text-center">
-                        <h4 className="text-xl md:text-2xl font-black text-white mb-4 md:mb-6 flex items-center justify-center gap-2">
-                          <Star className="w-5 h-5 md:w-6 md:h-6 text-orange-400" />
+                        <h4 className="text-2xl font-black text-white mb-6 flex items-center justify-center gap-2">
+                          <Star className="w-6 h-6 text-orange-400" />
                           Why Sponsor AWS Community Day?
                         </h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                           {[
                             "Reach 500+ cloud professionals",
                             "Brand visibility in tech community", 
@@ -137,8 +130,8 @@ export function Sponsors() {
                             "Support local developer ecosystem"
                           ].map((benefit, index) => (
                             <div key={index} className="flex items-start gap-3 group/item">
-                              <div className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300"></div>
-                              <span className="text-sm md:text-base text-gray-300 font-medium group-hover/item:text-white transition-colors duration-300">{benefit}</span>
+                              <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300"></div>
+                              <span className="text-gray-300 font-medium group-hover/item:text-white transition-colors duration-300">{benefit}</span>
                             </div>
                           ))}
                         </div>
@@ -150,30 +143,30 @@ export function Sponsors() {
             </div>
 
             <div
-              className={`transition-all duration-700 delay-200 ${
+              className={`transition-all duration-1000 delay-200 ${
                 isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
               }`}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
                 <Card className="relative border-2 border-orange-500/30 bg-gradient-to-r from-orange-500/10 to-yellow-500/5 backdrop-blur-sm shadow-2xl hover:shadow-orange-500/30 transition-all duration-700">
-                  <CardContent className="p-6 md:p-10 text-center">
+                  <CardContent className="p-10 text-center">
                     <div className="relative mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-xl opacity-60 animate-pulse-slow"></div>
-                      <div className="relative w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
-                        <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
+                      <div className="relative w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
+                        <Sparkles className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <h4 className="text-xl md:text-2xl font-black text-white mb-4 md:mb-6 group-hover:text-orange-400 transition-colors duration-500">
+                    <h4 className="text-2xl font-black text-white mb-6 group-hover:text-orange-400 transition-colors duration-500">
                       Custom Sponsorship Packages
                     </h4>
-                    <p className="text-gray-300 mb-6 md:mb-8 text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                    <p className="text-gray-300 mb-8 text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                       Have specific requirements? We can create a custom sponsorship package tailored to your needs and
                       budget. Let's discuss how we can work together to make this event amazing.
                     </p>
                     <Button
                       variant="outline"
-                      className="border-2 border-orange-500/40 text-orange-400 hover:bg-orange-500/20 bg-transparent hover:border-orange-500/60 font-bold px-6 md:px-8 py-3 text-base md:text-lg transition-all duration-500 hover:scale-105"
+                      className="border-2 border-orange-500/40 text-orange-400 hover:bg-orange-500/20 bg-transparent hover:border-orange-500/60 font-bold px-8 py-3 text-lg transition-all duration-500 hover:scale-105"
                     >
                       Discuss Custom Package
                     </Button>
@@ -189,23 +182,23 @@ export function Sponsors() {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
                 <Card className="relative border-2 border-white/20 shadow-2xl shadow-orange-500/10 bg-white/5 backdrop-blur-sm hover:border-orange-500/30 transition-all duration-700">
-                  <CardContent className="p-6 md:p-10">
-                    <div className="text-center mb-8 md:mb-10">
+                  <CardContent className="p-10">
+                    <div className="text-center mb-10">
                       <div className="relative mb-6">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-xl opacity-60 animate-pulse-slow"></div>
-                        <div className="relative w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
-                          <Zap className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
+                        <div className="relative w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
+                          <Zap className="w-8 h-8 text-white" />
                         </div>
                       </div>
-                      <h3 className="text-xl md:text-2xl font-black text-white mb-3">Become a Sponsor</h3>
-                      <p className="text-gray-300 font-medium text-sm md:text-base">
+                      <h3 className="text-2xl font-black text-white mb-3">Become a Sponsor</h3>
+                      <p className="text-gray-300 font-medium">
                         Join our amazing sponsors and support the AWS community in Cebu.
                       </p>
                     </div>
 
-                    <form className="space-y-4 md:space-y-6">
+                    <form className="space-y-6">
                       <div>
-                        <Label htmlFor="company" className="text-white font-bold text-sm md:text-base mb-2 block">
+                        <Label htmlFor="company" className="text-white font-bold text-base mb-2 block">
                           Company Name
                         </Label>
                         <div className="relative">
@@ -213,13 +206,13 @@ export function Sponsors() {
                           <Input 
                             id="company" 
                             placeholder="Your company name" 
-                            className="relative bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30 text-sm md:text-base" 
+                            className="relative bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30" 
                           />
                         </div>
                       </div>
                       
                       <div>
-                        <Label htmlFor="email" className="text-white font-bold text-sm md:text-base mb-2 block">
+                        <Label htmlFor="email" className="text-white font-bold text-base mb-2 block">
                           Email Address
                         </Label>
                         <div className="relative">
@@ -228,72 +221,54 @@ export function Sponsors() {
                             id="email" 
                             type="email" 
                             placeholder="contact@company.com" 
-                            className="relative bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30 text-sm md:text-base" 
+                            className="relative bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30" 
                           />
                         </div>
                       </div>
-
+                      
                       <div>
-                        <Label htmlFor="package-type" className="text-white font-bold text-sm md:text-base mb-2 block">
-                          Package Type
+                        <Label htmlFor="tier" className="text-white font-bold text-base mb-2 block">
+                          Interested Package
                         </Label>
                         <div className="relative">
                           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur-sm"></div>
-                          <select 
-                            value={packageType}
-                            onChange={(e) => setPackageType(e.target.value)}
-                            className="relative w-full px-3 md:px-4 py-2 md:py-3 border border-white/20 bg-white/10 backdrop-blur-sm rounded-xl text-white font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30 text-sm md:text-base"
-                          >
-                            <option className="bg-slate-900 text-white" value="national">National Sponsorship</option>
-                            <option className="bg-slate-900 text-white" value="local">Local Sponsorship</option>
-                          </select>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <Label htmlFor="tier" className="text-white font-bold text-sm md:text-base mb-2 block">
-                          Sponsorship Package
-                        </Label>
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl blur-sm"></div>
-                          <select className="relative w-full px-3 md:px-4 py-2 md:py-3 border border-white/20 bg-white/10 backdrop-blur-sm rounded-xl text-white font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30 text-sm md:text-base">
+                          <select className="relative w-full px-4 py-3 border border-white/20 bg-white/10 backdrop-blur-sm rounded-xl text-white font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30">
                             <option className="bg-slate-900 text-white">Select sponsorship package</option>
-                            {(packageType === "national" ? nationalPackages : localPackages).map((pkg) => (
-                              <option key={pkg.value} className="bg-slate-900 text-white" value={pkg.value}>
-                                {pkg.label}
-                              </option>
-                            ))}
-                            <option className="bg-slate-900 text-white" value="custom">Custom Package</option>
+                            <option className="bg-slate-900 text-white">Platinum Package</option>
+                            <option className="bg-slate-900 text-white">Gold Package</option>
+                            <option className="bg-slate-900 text-white">Silver Package</option>
+                            <option className="bg-slate-900 text-white">Community Package</option>
+                            <option className="bg-slate-900 text-white">Custom Package</option>
                           </select>
                         </div>
                       </div>
                       
                       <div>
-                        <Label htmlFor="message" className="text-white font-bold text-sm md:text-base mb-2 block">
+                        <Label htmlFor="message" className="text-white font-bold text-base mb-2 block">
                           Message
                         </Label>
                         <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-xl blur-sm"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl blur-sm"></div>
                           <Textarea
                             id="message"
                             placeholder="Tell us about your sponsorship interests and any specific requirements..."
-                            className="relative min-h-[100px] md:min-h-[120px] bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30 text-sm md:text-base"
+                            className="relative min-h-[120px] bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30"
                           />
                         </div>
                       </div>
                       
                       <div className="relative">
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-yellow-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <Button className="relative w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black text-base md:text-lg py-3 md:py-4 shadow-2xl hover:scale-105 duration-500">
-                          <Mail className="w-4 h-4 md:w-5 md:h-5 mr-3" />
+                        <Button className="relative w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black text-lg py-4 shadow-2xl hover:scale-105 duration-500">
+                          <Mail className="w-5 h-5 mr-3" />
                           Send Inquiry
                         </Button>
                       </div>
                     </form>
 
-                    <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-white/20">
-                      <div className="flex items-center gap-3 text-gray-300 justify-center text-sm md:text-base">
-                        <Mail className="w-4 h-4 md:w-5 md:h-5 text-orange-400" />
+                    <div className="mt-10 pt-8 border-t border-white/20">
+                      <div className="flex items-center gap-3 text-gray-300 justify-center">
+                        <Mail className="w-5 h-5 text-orange-400" />
                         <span className="font-medium">For inquiries, email us at: awscloudclubctu@gmail.com</span>
                       </div>
                     </div>
