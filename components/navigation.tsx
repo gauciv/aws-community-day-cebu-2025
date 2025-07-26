@@ -95,14 +95,16 @@ export function Navigation() {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 lg:h-20">
+        <div className="flex items-center h-20 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-             <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
-          </Link>
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-2">
+               <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
+            </Link>
+          </div>
 
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center justify-center space-x-8 relative flex-1">
+          {/* Desktop Navigation - Absolutely Centered */}
+          <div className="hidden lg:flex items-center justify-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -119,8 +121,8 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button - Only show when scrolled past hero section */}
-          <div className="flex items-center space-x-4">
+          {/* CTA Button and Mobile Menu - Right Side */}
+          <div className="flex items-center space-x-4 ml-auto">
             <div className={`transition-all duration-500 ease-out ${
               showRegisterButton 
                 ? 'opacity-100 translate-x-0 scale-100' 

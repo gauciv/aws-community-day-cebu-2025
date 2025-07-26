@@ -180,28 +180,13 @@ export function Volunteers() {
     { name: "Charles Vincent Montero" }
   ]
 
-  // Mobile-first responsive volunteers per row
-  const getVolunteersPerRow = () => {
-    try {
-      if (typeof window !== 'undefined') {
-        if (window.innerWidth < 640) return 2 // sm
-        if (window.innerWidth < 768) return 3 // md  
-        if (window.innerWidth < 1024) return 4 // lg
-        return 5 // xl+
-      }
-      return 5
-    } catch (error) {
-      console.error('Error calculating volunteers per row:', error)
-      return 5
-    }
-  }
-  
   // Filter volunteers based on search term
   const filteredVolunteers = volunteers.filter(volunteer =>
     volunteer.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
-  const volunteersPerRow = getVolunteersPerRow()
+  // Use fixed values to avoid hydration mismatch
+  const volunteersPerRow = 5
   const rowsToShow = showAll ? Math.ceil(filteredVolunteers.length / volunteersPerRow) : 2
   const displayedVolunteers = filteredVolunteers.slice(0, rowsToShow * volunteersPerRow)
   const hasMore = filteredVolunteers.length > displayedVolunteers.length

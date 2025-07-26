@@ -1382,28 +1382,58 @@ html {
 .thumbnail-button.active {
   transform: scale(1.1);
 }
-/* Lightning animation */
-@keyframes lightning {
-  0% {
-    transform: translateX(-100%) translateY(-50%);
+/* Crackling Lightning Animations */
+@keyframes lightning-crackle {
+  0%, 85% {
     opacity: 0;
   }
-  10% {
+  86% {
     opacity: 1;
   }
-  20% {
-    transform: translateX(100%) translateY(-50%);
-    opacity: 1;
-  }
-  21% {
+  87% {
     opacity: 0;
   }
-  100% {
-    transform: translateX(100%) translateY(-50%);
+  88% {
+    opacity: 0.8;
+  }
+  89% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  91% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0.9;
+  }
+  93%, 100% {
     opacity: 0;
   }
 }
 
-.animate-lightning {
-  animation: lightning 3s ease-in-out infinite;
+@keyframes lightning-path {
+  0% {
+    stroke-dasharray: 0 2000;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 2000 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-lightning-crackle {
+  animation: lightning-crackle 3s ease-in-out infinite;
+}
+
+.animate-lightning-path {
+  animation: lightning-path 0.2s ease-out;
+  stroke-dasharray: 0 2000;
+}
+
+.animate-lightning-path-delayed {
+  animation: lightning-path 0.2s ease-out 0.05s;
+  stroke-dasharray: 0 2000;
 }

@@ -31,7 +31,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-40 sm:pt-36 md:pt-32 lg:pt-28 xl:pt-24" style={{background: 'linear-gradient(135deg, #003E84 0%, #0A2A5C 30%, #011C3B 100%)'}}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-48 sm:pt-40 md:pt-36 lg:pt-32 xl:pt-28" style={{background: 'linear-gradient(135deg, #003E84 0%, #0A2A5C 30%, #011C3B 100%)'}}>
       {/* Enhanced Constellation SVG Background */}
       <div className="absolute inset-0 constellation-background" key={Date.now()}>
         {/* Constellation SVG Elements */}
@@ -280,38 +280,48 @@ export function Hero() {
             />
           </div>
 
-          {/* Additional complementary assets */}
+          {/* Additional constellation assets */}
           <div
-            className="constellation-svg"
-            style={{ top: "60%", right: "8%", width: "60px", height: "auto", opacity: "0.15" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "60%", right: "8%", width: "60px", height: "auto", opacity: "0.4" }}
           >
             <img 
-              src="/art-assets/clouds.svg" 
-              alt="Atmospheric clouds" 
-              className="w-full h-auto animate-float-slow"
+              src="/art-assets/cassiopeia.svg" 
+              alt="Cassiopeia constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
             />
           </div>
 
           <div
-            className="constellation-svg"
-            style={{ top: "25%", right: "3%", width: "80px", height: "auto", opacity: "0.1" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "25%", right: "3%", width: "80px", height: "auto", opacity: "0.35" }}
           >
             <img 
-              src="/art-assets/shroud.svg" 
-              alt="Atmospheric shroud" 
-              className="w-full h-auto animate-float-reverse"
+              src="/art-assets/big dipper.svg" 
+              alt="Big Dipper constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
             />
           </div>
 
           <div
-            className="constellation-svg"
-            style={{ bottom: "15%", right: "25%", width: "45px", height: "auto", opacity: "0.2" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "15%", right: "25%", width: "45px", height: "auto", opacity: "0.3" }}
           >
             <img 
-              src="/art-assets/smoke.svg" 
-              alt="Atmospheric smoke" 
-              className="w-full h-auto animate-gentle-pulse"
-              style={{ transform: "rotate(45deg)" }}
+              src="/art-assets/aquarius.svg" 
+              alt="Aquarius constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "40%", left: "3%", width: "55px", height: "auto", opacity: "0.25" }}
+          >
+            <img 
+              src="/art-assets/orion.svg" 
+              alt="Orion constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
             />
           </div>
         </div>
@@ -332,12 +342,39 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* Subtitle with lightning animation */}
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white mb-6 sm:mb-8 tracking-[0.1em] sm:tracking-[0.2em] relative">
+          {/* Subtitle with shine effect and crackling lightning */}
+          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white mb-6 sm:mb-8 tracking-[0.1em] sm:tracking-[0.2em] relative animate-text-shimmer">
             <span className="relative z-10">BUILD BEYOND LIMITS</span>
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 animate-lightning transform -translate-y-1/2"></div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-sm animate-shimmer-wave"></div>
+            
+            {/* Crackling Lightning SVG */}
+            <svg className="absolute inset-0 w-full h-full animate-lightning-crackle pointer-events-none" viewBox="0 0 400 60" preserveAspectRatio="none">
+              <defs>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path 
+                d="M0,30 L20,25 L40,35 L60,20 L80,30 L100,15 L120,25 L140,35 L160,20 L180,30 L200,25 L220,35 L240,15 L260,30 L280,20 L300,35 L320,25 L340,30 L360,20 L380,30 L400,25" 
+                stroke="white" 
+                strokeWidth="2" 
+                fill="none" 
+                filter="url(#glow)"
+                className="animate-lightning-path"
+              />
+              <path 
+                d="M0,30 L25,40 L50,20 L75,35 L100,25 L125,40 L150,15 L175,30 L200,35 L225,20 L250,30 L275,40 L300,25 L325,35 L350,20 L375,30 L400,35" 
+                stroke="white" 
+                strokeWidth="1" 
+                fill="none" 
+                filter="url(#glow)"
+                className="animate-lightning-path-delayed"
+              />
+            </svg>
           </div>
 
           {/* Event Details with mobile-first responsive design */}
