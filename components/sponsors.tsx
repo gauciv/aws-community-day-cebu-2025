@@ -7,12 +7,20 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Mail, Download, FileText, Zap, Sparkles, Star, Crown } from "lucide-react"
+import { Mail, Download, FileText, Zap, Sparkles, Star, Crown, CheckCircle, Loader2 } from "lucide-react"
 
 export function Sponsors() {
   const [isVisible, setIsVisible] = useState(false)
   const [sponsorshipType, setSponsorshipType] = useState("")
   const [sponsorshipPackage, setSponsorshipPackage] = useState("")
+  const [formData, setFormData] = useState({
+    company: "",
+    email: "",
+    contactPerson: "",
+    phone: "",
+    message: ""
+  })
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'opening' | 'success'>('idle')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,6 +66,74 @@ export function Sponsors() {
   const handleTypeChange = (value: string) => {
     setSponsorshipType(value)
     setSponsorshipPackage("")
+  }
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
+  const constructEmailBody = () => {
+    const selectedPackageInfo = sponsorshipType && sponsorshipPackage 
+      ? getPackageOptions(sponsorshipType).find(p => p.value === sponsorshipPackage)
+      : null
+
+    return `Hello AWS Community Day Cebu 2025 Team,
+
+I am interested in becoming a sponsor for AWS Community Day Cebu 2025.
+
+COMPANY INFORMATION:
+Company Name: ${formData.company || '[Not provided]'}
+Contact Person: ${formData.contactPerson || '[Not provided]'}
+Email: ${formData.email || '[Not provided]'}
+Phone: ${formData.phone || '[Not provided]'}
+
+SPONSORSHIP DETAILS:
+Sponsorship Type: ${sponsorshipType ? (sponsorshipType === 'national' ? 'National Sponsorship' : 'Local Sponsorship') : '[Not selected]'}
+Package: ${selectedPackageInfo ? `${selectedPackageInfo.icon} ${selectedPackageInfo.label}` : '[Not selected]'}
+
+MESSAGE:
+${formData.message || '[No additional message]'}
+
+---
+This inquiry was sent from the AWS Community Day Cebu 2025 website.
+Event Date: September 13, 2025
+Venue: University of the Philippines Cebu Performing Arts Hall
+
+Looking forward to hearing from you!
+
+Best regards,
+${formData.contactPerson || formData.company || 'Potential Sponsor'}`
+  }
+
+  const handleSendInquiry = () => {
+    // Validate required fields
+    if (!formData.company.trim() || !formData.email.trim() || !formData.contactPerson.trim()) {
+      alert('Please fill in all required fields (Company Name, Contact Person, and Email Address)')
+      return
+    }
+
+    // Set opening status
+    setEmailStatus('opening')
+
+    const subject = `Sponsorship Inquiry - ${formData.company} - AWS Community Day Cebu 2025`
+    const body = constructEmailBody()
+    const mailtoLink = `mailto:awscommunitydaycebu.2025@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    
+    // Open email client
+    window.location.href = mailtoLink
+    
+    // Set success status after a short delay (assuming email client opened)
+    setTimeout(() => {
+      setEmailStatus('success')
+      
+      // Reset to idle after showing success message
+      setTimeout(() => {
+        setEmailStatus('idle')
+      }, 5000)
+    }, 1000)
   }
 
   return (
@@ -154,23 +230,54 @@ export function Sponsors() {
                 <form className="space-y-6">
                   <div>
                     <Label htmlFor="company" className="text-white font-medium mb-2 block">
-                      Company Name
+                      Company Name *
                     </Label>
                     <Input 
                       id="company" 
                       placeholder="Your company name" 
+                      value={formData.company}
+                      onChange={(e) => handleInputChange('company', e.target.value)}
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="contactPerson" className="text-white font-medium mb-2 block">
+                      Contact Person *
+                    </Label>
+                    <Input 
+                      id="contactPerson" 
+                      placeholder="Your full name" 
+                      value={formData.contactPerson}
+                      onChange={(e) => handleInputChange('contactPerson', e.target.value)}
                       className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
                     />
                   </div>
                   
                   <div>
                     <Label htmlFor="email" className="text-white font-medium mb-2 block">
-                      Email Address
+                      Email Address *
                     </Label>
                     <Input 
                       id="email" 
                       type="email" 
                       placeholder="contact@company.com" 
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="phone" className="text-white font-medium mb-2 block">
+                      Phone Number
+                    </Label>
+                    <Input 
+                      id="phone" 
+                      type="tel" 
+                      placeholder="+63 XXX XXX XXXX" 
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
                       className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
                     />
                   </div>
@@ -260,21 +367,63 @@ export function Sponsors() {
                     </Label>
                     <Textarea
                       id="message"
-                      placeholder="Tell us about your sponsorship interests and any specific requirements..."
+                      placeholder="Tell us about your sponsorship interests, specific requirements, or any questions you may have..."
+                      value={formData.message}
+                      onChange={(e) => handleInputChange('message', e.target.value)}
                       className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
                     />
                   </div>
                   
-                  <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold py-3">
-                    <Mail className="w-5 h-5 mr-2" />
-                    Send Inquiry
+                  <Button 
+                    type="button"
+                    onClick={handleSendInquiry}
+                    disabled={emailStatus === 'opening'}
+                    className={`w-full font-semibold py-3 transform transition-all duration-300 ${
+                      emailStatus === 'success' 
+                        ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600' 
+                        : 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 hover:scale-105 active:scale-95'
+                    } ${emailStatus === 'opening' ? 'opacity-75 cursor-not-allowed' : ''}`}
+                  >
+                    {emailStatus === 'opening' && <Loader2 className="w-5 h-5 mr-2 animate-spin" />}
+                    {emailStatus === 'success' && <CheckCircle className="w-5 h-5 mr-2" />}
+                    {emailStatus === 'idle' && <Mail className="w-5 h-5 mr-2" />}
+                    
+                    {emailStatus === 'opening' && 'Opening Email Client...'}
+                    {emailStatus === 'success' && 'Email Client Opened Successfully!'}
+                    {emailStatus === 'idle' && 'Send Inquiry via Email'}
                   </Button>
+
+                  {/* Status Messages */}
+                  {emailStatus === 'opening' && (
+                    <div className="text-center p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                      <p className="text-blue-400 text-sm">
+                        Opening your email client with pre-filled sponsorship inquiry...
+                      </p>
+                    </div>
+                  )}
+
+                  {emailStatus === 'success' && (
+                    <div className="text-center p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+                      <p className="text-green-400 text-sm font-medium">
+                        ✅ Email client opened successfully!
+                      </p>
+                      <p className="text-green-300 text-xs mt-1">
+                        Please review and send the pre-filled email from your email client.
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="text-center">
+                    <p className="text-xs text-gray-400">
+                      * Required fields. This will open your email client with pre-filled sponsorship information.
+                    </p>
+                  </div>
                 </form>
 
                 <div className="mt-8 pt-6 border-t border-white/20 text-center flex-shrink-0">
                   <div className="flex items-center justify-center gap-2 text-gray-300">
                     <Mail className="w-4 h-4 text-orange-400" />
-                    <span className="text-sm">For inquiries: awscloudclubctu@gmail.com</span>
+                    <span className="text-sm">For inquiries: awscommunitydaycebu.2025@gmail.com</span>
                   </div>
                 </div>
                 </div>
