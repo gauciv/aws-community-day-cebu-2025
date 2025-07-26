@@ -391,8 +391,9 @@ export function Volunteers() {
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                    loading={index < 10 ? "eager" : "lazy"}
+                    loading={index < 8 ? "eager" : "lazy"}
                     priority={index < 4}
+                    quality={index < 8 ? 90 : 75}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 via-yellow-500/20 to-orange-500/20 relative">
@@ -439,6 +440,7 @@ export function Volunteers() {
                     </div>
                   </div>
                 </div>
+              </div>
             </Card>
           ))}
         </div>

@@ -199,6 +199,7 @@ export function Speakers() {
                     sizes="(max-width: 768px) 288px, 320px"
                     priority
                     loading="eager"
+                    quality={95}
                   />
                   
                   {/* Enhanced crown badge */}
@@ -258,6 +259,9 @@ export function Speakers() {
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                         sizes="(max-width: 768px) 160px, 192px"
+                        loading={index < 4 ? "eager" : "lazy"}
+                        priority={index < 2}
+                        quality={index < 4 ? 90 : 80}
                       />
                     </div>
 
