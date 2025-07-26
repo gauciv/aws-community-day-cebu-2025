@@ -301,72 +301,21 @@
     50% { opacity: 0.8; }
   }
 
-  /* Constellation animations - enhanced */
   @keyframes twinkle-slow {
     0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+    50% { opacity: 0.9; }
   }
 
   @keyframes twinkle-fast {
-    0%, 100% { opacity: 0.4; }
+    0%, 100% { opacity: 0.2; }
     25% { opacity: 0.8; }
-    75% { opacity: 0.2; }
+    75% { opacity: 0.6; }
   }
 
   @keyframes twinkle-delayed {
-    0%, 100% { opacity: 0.2; }
-    33% { opacity: 0.7; }
-    66% { opacity: 0.5; }
-  }
-
-  @keyframes float-gentle {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(2deg); }
-  }
-
-  @keyframes float-gentle-delayed {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-8px) rotate(-1deg); }
-  }
-
-  @keyframes float-gentle-delayed-2 {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(1deg); }
-  }
-
-  @keyframes bounce-gentle {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-  }
-
-  @keyframes bounce-subtle {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-5px) scale(1.05); }
-  }
-
-  @keyframes fade-pulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
-  }
-
-  @keyframes glow-pulse {
-    0%, 100% { 
-      opacity: 0.6; 
-      filter: drop-shadow(0 0 5px rgba(255, 153, 0, 0.3));
-    }
-    50% { 
-      opacity: 1; 
-      filter: drop-shadow(0 0 15px rgba(255, 153, 0, 0.8));
-    }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% { 
-      box-shadow: 0 0 5px rgba(255, 153, 0, 0.3);
-    }
-    50% { 
-      box-shadow: 0 0 20px rgba(255, 153, 0, 0.8);
-    }
+    0%, 100% { opacity: 0.5; }
+    33% { opacity: 0.2; }
+    66% { opacity: 0.9; }
   }
 
   @keyframes rotate-slow {
@@ -379,74 +328,54 @@
     to { transform: rotate(0deg); }
   }
 
-  @keyframes pulse-subtle {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
   }
 
-  @keyframes glow-ring {
-    0%, 100% { 
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-    }
-    50% { 
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    }
+  @keyframes pulse-fast {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
   }
 
-  /* New constellation SVG animations */
-  @keyframes dash-flow {
-    0% { stroke-dashoffset: 0; }
-    100% { stroke-dashoffset: 25; }
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
   }
 
-  @keyframes dash-flow-reverse {
-    0% { stroke-dashoffset: 25; }
-    100% { stroke-dashoffset: 0; }
+  @keyframes fade-pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
   }
 
-  @keyframes constellation-float {
-    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-    25% { transform: translateY(-5px) translateX(2px) rotate(1deg); }
-    50% { transform: translateY(-3px) translateX(-1px) rotate(-0.5deg); }
-    75% { transform: translateY(-7px) translateX(1px) rotate(0.5deg); }
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.2); }
+    50% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); }
   }
 
-  @keyframes constellation-glow {
-    0%, 100% { 
-      filter: drop-shadow(0 0 10px rgba(255, 153, 0, 0.3));
-    }
-    50% { 
-      filter: drop-shadow(0 0 25px rgba(255, 153, 0, 0.7));
-    }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
   }
 
-  @keyframes subtle-drift {
-    0%, 100% { transform: translate(0px, 0px); }
-    33% { transform: translate(2px, -3px); }
-    66% { transform: translate(-1px, 2px); }
+  @keyframes float-reverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(-1deg); }
   }
 
   /* Apply animations */
   .animate-twinkle-slow { animation: twinkle-slow 3s ease-in-out infinite; }
-  .animate-twinkle-fast { animation: twinkle-fast 1.5s ease-in-out infinite; }
-  .animate-twinkle-delayed { animation: twinkle-delayed 4s ease-in-out infinite 1s; }
-  .animate-float-gentle { animation: float-gentle 4s ease-in-out infinite; }
-  .animate-float-gentle-delayed { animation: float-gentle-delayed 5s ease-in-out infinite 0.5s; }
-  .animate-float-gentle-delayed-2 { animation: float-gentle-delayed-2 6s ease-in-out infinite 1s; }
-  .animate-bounce-gentle { animation: bounce-gentle 2s ease-in-out infinite; }
-  .animate-bounce-subtle { animation: bounce-subtle 3s ease-in-out infinite; }
-  .animate-fade-pulse { animation: fade-pulse 2.5s ease-in-out infinite; }
-  .animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
-  .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+  .animate-twinkle-fast { animation: twinkle-fast 2s ease-in-out infinite; }
+  .animate-twinkle-delayed { animation: twinkle-delayed 4s ease-in-out infinite; }
   .animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
   .animate-rotate-reverse { animation: rotate-reverse 25s linear infinite; }
-  .animate-pulse-subtle { animation: pulse-subtle 2s ease-in-out infinite; }
-  .animate-glow-ring { animation: glow-ring 3s ease-in-out infinite; }
-  .animate-dash-flow { animation: dash-flow 8s linear infinite; }
-  .animate-dash-flow-reverse { animation: dash-flow-reverse 10s linear infinite; }
-  .animate-constellation-float { animation: constellation-float 6s ease-in-out infinite; }
-  .animate-constellation-glow { animation: constellation-glow 4s ease-in-out infinite; }
-  .animate-subtle-drift { animation: subtle-drift 8s ease-in-out infinite; }
+  .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+  .animate-pulse-fast { animation: pulse-fast 2s ease-in-out infinite; }
+  .animate-bounce-subtle { animation: bounce-subtle 3s ease-in-out infinite; }
+  .animate-fade-pulse { animation: fade-pulse 4s ease-in-out infinite; }
+  .animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+  .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+  .animate-float-reverse { animation: float-reverse 8s ease-in-out infinite; }
 
   .constellation-dot.constellation-glow {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.3), 0 0 30px rgba(245, 158, 11, 0.1);
