@@ -37,6 +37,9 @@
     --aws-accent-end: 45 100% 51%;
     --aws-cloud-start: 207 89% 86%;
     --aws-cloud-end: 0 0% 100%;
+
+    --navbar-height: 80px;
+    --navbar-height-mobile: 70px;
   }
 
 .dark {
@@ -119,6 +122,50 @@
   .hero-gradient-dark {
     background: linear-gradient(135deg, #1a365d 0%, #1e3a8a 25%, #2563eb 50%, #1e3a8a 75%, #1a365d 100%);
     position: relative;
+  }
+
+  .hero-adjusted-height {
+    min-height: calc(100vh - var(--navbar-height));
+    padding-top: var(--navbar-height);
+  }
+
+  /* Mobile-specific hero adjustments - use consistent breakpoint with existing mobile styles */
+  @media (max-width: 640px) {
+    section.hero-adjusted-height {
+      min-height: calc(100dvh - var(--navbar-height-mobile)) !important;
+      padding-top: calc(var(--navbar-height-mobile) + 20px) !important;
+      padding-bottom: 0 !important;
+    }
+    
+    /* Ensure hero content doesn't overlap with navigation */
+    section.hero-adjusted-height .container {
+      padding-top: 1rem !important;
+    }
+    
+    /* Additional safety margin for hero title */
+    section.hero-adjusted-height h1 {
+      margin-top: 1rem !important;
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 480px) {
+    section.hero-adjusted-height {
+      padding-top: calc(var(--navbar-height-mobile) + 30px) !important;
+    }
+    
+    section.hero-adjusted-height h1 {
+      margin-top: 1.5rem !important;
+    }
+  }
+
+  /* Fallback for browsers that don't support dvh */
+  @supports not (height: 100dvh) {
+    @media (max-width: 640px) {
+      section.hero-adjusted-height {
+        min-height: calc(100vh - var(--navbar-height-mobile)) !important;
+      }
+    }
   }
 
   .hero-gradient::before,
@@ -453,7 +500,7 @@
 /* Base mobile styles (320px+) */
 @media (max-width: 640px) {
   /* Reduce section padding for mobile */
-  section {
+  section:not(.hero-adjusted-height) {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
@@ -1338,6 +1385,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+}
+
+/* Mobile scroll padding adjustment */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: calc(var(--navbar-height-mobile) + 20px);
+  }
 }
 
 /* Reduce motion for accessibility */

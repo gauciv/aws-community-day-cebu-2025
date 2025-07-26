@@ -93,9 +93,10 @@ export function Navigation() {
           ? "bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50 shadow-lg shadow-black/10" 
           : "bg-transparent"
       }`}
+      style={{ minHeight: '70px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-20 lg:h-20">
+        <div className="flex items-center h-[70px] sm:h-20 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">

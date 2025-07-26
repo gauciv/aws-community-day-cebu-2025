@@ -31,7 +31,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-48 sm:pt-40 md:pt-36 lg:pt-32 xl:pt-28" style={{background: 'linear-gradient(135deg, #003E84 0%, #0A2A5C 30%, #011C3B 100%)'}}>
+    <section className="relative hero-adjusted-height flex flex-col items-center justify-center overflow-hidden" style={{background: 'linear-gradient(135deg, #003E84 0%, #0A2A5C 30%, #011C3B 100%)'}}>
       {/* Enhanced Constellation SVG Background */}
       <div className="absolute inset-0 constellation-background" key={Date.now()}>
         {/* Constellation SVG Elements */}
@@ -328,7 +328,7 @@ export function Hero() {
       </div>
 
       {/* Content with subtle entrance animations */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center pt-4 sm:pt-0">
         <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"}`}>
           {/* Main Title with mobile-first responsive design */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight tracking-tight animate-text-glow">
