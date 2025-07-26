@@ -121,6 +121,20 @@
     position: relative;
   }
 
+  /* Ocean Blue Gradient for Hero */
+  .ocean-gradient {
+    background: linear-gradient(135deg, 
+      #0c4a6e 0%,    /* Deep ocean blue */
+      #0369a1 15%,   /* Ocean blue */
+      #0284c7 30%,   /* Sky blue */
+      #0ea5e9 50%,   /* Bright blue */
+      #0284c7 70%,   /* Sky blue */
+      #0369a1 85%,   /* Ocean blue */
+      #0c4a6e 100%   /* Deep ocean blue */
+    );
+    position: relative;
+  }
+
   .hero-gradient::before,
   .hero-gradient-dark::before {
     content: "";
@@ -293,6 +307,21 @@
 
   .constellation-glow {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  }
+
+  /* Ocean-themed Constellation Glows */
+  .constellation-glow-ocean {
+    box-shadow: 
+      0 0 15px rgba(245, 158, 11, 0.6),
+      0 0 30px rgba(14, 165, 233, 0.4),
+      0 0 45px rgba(6, 182, 212, 0.2);
+  }
+
+  .constellation-glow-soft {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5))
+            drop-shadow(0 0 16px rgba(14, 165, 233, 0.3))
+            drop-shadow(0 0 24px rgba(6, 182, 212, 0.2));
+    opacity: 0.8;
   }
 
   /* Enhanced Animations */
@@ -533,6 +562,69 @@
     }
   }
 
+  /* Ocean-themed Animations */
+  @keyframes wave-slow {
+    0%, 100% { 
+      transform: translateX(0px) translateY(0px);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translateX(10px) translateY(-5px);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes pulse-gentle {
+    0%, 100% { 
+      opacity: 0.4; 
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.8; 
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes gradient-ocean {
+    0%, 100% { 
+      background-position: 0% 50%;
+    }
+    50% { 
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes pulse-ocean {
+    0%, 100% { 
+      opacity: 0.6; 
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    }
+    50% { 
+      opacity: 1; 
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+    }
+  }
+
+  @keyframes ocean-shimmer {
+    0%, 100% { 
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% { 
+      transform: translateX(100%);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes ocean-glow-ring {
+    0%, 100% { 
+      box-shadow: 0 0 5px rgba(6, 182, 212, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.6), 0 0 25px rgba(14, 165, 233, 0.4);
+    }
+  }
+
   @keyframes flip {
     0% { transform: rotateY(0); }
     50% { transform: rotateY(90deg) scale(1.1); }
@@ -767,11 +859,80 @@
     }
   }
 
+  /* Ocean-themed Utility Classes */
+  .ocean-text-glow {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(14, 165, 233, 0.3),
+      0 0 30px rgba(6, 182, 212, 0.2);
+  }
+
+  .ocean-text-shimmer {
+    background: linear-gradient(45deg, transparent 30%, rgba(6, 182, 212, 0.5) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: ocean-shimmer 3s ease-in-out infinite;
+  }
+
+  .ocean-text-shadow {
+    text-shadow: 0 2px 4px rgba(12, 74, 110, 0.5);
+  }
+
+  .ocean-glass {
+    backdrop-filter: blur(12px);
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+  }
+
+  .ocean-glass-card {
+    backdrop-filter: blur(8px);
+    background: rgba(12, 74, 110, 0.2);
+    border: 1px solid rgba(14, 165, 233, 0.4);
+  }
+
+  .animate-wave-slow { animation: wave-slow 6s ease-in-out infinite; }
+  .animate-pulse-gentle { animation: pulse-gentle 4s ease-in-out infinite; }
+  .animate-gradient-ocean { animation: gradient-ocean 3s ease-in-out infinite; }
+  .animate-pulse-ocean { animation: pulse-ocean 2s ease-in-out infinite; }
+  .animate-ocean-shimmer { animation: ocean-shimmer 4s ease-in-out infinite; }
+  .animate-ocean-glow-ring { animation: ocean-glow-ring 3s ease-in-out infinite; }
+
+  .btn-glow-ocean {
+    box-shadow: 
+      0 0 10px rgba(245, 158, 11, 0.4),
+      0 0 20px rgba(14, 165, 233, 0.2);
+  }
+
+  .pulse-glow-ocean {
+    animation: pulse-ocean 2s ease-in-out infinite;
+  }
+
+  .animate-button-glow-ocean {
+    animation: pulse-ocean 3s ease-in-out infinite;
+  }
+
+  .animate-button-glow-ocean-secondary {
+    animation: ocean-glow-ring 3s ease-in-out infinite;
+  }
+
   /* Mobile-first responsive utilities */
   @media (max-width: 640px) {
     .hero-gradient,
     .hero-gradient-dark {
       background: linear-gradient(180deg, #051029 0%, #0a1a40 25%, #0f2554 50%, #0a1a40 75%, #051029 100%);
+    }
+    
+    .ocean-gradient {
+      background: linear-gradient(180deg, 
+        #0c4a6e 0%, 
+        #0369a1 25%, 
+        #0ea5e9 50%, 
+        #0369a1 75%, 
+        #0c4a6e 100%
+      );
+    }
+
+    .constellation-glow-soft {
+      filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.3));
     }
   }
 }

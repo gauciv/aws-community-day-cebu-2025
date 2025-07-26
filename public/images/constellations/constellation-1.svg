@@ -1,0 +1,25 @@
+
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="#f59e0b" filter="url(#glow)">
+    <!-- Main star -->
+    <path d="M100 100 L120 80 L140 100 L120 120 Z" />
+    <!-- Dashed line -->
+    <line x1="140" y1="100" x2="300" y2="250" stroke="#f59e0b" stroke-width="3" stroke-dasharray="8,4"/>
+    <!-- Connected stars -->
+    <path d="M300 250 L320 230 L340 250 L320 270 Z" />
+    <path d="M400 180 L420 160 L440 180 L420 200 Z" />
+    <!-- Circles -->
+    <circle cx="200" cy="300" r="8" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="450" cy="120" r="12" fill="#f59e0b"/>
+    <circle cx="80" cy="400" r="6" fill="#f59e0b"/>
+  </g>
+</svg>
