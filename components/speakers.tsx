@@ -237,8 +237,8 @@ export function Speakers() {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative text-center h-full">
-                {/* Enhanced Speaker Card with mobile-first padding */}
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10 shadow-xl group-hover:shadow-2xl group-hover:shadow-blue-500/20 transition-all duration-700 h-full flex flex-col group-hover:border-orange-500/30">
+                {/* Enhanced Speaker Card with mobile-first padding and equal heights */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 border border-white/10 shadow-xl group-hover:shadow-2xl group-hover:shadow-blue-500/20 transition-all duration-700 h-full flex flex-col group-hover:border-orange-500/30 min-h-[200px] sm:min-h-[240px]">
                   
                   {/* Speaker Image - compact like volunteers */}
                   <div className="relative mx-auto mb-3 sm:mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36">
@@ -259,12 +259,12 @@ export function Speakers() {
 
                   </div>
 
-                  {/* Compact Speaker Info */}
-                  <div className="text-center">
-                    <h3 className="text-sm sm:text-base font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-1 group-hover:from-orange-400 group-hover:via-yellow-400 group-hover:to-orange-400 transition-all duration-500 leading-tight">
+                  {/* Compact Speaker Info with flexible height and text wrapping */}
+                  <div className="text-center flex-1 flex flex-col justify-center mt-auto">
+                    <h3 className="text-sm sm:text-base font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 group-hover:from-orange-400 group-hover:via-yellow-400 group-hover:to-orange-400 transition-all duration-500 leading-tight">
                       {speaker.name}
                     </h3>
-                    <p className="text-gray-400 text-xs sm:text-sm leading-tight group-hover:text-gray-300 transition-colors duration-500 line-clamp-2">
+                    <p className="text-gray-400 text-xs leading-relaxed group-hover:text-gray-300 transition-colors duration-500 line-clamp-3">
                       {speaker.position.split(' | ')[0]}
                     </p>
                   </div>

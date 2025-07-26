@@ -4,12 +4,14 @@
 import { useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, Users } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { ChevronDown, Users, Search, X } from "lucide-react"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 
 export function Volunteers() {
   const [isVisible, setIsVisible] = useState(false)
   const [showAll, setShowAll] = useState(false)
+  const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -194,10 +196,15 @@ export function Volunteers() {
     }
   }
   
+  // Filter volunteers based on search term
+  const filteredVolunteers = volunteers.filter(volunteer =>
+    volunteer.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
   const volunteersPerRow = getVolunteersPerRow()
-  const rowsToShow = showAll ? Math.ceil(volunteers.length / volunteersPerRow) : 2
-  const displayedVolunteers = volunteers.slice(0, rowsToShow * volunteersPerRow)
-  const hasMore = volunteers.length > displayedVolunteers.length
+  const rowsToShow = showAll ? Math.ceil(filteredVolunteers.length / volunteersPerRow) : 2
+  const displayedVolunteers = filteredVolunteers.slice(0, rowsToShow * volunteersPerRow)
+  const hasMore = filteredVolunteers.length > displayedVolunteers.length
 
   return (
     <section id="volunteers" className="py-12 md:py-20 lg:py-32 hero-gradient-dark relative overflow-hidden">
@@ -295,10 +302,37 @@ export function Volunteers() {
               Amazing Team
             </span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 mb-6 sm:mb-8">
             Our dedicated volunteers are the heart of AWS Community Day Cebu. Get to know the passionate individuals who
             make this event possible.
           </p>
+          
+          {/* Search Input */}
+          <div className="max-w-md mx-auto relative">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Input
+                type="text"
+                placeholder="Search volunteers..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-orange-500/50 focus:ring-orange-500/20"
+              />
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm("")}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+            {searchTerm && (
+              <p className="text-sm text-gray-400 mt-2 text-center">
+                Found {filteredVolunteers.length} volunteer{filteredVolunteers.length !== 1 ? 's' : ''}
+              </p>
+            )}
+          </div>
         </div>
 
         {/* Enhanced Volunteers Grid with mobile-first responsive design */}
@@ -357,8 +391,8 @@ export function Volunteers() {
                 className="relative bg-white/10 backdrop-blur-sm border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-200 hover:scale-105"
               >
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-bounce" />
-                <span className="hidden sm:inline">Show More Volunteers ({volunteers.length - displayedVolunteers.length} remaining)</span>
-                <span className="sm:hidden">Show More ({volunteers.length - displayedVolunteers.length})</span>
+                <span className="hidden sm:inline">Show More Volunteers ({filteredVolunteers.length - displayedVolunteers.length} remaining)</span>
+                <span className="sm:hidden">Show More ({filteredVolunteers.length - displayedVolunteers.length})</span>
               </Button>
             </div>
           </div>
