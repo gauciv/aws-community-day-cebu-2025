@@ -77,22 +77,78 @@ export function Speakers() {
 
   return (
     <section id="speakers" className="py-12 md:py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-900 relative overflow-hidden">
-      {/* Enhanced Background Elements */}
+      {/* Enhanced Atmospheric Background with Ray Elements */}
       <div className="absolute inset-0 constellation-background">
         <div className="constellation-container">
-          {/* Moving constellation elements */}
-          <div className="absolute top-16 left-12 text-orange-400/30 text-7xl animate-twinkle">✧</div>
-          <div className="absolute bottom-24 right-16 text-orange-300/25 text-9xl animate-float-slow">✦</div>
-          <div className="absolute top-1/3 right-1/3 text-orange-400/20 text-5xl animate-twinkle-delayed">★</div>
-          <div className="absolute bottom-1/4 left-1/5 text-orange-300/25 text-6xl animate-float">✧</div>
+          {/* Ray SVG Elements for Spotlight Effects */}
+          <div
+            className="constellation-svg"
+            style={{ top: "20%", left: "10%", width: "180px", height: "auto", opacity: "0.06" }}
+          >
+            <img 
+              src="/art-assets/ray.svg" 
+              alt="Light ray" 
+              className="w-full h-auto animate-gentle-pulse"
+              style={{ transform: "rotate(45deg)" }}
+            />
+          </div>
           
-          {/* Enhanced glowing orbs */}
-          <div className="absolute top-32 right-1/4 w-40 h-40 bg-gradient-to-r from-orange-500/15 to-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-48 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-purple-500/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div
+            className="constellation-svg"
+            style={{ bottom: "25%", right: "12%", width: "160px", height: "auto", opacity: "0.08" }}
+          >
+            <img 
+              src="/art-assets/ray.svg" 
+              alt="Light ray" 
+              className="w-full h-auto animate-gentle-pulse"
+              style={{ transform: "rotate(-30deg)" }}
+            />
+          </div>
+
+          {/* Shroud SVG for Depth Behind Content */}
+          <div
+            className="constellation-svg"
+            style={{ top: "15%", right: "20%", width: "200px", height: "auto", opacity: "0.05" }}
+          >
+            <img 
+              src="/art-assets/shroud.svg" 
+              alt="Atmospheric shroud" 
+              className="w-full h-auto animate-float-slow"
+            />
+          </div>
           
-          {/* Constellation network lines */}
-          <div className="absolute top-1/4 left-1/4 w-20 h-0.5 bg-gradient-to-r from-orange-400/30 to-transparent rotate-45 animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-16 h-0.5 bg-gradient-to-r from-orange-300/25 to-transparent -rotate-45 animate-pulse delay-500"></div>
+          {/* Constellation Accents */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "35%", left: "8%", width: "70px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/leo.svg" 
+              alt="Leo constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.4" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "30%", right: "6%", width: "65px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/orion.svg" 
+              alt="Orion constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.45" }}
+            />
+          </div>
+          
+          {/* Enhanced multi-color gradient orbs */}
+          <div className="absolute top-32 right-1/4 w-40 h-40 bg-gradient-to-r from-orange-500/12 via-amber-500/15 to-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-48 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/8 via-purple-500/12 to-indigo-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          {/* Optimized network lines */}
+          <div className="constellation-line" style={{top: '25%', left: '20%', width: '60px', transform: 'rotate(35deg)'}}></div>
+          <div className="constellation-line" style={{bottom: '35%', right: '25%', width: '50px', transform: 'rotate(-25deg)'}}></div>
         </div>
       </div>
 

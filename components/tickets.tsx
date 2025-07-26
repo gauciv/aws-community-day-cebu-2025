@@ -119,20 +119,75 @@ export function Tickets() {
 
   return (
     <section id="tickets" className="py-12 md:py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-900 relative overflow-hidden">
-      {/* Enhanced Constellation Background */}
+      {/* Enhanced Atmospheric Background with Pricing Highlights */}
       <div className="absolute inset-0 constellation-background">
         <div className="constellation-container">
-          {/* Enhanced constellation elements */}
-          <div className="absolute top-16 left-12 text-orange-400/30 text-7xl animate-twinkle">✧</div>
-          <div className="absolute bottom-24 right-16 text-orange-300/25 text-9xl animate-float-slow">✦</div>
-          <div className="absolute top-1/3 right-1/3 text-orange-400/20 text-5xl animate-twinkle-delayed">★</div>
-          <div className="absolute bottom-1/4 left-1/5 text-orange-300/25 text-6xl animate-float">✧</div>
+          {/* Ray SVG for CTA Button Highlights */}
+          <div
+            className="constellation-svg animate-ray-pulse"
+            style={{ top: "60%", left: "15%", width: "200px", height: "auto", opacity: "0.04", '--ray-rotation': '25deg' } as React.CSSProperties}
+          >
+            <img 
+              src="/art-assets/ray.svg" 
+              alt="Light ray" 
+              className="w-full h-auto"
+            />
+          </div>
           
-          {/* Enhanced glowing orbs */}
-          <div className="absolute top-32 right-1/4 w-40 h-40 bg-gradient-to-r from-orange-500/15 to-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-48 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-purple-500/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div
+            className="constellation-svg animate-ray-pulse"
+            style={{ bottom: "30%", right: "18%", width: "180px", height: "auto", opacity: "0.06", '--ray-rotation': '-40deg' } as React.CSSProperties}
+          >
+            <img 
+              src="/art-assets/ray.svg" 
+              alt="Light ray" 
+              className="w-full h-auto"
+            />
+          </div>
+
+          {/* Shroud SVG Behind Ticket Cards */}
+          <div
+            className="constellation-svg animate-shroud-depth"
+            style={{ top: "20%", left: "10%", width: "300px", height: "auto", opacity: "0.03" }}
+          >
+            <img 
+              src="/art-assets/shroud.svg" 
+              alt="Atmospheric shroud" 
+              className="w-full h-auto"
+            />
+          </div>
           
-          {/* Constellation dots */}
+          {/* Constellation Pricing Accents */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "35%", left: "8%", width: "70px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/cassiopeia.svg" 
+              alt="Cassiopeia constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.4" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "25%", right: "12%", width: "65px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/pegasus.svg" 
+              alt="Pegasus constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.35" }}
+            />
+          </div>
+          
+          {/* Enhanced multi-layered gradient orbs */}
+          <div className="absolute top-32 right-1/4 w-40 h-40 bg-gradient-to-r from-orange-500/10 via-amber-500/15 to-yellow-500/12 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-48 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/8 via-purple-500/12 to-indigo-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-60 left-1/6 w-28 h-28 bg-gradient-to-r from-green-500/8 via-emerald-500/10 to-teal-500/8 rounded-full blur-2xl animate-pulse delay-2000"></div>
+          
+          {/* Optimized constellation network */}
           <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '25%', left: '18%'}}></div>
           <div className="constellation-dot constellation-dot-small" style={{top: '40%', right: '22%'}}></div>
           <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '35%', left: '15%'}}></div>

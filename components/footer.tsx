@@ -6,10 +6,41 @@ import { Facebook, Linkedin, Mail } from "lucide-react"
 export function Footer() {
   return (
     <footer className="relative bg-black text-white overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-yellow-500/5"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent"></div>
+      {/* Enhanced Gradient Background with Atmospheric Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-black">
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/6 via-amber-500/4 to-yellow-500/6"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/60 to-transparent"></div>
+        
+        {/* Smoke SVG for Background Texture */}
+        <div
+          className="absolute"
+          style={{ top: "20%", left: "5%", width: "120px", height: "auto", opacity: "0.04" }}
+        >
+          <img 
+            src="/art-assets/smoke.svg" 
+            alt="Atmospheric smoke" 
+            className="w-full h-auto animate-smoke-wisp"
+            style={{ '--smoke-rotation': '10deg' } as React.CSSProperties}
+          />
+        </div>
+        
+        <div
+          className="absolute"
+          style={{ bottom: "15%", right: "8%", width: "100px", height: "auto", opacity: "0.06" }}
+        >
+          <img 
+            src="/art-assets/smoke.svg" 
+            alt="Atmospheric smoke" 
+            className="w-full h-auto animate-smoke-wisp"
+            style={{ '--smoke-rotation': '-15deg' } as React.CSSProperties}
+          />
+        </div>
+
+        {/* Constellation Dots in Corners */}
+        <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{top: '20%', left: '10%'}}></div>
+        <div className="constellation-dot constellation-dot-small" style={{top: '30%', right: '15%'}}></div>
+        <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '25%', left: '12%'}}></div>
+        <div className="constellation-dot constellation-dot-small" style={{bottom: '35%', right: '18%'}}></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">

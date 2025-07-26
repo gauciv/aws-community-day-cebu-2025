@@ -134,10 +134,12 @@
     );
   }
 
-  /* Enhanced Constellation Background Styles */
+  /* Enhanced Constellation Background Styles with Performance Optimization */
   .constellation-background {
     z-index: 1;
     pointer-events: none;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   /* Constellation network - Enhanced with more star shapes and animations */
@@ -340,6 +342,59 @@
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
   }
 
+  /* Performance-Optimized Atmospheric Animations */
+  @keyframes atmosphericFloat {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+      opacity: 0.06;
+    }
+    33% { 
+      transform: translateY(-8px) translateX(3px) rotate(2deg);
+      opacity: 0.12;
+    }
+    66% { 
+      transform: translateY(4px) translateX(-2px) rotate(-1deg);
+      opacity: 0.08;
+    }
+  }
+
+  @keyframes rayPulse {
+    0%, 100% { 
+      opacity: 0.04;
+      transform: scale(1) rotate(var(--ray-rotation, 0deg));
+    }
+    50% { 
+      opacity: 0.08;
+      transform: scale(1.05) rotate(var(--ray-rotation, 0deg));
+    }
+  }
+
+  @keyframes shroudDepth {
+    0%, 100% { 
+      opacity: 0.03;
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.06;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes smokeWisp {
+    0%, 100% { 
+      transform: translateY(0px) rotate(var(--smoke-rotation, 0deg));
+      opacity: 0.05;
+    }
+    25% { 
+      transform: translateY(-6px) rotate(calc(var(--smoke-rotation, 0deg) + 2deg));
+      opacity: 0.08;
+    }
+    75% { 
+      transform: translateY(3px) rotate(calc(var(--smoke-rotation, 0deg) - 1deg));
+      opacity: 0.06;
+    }
+  }
+
   /* Enhanced Animations */
   @keyframes gentleTwinkle {
     0%, 100% { opacity: 0.4; }
@@ -506,6 +561,12 @@
   .animate-float-reverse { animation: float-reverse 8s ease-in-out infinite; }
   .animate-draw-in { animation: draw-in 3s ease-in-out; }
   .animate-draw-in-delayed { animation: draw-in 3s ease-in-out 1s; }
+
+  /* New Atmospheric Animation Classes */
+  .animate-atmospheric-float { animation: atmosphericFloat 8s ease-in-out infinite; }
+  .animate-ray-pulse { animation: rayPulse 6s ease-in-out infinite; }
+  .animate-shroud-depth { animation: shroudDepth 10s ease-in-out infinite; }
+  .animate-smoke-wisp { animation: smokeWisp 7s ease-in-out infinite; }
 
   .constellation-dot.constellation-glow {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.3), 0 0 30px rgba(245, 158, 11, 0.1);
