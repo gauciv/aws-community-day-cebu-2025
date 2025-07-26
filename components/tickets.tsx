@@ -335,7 +335,7 @@ export function Tickets() {
                     ))}
                   </ul>
 
-                  <div className="mt-auto pt-6 border-t border-white/10">
+                  <div className="mt-6">
                     <Button
                       onClick={handleRegisterClick}
                       className={`w-full py-3 font-bold text-base transition-all duration-500 transform hover:scale-105 ${
