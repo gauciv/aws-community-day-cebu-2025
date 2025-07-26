@@ -38,20 +38,75 @@ export function Sponsors() {
 
   return (
     <section id="sponsors" className="py-12 md:py-20 lg:py-32 hero-gradient-dark relative overflow-hidden">
-      {/* Enhanced Constellation Background */}
+      {/* Enhanced Atmospheric Background with Shroud Depth */}
       <div className="absolute inset-0 constellation-background">
         <div className="constellation-container">
-          {/* Enhanced constellation elements */}
-          <div className="absolute top-20 left-16 text-orange-400/25 text-8xl animate-twinkle">✧</div>
-          <div className="absolute bottom-32 right-20 text-orange-300/20 text-6xl animate-float-slow">✦</div>
-          <div className="absolute top-1/2 right-1/4 text-orange-400/30 text-5xl animate-twinkle-delayed">★</div>
-          <div className="absolute bottom-1/4 left-1/3 text-orange-300/25 text-7xl animate-float">✧</div>
+          {/* Shroud SVG for Depth Behind Content */}
+          <div
+            className="constellation-svg"
+            style={{ top: "20%", left: "8%", width: "250px", height: "auto", opacity: "0.04" }}
+          >
+            <img 
+              src="/art-assets/shroud.svg" 
+              alt="Atmospheric shroud" 
+              className="w-full h-auto animate-gentle-pulse"
+            />
+          </div>
           
-          {/* Enhanced glowing orbs */}
-          <div className="absolute top-40 right-1/5 w-48 h-48 bg-gradient-to-r from-orange-500/10 to-yellow-500/15 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-56 left-1/4 w-36 h-36 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div
+            className="constellation-svg"
+            style={{ bottom: "15%", right: "10%", width: "220px", height: "auto", opacity: "0.06" }}
+          >
+            <img 
+              src="/art-assets/shroud.svg" 
+              alt="Atmospheric shroud" 
+              className="w-full h-auto animate-float-slow"
+              style={{ transform: "rotate(180deg)" }}
+            />
+          </div>
+
+          {/* Cloud SVG for Background Texture */}
+          <div
+            className="constellation-svg"
+            style={{ top: "40%", right: "20%", width: "160px", height: "auto", opacity: "0.08" }}
+          >
+            <img 
+              src="/art-assets/clouds.svg" 
+              alt="Atmospheric clouds" 
+              className="w-full h-auto animate-float-reverse"
+            />
+          </div>
           
-          {/* Network constellation dots */}
+          {/* Constellation Frames */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "25%", left: "20%", width: "80px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/cassiopeia.svg" 
+              alt="Cassiopeia constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.4" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "30%", right: "25%", width: "75px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/pegasus.svg" 
+              alt="Pegasus constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.35" }}
+            />
+          </div>
+          
+          {/* Enhanced gradient orbs with more color variety */}
+          <div className="absolute top-40 right-1/5 w-48 h-48 bg-gradient-to-r from-orange-500/8 via-amber-500/12 to-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-56 left-1/4 w-36 h-36 bg-gradient-to-r from-blue-500/8 via-purple-500/10 to-pink-500/8 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          {/* Optimized constellation network */}
           <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '20%', left: '15%'}}></div>
           <div className="constellation-dot constellation-dot-small" style={{top: '35%', right: '20%'}}></div>
           <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '40%', left: '12%'}}></div>

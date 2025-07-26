@@ -83,9 +83,34 @@ export function FAQ() {
 
   return (
     <section id="faq" className="py-20 lg:py-32 relative overflow-hidden">
-      {/* Enhanced Moving Question Marks Background with More Movement */}
+      {/* Enhanced Atmospheric Background with Smoke and Question Marks */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Large floating question marks with enhanced movement */}
+        {/* Smoke SVG for Section Dividers */}
+        <div
+          className="constellation-svg"
+          style={{ top: "5%", left: "2%", width: "150px", height: "auto", opacity: "0.06" }}
+        >
+          <img 
+            src="/art-assets/smoke.svg" 
+            alt="Atmospheric smoke" 
+            className="w-full h-auto animate-float-slow"
+            style={{ transform: "rotate(15deg)" }}
+          />
+        </div>
+        
+        <div
+          className="constellation-svg"
+          style={{ bottom: "8%", right: "5%", width: "130px", height: "auto", opacity: "0.08" }}
+        >
+          <img 
+            src="/art-assets/smoke.svg" 
+            alt="Atmospheric smoke" 
+            className="w-full h-auto animate-float-reverse"
+            style={{ transform: "rotate(-20deg)" }}
+          />
+        </div>
+
+        {/* Enhanced floating question marks with optimized animations */}
         <div
           className="absolute text-orange-400/12 text-8xl font-bold question-mark-bounce"
           style={{

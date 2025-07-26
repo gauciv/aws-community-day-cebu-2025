@@ -21,9 +21,9 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24" style={{background: 'linear-gradient(135deg, #003E84 0%, #011C3B 100%)'}}>
-      {/* Constellation SVG Background */}
-      <div className="absolute inset-0 constellation-background">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24" style={{background: 'linear-gradient(135deg, #003E84 0%, #0A2A5C 30%, #011C3B 100%)'}}>
+      {/* Enhanced Constellation SVG Background */}
+      <div className="absolute inset-0 constellation-background" key={Date.now()}>
         {/* Constellation SVG Elements */}
         <div className="constellation-container">
           {/* Top Left Area - Leo constellation */}

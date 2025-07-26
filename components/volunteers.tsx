@@ -237,24 +237,85 @@ export function Volunteers() {
 
   return (
     <section id="volunteers" className="py-12 md:py-20 lg:py-32 hero-gradient-dark relative overflow-hidden">
-      {/* Enhanced Constellation Background */}
+      {/* Enhanced Network Constellation Background */}
       <div className="absolute inset-0 constellation-background">
         <div className="constellation-container">
-          {/* Enhanced constellation elements */}
-          <div className="absolute top-20 left-16 text-orange-400/25 text-8xl animate-twinkle">✧</div>
-          <div className="absolute bottom-32 right-20 text-orange-300/20 text-6xl animate-float-slow">✦</div>
-          <div className="absolute top-1/2 right-1/4 text-orange-400/30 text-5xl animate-twinkle-delayed">★</div>
-          <div className="absolute bottom-1/4 left-1/3 text-orange-300/25 text-7xl animate-float">✧</div>
+          {/* Constellation Network Patterns */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "15%", left: "12%", width: "90px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/big dipper.svg" 
+              alt="Big Dipper constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.4" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "45%", right: "15%", width: "85px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/aquarius.svg" 
+              alt="Aquarius constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.38" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "20%", left: "18%", width: "75px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/leo.svg" 
+              alt="Leo constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.42" }}
+            />
+          </div>
+
+          {/* Ray SVG for Team Lead Highlights */}
+          <div
+            className="constellation-svg"
+            style={{ top: "30%", left: "5%", width: "140px", height: "auto", opacity: "0.05" }}
+          >
+            <img 
+              src="/art-assets/ray.svg" 
+              alt="Light ray" 
+              className="w-full h-auto animate-gentle-pulse"
+              style={{ transform: "rotate(60deg)" }}
+            />
+          </div>
+
+          {/* Cloud SVG for Background Texture */}
+          <div
+            className="constellation-svg"
+            style={{ bottom: "35%", right: "8%", width: "120px", height: "auto", opacity: "0.08" }}
+          >
+            <img 
+              src="/art-assets/clouds.svg" 
+              alt="Atmospheric clouds" 
+              className="w-full h-auto animate-float-slow"
+            />
+          </div>
           
-          {/* Enhanced glowing orbs */}
-          <div className="absolute top-40 right-1/5 w-48 h-48 bg-gradient-to-r from-orange-500/10 to-yellow-500/15 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-56 left-1/4 w-36 h-36 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          {/* Enhanced rainbow gradient orbs */}
+          <div className="absolute top-40 right-1/5 w-48 h-48 bg-gradient-to-r from-orange-500/8 via-pink-500/10 to-purple-500/8 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-56 left-1/4 w-36 h-36 bg-gradient-to-r from-blue-500/8 via-cyan-500/10 to-teal-500/8 rounded-full blur-2xl animate-pulse delay-1000"></div>
           
-          {/* Network constellation dots */}
+          {/* Enhanced network dots with connecting lines */}
           <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '20%', left: '15%'}}></div>
           <div className="constellation-dot constellation-dot-small" style={{top: '35%', right: '20%'}}></div>
           <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '40%', left: '12%'}}></div>
           <div className="constellation-dot constellation-dot-small" style={{bottom: '25%', right: '18%'}}></div>
+          
+          {/* Network connecting lines */}
+          <div className="constellation-line" style={{top: '22%', left: '17%', width: '80px', transform: 'rotate(25deg)'}}></div>
+          <div className="constellation-line" style={{top: '37%', right: '22%', width: '70px', transform: 'rotate(-35deg)'}}></div>
+          <div className="constellation-line" style={{bottom: '42%', left: '14%', width: '60px', transform: 'rotate(45deg)'}}></div>
         </div>
       </div>
 
