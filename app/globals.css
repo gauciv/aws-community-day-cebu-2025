@@ -448,56 +448,146 @@
     }
   }
 
-/* Mobile Optimizations */
-@media (max-width: 768px) {
+/* Mobile-First Responsive Optimizations */
+
+/* Base mobile styles (320px+) */
+@media (max-width: 640px) {
   /* Reduce section padding for mobile */
-  section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-  }
-
-  /* Scale down constellation background elements on mobile */
-  .constellation-svg {
-    transform: scale(0.7) !important;
-    opacity: 0.3 !important;
-  }
-
-  /* Optimize text sizes for mobile readability */
-  h1 {
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-  }
-
-  h2 {
-    font-size: 2rem !important;
-    line-height: 1.3 !important;
-  }
-
-  /* Reduce gradient orb sizes on mobile */
-  .constellation-background .absolute {
-    width: 60% !important;
-    height: 60% !important;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Further optimize for very small screens */
   section {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
 
+  /* Scale down constellation background elements on mobile */
   .constellation-svg {
-    transform: scale(0.5) !important;
-    opacity: 0.2 !important;
+    transform: scale(0.6) !important;
+    opacity: 0.25 !important;
   }
 
-  h1 {
-    font-size: 2rem !important;
+  /* Reduce gradient orb sizes on mobile */
+  .constellation-background .absolute {
+    width: 50% !important;
+    height: 50% !important;
   }
 
-  h2 {
-    font-size: 1.75rem !important;
+  /* Mobile-first container padding */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Mobile-optimized text spacing */
+  .space-y-6 > * + * {
+    margin-top: 1rem !important;
+  }
+
+  .space-y-8 > * + * {
+    margin-top: 1.5rem !important;
+  }
+
+  /* Mobile button optimizations */
+  .btn-mobile-full {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+  /* Further optimize for very small screens */
+  section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .constellation-svg {
+    transform: scale(0.4) !important;
+    opacity: 0.15 !important;
+  }
+
+  /* Extra small container padding */
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Reduce gaps on very small screens */
+  .gap-6 {
+    gap: 0.75rem !important;
+  }
+
+  .gap-8 {
+    gap: 1rem !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .constellation-svg {
+    transform: scale(0.8) !important;
+    opacity: 0.4 !important;
+  }
+}
+
+/* Mobile-first utility classes */
+.mobile-text-center {
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .mobile-text-center {
+    text-align: left;
+  }
+}
+
+.mobile-full-width {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .mobile-full-width {
+    width: auto;
+  }
+}
+
+/* Mobile-optimized grid utilities */
+.mobile-grid-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .mobile-grid-1 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-grid-1 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Touch-friendly interactive elements */
+@media (max-width: 1024px) {
+  button, .btn, [role="button"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Increase tap targets */
+  .tap-target {
+    padding: 0.75rem !important;
+  }
+
+  /* Improve form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 0.75rem !important;
   }
 }
 
@@ -1032,10 +1122,10 @@
     animation-timing-function: ease-in-out;
   }
 
-  /* Mobile optimizations for question marks */
-  @media (max-width: 768px) {
+  /* Mobile optimizations for question marks and performance */
+  @media (max-width: 640px) {
     .question-mark-bounce {
-      font-size: 2rem !important;
+      font-size: 1.5rem !important;
     }
 
     /* Reduce constellation elements on mobile for performance */
@@ -1044,7 +1134,7 @@
     }
 
     .constellation-line {
-      width: 15px !important;
+      width: 10px !important;
     }
 
     .constellation-glow {
@@ -1054,7 +1144,19 @@
 
     /* Reduce question mark size on mobile */
     .moving-question-mark {
-      font-size: 3rem !important;
+      font-size: 2rem !important;
+    }
+
+    /* Disable expensive animations on mobile */
+    .animate-gentle-shimmer,
+    .animate-gentle-shimmer-delayed,
+    .animate-gentle-pulse {
+      animation: none !important;
+    }
+
+    /* Simplify hover effects on mobile */
+    .group:hover .group-hover\:scale-110 {
+      transform: none !important;
     }
   }
 
@@ -1063,6 +1165,41 @@
     .hero-gradient,
     .hero-gradient-dark {
       background: linear-gradient(180deg, #051029 0%, #0a1a40 25%, #0f2554 50%, #0a1a40 75%, #051029 100%);
+    }
+
+    /* Mobile-optimized spacing */
+    .mobile-px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .mobile-py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .mobile-mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mobile-mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Mobile-first text sizes */
+    .mobile-text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .mobile-text-base {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .mobile-text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
   }
 

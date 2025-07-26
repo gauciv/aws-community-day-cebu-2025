@@ -40,11 +40,6 @@ export function FAQ() {
         "This event is perfect for developers, system administrators, architects, students, IT professionals, startup founders, and anyone interested in cloud computing and AWS services. Whether you're a beginner or an expert, there's something for everyone.",
     },
     {
-      question: "What's included with my ticket?",
-      answer:
-        "General tickets include access to the main event (1:00 PM–7:00 PM) and official merchandise. Builder+ tickets add workshop access (9:00 AM–12:00 PM). VIP tickets include everything plus exclusive dinner invitation and AWS Community Day Cebu polo.",
-    },
-    {
       question: "Is parking available at the venue?",
       answer:
         "Yes, free parking is available on the UP Cebu campus. We recommend arriving early as parking spaces are limited. Alternative transportation options include jeepneys and ride-sharing services like Grab.",
@@ -55,29 +50,14 @@ export function FAQ() {
         "Light refreshments are included for all attendees. VIP ticket holders also receive access to the exclusive dinner. There are also several dining options near the UP Cebu campus.",
     },
     {
-      question: "Will I receive a certificate of attendance?",
-      answer:
-        "Yes, all registered attendees will receive a digital certificate of attendance after the event. This can be used for professional development records or continuing education requirements.",
-    },
-    {
       question: "Can I get a refund if I can't attend?",
       answer:
         "Tickets are non-refundable but transferable. If you cannot attend, you may transfer your ticket to another person. Please contact our support team for assistance with ticket transfers.",
     },
     {
-      question: "Will the sessions be recorded?",
-      answer:
-        "Selected sessions will be recorded and made available to attendees after the event. However, we encourage live attendance for the full experience, including networking and interactive Q&A sessions.",
-    },
-    {
       question: "What should I bring to the event?",
       answer:
         "Bring your laptop for hands-on workshops, business cards for networking, a notebook for taking notes, and your enthusiasm to learn! We'll provide power outlets and WiFi throughout the venue.",
-    },
-    {
-      question: "How can I become a sponsor or volunteer?",
-      answer:
-        "We welcome sponsors and volunteers! For sponsorship opportunities, download our sponsorship primer or contact us at awscloudclubctu@gmail.com. For volunteering, email us at the same address. Both are great ways to support the AWS community in Cebu.",
     },
   ]
 

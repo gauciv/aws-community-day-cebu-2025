@@ -164,10 +164,10 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
+          <div className="space-y-4 sm:space-y-6">
             <Card className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-orange-500/20 transition-colors duration-300">
-              <CardContent className="p-8">
+              <CardContent className="p-4 sm:p-6 lg:p-8">
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <FileText className="w-8 h-8 text-white" />
@@ -213,23 +213,23 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
           </div>
 
           <div>
-            <Card className="border border-white/10 bg-white/5 backdrop-blur-sm min-h-[600px]">
-              <CardContent className="p-8 h-full flex flex-col">
-                <div className="text-center mb-8 flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-8 h-8 text-white" />
+            <Card className="border border-white/10 bg-white/5 backdrop-blur-sm">
+              <CardContent className="p-4 sm:p-6 lg:p-8 h-full flex flex-col">
+                <div className="text-center mb-6 sm:mb-8 flex-shrink-0">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Become a Sponsor</h3>
-                  <p className="text-gray-300">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Become a Sponsor</h3>
+                  <p className="text-sm sm:text-base text-gray-300">
                     Join our amazing sponsors and support the AWS community in Cebu.
                   </p>
                 </div>
 
                 <div className="flex-1 flex flex-col justify-between">
 
-                <form className="space-y-6">
+                <form className="space-y-4 sm:space-y-6">
                   <div>
-                    <Label htmlFor="company" className="text-white font-medium mb-2 block">
+                    <Label htmlFor="company" className="text-white font-medium mb-2 block text-sm sm:text-base">
                       Company Name *
                     </Label>
                     <Input 
@@ -237,7 +237,7 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                       placeholder="Your company name" 
                       value={formData.company}
                       onChange={(e) => handleInputChange('company', e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base" 
                     />
                   </div>
 
@@ -378,7 +378,7 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                     type="button"
                     onClick={handleSendInquiry}
                     disabled={emailStatus === 'opening'}
-                    className={`w-full font-semibold py-3 transform transition-all duration-300 ${
+                    className={`w-full font-semibold py-3 sm:py-4 text-sm sm:text-base transform transition-all duration-300 ${
                       emailStatus === 'success' 
                         ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600' 
                         : 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 hover:scale-105 active:scale-95'
@@ -420,10 +420,10 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                   </div>
                 </form>
 
-                <div className="mt-8 pt-6 border-t border-white/20 text-center flex-shrink-0">
-                  <div className="flex items-center justify-center gap-2 text-gray-300">
+                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/20 text-center flex-shrink-0">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-gray-300">
                     <Mail className="w-4 h-4 text-orange-400" />
-                    <span className="text-sm">For inquiries: awscommunitydaycebu.2025@gmail.com</span>
+                    <span className="text-xs sm:text-sm break-all sm:break-normal">For inquiries: awscommunitydaycebu.2025@gmail.com</span>
                   </div>
                 </div>
                 </div>

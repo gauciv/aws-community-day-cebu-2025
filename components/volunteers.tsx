@@ -172,7 +172,18 @@ export function Volunteers() {
     { name: "Charles Vincent Montero" }
   ]
 
-  const volunteersPerRow = 5
+  // Mobile-first responsive volunteers per row
+  const getVolunteersPerRow = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) return 2 // sm
+      if (window.innerWidth < 768) return 3 // md  
+      if (window.innerWidth < 1024) return 4 // lg
+      return 5 // xl+
+    }
+    return 5
+  }
+  
+  const volunteersPerRow = getVolunteersPerRow()
   const rowsToShow = showAll ? Math.ceil(volunteers.length / volunteersPerRow) : 2
   const displayedVolunteers = volunteers.slice(0, rowsToShow * volunteersPerRow)
   const hasMore = volunteers.length > displayedVolunteers.length
@@ -262,25 +273,25 @@ export function Volunteers() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-sm font-bold mb-8 shadow-lg">
-            <Users className="w-4 h-4 mr-2 animate-pulse" />
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg">
+            <Users className="w-3 h-3 sm:w-4 sm:h-4 mr-2 animate-pulse" />
             Our Volunteers
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-8 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">
             Meet Our{" "}
             <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
               Amazing Team
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
             Our dedicated volunteers are the heart of AWS Community Day Cebu. Get to know the passionate individuals who
             make this event possible.
           </p>
         </div>
 
-        {/* Enhanced Volunteers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 max-w-7xl mx-auto">
+        {/* Enhanced Volunteers Grid with mobile-first responsive design */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 max-w-7xl mx-auto">
           {displayedVolunteers.map((volunteer, index) => (
             <Card
               key={index}
@@ -303,7 +314,7 @@ export function Volunteers() {
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 via-yellow-500/20 to-orange-500/20 relative">
-                    <span className="text-4xl font-black text-orange-400/70 z-10">
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-orange-400/70 z-10">
                       {volunteer.name
                         .split(" ")
                         .map((n) => n[0])
@@ -314,9 +325,9 @@ export function Volunteers() {
                   </div>
                 )}
                 
-                {/* Simple darkening overlay with name */}
+                {/* Mobile-optimized overlay with name */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                  <h4 className="text-white font-bold text-sm text-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 leading-tight">
+                  <h4 className="text-white font-bold text-xs sm:text-sm text-center px-2 sm:px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 leading-tight">
                     {volunteer.name}
                   </h4>
                 </div>
@@ -325,17 +336,18 @@ export function Volunteers() {
           ))}
         </div>
 
-        {/* Enhanced Show More Button */}
+        {/* Enhanced Show More Button with mobile-first responsive design */}
         {hasMore ? (
-          <div className="text-center mt-16">
+          <div className="text-center mt-8 sm:mt-12 lg:mt-16">
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-full blur-xl"></div>
               <Button
                 onClick={() => setShowAll(true)}
-                className="relative bg-white/10 backdrop-blur-sm border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 px-8 py-4 text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-200 hover:scale-105"
+                className="relative bg-white/10 backdrop-blur-sm border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-200 hover:scale-105"
               >
-                <ChevronDown className="w-5 h-5 mr-2 animate-bounce" />
-                Show More Volunteers ({volunteers.length - displayedVolunteers.length} remaining)
+                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-bounce" />
+                <span className="hidden sm:inline">Show More Volunteers ({volunteers.length - displayedVolunteers.length} remaining)</span>
+                <span className="sm:hidden">Show More ({volunteers.length - displayedVolunteers.length})</span>
               </Button>
             </div>
           </div>

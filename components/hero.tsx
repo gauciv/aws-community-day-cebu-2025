@@ -275,52 +275,52 @@ export function Hero() {
       {/* Content with subtle entrance animations */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center">
         <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"}`}>
-          {/* Main Title with subtle text animation */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight tracking-tight animate-text-glow">
+          {/* Main Title with mobile-first responsive design */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight tracking-tight animate-text-glow">
             AWS Community Day
             <br />
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent animate-gradient-shift">
                 Cebu 2025
               </span>
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full opacity-60 animate-pulse-glow"></div>
+              <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full opacity-60 animate-pulse-glow"></div>
             </span>
           </h1>
 
-          {/* Subtitle with enhanced styling and animation */}
-          <div className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-8 tracking-[0.2em] relative animate-text-shimmer">
+          {/* Subtitle with mobile-first responsive design */}
+          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white mb-6 sm:mb-8 tracking-[0.1em] sm:tracking-[0.2em] relative animate-text-shimmer">
             <span className="relative z-10">BUILD BEYOND LIMITS</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-sm animate-shimmer-wave"></div>
           </div>
 
-          {/* Event Details with icons and subtle animations */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-white/90">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 animate-float-gentle">
-              <Calendar className="w-5 h-5 text-orange-400 animate-pulse-subtle" />
+          {/* Event Details with mobile-first responsive design */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 text-white/90">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle text-sm sm:text-base">
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-pulse-subtle" />
               <span className="font-semibold">September 13, 2025</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 animate-float-gentle-delayed">
-              <MapPin className="w-5 h-5 text-orange-400 animate-pulse-subtle" />
-              <span className="font-semibold">UP Cebu Performing Arts Hall</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle-delayed text-sm sm:text-base">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-pulse-subtle" />
+              <span className="font-semibold text-center sm:text-left">UP Cebu Performing Arts Hall</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-orange-400/30 animate-float-gentle-delayed-2">
-              <Users className="w-5 h-5 text-orange-400 animate-pulse-subtle" />
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-orange-400/30 animate-float-gentle-delayed-2 text-sm sm:text-base">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-pulse-subtle" />
               <span className="font-bold text-orange-300">9 Amazing Speakers</span>
             </div>
           </div>
 
-          {/* Description with better contrast */}
-          <p className="text-lg sm:text-xl text-white/95 max-w-3xl mx-auto mb-8 leading-relaxed font-medium animate-fade-in-up">
+          {/* Description with mobile-first responsive design */}
+          <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed font-medium animate-fade-in-up px-4 sm:px-0">
             Join the AWS community in Cebu for a day of learning, networking, and innovation. Discover the latest in
             cloud computing, connect with fellow developers, and build beyond limits.
           </p>
 
-          {/* Enhanced CTA Buttons with improved animations */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          {/* Enhanced CTA Buttons with mobile-first responsive design */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-4 sm:px-0">
             <Button
               onClick={handleRegisterClick}
               size="lg"
-              className="relative bg-gradient-to-r from-orange-500 via-orange-600 to-yellow-500 text-white font-bold px-8 py-4 text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-lg shadow-orange-500/30 border border-orange-400/20 btn-glow-orange pulse-glow-orange overflow-hidden group animate-button-glow"
+              className="relative bg-gradient-to-r from-orange-500 via-orange-600 to-yellow-500 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-lg shadow-orange-500/30 border border-orange-400/20 btn-glow-orange pulse-glow-orange overflow-hidden group animate-button-glow w-full sm:w-auto"
             >
               <span className="relative z-10">Register Now</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -329,7 +329,7 @@ export function Hero() {
               onClick={handleLearnMoreClick}
               size="lg"
               variant="outline"
-              className="relative border-white/40 text-white hover:bg-white/15 backdrop-blur-sm px-8 py-4 text-lg transition-all duration-300 bg-transparent shadow-lg shadow-white/10 font-semibold glass-card hover:border-orange-400/50 hover:text-orange-300 group overflow-hidden animate-button-glow-secondary"
+              className="relative border-white/40 text-white hover:bg-white/15 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg transition-all duration-300 bg-transparent shadow-lg shadow-white/10 font-semibold glass-card hover:border-orange-400/50 hover:text-orange-300 group overflow-hidden animate-button-glow-secondary w-full sm:w-auto"
             >
               <span className="relative z-10">Learn More</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-400/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
