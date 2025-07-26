@@ -172,15 +172,7 @@ export function Speakers() {
 
         {/* Enhanced Keynote Speaker */}
         <div className="mb-24">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm text-yellow-400 border border-yellow-500/30 text-base font-bold mb-6 shadow-xl">
-              <Crown className="w-5 h-5 mr-2 animate-pulse" />
-              Keynote Speaker
-            </div>
-            <h3 className="text-3xl md:text-4xl font-black text-white">
-              Opening the <span className="text-orange-400">Future</span>
-            </h3>
-          </div>
+
 
           <div className="max-w-3xl mx-auto px-4 sm:px-0">
             <div className="relative text-center group perspective-1000">

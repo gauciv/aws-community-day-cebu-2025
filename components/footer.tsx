@@ -44,98 +44,98 @@ export function Footer() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid md:grid-cols-4 gap-8 text-center md:text-left">
-          {/* Logo and Description - Centered */}
-          <div className="md:col-span-1 space-y-6 flex flex-col items-center md:items-start">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center md:text-left">
+          {/* Logo and Description */}
+          <div className="col-span-2 md:col-span-1 space-y-4 md:space-y-6 flex flex-col items-center md:items-start">
             <div className="flex items-center space-x-3">
-              <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
+              <img src="/aws-logo.svg" alt="AWS Logo" className="h-8 md:h-10 w-8 md:w-10 object-contain" />
               <div>
-                <h3 className="font-bold text-xl text-white">COMMUNITY DAY</h3>
-                <p className="text-sm text-orange-400 font-medium">CEBU</p>
+                <h3 className="font-bold text-lg md:text-xl text-white">COMMUNITY DAY</h3>
+                <p className="text-xs md:text-sm text-orange-400 font-medium">CEBU</p>
               </div>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-300 text-xs md:text-sm leading-relaxed max-w-xs hidden md:block">
               AWS Community Days are community-organized cloud education events that feature technical discussions and
               demos by expert AWS users and industry leaders from around the world.
             </p>
           </div>
 
-          {/* Event - Centered */}
-          <div className="space-y-4 flex flex-col items-center md:items-start">
-            <h4 className="font-bold text-white text-lg mb-6 relative">
+          {/* Event */}
+          <div className="space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
+            <h4 className="font-bold text-white text-base md:text-lg mb-3 md:mb-6 relative">
               Event
-              <div className="absolute -bottom-2 left-1/2 md:left-0 transform -translate-x-1/2 md:transform-none w-8 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
+              <div className="absolute -bottom-1 md:-bottom-2 left-1/2 md:left-0 transform -translate-x-1/2 md:transform-none w-6 md:w-8 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               <li>
                 <Link
                   href="#about"
-                  className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center group justify-center md:justify-start"
+                  className="text-gray-300 hover:text-orange-400 transition-colors text-xs md:text-sm flex items-center group justify-center md:justify-start"
                 >
-                  <div className="w-1.5 h-1.5 bg-orange-500/50 rounded-full mr-3 group-hover:bg-orange-400 transition-colors"></div>
+                  <div className="w-1 md:w-1.5 h-1 md:h-1.5 bg-orange-500/50 rounded-full mr-2 md:mr-3 group-hover:bg-orange-400 transition-colors"></div>
                   About Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Resources - Centered */}
-          <div className="space-y-4 flex flex-col items-center md:items-start">
-            <h4 className="font-bold text-white text-lg mb-6 relative">
+          {/* Resources */}
+          <div className="space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
+            <h4 className="font-bold text-white text-base md:text-lg mb-3 md:mb-6 relative">
               Resources
-              <div className="absolute -bottom-2 left-1/2 md:left-0 transform -translate-x-1/2 md:transform-none w-8 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
+              <div className="absolute -bottom-1 md:-bottom-2 left-1/2 md:left-0 transform -translate-x-1/2 md:transform-none w-6 md:w-8 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               <li>
                 <Link
                   href="/"
-                  className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center group justify-center md:justify-start"
+                  className="text-gray-300 hover:text-orange-400 transition-colors text-xs md:text-sm flex items-center group justify-center md:justify-start"
                 >
-                  <div className="w-1.5 h-1.5 bg-orange-500/50 rounded-full mr-3 group-hover:bg-orange-400 transition-colors"></div>
+                  <div className="w-1 md:w-1.5 h-1 md:h-1.5 bg-orange-500/50 rounded-full mr-2 md:mr-3 group-hover:bg-orange-400 transition-colors"></div>
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   href="/code-of-conduct"
-                  className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center group justify-center md:justify-start"
+                  className="text-gray-300 hover:text-orange-400 transition-colors text-xs md:text-sm flex items-center group justify-center md:justify-start"
                 >
-                  <div className="w-1.5 h-1.5 bg-orange-500/50 rounded-full mr-3 group-hover:bg-orange-400 transition-colors"></div>
+                  <div className="w-1 md:w-1.5 h-1 md:h-1.5 bg-orange-500/50 rounded-full mr-2 md:mr-3 group-hover:bg-orange-400 transition-colors"></div>
                   Code of Conduct
                 </Link>
               </li>
               <li>
                 <Link
                   href="/privacy"
-                  className="text-gray-300 hover:text-orange-400 transition-colors text-sm flex items-center group justify-center md:justify-start"
+                  className="text-gray-300 hover:text-orange-400 transition-colors text-xs md:text-sm flex items-center group justify-center md:justify-start"
                 >
-                  <div className="w-1.5 h-1.5 bg-orange-500/50 rounded-full mr-3 group-hover:bg-orange-400 transition-colors"></div>
+                  <div className="w-1 md:w-1.5 h-1 md:h-1.5 bg-orange-500/50 rounded-full mr-2 md:mr-3 group-hover:bg-orange-400 transition-colors"></div>
                   Policy
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Connect With Us - Centered */}
-          <div className="space-y-4 flex flex-col items-center md:items-start">
-            <h4 className="font-bold text-white text-lg mb-6 relative">
-              Connect With Us
-              <div className="absolute -bottom-2 left-1/2 md:left-0 transform -translate-x-1/2 md:transform-none w-8 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
+          {/* Connect With Us */}
+          <div className="space-y-3 md:space-y-4 flex flex-col items-center md:items-start">
+            <h4 className="font-bold text-white text-base md:text-lg mb-3 md:mb-6 relative">
+              Connect
+              <div className="absolute -bottom-1 md:-bottom-2 left-1/2 md:left-0 transform -translate-x-1/2 md:transform-none w-6 md:w-8 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
             </h4>
-            <div className="flex gap-4 justify-center md:justify-start">
+            <div className="flex gap-3 md:gap-4 justify-center md:justify-start">
               <a
                 href="https://www.facebook.com/awsugcebu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center hover:from-blue-600 hover:to-blue-700 hover:border-blue-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
-                  <Facebook className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center hover:from-blue-600 hover:to-blue-700 hover:border-blue-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
+                  <Facebook className="w-4 h-4 md:w-5 md:h-5 text-gray-300 group-hover:text-white transition-colors" />
                 </div>
               </a>
               <a href="mailto:awscloudclubctu@gmail.com" className="group relative">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center hover:from-orange-600 hover:to-orange-700 hover:border-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/20">
-                  <Mail className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center hover:from-orange-600 hover:to-orange-700 hover:border-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/20">
+                  <Mail className="w-4 h-4 md:w-5 md:h-5 text-gray-300 group-hover:text-white transition-colors" />
                 </div>
               </a>
             </div>
