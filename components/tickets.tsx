@@ -356,48 +356,7 @@ export function Tickets() {
           ))}
         </div>
 
-        {/* Enhanced Event Details */}
-        <div className="text-center mb-16">
-          <h3 className="text-3xl md:text-4xl font-black text-white mb-12">
-            Join us on{" "}
-            <span className="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
-              September 13, 2025
-            </span>
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-            {[
-              { icon: Calendar, label: "September 13, 2025", color: "orange" },
-              { icon: Clock, label: "1:00 PM - 7:00 PM (PHT)", color: "blue" },
-              { icon: Users, label: "500+ Expected Attendees", color: "purple" }
-            ].map((item, index) => (
-              <div key={index} className="relative group">
-                <div className={`absolute inset-0 bg-gradient-to-r ${
-                  item.color === 'orange' ? 'from-orange-500/20 to-yellow-500/20' :
-                  item.color === 'blue' ? 'from-blue-500/20 to-cyan-500/20' :
-                  'from-purple-500/20 to-pink-500/20'
-                } rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-
-                <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 group-hover:border-orange-500/30 transition-all duration-500">
-                  <item.icon className="w-8 h-8 text-orange-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="font-bold text-white text-lg group-hover:text-orange-400 transition-colors duration-300">
-                    {item.label}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="relative group max-w-2xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-2xl blur-xl"></div>
-            <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 group-hover:border-orange-500/30 transition-all duration-500">
-              <div className="flex items-center justify-center gap-3">
-                <MapPin className="w-6 h-6 text-orange-400" />
-                <span className="font-bold text-white text-xl">UP Cebu Performing Arts Hall, Gorordo Avenue, Lahug</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Enhanced Map */}
         <div className="max-w-6xl mx-auto mb-12">
