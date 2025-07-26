@@ -1134,3 +1134,114 @@
     object-fit: cover;
   }
 }
+/* Enhanced smooth animations for better UX */
+@keyframes smooth-twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes smooth-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(4px) rotate(-1deg); }
+}
+
+@keyframes smooth-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 5px rgba(251, 146, 60, 0.3));
+    opacity: 0.4;
+  }
+  50% { 
+    filter: drop-shadow(0 0 15px rgba(251, 146, 60, 0.6));
+    opacity: 0.8;
+  }
+}
+
+@keyframes countdown-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    border-color: rgba(251, 146, 60, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    border-color: rgba(251, 146, 60, 0.8);
+  }
+}
+
+/* Utility classes for smooth animations */
+.animate-smooth-twinkle {
+  animation: smooth-twinkle 4s ease-in-out infinite;
+}
+
+.animate-smooth-float {
+  animation: smooth-float 6s ease-in-out infinite;
+}
+
+.animate-smooth-glow {
+  animation: smooth-glow 5s ease-in-out infinite;
+}
+
+.animate-countdown-pulse {
+  animation: countdown-pulse 2s ease-in-out infinite;
+}
+
+/* Performance optimizations */
+.constellation-element {
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Smooth transitions for all interactive elements */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* Progress bar animation for carousel */
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Carousel navigation enhancements */
+.carousel-nav-button {
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-nav-button:hover {
+  transform: scale(1.1);
+  backdrop-filter: blur(12px);
+}
+
+/* Thumbnail hover effects */
+.thumbnail-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.thumbnail-button:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail-button.active {
+  transform: scale(1.1);
+}
