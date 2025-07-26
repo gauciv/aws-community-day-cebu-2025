@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Users, ChevronDown } from "lucide-react"
+import { Calendar, MapPin, Users, ChevronDown, Zap, ExternalLink } from "lucide-react"
 import { useEffect, useState } from "react"
 import { CountdownClock } from "./countdown-clock"
 
@@ -130,7 +130,7 @@ export function Hero() {
           </div>
 
           {/* Additional Main Constellations for Better Coverage */}
-          
+
           {/* Aquarius - Top Center Right */}
           <div
             className="constellation-svg constellation-hover-spin"

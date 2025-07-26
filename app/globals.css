@@ -401,6 +401,106 @@
     50% { opacity: 0.8; }
   }
 
+  /* Enhanced animations for constellation elements */
+  @keyframes gentle-shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+
+  @keyframes gentle-shimmer-delayed {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.7; }
+  }
+
+  @keyframes constellation-hover-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  @keyframes float-reverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(-2deg); }
+  }
+
+  @keyframes shroud-depth {
+    0%, 100% { opacity: 0.03; transform: scale(1); }
+    50% { opacity: 0.08; transform: scale(1.1); }
+  }
+
+  @keyframes ray-pulse {
+    0%, 100% { 
+      opacity: 0.04; 
+      transform: rotate(var(--ray-rotation, 0deg)) scale(1); 
+    }
+    50% { 
+      opacity: 0.12; 
+      transform: rotate(var(--ray-rotation, 0deg)) scale(1.2); 
+    }
+  }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Reduce section padding for mobile */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Scale down constellation background elements on mobile */
+  .constellation-svg {
+    transform: scale(0.7) !important;
+    opacity: 0.3 !important;
+  }
+
+  /* Optimize text sizes for mobile readability */
+  h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Reduce gradient orb sizes on mobile */
+  .constellation-background .absolute {
+    width: 60% !important;
+    height: 60% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further optimize for very small screens */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .constellation-svg {
+    transform: scale(0.5) !important;
+    opacity: 0.2 !important;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
   @keyframes gentle-shimmer {
     0%, 100% { 
       opacity: 0.4;
