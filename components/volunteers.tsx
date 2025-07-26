@@ -170,7 +170,7 @@ export function Volunteers() {
       image: "/images/volunteers/heart-sumicad.jpeg"
     },
     { name: "Fabiola Villanueva",
-      image: "/images/volunteers/liv-jewel-monsalud.jpeg"
+      image: "/images/volunteers/fabiola-villanueva.jpeg"
     },
     { name: "Andre Salonga" },
     { name: "Cris Villem P. Saniel" },
