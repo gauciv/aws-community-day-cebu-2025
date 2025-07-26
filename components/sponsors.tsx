@@ -132,7 +132,7 @@ export function Sponsors() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
           {/* Enhanced Sponsorship Information */}
           <div className="space-y-8">
             <div
@@ -141,7 +141,7 @@ export function Sponsors() {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
                 <Card className="relative border-2 border-white/20 hover:border-orange-500/30 shadow-2xl hover:shadow-orange-500/20 transition-all duration-700 bg-white/5 backdrop-blur-sm">
-                  <CardContent className="p-10">
+                  <CardContent className="p-6 sm:p-8 lg:p-10">
                     <div className="text-center mb-10">
                       <div className="relative mb-6">
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
@@ -150,11 +150,11 @@ export function Sponsors() {
                         </div>
                       </div>
                       
-                      <h3 className="text-3xl md:text-4xl font-black text-white mb-6 group-hover:text-orange-400 transition-colors duration-500">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6 group-hover:text-orange-400 transition-colors duration-500">
                         Sponsorship Primer
                       </h3>
                       
-                      <p className="text-gray-300 mb-8 text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                      <p className="text-gray-300 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed group-hover:text-white transition-colors duration-500"></p>
                         Download our comprehensive sponsorship primer to learn about all available packages, benefits, and
                         opportunities to partner with AWS Community Day Cebu 2025.
                       </p>
@@ -237,7 +237,7 @@ export function Sponsors() {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
                 <Card className="relative border-2 border-white/20 shadow-2xl shadow-orange-500/10 bg-white/5 backdrop-blur-sm hover:border-orange-500/30 transition-all duration-700">
-                  <CardContent className="p-10">
+                  <CardContent className="p-6 sm:p-8 lg:p-10">
                     <div className="text-center mb-10">
                       <div className="relative mb-6">
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-xl opacity-60 animate-pulse"></div>

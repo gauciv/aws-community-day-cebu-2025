@@ -74,11 +74,11 @@ export function Tickets() {
         "Networking opportunities",
         "Access to all tech talks",
       ],
-      badge: "Most Popular",
-      badgeColor: "bg-gradient-to-r from-orange-500 to-yellow-500",
-      popular: true,
+      badge: "Essential",
+      badgeColor: "bg-gradient-to-r from-gray-500 to-gray-600",
+      popular: false,
       icon: Users,
-      glowColor: "orange"
+      glowColor: "gray"
     },
     {
       name: "Builder+",
@@ -90,12 +90,13 @@ export function Tickets() {
         "Main Event access (1:00 PM–7:00 PM)",
         "General merchandise",
         "Hands-on learning experience",
+        "Priority seating",
       ],
-      badge: "Best Value",
-      badgeColor: "bg-gradient-to-r from-blue-500 to-cyan-500",
-      popular: false,
+      badge: "Most Popular",
+      badgeColor: "bg-gradient-to-r from-orange-500 to-yellow-500",
+      popular: true,
       icon: Zap,
-      glowColor: "blue"
+      glowColor: "orange"
     },
     {
       name: "VIP",
@@ -252,7 +253,7 @@ export function Tickets() {
         )}
 
         {/* Enhanced Ticket Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto mb-16 sm:mb-20">
           {ticketTypes.map((ticket, index) => (
             <div
               key={index}
@@ -270,81 +271,84 @@ export function Tickets() {
                 <div className={`absolute inset-0 bg-gradient-to-r ${
                   ticket.glowColor === 'orange' ? 'from-orange-500/20 to-yellow-500/20' :
                   ticket.glowColor === 'blue' ? 'from-blue-500/20 to-cyan-500/20' :
+                  ticket.glowColor === 'gray' ? 'from-gray-500/20 to-gray-600/20' :
                   'from-purple-500/20 to-pink-500/20'
                 } rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10`}></div>
 
                 {ticket.popular && (
-                  <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
-                    <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-6 py-2 text-base font-black shadow-xl animate-pulse">
-                      <Star className="w-4 h-4 mr-2" />
+                  <div className="absolute -top-4 sm:-top-6 left-1/2 transform -translate-x-1/2 z-20">
+                    <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-3 sm:px-6 py-1 sm:py-2 text-sm sm:text-base font-black shadow-xl animate-pulse">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                       Most Popular
                     </Badge>
                   </div>
                 )}
 
-                <CardHeader className="text-center pb-6 relative">
+                <CardHeader className="text-center pb-4 sm:pb-6 relative p-4 sm:p-6">
                   {/* Floating sparkles */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
                     <Sparkles className="w-5 h-5 text-orange-400 animate-twinkle" />
                   </div>
                   
-                  <div className="mb-6">
-                    <div className={`w-20 h-20 mx-auto mb-6 rounded-full ${ticket.badgeColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
-                      <ticket.icon className="w-10 h-10 text-white" />
+                  <div className="mb-4 sm:mb-6">
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full ${ticket.badgeColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
+                      <ticket.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                     </div>
-                    <Badge className={`${ticket.badgeColor} text-white border-0 mb-6 text-base font-bold px-4 py-2 shadow-lg`}>
+                    <Badge className={`${ticket.badgeColor} text-white border-0 mb-4 sm:mb-6 text-sm sm:text-base font-bold px-3 sm:px-4 py-1 sm:py-2 shadow-lg`}>
                       {ticket.badge}
                     </Badge>
                   </div>
                   
-                  <CardTitle className="text-3xl font-black text-white mb-4 group-hover:text-orange-400 transition-colors duration-500">
+                  <CardTitle className="text-2xl sm:text-3xl font-black text-white mb-3 sm:mb-4 group-hover:text-orange-400 transition-colors duration-500">
                     {ticket.name}
                   </CardTitle>
                   
-                  <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                     {isEarlyBirdActive ? (
                       <>
-                        <span className="text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
+                        <span className="text-3xl sm:text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                           {ticket.earlyBirdPrice}
                         </span>
-                        <span className="text-xl text-gray-400 line-through">{ticket.price}</span>
+                        <span className="text-lg sm:text-xl text-gray-400 line-through">{ticket.price}</span>
                       </>
                     ) : (
-                      <span className="text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
+                      <span className="text-3xl sm:text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                         {ticket.price}
                       </span>
                     )}
                   </div>
                   
-                  <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-500">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-500">
                     {ticket.description}
                   </p>
                 </CardHeader>
 
-                <CardContent className="space-y-8 flex-1 flex flex-col">
-                  <ul className="space-y-4 flex-1">
+                <CardContent className="p-6 sm:p-8 flex flex-col h-full">
+                  <ul className="space-y-3 sm:space-y-4 flex-1 mb-6 sm:mb-8">
                     {ticket.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-3 group/item">
-                        <CheckCircle className="w-6 h-6 text-green-400 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300" />
-                        <span className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+                      <li key={featureIndex} className="flex items-start gap-2 sm:gap-3 group/item">
+                        <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300" />
+                        <span className="text-sm sm:text-base text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
                           {feature}
                         </span>
                       </li>
                     ))}
                   </ul>
 
-                  <Button
-                    onClick={handleRegisterClick}
-                    className={`w-full font-black text-lg py-4 transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
-                      ticket.popular
-                        ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90"
-                        : "bg-white/10 backdrop-blur-sm border-2 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500/50"
-                    }`}
-                  >
-                    {ticket.popular && <Zap className="w-5 h-5 mr-2" />}
-                    Register Now
-                    <ExternalLink className="w-5 h-5 ml-2" />
-                  </Button>
+                  <div className="mt-auto">
+                    <Button
+                      onClick={handleRegisterClick}
+                      className={`w-full font-black text-base sm:text-lg py-3 sm:py-4 transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
+                        ticket.popular
+                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90"
+                          : "bg-white/10 backdrop-blur-sm border-2 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500/50"
+                      }`}
+                    >
+                      {ticket.popular && <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />}
+                      Register Now
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
