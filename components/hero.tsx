@@ -21,7 +21,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-blue-900 via-blue-600 to-blue-900">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24" style={{background: 'linear-gradient(135deg, #1e40af 0%, #1e40af 100%)'}}>
       {/* Enhanced Constellation Background with Connected Dots Pattern */}
       <div className="absolute inset-0 constellation-background">
         {/* Soft cloud elements with subtle movement */}
