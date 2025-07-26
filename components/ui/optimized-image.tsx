@@ -66,7 +66,7 @@ export function OptimizedImage({
   const imageLoading = priority ? "eager" : loading;
 
   return (
-    <div className={cn("relative", fill ? "" : "inline-block")}>
+    <div className={cn("relative", fill ? "w-full h-full" : "inline-block")}>
       <Image
         src={src}
         alt={alt}
