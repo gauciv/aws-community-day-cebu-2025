@@ -155,6 +155,148 @@
     animation: gentleTwinkle 4s ease-in-out infinite;
   }
 
+  .constellation-dot-tiny {
+    width: 2px;
+    height: 2px;
+  }
+
+  .constellation-dot-small {
+    width: 3px;
+    height: 3px;
+  }
+
+  .constellation-dot-medium {
+    width: 4px;
+    height: 4px;
+  }
+
+  .constellation-dot-large {
+    width: 6px;
+    height: 6px;
+  }
+
+  .constellation-star {
+    position: absolute;
+    background: #f59e0b;
+    opacity: 0.7;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .constellation-star-small {
+    width: 6px;
+    height: 6px;
+  }
+
+  .constellation-star-medium {
+    width: 8px;
+    height: 8px;
+  }
+
+  .constellation-star-large {
+    width: 10px;
+    height: 10px;
+  }
+
+  .constellation-circle {
+    position: absolute;
+    border: 1px solid #f59e0b;
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+
+  .constellation-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+    opacity: 0.3;
+  }
+
+  .constellation-glow {
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+  }
+
+  /* Enhanced Animations */
+  @keyframes gentleTwinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+
+  @keyframes twinkle-slow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.9; }
+  }
+
+  @keyframes twinkle-fast {
+    0%, 100% { opacity: 0.2; }
+    25% { opacity: 0.8; }
+    75% { opacity: 0.6; }
+  }
+
+  @keyframes twinkle-delayed {
+    0%, 100% { opacity: 0.5; }
+    33% { opacity: 0.2; }
+    66% { opacity: 0.9; }
+  }
+
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes rotate-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+  }
+
+  @keyframes pulse-fast {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+  }
+
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+  }
+
+  @keyframes fade-pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.2); }
+    50% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+
+  @keyframes float-reverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(-1deg); }
+  }
+
+  /* Apply animations */
+  .animate-twinkle-slow { animation: twinkle-slow 3s ease-in-out infinite; }
+  .animate-twinkle-fast { animation: twinkle-fast 2s ease-in-out infinite; }
+  .animate-twinkle-delayed { animation: twinkle-delayed 4s ease-in-out infinite; }
+  .animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
+  .animate-rotate-reverse { animation: rotate-reverse 25s linear infinite; }
+  .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+  .animate-pulse-fast { animation: pulse-fast 2s ease-in-out infinite; }
+  .animate-bounce-subtle { animation: bounce-subtle 3s ease-in-out infinite; }
+  .animate-fade-pulse { animation: fade-pulse 4s ease-in-out infinite; }
+  .animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+  .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+  .animate-float-reverse { animation: float-reverse 8s ease-in-out infinite; }
+
   .constellation-dot.constellation-glow {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.3), 0 0 30px rgba(245, 158, 11, 0.1);
     opacity: 0.8;

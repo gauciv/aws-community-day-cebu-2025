@@ -106,7 +106,7 @@ export function Hero() {
           <div className="constellation-line" style={{top: '30%', left: '20%', width: '40px', transform: 'rotate(15deg)'}}></div>
           <div className="constellation-line constellation-glow" style={{bottom: '35%', right: '25%', width: '35px', transform: 'rotate(-35deg)'}}></div>
           <div className="constellation-line" style={{top: '55%', left: '25%', width: '30px', transform: 'rotate(60deg)'}}></div>
-
+        </div>
         {/* Enhanced Constellation Elements with More Movement */}
         <div className="constellation-container">
           {/* Top Left Cluster - Enhanced */}
@@ -524,8 +524,7 @@ export function Hero() {
               <span className="relative z-10">Learn More</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-400/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             </Button>
-          </div>
-        </div>
+          </div></div>
       </div>
 
       {/* Mobile-optimized Countdown Clock */}
