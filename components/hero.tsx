@@ -13,11 +13,21 @@ export function Hero() {
   }, [])
 
   const handleRegisterClick = () => {
-    window.open("https://ticketnation.ph/events/aws_community_day_cebu_-_2025", "_blank", "noopener,noreferrer")
+    try {
+      window.open("https://ticketnation.ph/events/aws_community_day_cebu_-_2025", "_blank", "noopener,noreferrer")
+    } catch (error) {
+      console.error('Error opening registration link:', error)
+      alert('Unable to open registration link. Please visit ticketnation.ph directly.')
+    }
   }
 
   const handleLearnMoreClick = () => {
-    window.open("https://www.facebook.com/awsugcebu", "_blank", "noopener,noreferrer")
+    try {
+      window.open("https://www.facebook.com/awsugcebu", "_blank", "noopener,noreferrer")
+    } catch (error) {
+      console.error('Error opening Facebook link:', error)
+      alert('Unable to open Facebook link. Please visit facebook.com/awsugcebu directly.')
+    }
   }
 
   return (

@@ -57,7 +57,12 @@ export function Tickets() {
   }, [])
 
   const handleRegisterClick = () => {
-    window.open("https://ticketnation.ph/events/aws_community_day_cebu_2025/tickets", "_blank", "noopener,noreferrer")
+    try {
+      window.open("https://ticketnation.ph/events/aws_community_day_cebu_2025/tickets", "_blank", "noopener,noreferrer")
+    } catch (error) {
+      console.error('Error opening tickets link:', error)
+      alert('Unable to open tickets link. Please visit ticketnation.ph directly.')
+    }
   }
 
   const ticketTypes = [

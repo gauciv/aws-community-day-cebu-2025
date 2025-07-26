@@ -163,16 +163,16 @@ export function Volunteers() {
     { name: "Chriscia Xanelle Llamas",
       image: "/images/volunteers/chriscia-xanelle-llamas.jpg" 
     },
-    { name: "Fabiola Villanueva",
-      image: "/images/volunteers/liv-jewel-monsalud.jpeg"
-    },
     { name: "Liv Jewel Monsalud",
       image: "/images/volunteers/liv-jewel-monsalud.jpeg"
     },
-    { name: "Andre Salonga" },
     { name: "Heart Alvern Sumicad",
       image: "/images/volunteers/heart-sumicad.jpeg"
     },
+    { name: "Fabiola Villanueva",
+      image: "/images/volunteers/liv-jewel-monsalud.jpeg"
+    },
+    { name: "Andre Salonga" },
     { name: "Cris Villem P. Saniel" },
     { name: "Lev Altair Imetri S. Aguirre" },
     { name: "Charles Vincent Montero" }
@@ -180,13 +180,18 @@ export function Volunteers() {
 
   // Mobile-first responsive volunteers per row
   const getVolunteersPerRow = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth < 640) return 2 // sm
-      if (window.innerWidth < 768) return 3 // md  
-      if (window.innerWidth < 1024) return 4 // lg
-      return 5 // xl+
+    try {
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth < 640) return 2 // sm
+        if (window.innerWidth < 768) return 3 // md  
+        if (window.innerWidth < 1024) return 4 // lg
+        return 5 // xl+
+      }
+      return 5
+    } catch (error) {
+      console.error('Error calculating volunteers per row:', error)
+      return 5
     }
-    return 5
   }
   
   const volunteersPerRow = getVolunteersPerRow()
@@ -331,9 +336,9 @@ export function Volunteers() {
                   </div>
                 )}
                 
-                {/* Mobile-optimized overlay with name */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                  <h4 className="text-white font-bold text-xs sm:text-sm text-center px-2 sm:px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 leading-tight">
+                {/* Name overlay at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 p-2">
+                  <h4 className="text-white font-black text-xs sm:text-sm text-center leading-tight tracking-wide uppercase">
                     {volunteer.name}
                   </h4>
                 </div>

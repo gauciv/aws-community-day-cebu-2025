@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { OptimizedImage } from "@/components/ui/optimized-image"
-import { Sparkles, Star, Zap, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
+import { Sparkles, Star, Zap, ChevronLeft, ChevronRight } from "lucide-react"
 
 export function About() {
   const [isVisible, setIsVisible] = useState(false)
@@ -41,28 +41,41 @@ export function About() {
 
   // Navigation functions
   const goToNext = () => {
-    setIsImageLoading(true)
-    setSelectedPhoto((prev) => (prev + 1) % galleryPhotos.length)
-    setTimeout(() => setIsImageLoading(false), 300)
-  }
-
-  const goToPrevious = () => {
-    setIsImageLoading(true)
-    setSelectedPhoto((prev) => (prev - 1 + galleryPhotos.length) % galleryPhotos.length)
-    setTimeout(() => setIsImageLoading(false), 300)
-  }
-
-  const goToSlide = (index: number) => {
-    if (index !== selectedPhoto) {
+    try {
       setIsImageLoading(true)
-      setSelectedPhoto(index)
+      setSelectedPhoto((prev) => (prev + 1) % galleryPhotos.length)
       setTimeout(() => setIsImageLoading(false), 300)
+    } catch (error) {
+      console.error('Error navigating to next photo:', error)
+      setIsImageLoading(false)
     }
   }
 
-  const toggleAutoplay = () => {
-    setIsAutoPlaying(!isAutoPlaying)
+  const goToPrevious = () => {
+    try {
+      setIsImageLoading(true)
+      setSelectedPhoto((prev) => (prev - 1 + galleryPhotos.length) % galleryPhotos.length)
+      setTimeout(() => setIsImageLoading(false), 300)
+    } catch (error) {
+      console.error('Error navigating to previous photo:', error)
+      setIsImageLoading(false)
+    }
   }
+
+  const goToSlide = (index: number) => {
+    try {
+      if (index !== selectedPhoto && index >= 0 && index < galleryPhotos.length) {
+        setIsImageLoading(true)
+        setSelectedPhoto(index)
+        setTimeout(() => setIsImageLoading(false), 300)
+      }
+    } catch (error) {
+      console.error('Error navigating to slide:', error)
+      setIsImageLoading(false)
+    }
+  }
+
+
 
   // Keyboard navigation
   useEffect(() => {
@@ -71,9 +84,6 @@ export function About() {
         goToPrevious()
       } else if (event.key === 'ArrowRight') {
         goToNext()
-      } else if (event.key === ' ') {
-        event.preventDefault()
-        toggleAutoplay()
       }
     }
 
@@ -308,14 +318,7 @@ export function About() {
                     <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
                   </button>
 
-                  {/* Autoplay Control - Mobile optimized */}
-                  <button
-                    onClick={toggleAutoplay}
-                    className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
-                    aria-label={isAutoPlaying ? "Pause slideshow" : "Play slideshow"}
-                  >
-                    {isAutoPlaying ? <Pause className="w-4 h-4 sm:w-5 sm:h-5" /> : <Play className="w-4 h-4 sm:w-5 sm:h-5" />}
-                  </button>
+
                   
                   {/* Minimal overlay with counter only */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
