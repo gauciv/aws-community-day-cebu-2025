@@ -140,10 +140,32 @@
     pointer-events: none;
   }
 
+  /* Constellation network - Enhanced with more star shapes and animations */
   .constellation-container {
     position: absolute;
     inset: 0;
-    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Constellation SVG styles */
+  .constellation-svg {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .constellation-glow-svg {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) 
+            drop-shadow(0 0 16px rgba(147, 197, 253, 0.3)) 
+            drop-shadow(0 0 24px rgba(59, 130, 246, 0.2));
+    transition: all 0.3s ease-in-out;
+  }
+
+  .constellation-glow-svg:hover {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6)) 
+            drop-shadow(0 0 24px rgba(147, 197, 253, 0.5)) 
+            drop-shadow(0 0 36px rgba(59, 130, 246, 0.3));
   }
 
   /* Enhanced Constellation Elements with Glows */
