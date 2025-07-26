@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useEffect, useState } from "react"
@@ -134,7 +133,7 @@ export function Tickets() {
               className="w-full h-auto"
             />
           </div>
-          
+
           <div
             className="constellation-svg animate-ray-pulse"
             style={{ bottom: "30%", right: "18%", width: "180px", height: "auto", opacity: "0.06", '--ray-rotation': '-40deg' } as React.CSSProperties}
@@ -157,7 +156,7 @@ export function Tickets() {
               className="w-full h-auto"
             />
           </div>
-          
+
           {/* Constellation Pricing Accents */}
           <div
             className="constellation-svg constellation-hover-spin"
@@ -182,12 +181,12 @@ export function Tickets() {
               style={{ opacity: "0.35" }}
             />
           </div>
-          
+
           {/* Enhanced multi-layered gradient orbs */}
           <div className="absolute top-32 right-1/4 w-40 h-40 bg-gradient-to-r from-orange-500/10 via-amber-500/15 to-yellow-500/12 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-48 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/8 via-purple-500/12 to-indigo-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
           <div className="absolute top-60 left-1/6 w-28 h-28 bg-gradient-to-r from-green-500/8 via-emerald-500/10 to-teal-500/8 rounded-full blur-2xl animate-pulse delay-2000"></div>
-          
+
           {/* Optimized constellation network */}
           <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '25%', left: '18%'}}></div>
           <div className="constellation-dot constellation-dot-small" style={{top: '40%', right: '22%'}}></div>
@@ -284,14 +283,14 @@ export function Tickets() {
                   </div>
                 )}
 
-                
+
 
                 <CardHeader className="text-center pb-4 sm:pb-6 relative p-4 sm:p-6">
                   {/* Floating sparkles */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
                     <Sparkles className="w-5 h-5 text-orange-400 animate-twinkle" />
                   </div>
-                  
+
                   <div className="mb-4 sm:mb-6">
                     <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full ${ticket.badgeColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
                       <ticket.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
@@ -300,11 +299,11 @@ export function Tickets() {
                       {ticket.badge}
                     </Badge>
                   </div>
-                  
+
                   <CardTitle className="text-2xl sm:text-3xl font-black text-white mb-3 sm:mb-4 group-hover:text-orange-400 transition-colors duration-500">
                     {ticket.name}
                   </CardTitle>
-                  
+
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                     {isEarlyBirdActive ? (
                       <>
@@ -319,12 +318,12 @@ export function Tickets() {
                       </span>
                     )}
                   </div>
-                  
+
                   <p className="text-sm sm:text-base text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-500">
                     {ticket.description}
                   </p>
                 </CardHeader>
-                
+
                 <CardContent className="p-6 sm:p-8 flex flex-col h-full">
                   <ul className="space-y-3 sm:space-y-4 flex-1 mb-6 sm:mb-8">
                     {ticket.features.map((feature, featureIndex) => (
@@ -336,8 +335,22 @@ export function Tickets() {
                       </li>
                     ))}
                   </ul>
-                  </CardContent>
-                
+
+                  <div className="mt-auto">
+                    <Button
+                      onClick={handleRegisterClick}
+                      className={`w-full py-3 font-bold text-base transition-all duration-500 transform hover:scale-105 ${
+                        ticket.popular
+                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 shadow-xl shadow-orange-500/30"
+                          : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm"
+                      }`}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Register Now
+                    </Button>
+                  </div>
+                </CardContent>
+
               </Card>
             </div>
           ))}
@@ -351,7 +364,7 @@ export function Tickets() {
               September 13, 2025
             </span>
           </h3>
-          
+
           <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
             {[
               { icon: Calendar, label: "September 13, 2025", color: "orange" },
@@ -364,7 +377,7 @@ export function Tickets() {
                   item.color === 'blue' ? 'from-blue-500/20 to-cyan-500/20' :
                   'from-purple-500/20 to-pink-500/20'
                 } rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                
+
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 group-hover:border-orange-500/30 transition-all duration-500">
                   <item.icon className="w-8 h-8 text-orange-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                   <span className="font-bold text-white text-lg group-hover:text-orange-400 transition-colors duration-300">
@@ -374,7 +387,7 @@ export function Tickets() {
               </div>
             ))}
           </div>
-          
+
           <div className="relative group max-w-2xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-2xl blur-xl"></div>
             <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 group-hover:border-orange-500/30 transition-all duration-500">
