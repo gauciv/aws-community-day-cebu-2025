@@ -142,6 +142,7 @@ export function Speakers() {
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                     sizes="(max-width: 768px) 288px, 320px"
                     priority
+                    loading="eager"
                   />
                   
                   {/* Enhanced crown badge */}
