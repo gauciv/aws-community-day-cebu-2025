@@ -335,19 +335,20 @@ export function Tickets() {
                     ))}
                   </ul>
 
-                  <div className="mt-auto pt-4">
+                  <div className="mt-auto pt-6 border-t border-white/10">
                     <Button
                       onClick={handleRegisterClick}
-                      className={`w-full font-black text-sm sm:text-base md:text-lg py-3 sm:py-4 transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl ${
+                      size="lg"
+                      className={`w-full font-black text-base md:text-lg py-4 md:py-5 transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl group/btn ${
                         ticket.popular
-                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90"
-                          : "bg-white/10 backdrop-blur-sm border-2 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500/50"
+                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 hover:shadow-orange-500/50"
+                          : "bg-white/10 backdrop-blur-sm border-2 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500/50 hover:text-white"
                       }`}
                     >
-                      <div className="flex items-center justify-center gap-1 sm:gap-2">
-                        {ticket.popular && <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />}
-                        <span>Register Now</span>
-                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                      <div className="flex items-center justify-center gap-2">
+                        {ticket.popular && <Zap className="w-4 h-4 md:w-5 md:h-5 group-hover/btn:animate-pulse" />}
+                        <span className="font-black">Register Now</span>
+                        <ExternalLink className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
                       </div>
                     </Button>
                   </div>
