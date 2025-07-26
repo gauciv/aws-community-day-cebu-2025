@@ -1,0 +1,24 @@
+
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="#f59e0b" filter="url(#glow)">
+    <!-- Complex constellation network -->
+    <path d="M150 80 L170 60 L190 80 L170 100 Z" />
+    <line x1="190" y1="80" x2="280" y2="120" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M280 120 L300 100 L320 120 L300 140 Z" />
+    <line x1="320" y1="120" x2="380" y2="180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M380 180 L400 160 L420 180 L400 200 Z" />
+    <!-- Additional elements -->
+    <circle cx="250" cy="200" r="4" fill="#f59e0b"/>
+    <circle cx="350" cy="250" r="10" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="480" cy="90" r="6" fill="#f59e0b"/>
+  </g>
+</svg>
