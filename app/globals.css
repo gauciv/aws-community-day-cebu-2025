@@ -168,6 +168,29 @@
             drop-shadow(0 0 36px rgba(59, 130, 246, 0.3));
   }
 
+  /* Orange glow for constellation elements */
+  .constellation-glow-orange {
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5)) 
+            drop-shadow(0 0 12px rgba(245, 158, 11, 0.3)) 
+            drop-shadow(0 0 18px rgba(245, 158, 11, 0.2));
+    transition: all 0.3s ease-in-out;
+  }
+
+  .constellation-glow-orange:hover {
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.7)) 
+            drop-shadow(0 0 20px rgba(245, 158, 11, 0.5)) 
+            drop-shadow(0 0 30px rgba(245, 158, 11, 0.3));
+  }
+
+  /* Hover spin effect */
+  .constellation-hover-spin {
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .constellation-hover-spin:hover {
+    transform: rotate(360deg);
+  }
+
   /* Enhanced Constellation Elements with Glows */
   .constellation-dot {
     position: absolute;
@@ -340,6 +363,32 @@
     66% { opacity: 0.9; }
   }
 
+  @keyframes twinkle-gentle {
+    0%, 100% { 
+      opacity: 0.3; 
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.7; 
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes draw-in {
+    0% { 
+      opacity: 0; 
+      transform: scale(0.5) rotate(-90deg);
+    }
+    50% { 
+      opacity: 0.5; 
+      transform: scale(1.1) rotate(0deg);
+    }
+    100% { 
+      opacity: 0.4; 
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
   @keyframes rotate-slow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -389,6 +438,7 @@
   .animate-twinkle-slow { animation: twinkle-slow 3s ease-in-out infinite; }
   .animate-twinkle-fast { animation: twinkle-fast 2s ease-in-out infinite; }
   .animate-twinkle-delayed { animation: twinkle-delayed 4s ease-in-out infinite; }
+  .animate-twinkle-gentle { animation: twinkle-gentle 4s ease-in-out infinite; }
   .animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
   .animate-rotate-reverse { animation: rotate-reverse 25s linear infinite; }
   .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
@@ -398,6 +448,8 @@
   .animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
   .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
   .animate-float-reverse { animation: float-reverse 8s ease-in-out infinite; }
+  .animate-draw-in { animation: draw-in 3s ease-in-out; }
+  .animate-draw-in-delayed { animation: draw-in 3s ease-in-out 1s; }
 
   .constellation-dot.constellation-glow {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.3), 0 0 30px rgba(245, 158, 11, 0.1);
