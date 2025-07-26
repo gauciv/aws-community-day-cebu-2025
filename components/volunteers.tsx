@@ -383,19 +383,17 @@ export function Volunteers() {
               }`}
               style={{ animationDelay: `${(index % 20) * 50}ms` }}
             >
-              <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 next-image-fill-container">
                 {volunteer.image ? (
-                  <div className="relative w-full h-full aspect-square">
-                    <OptimizedImage
-                      src={volunteer.image}
-                      alt={volunteer.name}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                      loading={index < 10 ? "eager" : "lazy"}
-                      priority={index < 4}
-                    />
-                  </div>
+                  <OptimizedImage
+                    src={volunteer.image}
+                    alt={volunteer.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                    loading={index < 10 ? "eager" : "lazy"}
+                    priority={index < 4}
+                  />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 via-yellow-500/20 to-orange-500/20 relative">
                     <span className="text-4xl font-black text-orange-400/70 z-10">
