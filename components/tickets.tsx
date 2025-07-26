@@ -209,7 +209,7 @@ export function Tickets() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Join 500+ developers, architects, and cloud enthusiasts for an unforgettable day of learning and networking.
+            Join 200+ developers, architects, and cloud enthusiasts for an unforgettable day of learning and networking.
             Choose the ticket that works best for you.
           </p>
         </div>
@@ -284,6 +284,8 @@ export function Tickets() {
                   </div>
                 )}
 
+                
+
                 <CardHeader className="text-center pb-4 sm:pb-6 relative p-4 sm:p-6">
                   {/* Floating sparkles */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
@@ -322,7 +324,7 @@ export function Tickets() {
                     {ticket.description}
                   </p>
                 </CardHeader>
-
+                
                 <CardContent className="p-6 sm:p-8 flex flex-col h-full">
                   <ul className="space-y-3 sm:space-y-4 flex-1 mb-6 sm:mb-8">
                     {ticket.features.map((feature, featureIndex) => (
@@ -334,22 +336,8 @@ export function Tickets() {
                       </li>
                     ))}
                   </ul>
-
-                  <div className="mt-6">
-                    <Button
-                      onClick={handleRegisterClick}
-                      className={`w-full py-3 font-bold text-base transition-all duration-500 transform hover:scale-105 ${
-                        ticket.popular
-                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 shadow-xl shadow-orange-500/30"
-                          : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm"
-                      }`}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Register Now
-                    </Button>
-                  </div>
-
                   </CardContent>
+                
               </Card>
             </div>
           ))}
