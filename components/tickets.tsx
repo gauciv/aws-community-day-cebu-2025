@@ -196,18 +196,18 @@ export function Tickets() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-sm font-bold mb-8 shadow-lg">
-            <Sparkles className="w-4 h-4 mr-2 animate-twinkle" />
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg">
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2 animate-twinkle" />
             Event Tickets
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-8 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">
             Secure Your{" "}
             <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
               Spot Today
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
             Join 200+ developers, architects, and cloud enthusiasts for an unforgettable day of learning and networking.
             Choose the ticket that works best for you.
           </p>
@@ -295,9 +295,11 @@ export function Tickets() {
                     <div className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-3 sm:mb-4 lg:mb-6 rounded-full ${ticket.badgeColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
                       <ticket.icon className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" />
                     </div>
-                    <Badge className={`${ticket.badgeColor} text-white border-0 mb-3 sm:mb-4 lg:mb-6 text-xs sm:text-sm lg:text-base font-bold px-2 sm:px-3 lg:px-4 py-1 sm:py-1 lg:py-2 shadow-lg`}>
-                      {ticket.badge}
-                    </Badge>
+                    {!ticket.popular && (
+                      <Badge className={`${ticket.badgeColor} text-white border-0 mb-3 sm:mb-4 lg:mb-6 text-xs sm:text-sm lg:text-base font-bold px-2 sm:px-3 lg:px-4 py-1 sm:py-1 lg:py-2 shadow-lg`}>
+                        {ticket.badge}
+                      </Badge>
+                    )}
                   </div>
 
                   <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 lg:mb-4 group-hover:text-orange-400 transition-colors duration-500 leading-tight">

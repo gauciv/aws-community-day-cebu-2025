@@ -228,7 +228,7 @@ export function About() {
             </span>
             ?
           </h2>
-          <div className="max-w-5xl mx-auto space-y-6">
+          <div className="max-w-5xl mx-auto space-y-8">
             <p className="text-xl text-gray-300 leading-relaxed">
               AWS Community Days are community-organized cloud education events that feature technical discussions and
               demos by expert AWS users and industry leaders from around the world. These events are designed to educate

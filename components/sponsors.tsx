@@ -147,18 +147,18 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-sm font-semibold mb-6">
-            <Crown className="w-4 h-4 mr-2" />
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+            <Crown className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             Sponsorship Opportunities
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
             Partner with{" "}
             <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
               AWS Community Day
             </span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Join us in building the largest AWS community event in Cebu. Support local developers and showcase your
             commitment to cloud innovation.
           </p>

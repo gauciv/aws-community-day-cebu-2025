@@ -163,10 +163,16 @@ export function Volunteers() {
     { name: "Chriscia Xanelle Llamas",
       image: "/images/volunteers/chriscia-xanelle-llamas.jpg" 
     },
-    { name: "Fabiola Villanueva" },
-    { name: "Liv Jewel Monsalud" },
+    { name: "Fabiola Villanueva",
+      image: "/images/volunteers/liv-jewel-monsalud.jpeg"
+    },
+    { name: "Liv Jewel Monsalud",
+      image: "/images/volunteers/liv-jewel-monsalud.jpeg"
+    },
     { name: "Andre Salonga" },
-    { name: "Heart Alvern Sumicad" },
+    { name: "Heart Alvern Sumicad",
+      image: "/images/volunteers/heart-sumicad.jpeg"
+    },
     { name: "Cris Villem P. Saniel" },
     { name: "Lev Altair Imetri S. Aguirre" },
     { name: "Charles Vincent Montero" }
