@@ -51,7 +51,7 @@ export function Footer() {
               <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
               <div>
                 <h3 className="font-bold text-xl text-white">COMMUNITY DAY</h3>
-                <p className="text-sm text-orange-400 font-medium">Philippines</p>
+                <p className="text-sm text-orange-400 font-medium">CEBU</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">

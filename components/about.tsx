@@ -252,11 +252,11 @@ export function About() {
 
         {/* Enhanced Photo Gallery */}
         <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-black text-white mb-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6">
               Community <span className="text-orange-400">Gallery</span>
             </h3>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
               Moments from our AWS Community events showcasing learning, networking, and innovation
             </p>
           </div>
@@ -265,15 +265,15 @@ export function About() {
             className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
           >
 
-            {/* Enhanced Carousel with Navigation */}
-            <div className="relative mb-8 group">
+            {/* Enhanced Carousel with Navigation - Mobile optimized */}
+            <div className="relative mb-6 sm:mb-8 group">
               <div 
-                className="relative rounded-2xl overflow-hidden shadow-2xl"
+                className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
                 onTouchStart={onTouchStart}
                 onTouchMove={onTouchMove}
                 onTouchEnd={onTouchEnd}
               >
-                <div className="aspect-[16/9] relative">
+                <div className="aspect-[4/3] sm:aspect-[16/9] relative">
                   <OptimizedImage
                     src={galleryPhotos[selectedPhoto].src}
                     alt={galleryPhotos[selectedPhoto].alt}
@@ -291,47 +291,40 @@ export function About() {
                     </div>
                   )}
                   
-                  {/* Navigation Arrows */}
+                  {/* Navigation Arrows - Mobile optimized */}
                   <button
                     onClick={goToPrevious}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
                     aria-label="Previous image"
                   >
-                    <ChevronLeft className="w-6 h-6" />
+                    <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
                   </button>
                   
                   <button
                     onClick={goToNext}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
                     aria-label="Next image"
                   >
-                    <ChevronRight className="w-6 h-6" />
+                    <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
                   </button>
 
-                  {/* Autoplay Control */}
+                  {/* Autoplay Control - Mobile optimized */}
                   <button
                     onClick={toggleAutoplay}
-                    className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                    className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
                     aria-label={isAutoPlaying ? "Pause slideshow" : "Play slideshow"}
                   >
-                    {isAutoPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                    {isAutoPlaying ? <Pause className="w-4 h-4 sm:w-5 sm:h-5" /> : <Play className="w-4 h-4 sm:w-5 sm:h-5" />}
                   </button>
                   
-                  {/* Enhanced gradient overlay with description */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
-                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                  {/* Minimal overlay with counter only */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3">
+                      <div className="flex items-end justify-between">
                         <div className="flex-1">
-                          <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 text-sm font-bold mb-3 shadow-lg">
-                            <Star className="w-4 h-4 mr-2" />
-                            AWS Community Day
-                          </Badge>
-                          <h4 className="text-2xl md:text-3xl font-bold text-white mb-2">{galleryPhotos[selectedPhoto].title}</h4>
-                          <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl">
-                            {galleryPhotos[selectedPhoto].description}
-                          </p>
+                          <h4 className="text-sm sm:text-base font-bold text-white mb-1 leading-tight">{galleryPhotos[selectedPhoto].title}</h4>
                         </div>
-                        <div className="text-white/80 text-sm font-medium bg-black/30 px-3 py-1 rounded-full">
+                        <div className="text-white/90 text-xs sm:text-sm font-medium bg-black/50 px-2 py-1 rounded-full">
                           {selectedPhoto + 1} / {galleryPhotos.length}
                         </div>
                       </div>
@@ -354,14 +347,14 @@ export function About() {
               </div>
             </div>
 
-            {/* Enhanced Thumbnail Navigation */}
-            <div className="flex justify-center mb-8">
-              <div className="flex gap-2 p-2 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+            {/* Enhanced Thumbnail Navigation - Mobile optimized */}
+            <div className="flex justify-center mb-6 sm:mb-8">
+              <div className="flex gap-1 sm:gap-2 p-1 sm:p-2 bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/10 overflow-x-auto max-w-full">
                 {galleryPhotos.map((photo, index) => (
                   <button
                     key={photo.id}
                     onClick={() => goToSlide(index)}
-                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden transition-all duration-300 ${
+                    className={`relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 ${
                       selectedPhoto === index
                         ? "ring-2 ring-orange-500 scale-110 shadow-lg shadow-orange-500/25"
                         : "hover:scale-105 opacity-70 hover:opacity-100"
@@ -373,11 +366,11 @@ export function About() {
                       alt={photo.alt}
                       fill
                       className="object-cover"
-                      sizes="80px"
+                      sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 80px"
                     />
                     {selectedPhoto === index && (
                       <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full animate-pulse" />
                       </div>
                     )}
                   </button>
