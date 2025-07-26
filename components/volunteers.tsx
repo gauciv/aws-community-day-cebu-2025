@@ -395,7 +395,7 @@ export function Volunteers() {
                       loading={index < 10 ? "eager" : "lazy"}
                       priority={index < 4}
                     />
-                  </div>
+                  </div>v>
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 via-yellow-500/20 to-orange-500/20 relative">
                     <span className="text-4xl font-black text-orange-400/70 z-10">
