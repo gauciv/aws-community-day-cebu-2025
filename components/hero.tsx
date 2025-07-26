@@ -28,276 +28,129 @@ export function Hero() {
         <div className="constellation-container">
           {/* Top Left Area - Leo constellation */}
           <div
-            className="constellation-svg animate-float-slow"
-            style={{ top: "8%", left: "5%", width: "120px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "10%", left: "6%", width: "90px", height: "auto" }}
           >
             <img 
               src="/art-assets/leo.svg" 
               alt="Leo constellation" 
-              className="w-full h-auto constellation-glow-svg animate-twinkle-slow"
-              style={{ opacity: "0.8", filter: "brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))" }}
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.6" }}
             />
           </div>
 
           {/* Top Right Area - Cassiopeia constellation */}
           <div
-            className="constellation-svg animate-float-delayed"
-            style={{ top: "12%", right: "8%", width: "100px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "15%", right: "8%", width: "75px", height: "auto" }}
           >
             <img 
               src="/art-assets/cassiopeia.svg" 
               alt="Cassiopeia constellation" 
-              className="w-full h-auto constellation-glow-svg animate-pulse-subtle"
-              style={{ opacity: "0.9", filter: "brightness(1.3) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6))" }}
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.5" }}
             />
           </div>
 
           {/* Left Mid Area - Orion constellation */}
           <div
-            className="constellation-svg animate-float-reverse"
-            style={{ top: "35%", left: "3%", width: "140px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "35%", left: "4%", width: "100px", height: "auto" }}
           >
             <img 
               src="/art-assets/orion.svg" 
               alt="Orion constellation" 
-              className="w-full h-auto constellation-glow-svg animate-twinkle-delayed"
-              style={{ opacity: "0.7", filter: "brightness(1.1) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4))" }}
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.55" }}
             />
           </div>
 
           {/* Right Mid Area - Aquarius constellation */}
           <div
-            className="constellation-svg animate-float-gentle"
-            style={{ top: "40%", right: "5%", width: "110px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "40%", right: "6%", width: "85px", height: "auto" }}
           >
             <img 
               src="/art-assets/aquarius.svg" 
               alt="Aquarius constellation" 
-              className="w-full h-auto constellation-glow-svg animate-bounce-subtle"
-              style={{ opacity: "0.8", filter: "brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))" }}
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.5" }}
             />
           </div>
 
           {/* Bottom Left Area - Big Dipper constellation */}
           <div
-            className="constellation-svg animate-float-slow"
-            style={{ bottom: "15%", left: "8%", width: "130px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "20%", left: "10%", width: "95px", height: "auto" }}
           >
             <img 
               src="/art-assets/big dipper.svg" 
               alt="Big Dipper constellation" 
-              className="w-full h-auto constellation-glow-svg animate-twinkle-slow"
-              style={{ opacity: "0.85", filter: "brightness(1.25) drop-shadow(0 0 9px rgba(255, 255, 255, 0.55))" }}
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.6" }}
             />
           </div>
 
           {/* Bottom Right Area - Pegasus constellation */}
           <div
-            className="constellation-svg animate-float-delayed"
-            style={{ bottom: "20%", right: "10%", width: "115px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "25%", right: "12%", width: "80px", height: "auto" }}
           >
             <img 
               src="/art-assets/pegasus.svg" 
               alt="Pegasus constellation" 
-              className="w-full h-auto constellation-glow-svg animate-pulse-subtle"
-              style={{ opacity: "0.75", filter: "brightness(1.15) drop-shadow(0 0 11px rgba(255, 255, 255, 0.45))" }}
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.55" }}
             />
           </div>
 
-          {/* Center scattered smaller constellations */}
+          {/* Strategically placed subtle accent constellations */}
           <div
-            className="constellation-svg animate-float-gentle"
-            style={{ top: "25%", left: "35%", width: "80px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/cassiopeia-1.svg" 
-              alt="Cassiopeia variant" 
-              className="w-full h-auto constellation-glow-svg animate-twinkle-fast"
-              style={{ opacity: "0.6", filter: "brightness(1.0) drop-shadow(0 0 6px rgba(255, 255, 255, 0.3))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-float-reverse"
-            style={{ top: "60%", left: "25%", width: "90px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/orion-1.svg" 
-              alt="Orion variant" 
-              className="w-full h-auto constellation-glow-svg animate-bounce-subtle"
-              style={{ opacity: "0.7", filter: "brightness(1.1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-float-delayed"
-            style={{ top: "50%", right: "30%", width: "85px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/aquarius-1.svg" 
-              alt="Aquarius variant" 
-              className="w-full h-auto constellation-glow-svg animate-twinkle-delayed"
-              style={{ opacity: "0.65", filter: "brightness(1.05) drop-shadow(0 0 7px rgba(255, 255, 255, 0.35))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-float-slow"
-            style={{ bottom: "45%", right: "25%", width: "95px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/pegasus-1.svg" 
-              alt="Pegasus variant" 
-              className="w-full h-auto constellation-glow-svg animate-pulse-subtle"
-              style={{ opacity: "0.75", filter: "brightness(1.15) drop-shadow(0 0 9px rgba(255, 255, 255, 0.4))" }}
-            />
-          </div>
-
-          {/* Smaller scattered constellation elements */}
-          <div
-            className="constellation-svg animate-float-gentle"
-            style={{ top: "18%", left: "25%", width: "60px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "25%", left: "20%", width: "45px", height: "auto" }}
           >
             <img 
               src="/art-assets/Group 79.svg" 
-              alt="Constellation group" 
-              className="w-full h-auto constellation-glow-svg animate-twinkle-fast"
-              style={{ opacity: "0.5", filter: "brightness(0.95) drop-shadow(0 0 5px rgba(255, 255, 255, 0.25))" }}
+              alt="Constellation accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.3" }}
             />
           </div>
 
           <div
-            className="constellation-svg animate-float-reverse"
-            style={{ bottom: "35%", left: "40%", width: "70px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "35%", right: "20%", width: "50px", height: "auto" }}
           >
             <img 
               src="/art-assets/assets.svg" 
-              alt="Constellation assets" 
-              className="w-full h-auto constellation-glow-svg animate-bounce-subtle"
-              style={{ opacity: "0.6", filter: "brightness(1.0) drop-shadow(0 0 6px rgba(255, 255, 255, 0.3))" }}
+              alt="Constellation accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.35" }}
             />
           </div>
 
-          {/* Edge elements for depth */}
+          {/* Subtle edge accents for depth */}
           <div
-            className="constellation-svg animate-float-slow"
-            style={{ top: "70%", right: "15%", width: "75px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/leo.svg" 
-              alt="Leo edge" 
-              className="w-full h-auto constellation-glow-svg animate-twinkle-slow"
-              style={{ opacity: "0.4", filter: "brightness(0.9) drop-shadow(0 0 4px rgba(255, 255, 255, 0.2))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-float-delayed"
-            style={{ top: "75%", left: "15%", width: "65px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/cassiopeia.svg" 
-              alt="Cassiopeia edge" 
-              className="w-full h-auto constellation-glow-svg animate-pulse-subtle"
-              style={{ opacity: "0.45", filter: "brightness(0.95) drop-shadow(0 0 5px rgba(255, 255, 255, 0.25))" }}
-            />
-          </div>
-
-          {/* Far edge subtle elements */}
-          <div
-            className="constellation-svg animate-float-gentle constellation-hover-spin"
-            style={{ top: "30%", right: "2%", width: "50px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/aquarius.svg" 
-              alt="Edge constellation" 
-              className="w-full h-auto constellation-glow-orange animate-twinkle-gentle"
-              style={{ opacity: "0.3", filter: "brightness(0.8) drop-shadow(0 0 6px rgba(245, 158, 11, 0.4))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-float-reverse constellation-hover-spin"
-            style={{ bottom: "60%", left: "1%", width: "55px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/orion.svg" 
-              alt="Edge constellation" 
-              className="w-full h-auto constellation-glow-orange animate-bounce-subtle"
-              style={{ opacity: "0.35", filter: "brightness(0.85) drop-shadow(0 0 7px rgba(245, 158, 11, 0.35))" }}
-            />
-          </div>
-
-          {/* Additional side constellation elements */}
-          <div
-            className="constellation-svg animate-draw-in constellation-hover-spin"
-            style={{ top: "55%", right: "4%", width: "45px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/Group 79.svg" 
-              alt="Side constellation" 
-              className="w-full h-auto constellation-glow-orange animate-twinkle-gentle"
-              style={{ opacity: "0.4", filter: "brightness(0.9) drop-shadow(0 0 8px rgba(245, 158, 11, 0.5))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-draw-in-delayed constellation-hover-spin"
-            style={{ bottom: "25%", left: "3%", width: "50px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "65%", right: "3%", width: "35px", height: "auto" }}
           >
             <img 
               src="/art-assets/cassiopeia-1.svg" 
-              alt="Side constellation" 
-              className="w-full h-auto constellation-glow-orange animate-twinkle-gentle"
-              style={{ opacity: "0.35", filter: "brightness(0.85) drop-shadow(0 0 6px rgba(245, 158, 11, 0.4))" }}
+              alt="Edge accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.25" }}
             />
           </div>
 
           <div
-            className="constellation-svg animate-draw-in constellation-hover-spin"
-            style={{ top: "15%", right: "6%", width: "40px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/assets.svg" 
-              alt="Top side constellation" 
-              className="w-full h-auto constellation-glow-orange animate-twinkle-gentle"
-              style={{ opacity: "0.3", filter: "brightness(0.8) drop-shadow(0 0 5px rgba(245, 158, 11, 0.35))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-draw-in-delayed constellation-hover-spin"
-            style={{ bottom: "15%", right: "2%", width: "38px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/leo.svg" 
-              alt="Bottom side constellation" 
-              className="w-full h-auto constellation-glow-orange animate-twinkle-gentle"
-              style={{ opacity: "0.25", filter: "brightness(0.75) drop-shadow(0 0 4px rgba(245, 158, 11, 0.3))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-draw-in constellation-hover-spin"
-            style={{ top: "65%", left: "2%", width: "42px", height: "auto" }}
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "75%", left: "5%", width: "40px", height: "auto" }}
           >
             <img 
               src="/art-assets/pegasus-1.svg" 
-              alt="Left side constellation" 
-              className="w-full h-auto constellation-glow-orange animate-twinkle-gentle"
-              style={{ opacity: "0.3", filter: "brightness(0.8) drop-shadow(0 0 6px rgba(245, 158, 11, 0.4))" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg animate-draw-in-delayed constellation-hover-spin"
-            style={{ top: "45%", left: "1%", width: "35px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/aquarius-1.svg" 
-              alt="Mid left constellation" 
-              className="w-full h-auto constellation-glow-orange animate-twinkle-gentle"
-              style={{ opacity: "0.25", filter: "brightness(0.75) drop-shadow(0 0 5px rgba(245, 158, 11, 0.3))" }}
+              alt="Edge accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.3" }}
             />
           </div>
         </div>

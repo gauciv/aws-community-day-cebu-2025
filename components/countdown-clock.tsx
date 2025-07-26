@@ -73,11 +73,15 @@ export function CountdownClock() {
     <div className="flex flex-col items-center group">
       <div className="relative">
         <div
-          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-orange-400/30 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-105 ${
-            isActive ? "animate-pulse border-orange-400/60 shadow-orange-400/20" : ""
-          } ${isFlipping && isActive ? "animate-flip" : ""}`}
+          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-orange-400/30 flex items-center justify-center shadow-lg transition-all duration-700 ease-in-out group-hover:scale-105 ${
+            isActive ? "border-orange-400/60 shadow-orange-400/20" : ""
+          }`}
         >
-          <span className="text-xl sm:text-2xl md:text-4xl font-black font-mono text-white drop-shadow-lg">
+          <span 
+            className={`text-xl sm:text-2xl md:text-4xl font-black font-mono text-white drop-shadow-lg transition-all duration-500 ease-in-out ${
+              isFlipping && isActive ? "animate-smooth-flip" : ""
+            }`}
+          >
             {value.toString().padStart(2, "0")}
           </span>
         </div>
@@ -85,21 +89,21 @@ export function CountdownClock() {
         {/* Glassmorphism overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 via-transparent to-white/5 rounded-xl" />
 
-        {/* Orange glow effect */}
+        {/* Smooth orange glow effect */}
         <div
-          className={`absolute inset-0 rounded-xl transition-opacity duration-300 ${
+          className={`absolute inset-0 rounded-xl transition-all duration-700 ease-in-out ${
             isActive ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="absolute inset-0 bg-orange-400/20 rounded-xl blur-sm" />
+          <div className="absolute inset-0 bg-orange-400/20 rounded-xl blur-sm animate-gentle-pulse" />
         </div>
 
         {/* Constellation pattern */}
-        <div className="absolute -top-1 -right-1 text-orange-400/60 text-xs animate-twinkle">✦</div>
-        <div className="absolute -bottom-1 -left-1 text-orange-300/40 text-xs animate-twinkle-delayed">★</div>
+        <div className="absolute -top-1 -right-1 text-orange-400/60 text-xs animate-gentle-shimmer">✦</div>
+        <div className="absolute -bottom-1 -left-1 text-orange-300/40 text-xs animate-gentle-shimmer-delayed">★</div>
       </div>
 
-      <span className="text-xs sm:text-sm text-white/80 mt-2 sm:mt-3 font-bold uppercase tracking-widest">{label}</span>
+      <span className="text-xs sm:text-sm text-white/80 mt-2 sm:mt-3 font-bold uppercase tracking-widest transition-all duration-300">{label}</span>
     </div>
   )
 
