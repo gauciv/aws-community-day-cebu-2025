@@ -234,15 +234,15 @@ export function About() {
               demos by expert AWS users and industry leaders from around the world. These events are designed to educate
               everyone, regardless of their level of AWS knowledge.
             </p>
-            <div className="relative p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-orange-500/20 shadow-2xl">
+            <div className="relative p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-orange-500/20 shadow-2xl">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <div className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                  <Zap className="w-4 h-4 inline mr-1" />
+                <div className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg">
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1" />
                   Join the Movement
                 </div>
               </div>
-              <p className="text-2xl text-white leading-relaxed font-semibold">
-                Join <span className="text-orange-400 font-black">500+</span> developers, architects, and cloud enthusiasts in Cebu for an unforgettable day of learning,
+              <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed font-semibold">
+                Join <span className="text-orange-400 font-black">200+</span> developers, architects, and cloud enthusiasts in Cebu for an unforgettable day of learning,
                 networking, and innovation. Experience hands-on workshops, inspiring keynotes, and connect with the vibrant
                 AWS community in the Philippines.
               </p>

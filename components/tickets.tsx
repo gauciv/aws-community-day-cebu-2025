@@ -99,7 +99,7 @@ export function Tickets() {
     },
     {
       name: "VIP",
-      price: "₱1,200",
+      price: "₱1,250",
       earlyBirdPrice: "₱1,000",
       description: "Enjoy the full VIP experience with exclusive perks",
       features: [

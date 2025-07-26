@@ -5,7 +5,6 @@ import { Speakers } from "@/components/speakers"
 import { Tickets } from "@/components/tickets"
 import { Sponsors } from "@/components/sponsors"
 import { Volunteers } from "@/components/volunteers"
-import { FAQ } from "@/components/faq"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
@@ -18,7 +17,6 @@ export default function HomePage() {
       <Tickets />
       <Sponsors />
       <Volunteers />
-      <FAQ />
       <Footer />
     </main>
   )

@@ -133,11 +133,6 @@ export function Footer() {
                   <Facebook className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
                 </div>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="group relative">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center hover:from-blue-700 hover:to-blue-800 hover:border-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-600/20">
-                  <Linkedin className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
-                </div>
-              </a>
               <a href="mailto:awscloudclubctu@gmail.com" className="group relative">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center hover:from-orange-600 hover:to-orange-700 hover:border-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-500/20">
                   <Mail className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
