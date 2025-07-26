@@ -32,7 +32,7 @@ export function FAQ() {
     {
       question: "What is AWS Community Day?",
       answer:
-        "AWS Community Day is a free, community-driven event that brings together cloud enthusiasts, developers, and IT professionals to learn about Amazon Web Services. It features technical sessions, workshops, and networking opportunities led by AWS experts and community leaders.",
+        "AWS Community Day is a community-driven event that brings together cloud enthusiasts, developers, and IT professionals to learn about Amazon Web Services. It features technical sessions, workshops, and networking opportunities led by AWS experts and community leaders.",
     },
     {
       question: "Who should attend this event?",
@@ -62,7 +62,7 @@ export function FAQ() {
   ]
 
   return (
-    <section id="faq" className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="faq" className="py-12 md:py-20 lg:py-32 relative overflow-hidden">
       {/* Enhanced Atmospheric Background with Smoke and Question Marks */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Smoke SVG for Section Dividers */}
@@ -328,17 +328,17 @@ export function FAQ() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-sm font-medium mb-6 animate-fade-in">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs sm:text-sm font-medium mb-4 sm:mb-6 animate-fade-in">
             Frequently Asked Questions
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-slide-up">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 animate-slide-up leading-tight">
             Got{" "}
             <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
               Questions?
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-slide-up delay-200">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto animate-slide-up delay-200 px-4 sm:px-0">
             Find answers to common questions about AWS Community Day Cebu 2025. Can&apos;t find what you&apos;re looking
             for? Contact us directly.
           </p>
@@ -360,9 +360,9 @@ export function FAQ() {
                 <CardContent className="p-0">
                   <button
                     onClick={() => toggleItem(index)}
-                    className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/20 transition-all duration-300 rounded-lg group"
+                    className="w-full p-4 sm:p-6 text-left flex items-center justify-between hover:bg-muted/20 transition-all duration-300 rounded-lg group"
                   >
-                    <h3 className="text-lg font-semibold text-foreground pr-4 group-hover:text-orange-300 transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg font-semibold text-foreground pr-3 sm:pr-4 group-hover:text-orange-300 transition-colors duration-300 leading-tight">
                       {faq.question}
                     </h3>
                     <div className={`transition-all duration-300 ${openItems.includes(index) ? "rotate-180" : ""}`}>
@@ -379,9 +379,9 @@ export function FAQ() {
                       openItems.includes(index) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="px-6 pb-6">
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                       <div className="pt-2 border-t border-border/50">
-                        <p className="text-muted-foreground leading-relaxed animate-fade-in">{faq.answer}</p>
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed animate-fade-in">{faq.answer}</p>
                       </div>
                     </div>
                   </div>
@@ -391,25 +391,25 @@ export function FAQ() {
           </div>
 
           {/* Enhanced Contact Card */}
-          <Card className="mt-12 border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-yellow-500/5 hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-500 transform hover:scale-[1.02]">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-                <HelpCircle className="w-8 h-8 text-white" />
+          <Card className="mt-8 sm:mt-12 border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-yellow-500/5 hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-500 transform hover:scale-[1.02]">
+            <CardContent className="p-4 sm:p-6 lg:p-8 text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-pulse">
+                <HelpCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-4">Still have questions?</h3>
-              <p className="text-muted-foreground mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4">Still have questions?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
                 Our team is here to help! Reach out to us for any additional questions or support.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <a
                   href="mailto:awscloudclubctu@gmail.com"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg"
+                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg text-sm sm:text-base"
                 >
                   Email Us
                 </a>
                 <a
                   href="https://t.me/awscommunitydaycebu"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-orange-500 text-orange-400 rounded-lg hover:bg-orange-500/10 transition-all duration-300 transform hover:scale-105 font-semibold"
+                  className="inline-flex items-center justify-center px-4 sm:px-6 py-3 border border-orange-500 text-orange-400 rounded-lg hover:bg-orange-500/10 transition-all duration-300 transform hover:scale-105 font-semibold text-sm sm:text-base"
                 >
                   Join Telegram
                 </a>
