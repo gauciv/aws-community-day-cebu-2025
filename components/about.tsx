@@ -144,7 +144,8 @@ export function About() {
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 1200px"
-                    priority
+                    priority={true}
+                    loading="eager"
                   />
                   
                   {/* Enhanced gradient overlay */}
@@ -196,6 +197,7 @@ export function About() {
                     fill
                     className="object-cover transition-all duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 25vw, 200px"
+                    loading="lazy"
                   />
                   
                   <div
