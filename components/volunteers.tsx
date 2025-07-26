@@ -152,13 +152,19 @@ export function Volunteers() {
       name: "Dan Chavez", 
       image: "/images/volunteers/dan-chavez.jpeg"
     },
+    { 
+      name: "Erik James M. Caliskis",
+      image: "/images/volunteers/erik-james-caliskis.jpg"
+    },
+    { name: "Elijah Luis Bes",
+      image: "/images/volunteers/elijah-bes.jpg" 
+
+    },
+    { name: "Chriscia Xanelle Llamas",
+      image: "/images/volunteers/chriscia-xanelle-llamas.jpg" 
+    },
     { name: "Fabiola Villanueva" },
     { name: "Liv Jewel Monsalud" },
-    { name: "Chriscia Xanelle Llamas" },
-    { 
-      name: "Erik James M. Caliskis"
-    },
-    { name: "Elijah Luis Bes" },
     { name: "Andre Salonga" },
     { name: "Heart Alvern Sumicad" },
     { name: "Cris Villem P. Saniel" },
