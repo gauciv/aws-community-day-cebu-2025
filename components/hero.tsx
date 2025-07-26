@@ -129,6 +129,122 @@ export function Hero() {
             />
           </div>
 
+          {/* Additional Main Constellations for Better Coverage */}
+          
+          {/* Aquarius - Top Center Right */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "12%", right: "25%", width: "85px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/aquarius.svg" 
+              alt="Aquarius constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.55" }}
+            />
+          </div>
+
+          {/* Big Dipper - Left Center */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "50%", left: "8%", width: "95px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/big dipper.svg" 
+              alt="Big Dipper constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.6" }}
+            />
+          </div>
+
+          {/* Additional Cassiopeia - Bottom Center */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "15%", left: "40%", width: "70px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/cassiopeia.svg" 
+              alt="Cassiopeia constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.5" }}
+            />
+          </div>
+
+          {/* Additional Orion - Right Center Upper */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "30%", right: "15%", width: "80px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/orion.svg" 
+              alt="Orion constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.55" }}
+            />
+          </div>
+
+          {/* Additional Pegasus - Top Left Center */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "20%", left: "25%", width: "75px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/pegasus.svg" 
+              alt="Pegasus constellation" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.5" }}
+            />
+          </div>
+
+          {/* Small Asset Accents for Depth */}
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "18%", left: "15%", width: "40px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/Group 79.svg" 
+              alt="Constellation accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.35" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "30%", right: "30%", width: "45px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/assets.svg" 
+              alt="Constellation accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.4" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ top: "45%", left: "35%", width: "35px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/aquarius-1.svg" 
+              alt="Small constellation accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
+              style={{ opacity: "0.3" }}
+            />
+          </div>
+
+          <div
+            className="constellation-svg constellation-hover-spin"
+            style={{ bottom: "40%", right: "10%", width: "38px", height: "auto" }}
+          >
+            <img 
+              src="/art-assets/orion-1.svg" 
+              alt="Small constellation accent" 
+              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
+              style={{ opacity: "0.35" }}
+            />
+          </div>
+
           {/* Subtle edge accents for depth */}
           <div
             className="constellation-svg constellation-hover-spin"
