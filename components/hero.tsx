@@ -22,501 +22,113 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24" style={{background: 'linear-gradient(135deg, #003E84 0%, #011C3B 100%)'}}>
-      {/* Enhanced Constellation Background with Connected Dots Pattern */}
+      {/* Constellation Background with Uploaded SVGs */}
       <div className="absolute inset-0 constellation-background">
         {/* Soft cloud elements with subtle movement */}
         <div className="absolute top-0 right-0 w-64 h-48 bg-white/8 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-0 left-0 w-64 h-48 bg-white/8 rounded-full blur-3xl animate-float-reverse" />
 
-        {/* Constellation Pattern Similar to Image */}
+        {/* Constellation SVGs scattered throughout */}
         <div className="constellation-container">
-          {/* Left Side Constellation Cluster */}
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{top: '15%', left: '8%'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '18%', left: '12%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{top: '22%', left: '15%'}}></div>
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{top: '25%', left: '10%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '16%', left: '9%', width: '25px', transform: 'rotate(35deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '20%', left: '11%', width: '30px', transform: 'rotate(-15deg)'}}></div>
-          <div className="constellation-line" style={{top: '23%', left: '13%', width: '20px', transform: 'rotate(70deg)'}}></div>
+          {/* Constellation SVG 1 - Top Left */}
+          <div className="absolute top-[10%] left-[8%] opacity-60 animate-twinkle-slow" style={{filter: 'drop-shadow(0 0 20px rgba(255, 153, 0, 0.5))'}}>
+            <svg width="120" height="116" viewBox="0 0 446 433" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="427.554" cy="212.957" rx="17.9314" ry="19.2854" fill="#FF9900" className="animate-pulse-subtle"/>
+              <ellipse cx="330.728" cy="39.3911" rx="35.8627" ry="38.5707" stroke="#FF9900" strokeWidth="2" className="animate-glow-pulse"/>
+            </svg>
+          </div>
 
-          {/* Top Center Constellation */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '12%', left: '45%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '16%', left: '48%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{top: '20%', left: '42%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '14%', left: '52%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '13%', left: '46%', width: '22px', transform: 'rotate(25deg)'}}></div>
-          <div className="constellation-line" style={{top: '17%', left: '45%', width: '28px', transform: 'rotate(-30deg)'}}></div>
+          {/* Constellation SVG 2 - Top Right */}
+          <div className="absolute top-[15%] right-[12%] opacity-50 animate-float-gentle" style={{filter: 'drop-shadow(0 0 25px rgba(255, 153, 0, 0.4))'}}>
+            <svg width="140" height="132" viewBox="0 0 1038 975" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M47.6221 110.219V286.702M47.6221 286.702L136.496 65.0039M47.6221 286.702L308.802 457.351M308.802 457.351L582.678 705.302L618.953 940.127L918.221 824.903L658.855 619.249L597.188 403.385M308.802 457.351L457.529 324.624L597.188 403.385M597.188 403.385L943.613 261.907M943.613 261.907L918.221 457.351M943.613 261.907L796.7 178.77" stroke="#FF9900" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="3 5 7 10" className="animate-dash-flow"/>
+            </svg>
+          </div>
 
-          {/* Right Side Upper Constellation */}
-          <div className="constellation-dot constellation-dot-large constellation-glow" style={{top: '18%', right: '12%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '22%', right: '8%'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '15%', right: '16%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{top: '25%', right: '14%'}}></div>
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{top: '28%', right: '18%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '19%', right: '13%', width: '30px', transform: 'rotate(-45deg)'}}></div>
-          <div className="constellation-line" style={{top: '23%', right: '10%', width: '25px', transform: 'rotate(20deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '26%', right: '15%', width: '20px', transform: 'rotate(60deg)'}}></div>
+          {/* Constellation SVG 3 - Center Left */}
+          <div className="absolute top-[45%] left-[5%] opacity-45 animate-bounce-subtle" style={{filter: 'drop-shadow(0 0 18px rgba(255, 153, 0, 0.6))'}}>
+            <svg width="100" height="50" viewBox="0 0 2078 1016" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="197.17" y="444.984" width="84.2756" height="84.2756" fill="#FF9900" opacity="0.8" className="animate-twinkle-delayed"/>
+            </svg>
+          </div>
 
-          {/* Center Right Constellation */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '45%', right: '20%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '48%', right: '15%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{top: '52%', right: '22%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '42%', right: '18%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '46%', right: '19%', width: '25px', transform: 'rotate(-20deg)'}}></div>
-          <div className="constellation-line" style={{top: '49%', right: '17%', width: '22px', transform: 'rotate(40deg)'}}></div>
+          {/* Constellation SVG 4 - Center Right */}
+          <div className="absolute top-[40%] right-[15%] opacity-55 animate-twinkle-delayed" style={{filter: 'drop-shadow(0 0 22px rgba(255, 153, 0, 0.45))'}}>
+            <svg width="110" height="60" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="454.991" cy="238.204" r="10.5345" stroke="#FF9900" strokeWidth="2" className="animate-pulse-glow"/>
+              <circle cx="130.661" cy="597.77" r="21.0689" stroke="#FF9900" strokeWidth="1.5" className="animate-fade-pulse"/>
+              <ellipse cx="11.6666" cy="257.231" rx="11.6666" ry="9.51221" fill="#FF9900" className="animate-glow-pulse"/>
+              <ellipse cx="800.323" cy="352.346" rx="11.6666" ry="9.51221" fill="#FF9900" className="animate-twinkle-fast"/>
+            </svg>
+          </div>
 
-          {/* Bottom Left Constellation Cluster */}
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{bottom: '25%', left: '15%'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{bottom: '28%', left: '10%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{bottom: '22%', left: '18%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{bottom: '32%', left: '12%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '20%', left: '14%'}}></div>
-          <div className="constellation-line constellation-glow" style={{bottom: '26%', left: '13%', width: '28px', transform: 'rotate(30deg)'}}></div>
-          <div className="constellation-line" style={{bottom: '29%', left: '11%', width: '25px', transform: 'rotate(-40deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{bottom: '23%', left: '16%', width: '20px', transform: 'rotate(75deg)'}}></div>
+          {/* Constellation SVG 5 - Bottom Left */}
+          <div className="absolute bottom-[25%] left-[10%] opacity-50 animate-float-reverse" style={{filter: 'drop-shadow(0 0 20px rgba(255, 153, 0, 0.5))'}}>
+            <svg width="95" height="87" viewBox="0 0 712 654" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M310.887 391.687L111.186 337.884L182.278 174.829L353.397 236.962M310.887 391.687L356.995 435.353L376.314 467.34L463.843 530.451L539.104 500.891M310.887 391.687L353.397 236.962M353.397 236.962L380.302 283.344L391.021 303.264L498.535 291.925L564.894 298.68M353.397 236.962L416.234 220.004L514.132 198.927" stroke="#FF9900" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 8 6 10" className="animate-dash-flow-reverse"/>
+            </svg>
+          </div>
 
-          {/* Bottom Right Large Constellation */}
-          <div className="constellation-dot constellation-dot-large constellation-glow" style={{bottom: '30%', right: '15%'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{bottom: '25%', right: '12%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{bottom: '35%', right: '18%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '20%', right: '20%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{bottom: '28%', right: '8%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{bottom: '32%', right: '22%'}}></div>
-          <div className="constellation-line constellation-glow" style={{bottom: '28%', right: '14%', width: '35px', transform: 'rotate(-25deg)'}}></div>
-          <div className="constellation-line" style={{bottom: '31%', right: '16%', width: '30px', transform: 'rotate(45deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{bottom: '26%', right: '10%', width: '25px', transform: 'rotate(15deg)'}}></div>
+          {/* Constellation SVG 6 - Bottom Right */}
+          <div className="absolute bottom-[20%] right-[8%] opacity-60 animate-glow-pulse" style={{filter: 'drop-shadow(0 0 25px rgba(255, 153, 0, 0.4))'}}>
+            <svg width="130" height="120" viewBox="0 0 446 433" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="427.554" cy="212.957" rx="17.9314" ry="19.2854" fill="#FF9900" className="animate-twinkle-slow"/>
+              <ellipse cx="330.728" cy="39.3911" rx="35.8627" ry="38.5707" stroke="#FF9900" strokeWidth="2" className="animate-pulse-subtle"/>
+            </svg>
+          </div>
 
-          {/* Left Center Constellation */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '50%', left: '8%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '45%', left: '12%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{top: '55%', left: '6%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '48%', left: '15%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '49%', left: '9%', width: '22px', transform: 'rotate(50deg)'}}></div>
-          <div className="constellation-line" style={{top: '46%', left: '11%', width: '25px', transform: 'rotate(-10deg)'}}></div>
+          {/* Additional smaller constellation elements */}
+          {/* Small constellation - Top Center */}
+          <div className="absolute top-[12%] left-1/2 transform -translate-x-1/2 opacity-40 animate-twinkle-fast" style={{filter: 'drop-shadow(0 0 15px rgba(255, 153, 0, 0.3))'}}>
+            <svg width="80" height="50" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="11.6666" cy="257.231" rx="11.6666" ry="9.51221" fill="#FF9900" className="animate-pulse-glow"/>
+              <ellipse cx="800.323" cy="352.346" rx="11.6666" ry="9.51221" fill="#FF9900" className="animate-fade-pulse"/>
+            </svg>
+          </div>
 
-          {/* Scattered Individual Stars */}
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{top: '35%', left: '25%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '40%', right: '35%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{bottom: '45%', left: '30%'}}></div>
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{top: '60%', right: '40%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{top: '25%', left: '35%'}}></div>
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{bottom: '40%', right: '30%'}}></div>
+          {/* Small constellation - Mid Center */}
+          <div className="absolute top-[55%] left-1/2 transform -translate-x-1/2 opacity-35 animate-bounce-gentle" style={{filter: 'drop-shadow(0 0 12px rgba(255, 153, 0, 0.4))'}}>
+            <svg width="70" height="40" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="454.991" cy="238.204" r="10.5345" stroke="#FF9900" strokeWidth="1.5" className="animate-twinkle-delayed"/>
+            </svg>
+          </div>
 
-          {/* Additional connecting lines for network effect */}
-          <div className="constellation-line" style={{top: '30%', left: '20%', width: '40px', transform: 'rotate(15deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{bottom: '35%', right: '25%', width: '35px', transform: 'rotate(-35deg)'}}></div>
-          <div className="constellation-line" style={{top: '55%', left: '25%', width: '30px', transform: 'rotate(60deg)'}}></div>
+          {/* Scattered individual elements */}
+          <div className="absolute top-[30%] left-[25%] opacity-30 animate-pulse-subtle" style={{filter: 'drop-shadow(0 0 10px rgba(255, 153, 0, 0.3))'}}>
+            <svg width="40" height="40" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="11.6666" cy="257.231" rx="8" ry="6" fill="#FF9900"/>
+            </svg>
+          </div>
 
-          {/* New constellation patterns inspired by reference image */}
-          {/* Top constellation cluster with connecting lines */}
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{top: '8%', left: '30%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{top: '12%', left: '35%'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '10%', left: '40%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '14%', left: '45%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '9%', left: '31%', width: '30px', transform: 'rotate(25deg)'}}></div>
-          <div className="constellation-line" style={{top: '11%', left: '37%', width: '25px', transform: 'rotate(-10deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '13%', left: '42%', width: '20px', transform: 'rotate(45deg)'}}></div>
+          <div className="absolute bottom-[35%] right-[30%] opacity-25 animate-twinkle-slow" style={{filter: 'drop-shadow(0 0 8px rgba(255, 153, 0, 0.4))'}}>
+            <svg width="35" height="35" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="454.991" cy="238.204" r="6" stroke="#FF9900" strokeWidth="1"/>
+            </svg>
+          </div>
 
-          {/* Mid-left constellation with circles */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '35%', left: '5%'}}></div>
-          <div className="constellation-circle animate-pulse-slow" style={{top: '32%', left: '8%', width: '20px', height: '20px'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '40%', left: '12%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{top: '37%', left: '15%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '36%', left: '6%', width: '35px', transform: 'rotate(30deg)'}}></div>
-          <div className="constellation-line" style={{top: '38%', left: '10%', width: '28px', transform: 'rotate(-20deg)'}}></div>
+          <div className="absolute top-[65%] left-[20%] opacity-35 animate-float-gentle" style={{filter: 'drop-shadow(0 0 12px rgba(255, 153, 0, 0.3))'}}>
+            <svg width="50" height="50" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="11.6666" cy="257.231" rx="10" ry="8" fill="#FF9900" className="animate-glow-pulse"/>
+            </svg>
+          </div>
 
-          {/* Mid-right constellation pattern */}
-          <div className="constellation-dot constellation-dot-large constellation-glow" style={{top: '38%', right: '8%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '42%', right: '12%'}}></div>
-          <div className="constellation-circle animate-fade-pulse" style={{top: '35%', right: '15%', width: '15px', height: '15px'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '45%', right: '10%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{top: '40%', right: '5%'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '39%', right: '9%', width: '32px', transform: 'rotate(-45deg)'}}></div>
-          <div className="constellation-line" style={{top: '43%', right: '11%', width: '25px', transform: 'rotate(15deg)'}}></div>
+          <div className="absolute top-[25%] right-[25%] opacity-40 animate-twinkle-fast" style={{filter: 'drop-shadow(0 0 14px rgba(255, 153, 0, 0.5))'}}>
+            <svg width="45" height="45" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="454.991" cy="238.204" r="8" stroke="#FF9900" strokeWidth="1.5" className="animate-pulse-subtle"/>
+            </svg>
+          </div>
 
-          {/* Center-upper constellation network */}
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{top: '25%', left: '48%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{top: '28%', left: '52%'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '30%', left: '55%'}}></div>
-          <div className="constellation-circle animate-twinkle-slow" style={{top: '23%', left: '50%', width: '12px', height: '12px'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '26%', left: '49%', width: '22px', transform: 'rotate(35deg)'}}></div>
-          <div className="constellation-line" style={{top: '29%', left: '53%', width: '18px', transform: 'rotate(-25deg)'}}></div>
+          <div className="absolute bottom-[45%] left-[35%] opacity-30 animate-bounce-subtle" style={{filter: 'drop-shadow(0 0 10px rgba(255, 153, 0, 0.3))'}}>
+            <svg width="38" height="38" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="11.6666" cy="257.231" rx="7" ry="5" fill="#FF9900"/>
+            </svg>
+          </div>
 
-          {/* Lower constellation patterns */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{bottom: '18%', left: '35%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{bottom: '22%', left: '40%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '15%', left: '45%'}}></div>
-          <div className="constellation-circle animate-glow-pulse" style={{bottom: '20%', left: '38%', width: '18px', height: '18px'}}></div>
-          <div className="constellation-line constellation-glow" style={{bottom: '19%', left: '36%', width: '28px', transform: 'rotate(20deg)'}}></div>
-          <div className="constellation-line" style={{bottom: '21%', left: '41%', width: '24px', transform: 'rotate(-40deg)'}}></div>
-
-          {/* Additional scattered constellation elements */}
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{top: '18%', right: '30%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '65%', left: '20%'}}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{bottom: '8%', right: '35%'}}></div>
-          <div className="constellation-circle animate-bounce-subtle" style={{top: '72%', right: '15%', width: '14px', height: '14px'}}></div>
-          <div className="constellation-dot constellation-dot-tiny" style={{top: '78%', left: '40%'}}></div>
-          <div className="constellation-dot constellation-dot-small constellation-glow" style={{top: '5%', right: '20%'}}></div>
-
-          {/* More connecting lines to create constellation networks */}
-          <div className="constellation-line constellation-glow" style={{top: '20%', right: '32%', width: '30px', transform: 'rotate(50deg)'}}></div>
-          <div className="constellation-line" style={{top: '67%', left: '22%', width: '35px', transform: 'rotate(-30deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{bottom: '10%', right: '37%', width: '26px', transform: 'rotate(70deg)'}}></div>
-          <div className="constellation-line" style={{top: '6%', right: '22%', width: '20px', transform: 'rotate(-60deg)'}}></div>
-          <div className="constellation-line constellation-glow" style={{top: '80%', left: '42%', width: '22px', transform: 'rotate(10deg)'}}></div>
-        </div>
-        {/* Enhanced Constellation Elements with More Movement */}
-        <div className="constellation-container">
-          {/* Top Left Cluster - Enhanced */}
-          <div
-            className="constellation-dot constellation-dot-small constellation-glow animate-twinkle-slow"
-            style={{ top: "15%", left: "8%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-medium constellation-glow animate-rotate-slow"
-            style={{ top: "12%", left: "15%" }}
-          ></div>
-          <div
-            className="constellation-circle constellation-glow animate-pulse-slow"
-            style={{ top: "20%", left: "12%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-bounce-subtle"
-            style={{ top: "18%", left: "10%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ top: "14%", left: "13%" }}
-          ></div>
-          <div
-            className="constellation-line constellation-glow animate-fade-pulse"
-            style={{ top: "16%", left: "10%", width: "40px", transform: "rotate(25deg)" }}
-          ></div>
-          <div
-            className="constellation-line animate-glow-pulse"
-            style={{ top: "17%", left: "13%", width: "25px", transform: "rotate(-10deg)" }}
-          ></div>
-
-          {/* Additional scattered elements for more density */}
-          <div
-            className="constellation-dot constellation-dot-small constellation-glow animate-twinkle-fast"
-            style={{ top: "8%", left: "5%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-reverse"
-            style={{ top: "25%", left: "3%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-fast" style={{ top: "18%", left: "20%" }}></div>
-
-          {/* Top Right Cluster - Enhanced */}
-          <div
-            className="constellation-star constellation-star-large constellation-glow animate-rotate-slow"
-            style={{ top: "18%", right: "10%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-medium constellation-glow animate-twinkle-slow"
-            style={{ top: "25%", right: "15%" }}
-          ></div>
-          <div
-            className="constellation-circle constellation-glow animate-pulse-slow"
-            style={{ top: "22%", right: "8%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-small animate-bounce-subtle"
-            style={{ top: "16%", right: "12%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ top: "27%", right: "13%" }}
-          ></div>
-          <div className="constellation-circle animate-fade-pulse" style={{ top: "20%", right: "17%" }}></div>
-          <div
-            className="constellation-line constellation-glow animate-glow-pulse"
-            style={{ top: "20%", right: "12%", width: "30px", transform: "rotate(-15deg)" }}
-          ></div>
-
-          {/* Additional top right elements */}
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-fast"
-            style={{ top: "10%", right: "5%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-slow"
-            style={{ top: "30%", right: "3%" }}
-          ></div>
-
-          {/* Left Side - Mid level Enhanced */}
-          <div
-            className="constellation-dot constellation-dot-small constellation-glow animate-twinkle-slow"
-            style={{ top: "45%", left: "5%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-medium constellation-glow animate-rotate-reverse"
-            style={{ top: "50%", left: "3%" }}
-          ></div>
-          <div
-            className="constellation-circle constellation-glow animate-pulse-slow"
-            style={{ top: "55%", left: "7%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-bounce-subtle"
-            style={{ top: "48%", left: "6%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ top: "52%", left: "4%" }}
-          ></div>
-          <div
-            className="constellation-line animate-fade-pulse"
-            style={{ top: "47%", left: "4%", width: "20px", transform: "rotate(60deg)" }}
-          ></div>
-
-          {/* Additional left side elements */}
-          <div
-            className="constellation-dot constellation-dot-medium animate-twinkle-fast"
-            style={{ top: "35%", left: "2%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-fast" style={{ top: "65%", left: "1%" }}></div>
-
-          {/* Right Side - Mid level Enhanced */}
-          <div
-            className="constellation-star constellation-star-medium constellation-glow animate-rotate-slow"
-            style={{ top: "40%", right: "6%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-medium constellation-glow animate-twinkle-slow"
-            style={{ top: "48%", right: "4%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-slow" style={{ top: "43%", right: "8%" }}></div>
-          <div
-            className="constellation-dot constellation-dot-small animate-bounce-subtle"
-            style={{ top: "46%", right: "7%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ top: "41%", right: "9%" }}
-          ></div>
-          <div
-            className="constellation-line constellation-glow animate-glow-pulse"
-            style={{ top: "44%", right: "5%", width: "25px", transform: "rotate(45deg)" }}
-          ></div>
-
-          {/* Additional right side elements */}
-          <div
-            className="constellation-star constellation-star-small animate-rotate-reverse"
-            style={{ top: "35%", right: "2%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-small animate-twinkle-fast"
-            style={{ top: "60%", right: "1%" }}
-          ></div>
-
-          {/* Center Area - More sparse but animated elements */}
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-slow"
-            style={{ top: "30%", left: "25%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-bounce-subtle"
-            style={{ top: "35%", right: "30%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-slow" style={{ top: "32%", left: "30%" }}></div>
-          <div
-            className="constellation-dot constellation-dot-small animate-twinkle-delayed"
-            style={{ top: "38%", right: "35%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-slow"
-            style={{ top: "28%", left: "35%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-fade-pulse"
-            style={{ top: "42%", left: "40%" }}
-          ></div>
-          <div className="constellation-circle animate-twinkle-fast" style={{ top: "26%", right: "40%" }}></div>
-
-          {/* Bottom Left Cluster - Enhanced */}
-          <div
-            className="constellation-star constellation-star-large constellation-glow animate-rotate-slow"
-            style={{ bottom: "25%", left: "12%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-small constellation-glow animate-twinkle-slow"
-            style={{ bottom: "20%", left: "8%" }}
-          ></div>
-          <div
-            className="constellation-circle constellation-glow animate-pulse-slow"
-            style={{ bottom: "30%", left: "15%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-medium animate-bounce-subtle"
-            style={{ bottom: "28%", left: "10%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ bottom: "22%", left: "14%" }}
-          ></div>
-          <div className="constellation-circle animate-fade-pulse" style={{ bottom: "26%", left: "17%" }}></div>
-          <div
-            className="constellation-line constellation-glow animate-glow-pulse"
-            style={{ bottom: "27%", left: "10%", width: "35px", transform: "rotate(-30deg)" }}
-          ></div>
-          <div
-            className="constellation-line animate-fade-pulse"
-            style={{ bottom: "24%", left: "13%", width: "20px", transform: "rotate(15deg)" }}
-          ></div>
-
-          {/* Additional bottom left elements */}
-          <div
-            className="constellation-dot constellation-dot-medium animate-twinkle-fast"
-            style={{ bottom: "15%", left: "5%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-reverse"
-            style={{ bottom: "35%", left: "3%" }}
-          ></div>
-
-          {/* Bottom Right Cluster - Enhanced */}
-          <div
-            className="constellation-dot constellation-dot-medium constellation-glow animate-twinkle-slow"
-            style={{ bottom: "22%", right: "10%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-medium constellation-glow animate-rotate-reverse"
-            style={{ bottom: "28%", right: "14%" }}
-          ></div>
-          <div
-            className="constellation-circle constellation-glow animate-pulse-slow"
-            style={{ bottom: "25%", right: "8%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-small animate-bounce-subtle"
-            style={{ bottom: "30%", right: "12%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ bottom: "24%", right: "16%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-slow"
-            style={{ bottom: "26%", right: "11%" }}
-          ></div>
-          <div
-            className="constellation-line animate-glow-pulse"
-            style={{ bottom: "26%", right: "12%", width: "28px", transform: "rotate(75deg)" }}
-          ></div>
-
-          {/* Additional bottom right elements */}
-          <div
-            className="constellation-dot constellation-dot-small animate-twinkle-fast"
-            style={{ bottom: "18%", right: "5%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-fast" style={{ bottom: "35%", right: "3%" }}></div>
-
-          {/* Far edges - extending slightly outside with animation */}
-          <div
-            className="constellation-dot constellation-dot-small constellation-glow animate-twinkle-slow"
-            style={{ top: "35%", left: "-2%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-medium constellation-glow animate-rotate-slow"
-            style={{ top: "60%", right: "-3%" }}
-          ></div>
-          <div
-            className="constellation-circle constellation-glow animate-pulse-slow"
-            style={{ bottom: "40%", left: "-1%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-small constellation-glow animate-bounce-subtle"
-            style={{ bottom: "50%", right: "-2%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ top: "25%", left: "-1%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-fade-pulse"
-            style={{ bottom: "35%", right: "-1%" }}
-          ></div>
-
-          {/* Additional scattered elements for depth with animation */}
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-fast"
-            style={{ top: "70%", right: "25%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-slow" style={{ top: "65%", left: "20%" }}></div>
-          <div
-            className="constellation-dot constellation-dot-small animate-bounce-subtle"
-            style={{ top: "75%", left: "18%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-reverse"
-            style={{ top: "68%", right: "28%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-delayed"
-            style={{ top: "72%", left: "22%" }}
-          ></div>
-
-          {/* Upper area additional elements with animation */}
-          <div
-            className="constellation-dot constellation-dot-tiny animate-fade-pulse"
-            style={{ top: "8%", left: "20%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-fast" style={{ top: "10%", right: "25%" }}></div>
-          <div
-            className="constellation-dot constellation-dot-small animate-twinkle-slow"
-            style={{ top: "6%", right: "30%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-slow"
-            style={{ top: "9%", left: "25%" }}
-          ></div>
-
-          {/* Mid-level connecting elements with animation */}
-          <div
-            className="constellation-dot constellation-dot-tiny animate-bounce-subtle"
-            style={{ top: "42%", left: "18%" }}
-          ></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-twinkle-fast"
-            style={{ top: "58%", right: "20%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-slow" style={{ top: "45%", left: "22%" }}></div>
-          <div className="constellation-circle animate-fade-pulse" style={{ top: "55%", right: "18%" }}></div>
-
-          {/* Additional connecting lines with subtle animation */}
-          <div
-            className="constellation-line animate-glow-pulse"
-            style={{ top: "32%", left: "20%", width: "20px", transform: "rotate(60deg)" }}
-          ></div>
-          <div
-            className="constellation-line constellation-glow animate-fade-pulse"
-            style={{ bottom: "35%", right: "20%", width: "25px", transform: "rotate(-45deg)" }}
-          ></div>
-          <div
-            className="constellation-line animate-glow-pulse"
-            style={{ top: "65%", left: "19%", width: "18px", transform: "rotate(30deg)" }}
-          ></div>
-          <div
-            className="constellation-line animate-fade-pulse"
-            style={{ top: "8%", right: "28%", width: "22px", transform: "rotate(-60deg)" }}
-          ></div>
-
-          {/* More floating elements for enhanced density */}
-          <div
-            className="constellation-dot constellation-dot-small animate-twinkle-slow"
-            style={{ top: "22%", left: "45%" }}
-          ></div>
-          <div
-            className="constellation-star constellation-star-small animate-rotate-reverse"
-            style={{ bottom: "45%", right: "45%" }}
-          ></div>
-          <div className="constellation-circle animate-pulse-fast" style={{ top: "55%", left: "35%" }}></div>
-          <div
-            className="constellation-dot constellation-dot-tiny animate-bounce-subtle"
-            style={{ bottom: "60%", right: "35%" }}
-          ></div>
+          <div className="absolute top-[75%] right-[20%] opacity-45 animate-fade-pulse" style={{filter: 'drop-shadow(0 0 16px rgba(255, 153, 0, 0.4))'}}>
+            <svg width="55" height="55" viewBox="0 0 1377 739" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="454.991" cy="238.204" r="9" stroke="#FF9900" strokeWidth="2" className="animate-glow-pulse"/>
+            </svg>
+          </div>
         </div>
       </div>
 
