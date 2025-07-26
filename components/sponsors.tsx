@@ -163,10 +163,12 @@ export function Sponsors() {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-yellow-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <Button
                           onClick={handleDownloadPrimer}
-                          className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black px-10 py-4 text-xl shadow-2xl hover:shadow-orange-500/50 hover:scale-105 duration-500"
+                          className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black px-4 sm:px-6 md:px-10 py-3 sm:py-4 text-base sm:text-lg md:text-xl shadow-2xl hover:shadow-orange-500/50 hover:scale-105 duration-500 w-full sm:w-auto"
                         >
-                          <Download className="w-6 h-6 mr-3" />
-                          Download Sponsorship Primer
+                          <div className="flex items-center justify-center gap-2 sm:gap-3">
+                            <Download className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0" />
+                            <span className="text-center">Download Sponsorship Primer</span>
+                          </div>
                         </Button>
                       </div>
                     </div>
@@ -221,7 +223,7 @@ export function Sponsors() {
                     </p>
                     <Button
                       variant="outline"
-                      className="border-2 border-orange-500/40 text-orange-400 hover:bg-orange-500/20 bg-transparent hover:border-orange-500/60 font-bold px-8 py-3 text-lg transition-all duration-500 hover:scale-105"
+                      className="border-2 border-orange-500/40 text-orange-400 hover:bg-orange-500/20 bg-transparent hover:border-orange-500/60 font-bold px-4 sm:px-6 md:px-8 py-3 text-sm sm:text-base md:text-lg transition-all duration-500 hover:scale-105 w-full sm:w-auto"
                     >
                       Discuss Custom Package
                     </Button>
@@ -314,9 +316,11 @@ export function Sponsors() {
                       
                       <div className="relative">
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-yellow-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <Button className="relative w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black text-lg py-4 shadow-2xl hover:scale-105 duration-500">
-                          <Mail className="w-5 h-5 mr-3" />
-                          Send Inquiry
+                        <Button className="relative w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black text-base sm:text-lg py-3 sm:py-4 shadow-2xl hover:scale-105 duration-500">
+                          <div className="flex items-center justify-center gap-2 sm:gap-3">
+                            <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                            <span>Send Inquiry</span>
+                          </div>
                         </Button>
                       </div>
                     </form>

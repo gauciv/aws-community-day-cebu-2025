@@ -374,7 +374,7 @@ export function Volunteers() {
         </div>
 
         {/* Enhanced Volunteers Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {displayedVolunteers.map((volunteer, index) => (
             <Card
               key={index}
@@ -418,11 +418,11 @@ export function Volunteers() {
                 </div>
               </div>
               
-              <CardContent className="p-6 bg-gradient-to-t from-slate-900/50 to-transparent">
-                <h3 className="font-black text-base text-white truncate mb-3 group-hover:text-orange-400 transition-colors duration-500">
-                  {volunteer.name}
+              <CardContent className="p-4 sm:p-6 bg-gradient-to-t from-slate-900/50 to-transparent">
+                <h3 className="font-black text-sm sm:text-base text-white mb-3 group-hover:text-orange-400 transition-colors duration-500 leading-tight min-h-[2.5rem] flex items-center">
+                  <span className="line-clamp-2">{volunteer.name}</span>
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
                   {volunteer.categories.map((category, idx) => (
                     <Badge
                       key={idx}
