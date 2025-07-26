@@ -378,7 +378,7 @@ export function Volunteers() {
           {displayedVolunteers.map((volunteer, index) => (
             <Card
               key={index}
-              className={`transition-all duration-1000 overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 hover:border-orange-500/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 group hover:scale-105 ${
+              className={`transition-all duration-300 overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 hover:border-orange-500/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 group hover:scale-105 ${
                 isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
               }`}
               style={{ animationDelay: `${(index % 20) * 50}ms` }}
@@ -389,7 +389,7 @@ export function Volunteers() {
                     src={volunteer.image}
                     alt={volunteer.name}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                     loading={index < 10 ? "eager" : "lazy"}
                     priority={index < 4}
@@ -408,25 +408,25 @@ export function Volunteers() {
                 )}
                 
                 {/* Overlay with floating elements */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                     <Star className="w-5 h-5 text-orange-400 animate-twinkle" />
                   </div>
-                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-400">
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150">
                     <Sparkles className="w-4 h-4 text-yellow-400 animate-twinkle" />
                   </div>
                 </div>
               </div>
               
               <CardContent className="p-4 sm:p-6 bg-gradient-to-t from-slate-900/50 to-transparent h-32 flex flex-col justify-center items-center text-center">
-                <h3 className="font-black text-sm sm:text-base text-white mb-3 group-hover:text-orange-400 transition-colors duration-500 leading-tight min-h-[2.5rem] flex items-center justify-center">
+                <h3 className="font-black text-sm sm:text-base text-white mb-3 group-hover:text-orange-400 transition-colors duration-200 leading-tight min-h-[2.5rem] flex items-center justify-center">
                   <span className="line-clamp-2 text-center">{volunteer.name}</span>
                 </h3>
                 <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                   {volunteer.categories.map((category, idx) => (
                     <Badge
                       key={idx}
-                      className={`text-xs font-bold shadow-lg transition-all duration-500 group-hover:scale-105 ${categoryColors[category as keyof typeof categoryColors]}`}
+                      className={`text-xs font-bold shadow-lg transition-all duration-200 group-hover:scale-105 ${categoryColors[category as keyof typeof categoryColors]}`}
                     >
                       {category}
                     </Badge>
@@ -444,7 +444,7 @@ export function Volunteers() {
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-full blur-xl"></div>
               <Button
                 onClick={() => setShowAll(true)}
-                className="relative bg-white/10 backdrop-blur-sm border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 px-8 py-4 text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105"
+                className="relative bg-white/10 backdrop-blur-sm border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 px-8 py-4 text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-200 hover:scale-105"
               >
                 <ChevronDown className="w-5 h-5 mr-2 animate-bounce" />
                 Show More Volunteers ({filteredVolunteers.length - displayedVolunteers.length} remaining)
