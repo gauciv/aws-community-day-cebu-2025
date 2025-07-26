@@ -1,0 +1,27 @@
+Error: ./components/hero.tsx
+Error:   [31m×[0m Unexpected token `section`. Expected jsx identifier
+    ╭─[[36;1;4m/home/runner/workspace/components/hero.tsx[0m:24:1]
+ [2m21[0m │   }
+ [2m22[0m │ 
+ [2m23[0m │   return (
+ [2m24[0m │     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-slate-800 via-blue-900/95 to-slate-800">
+    · [35;1m     ───────[0m
+ [2m25[0m │       {/* Enhanced Constellation Background with Connected Dots Pattern */}
+ [2m26[0m │       <div className="absolute inset-0 constellation-background">
+ [2m27[0m │         {/* Soft cloud elements with subtle movement */}
+    ╰────
+
+Caused by:
+    Syntax Error
+    at BuildError (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/components/react-dev-overlay/ui/container/build-error.js:43:41)
+    at react-stack-bottom-frame (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:23864:20)
+    at renderWithHooks (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:5530:22)
+    at updateFunctionComponent (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:8898:19)
+    at beginWork (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:10523:18)
+    at runWithFiberInDEV (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:1520:30)
+    at performUnitOfWork (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:15133:22)
+    at workLoopSync (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:14957:41)
+    at renderRootSync (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:14937:11)
+    at performWorkOnRoot (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:14420:13)
+    at performWorkOnRootViaSchedulerTask (webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:16217:7)
+    at MessagePort.performWorkUntilDeadline (webpack-internal:///(pages-dir-browser)/./node_modules/scheduler/cjs/scheduler.development.js:45:48)
