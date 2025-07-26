@@ -335,6 +335,20 @@ export function Tickets() {
                     ))}
                   </ul>
 
+                  <div className="mt-auto pt-6 border-t border-white/10">
+                    <Button
+                      onClick={handleRegisterClick}
+                      className={`w-full py-3 font-bold text-base transition-all duration-500 transform hover:scale-105 ${
+                        ticket.popular
+                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 shadow-xl shadow-orange-500/30"
+                          : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm"
+                      }`}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Register Now
+                    </Button>
+                  </div>
+
                   </CardContent>
               </Card>
             </div>
