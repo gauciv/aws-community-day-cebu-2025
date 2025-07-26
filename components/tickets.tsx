@@ -256,11 +256,11 @@ export function Tickets() {
           {ticketTypes.map((ticket, index) => (
             <div
               key={index}
-              className={`transition-all duration-1000 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
+              className={`transition-all duration-1000 flex ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <Card
-                className={`relative border-2 transition-all duration-700 hover:scale-105 h-full group ${
+                className={`relative border-2 transition-all duration-700 hover:scale-105 w-full flex flex-col group ${
                   ticket.popular
                     ? "border-orange-500/50 shadow-2xl shadow-orange-500/30 bg-gradient-to-br from-orange-500/10 via-yellow-500/5 to-orange-500/10"
                     : "border-white/20 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/20 bg-white/5"
@@ -336,18 +336,24 @@ export function Tickets() {
                     ))}
                   </ul>
 
-                  <div className="mt-auto">
+                  {/* CTA Button - Always aligned at bottom */}
+                  <div className="mt-auto pt-4">
                     <Button
                       onClick={handleRegisterClick}
-                      className={`w-full py-3 font-bold text-base transition-all duration-500 transform hover:scale-105 ${
+                      className={`w-full py-4 font-bold text-base transition-all duration-500 transform hover:scale-105 active:scale-95 ${
                         ticket.popular
-                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 shadow-xl shadow-orange-500/30"
-                          : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm"
-                      }`}
+                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50"
+                          : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm hover:text-white"
+                      } group/button`}
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <ExternalLink className="w-4 h-4 mr-2 group-hover/button:rotate-12 transition-transform duration-300" />
                       Register Now
                     </Button>
+                    
+                    {/* Additional CTA text for emphasis */}
+                    <p className="text-xs text-gray-400 text-center mt-2 group-hover:text-gray-300 transition-colors duration-300">
+                      Secure your spot today!
+                    </p>
                   </div>
                 </CardContent>
 
