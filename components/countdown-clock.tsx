@@ -17,8 +17,12 @@ export function CountdownClock() {
     seconds: 0,
   })
   const [mounted, setMounted] = useState(false)
-  const [prevSeconds, setPrevSeconds] = useState(0)
-  const [isFlipping, setIsFlipping] = useState(false)
+  const [animatingUnits, setAnimatingUnits] = useState({
+    days: false,
+    hours: false,
+    minutes: false,
+    seconds: false,
+  })
 
   useEffect(() => {
     setMounted(true)
@@ -40,23 +44,39 @@ export function CountdownClock() {
       return { days: 0, hours: 0, minutes: 0, seconds: 0 }
     }
 
+    let prevTime = calculateTimeLeft()
+
     const timer = setInterval(() => {
       const newTime = calculateTimeLeft()
 
-      // Trigger flip animation for seconds
-      if (newTime.seconds !== prevSeconds) {
-        setIsFlipping(true)
-        setTimeout(() => setIsFlipping(false), 300)
-        setPrevSeconds(newTime.seconds)
+      // Check which units changed and trigger animations
+      const newAnimatingUnits = {
+        days: newTime.days !== prevTime.days,
+        hours: newTime.hours !== prevTime.hours,
+        minutes: newTime.minutes !== prevTime.minutes,
+        seconds: newTime.seconds !== prevTime.seconds,
       }
 
+      if (Object.values(newAnimatingUnits).some(Boolean)) {
+        setAnimatingUnits(newAnimatingUnits)
+        setTimeout(() => {
+          setAnimatingUnits({
+            days: false,
+            hours: false,
+            minutes: false,
+            seconds: false,
+          })
+        }, 600) // Animation duration
+      }
+
+      prevTime = newTime
       setTimeLeft(newTime)
     }, 1000)
 
     setTimeLeft(calculateTimeLeft())
 
     return () => clearInterval(timer)
-  }, [prevSeconds])
+  }, [])
 
   if (!mounted) {
     return (
@@ -69,33 +89,34 @@ export function CountdownClock() {
     )
   }
 
-  const TimeCard = ({ value, label, isActive = false }: { value: number; label: string; isActive?: boolean }) => (
+  const TimeCard = ({ value, label, isAnimating = false }: { value: number; label: string; isAnimating?: boolean }) => (
     <div className="flex flex-col items-center group">
       <div className="relative">
         <div
-          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-orange-400/30 flex items-center justify-center shadow-lg transition-all duration-700 ease-in-out group-hover:scale-105 ${
-            isActive ? "border-orange-400/60 shadow-orange-400/20" : ""
+          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-orange-400/30 flex items-center justify-center shadow-lg transition-all duration-600 ease-out group-hover:scale-105 ${
+            isAnimating ? "scale-110 border-orange-400/80 shadow-orange-400/40" : "scale-100"
           }`}
         >
           <span 
-            className={`text-xl sm:text-2xl md:text-4xl font-black font-mono text-white drop-shadow-lg transition-all duration-500 ease-in-out ${
-              isFlipping && isActive ? "animate-smooth-flip" : ""
+            className={`text-xl sm:text-2xl md:text-4xl font-black font-mono text-white drop-shadow-lg transition-all duration-600 ease-out ${
+              isAnimating ? "scale-90 text-orange-300" : "scale-100"
             }`}
           >
             {value.toString().padStart(2, "0")}
           </span>
         </div>
 
-        {/* Glassmorphism overlay */}
+        {/* Enhanced glassmorphism overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 via-transparent to-white/5 rounded-xl" />
 
-        {/* Smooth orange glow effect */}
+        {/* Smooth pulsing glow effect */}
         <div
-          className={`absolute inset-0 rounded-xl transition-all duration-700 ease-in-out ${
-            isActive ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 rounded-xl transition-all duration-600 ease-out ${
+            isAnimating ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="absolute inset-0 bg-orange-400/20 rounded-xl blur-sm animate-gentle-pulse" />
+          <div className="absolute inset-0 bg-orange-400/30 rounded-xl blur-md animate-pulse" />
+          <div className="absolute inset-0 bg-orange-300/20 rounded-xl blur-lg animate-pulse" style={{ animationDelay: '0.2s' }} />
         </div>
 
         {/* Constellation pattern */}
@@ -134,13 +155,13 @@ export function CountdownClock() {
 
       {/* Countdown display */}
       <div className="flex items-center gap-3 sm:gap-4 md:gap-8 relative z-10">
-        <TimeCard value={timeLeft.days} label="Days" />
+        <TimeCard value={timeLeft.days} label="Days" isAnimating={animatingUnits.days} />
         <AnimatedColon />
-        <TimeCard value={timeLeft.hours} label="Hours" />
+        <TimeCard value={timeLeft.hours} label="Hours" isAnimating={animatingUnits.hours} />
         <AnimatedColon />
-        <TimeCard value={timeLeft.minutes} label="Minutes" />
+        <TimeCard value={timeLeft.minutes} label="Minutes" isAnimating={animatingUnits.minutes} />
         <AnimatedColon />
-        <TimeCard value={timeLeft.seconds} label="Seconds" isActive={true} />
+        <TimeCard value={timeLeft.seconds} label="Seconds" isAnimating={animatingUnits.seconds} />
       </div>
 
       {/* Enhanced event info */}

@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useEffect, useState } from "react"
@@ -7,10 +6,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, Download, FileText, Zap, Sparkles, Star, Crown } from "lucide-react"
 
 export function Sponsors() {
   const [isVisible, setIsVisible] = useState(false)
+  const [sponsorshipType, setSponsorshipType] = useState("")
+  const [sponsorshipPackage, setSponsorshipPackage] = useState("")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,7 +21,7 @@ export function Sponsors() {
           setIsVisible(true)
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     )
 
     const element = document.getElementById("sponsors")
@@ -32,309 +34,252 @@ export function Sponsors() {
     window.open(
       "https://drive.google.com/file/d/1HyIvUZQX81X58-RkSntHRfU0p8BD2De7/view",
       "_blank",
-      "noopener,noreferrer",
+      "noopener,noreferrer"
     )
   }
 
+  const getPackageOptions = (type: string) => {
+    if (type === "national") {
+      return [
+        { value: "platinum", label: "Platinum Package", icon: "👑", color: "from-purple-400 to-pink-400", description: "Premium tier with maximum visibility" },
+        { value: "gold", label: "Gold Package", icon: "🥇", color: "from-yellow-400 to-orange-400", description: "High-impact sponsorship benefits" },
+        { value: "silver", label: "Silver Package", icon: "🥈", color: "from-gray-300 to-gray-400", description: "Great value with solid exposure" }
+      ]
+    } else if (type === "local") {
+      return [
+        { value: "gold", label: "Gold Package", icon: "🥇", color: "from-yellow-400 to-orange-400", description: "Top-tier local community presence" },
+        { value: "silver", label: "Silver Package", icon: "🥈", color: "from-gray-300 to-gray-400", description: "Strong local community engagement" },
+        { value: "bronze", label: "Bronze Package", icon: "🥉", color: "from-amber-600 to-orange-600", description: "Essential local community support" }
+      ]
+    }
+    return []
+  }
+
+  const handleTypeChange = (value: string) => {
+    setSponsorshipType(value)
+    setSponsorshipPackage("")
+  }
+
   return (
-    <section id="sponsors" className="py-12 md:py-20 lg:py-32 hero-gradient-dark relative overflow-hidden">
-      {/* Enhanced Atmospheric Background with Shroud Depth */}
-      <div className="absolute inset-0 constellation-background">
-        <div className="constellation-container">
-          {/* Shroud SVG for Depth Behind Content */}
-          <div
-            className="constellation-svg"
-            style={{ top: "20%", left: "8%", width: "250px", height: "auto", opacity: "0.04" }}
-          >
-            <img 
-              src="/art-assets/shroud.svg" 
-              alt="Atmospheric shroud" 
-              className="w-full h-auto animate-gentle-pulse"
-            />
-          </div>
-          
-          <div
-            className="constellation-svg"
-            style={{ bottom: "15%", right: "10%", width: "220px", height: "auto", opacity: "0.06" }}
-          >
-            <img 
-              src="/art-assets/shroud.svg" 
-              alt="Atmospheric shroud" 
-              className="w-full h-auto animate-float-slow"
-              style={{ transform: "rotate(180deg)" }}
-            />
-          </div>
-
-          {/* Cloud SVG for Background Texture */}
-          <div
-            className="constellation-svg"
-            style={{ top: "40%", right: "20%", width: "160px", height: "auto", opacity: "0.08" }}
-          >
-            <img 
-              src="/art-assets/clouds.svg" 
-              alt="Atmospheric clouds" 
-              className="w-full h-auto animate-float-reverse"
-            />
-          </div>
-          
-          {/* Constellation Frames */}
-          <div
-            className="constellation-svg constellation-hover-spin"
-            style={{ top: "25%", left: "20%", width: "80px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/cassiopeia.svg" 
-              alt="Cassiopeia constellation" 
-              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer"
-              style={{ opacity: "0.4" }}
-            />
-          </div>
-
-          <div
-            className="constellation-svg constellation-hover-spin"
-            style={{ bottom: "30%", right: "25%", width: "75px", height: "auto" }}
-          >
-            <img 
-              src="/art-assets/pegasus.svg" 
-              alt="Pegasus constellation" 
-              className="w-full h-auto constellation-glow-orange animate-gentle-shimmer-delayed"
-              style={{ opacity: "0.35" }}
-            />
-          </div>
-          
-          {/* Enhanced gradient orbs with more color variety */}
-          <div className="absolute top-40 right-1/5 w-48 h-48 bg-gradient-to-r from-orange-500/8 via-amber-500/12 to-yellow-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-56 left-1/4 w-36 h-36 bg-gradient-to-r from-blue-500/8 via-purple-500/10 to-pink-500/8 rounded-full blur-2xl animate-pulse delay-1000"></div>
-          
-          {/* Optimized constellation network */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow" style={{top: '20%', left: '15%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{top: '35%', right: '20%'}}></div>
-          <div className="constellation-dot constellation-dot-tiny constellation-glow" style={{bottom: '40%', left: '12%'}}></div>
-          <div className="constellation-dot constellation-dot-small" style={{bottom: '25%', right: '18%'}}></div>
-        </div>
+    <section id="sponsors" className="py-12 md:py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/8 via-yellow-500/12 to-orange-600/8 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-32 left-1/3 w-80 h-80 bg-gradient-to-r from-blue-500/6 via-purple-500/10 to-indigo-500/8 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-orange-400/40 rounded-full animate-twinkle"></div>
+        <div className="absolute top-1/3 right-1/5 w-1 h-1 bg-yellow-400/50 rounded-full animate-twinkle delay-500"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-blue-400/40 rounded-full animate-twinkle delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-sm font-bold mb-8 shadow-lg">
-            <Crown className="w-4 h-4 mr-2 animate-pulse" />
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-sm font-semibold mb-6">
+            <Crown className="w-4 h-4 mr-2" />
             Sponsorship Opportunities
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-8 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
             Partner with{" "}
             <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
               AWS Community Day
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Join us in building the largest AWS community event in Cebu. Support local developers and showcase your
             commitment to cloud innovation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
-          {/* Enhanced Sponsorship Information */}
-          <div className="space-y-8">
-            <div
-              className={`transition-all duration-1000 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
-            >
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
-                <Card className="relative border-2 border-white/20 hover:border-orange-500/30 shadow-2xl hover:shadow-orange-500/20 transition-all duration-700 bg-white/5 backdrop-blur-sm">
-                  <CardContent className="p-6 sm:p-8 lg:p-10">
-                    <div className="text-center mb-10">
-                      <div className="relative mb-6">
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
-                        <div className="relative w-20 h-20 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
-                          <FileText className="w-10 h-10 text-white" />
-                        </div>
-                      </div>
-                      
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6 group-hover:text-orange-400 transition-colors duration-500">
-                        Sponsorship Primer
-                      </h3>
-                      
-                      <p className="text-gray-300 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
-                        Download our comprehensive sponsorship primer to learn about all available packages, benefits, and
-                        opportunities to partner with AWS Community Day Cebu 2025.
-                      </p>
-                      
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-yellow-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <Button
-                          onClick={handleDownloadPrimer}
-                          className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black px-4 sm:px-6 md:px-10 py-3 sm:py-4 text-base sm:text-lg md:text-xl shadow-2xl hover:shadow-orange-500/50 hover:scale-105 duration-500 w-full sm:w-auto"
-                        >
-                          <div className="flex items-center justify-center gap-2 sm:gap-3">
-                            <Download className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0" />
-                            <span className="text-center">Download Sponsorship Primer</span>
-                          </div>
-                        </Button>
-                      </div>
-                    </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="space-y-6">
+            <Card className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-orange-500/20 transition-colors duration-300">
+              <CardContent className="p-8">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Sponsorship Primer
+                  </h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    Download our comprehensive sponsorship primer to learn about all available packages, benefits, and
+                    opportunities to partner with AWS Community Day Cebu 2025.
+                  </p>
+                  
+                  <Button
+                    onClick={handleDownloadPrimer}
+                    className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold px-6 py-3 text-base w-full"
+                  >
+                    <Download className="w-5 h-5 mr-2" />
+                    Download Sponsorship Primer
+                  </Button>
+                </div>
 
-                    <div className="space-y-8">
-                      <div className="text-center">
-                        <h4 className="text-2xl font-black text-white mb-6 flex items-center justify-center gap-2">
-                          <Star className="w-6 h-6 text-orange-400" />
-                          Why Sponsor AWS Community Day?
-                        </h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                          {[
-                            "Reach 500+ cloud professionals",
-                            "Brand visibility in tech community", 
-                            "Networking with industry leaders",
-                            "Support local developer ecosystem"
-                          ].map((benefit, index) => (
-                            <div key={index} className="flex items-start gap-3 group/item">
-                              <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300"></div>
-                              <span className="text-gray-300 font-medium group-hover/item:text-white transition-colors duration-300">{benefit}</span>
-                            </div>
-                          ))}
-                        </div>
+                <div className="space-y-6">
+                  <h4 className="text-xl font-bold text-white flex items-center gap-2">
+                    <Star className="w-5 h-5 text-orange-400" />
+                    Why Sponsor AWS Community Day?
+                  </h4>
+                  <div className="grid grid-cols-1 gap-3">
+                    {[
+                      "Reach 500+ cloud professionals",
+                      "Brand visibility in tech community", 
+                      "Networking with industry leaders",
+                      "Support local developer ecosystem"
+                    ].map((benefit, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-gray-300">{benefit}</span>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            <div
-              className={`transition-all duration-1000 delay-200 ${
-                isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
-              }`}
-            >
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
-                <Card className="relative border-2 border-orange-500/30 bg-gradient-to-r from-orange-500/10 to-yellow-500/5 backdrop-blur-sm shadow-2xl hover:shadow-orange-500/30 transition-all duration-700">
-                  <CardContent className="p-10 text-center">
-                    <div className="relative mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
-                      <div className="relative w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
-                        <Sparkles className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <h4 className="text-2xl font-black text-white mb-6 group-hover:text-orange-400 transition-colors duration-500">
-                      Custom Sponsorship Packages
-                    </h4>
-                    <p className="text-gray-300 mb-8 text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
-                      Have specific requirements? We can create a custom sponsorship package tailored to your needs and
-                      budget. Let's discuss how we can work together to make this event amazing.
-                    </p>
-                    <Button
-                      variant="outline"
-                      className="border-2 border-orange-500/40 text-orange-400 hover:bg-orange-500/20 bg-transparent hover:border-orange-500/60 font-bold px-4 sm:px-6 md:px-8 py-3 text-sm sm:text-base md:text-lg transition-all duration-500 hover:scale-105 w-full sm:w-auto"
-                    >
-                      Discuss Custom Package
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Enhanced Contact Form */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-8">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700"></div>
-                <Card className="relative border-2 border-white/20 shadow-2xl shadow-orange-500/10 bg-white/5 backdrop-blur-sm hover:border-orange-500/30 transition-all duration-700">
-                  <CardContent className="p-6 sm:p-8 lg:p-10">
-                    <div className="text-center mb-10">
-                      <div className="relative mb-6">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-xl opacity-60 animate-pulse"></div>
-                        <div className="relative w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto shadow-2xl">
-                          <Zap className="w-8 h-8 text-white" />
-                        </div>
-                      </div>
-                      <h3 className="text-2xl font-black text-white mb-3">Become a Sponsor</h3>
-                      <p className="text-gray-300 font-medium">
-                        Join our amazing sponsors and support the AWS community in Cebu.
-                      </p>
-                    </div>
+          <div>
+            <Card className="border border-white/10 bg-white/5 backdrop-blur-sm min-h-[600px]">
+              <CardContent className="p-8 h-full flex flex-col">
+                <div className="text-center mb-8 flex-shrink-0">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Become a Sponsor</h3>
+                  <p className="text-gray-300">
+                    Join our amazing sponsors and support the AWS community in Cebu.
+                  </p>
+                </div>
 
-                    <form className="space-y-6">
-                      <div>
-                        <Label htmlFor="company" className="text-white font-bold text-base mb-2 block">
-                          Company Name
-                        </Label>
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-xl blur-sm"></div>
-                          <Input 
-                            id="company" 
-                            placeholder="Your company name" 
-                            className="relative bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30" 
-                          />
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <Label htmlFor="email" className="text-white font-bold text-base mb-2 block">
-                          Email Address
-                        </Label>
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl blur-sm"></div>
-                          <Input 
-                            id="email" 
-                            type="email" 
-                            placeholder="contact@company.com" 
-                            className="relative bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30" 
-                          />
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <Label htmlFor="tier" className="text-white font-bold text-base mb-2 block">
-                          Interested Package
-                        </Label>
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur-sm"></div>
-                          <select className="relative w-full px-4 py-3 border border-white/20 bg-white/10 backdrop-blur-sm rounded-xl text-white font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30">
-                            <option className="bg-slate-900 text-white">Select sponsorship package</option>
-                            <option className="bg-slate-900 text-white">Platinum Package</option>
-                            <option className="bg-slate-900 text-white">Gold Package</option>
-                            <option className="bg-slate-900 text-white">Silver Package</option>
-                            <option className="bg-slate-900 text-white">Community Package</option>
-                            <option className="bg-slate-900 text-white">Custom Package</option>
-                          </select>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <Label htmlFor="message" className="text-white font-bold text-base mb-2 block">
-                          Message
-                        </Label>
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl blur-sm"></div>
-                          <Textarea
-                            id="message"
-                            placeholder="Tell us about your sponsorship interests and any specific requirements..."
-                            className="relative min-h-[120px] bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-gray-400 font-medium focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/30"
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-yellow-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <Button className="relative w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all font-black text-base sm:text-lg py-3 sm:py-4 shadow-2xl hover:scale-105 duration-500">
-                          <div className="flex items-center justify-center gap-2 sm:gap-3">
-                            <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                            <span>Send Inquiry</span>
+                <div className="flex-1 flex flex-col justify-between">
+
+                <form className="space-y-6">
+                  <div>
+                    <Label htmlFor="company" className="text-white font-medium mb-2 block">
+                      Company Name
+                    </Label>
+                    <Input 
+                      id="company" 
+                      placeholder="Your company name" 
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="email" className="text-white font-medium mb-2 block">
+                      Email Address
+                    </Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="contact@company.com" 
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="sponsorship-type" className="text-white font-medium mb-2 block">
+                      Sponsorship Type
+                    </Label>
+                    <Select value={sponsorshipType} onValueChange={handleTypeChange}>
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500">
+                        <SelectValue placeholder="Select sponsorship type" className="text-white" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-slate-800 border-slate-600">
+                        <SelectItem value="national" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                          🌍 National Sponsorship
+                        </SelectItem>
+                        <SelectItem value="local" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                          🏢 Local Sponsorship
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Always render the package field but with smooth transitions */}
+                  <div className={`transition-all duration-300 ease-in-out ${sponsorshipType ? 'opacity-100 max-h-96' : 'opacity-50 max-h-24 pointer-events-none'}`}>
+                    <Label htmlFor="sponsorship-package" className="text-white font-medium mb-2 block">
+                      Sponsorship Package
+                    </Label>
+                    <Select 
+                      value={sponsorshipPackage} 
+                      onValueChange={setSponsorshipPackage}
+                      disabled={!sponsorshipType}
+                    >
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <SelectValue placeholder="Select sponsorship package" className="text-white" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-slate-800 border-slate-600">
+                        {sponsorshipType && getPackageOptions(sponsorshipType).map((option) => (
+                          <SelectItem 
+                            key={option.value} 
+                            value={option.value} 
+                            className="text-white hover:bg-slate-700 focus:bg-slate-700"
+                          >
+                            {option.icon} {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    
+                    {/* Package description with smooth transitions */}
+                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${sponsorshipType ? 'max-h-48 mt-3' : 'max-h-0 mt-0'}`}>
+                      <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+                        <p className="text-sm text-gray-300">
+                          {sponsorshipType === "national" ? (
+                            <>
+                              <span className="text-orange-400 font-semibold">National Sponsorship:</span> Reach a broader audience across the Philippines with enhanced visibility and premium benefits.
+                            </>
+                          ) : sponsorshipType === "local" ? (
+                            <>
+                              <span className="text-orange-400 font-semibold">Local Sponsorship:</span> Connect with the local Cebu tech community with targeted exposure and community-focused benefits.
+                            </>
+                          ) : null}
+                        </p>
+                        
+                        <div className={`transition-all duration-300 ease-in-out overflow-hidden ${sponsorshipPackage && sponsorshipType ? 'max-h-32 mt-3' : 'max-h-0 mt-0'}`}>
+                          <div className="p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-lg">
+                                {sponsorshipType && sponsorshipPackage && getPackageOptions(sponsorshipType).find(p => p.value === sponsorshipPackage)?.icon}
+                              </span>
+                              <span className="font-semibold text-orange-400">
+                                {sponsorshipType && sponsorshipPackage && getPackageOptions(sponsorshipType).find(p => p.value === sponsorshipPackage)?.label}
+                              </span>
+                            </div>
+                            <p className="text-sm text-gray-300">
+                              {sponsorshipType && sponsorshipPackage && getPackageOptions(sponsorshipType).find(p => p.value === sponsorshipPackage)?.description}
+                            </p>
                           </div>
-                        </Button>
-                      </div>
-                    </form>
-
-                    <div className="mt-10 pt-8 border-t border-white/20">
-                      <div className="flex items-center gap-3 text-gray-300 justify-center">
-                        <Mail className="w-5 h-5 text-orange-400" />
-                        <span className="font-medium">For inquiries, email us at: awscloudclubctu@gmail.com</span>
+                        </div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="message" className="text-white font-medium mb-2 block">
+                      Message
+                    </Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Tell us about your sponsorship interests and any specific requirements..."
+                      className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                    />
+                  </div>
+                  
+                  <Button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold py-3">
+                    <Mail className="w-5 h-5 mr-2" />
+                    Send Inquiry
+                  </Button>
+                </form>
+
+                <div className="mt-8 pt-6 border-t border-white/20 text-center flex-shrink-0">
+                  <div className="flex items-center justify-center gap-2 text-gray-300">
+                    <Mail className="w-4 h-4 text-orange-400" />
+                    <span className="text-sm">For inquiries: awscloudclubctu@gmail.com</span>
+                  </div>
+                </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

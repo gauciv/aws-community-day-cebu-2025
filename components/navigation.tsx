@@ -12,36 +12,45 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      setIsScrolled(scrollY > 50)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY
+          setIsScrolled(scrollY > 50)
 
-      // Show register button only when scrolled past the about section
-      const aboutSection = document.getElementById("about")
-      if (aboutSection) {
-        const aboutTop = aboutSection.offsetTop
-        setShowRegisterButton(scrollY >= aboutTop - 100)
-      }
+          // Show register button only when scrolled past the hero section
+          const heroSection = document.querySelector('section')
+          if (heroSection) {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight
+            setShowRegisterButton(scrollY >= heroBottom - 200)
+          }
 
-      // Determine active section
-      const sections = ["about", "program", "speakers", "tickets", "sponsors", "volunteers", "faq"]
-      const currentSection = sections.find((section) => {
-        const element = document.getElementById(section === "program" ? "schedule" : section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
+          // Determine active section with smooth transitions
+          const sections = ["about", "program", "speakers", "tickets", "sponsors", "volunteers", "faq"]
+          const currentSection = sections.find((section) => {
+            const element = document.getElementById(section === "program" ? "schedule" : section)
+            if (element) {
+              const rect = element.getBoundingClientRect()
+              return rect.top <= 150 && rect.bottom >= 150
+            }
+            return false
+          })
 
-      if (currentSection) {
-        setActiveSection(currentSection)
-      } else if (scrollY < 100) {
-        setActiveSection("")
+          if (currentSection) {
+            setActiveSection(currentSection)
+          } else if (scrollY < 100) {
+            setActiveSection("")
+          }
+
+          ticking = false
+        })
+        ticking = true
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -71,8 +80,10 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-gray-900/95 backdrop-blur-md border-b border-gray-800 shadow-sm" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        isScrolled 
+          ? "bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50 shadow-lg shadow-black/10" 
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,16 +111,20 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button - Only show when scrolled past about section */}
+          {/* CTA Button - Only show when scrolled past hero section */}
           <div className="flex items-center space-x-4">
-            {showRegisterButton && (
+            <div className={`transition-all duration-500 ease-out ${
+              showRegisterButton 
+                ? 'opacity-100 translate-x-0 scale-100' 
+                : 'opacity-0 translate-x-4 scale-95 pointer-events-none'
+            }`}>
               <Button
                 onClick={handleRegisterClick}
-                className="hidden sm:inline-flex bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-all duration-300 font-semibold"
+                className="hidden sm:inline-flex bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 hover:scale-105 transition-all duration-300 font-semibold shadow-lg hover:shadow-orange-500/25"
               >
                 Register Now
               </Button>
-            )}
+            </div>
 
             {/* Mobile Menu Button */}
             <Button
