@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
@@ -63,6 +62,9 @@ export function OptimizedImage({
     )
   }
 
+  // Determine the loading strategy based on priority
+  const imageLoading = priority ? "eager" : loading;
+
   return (
     <div className={cn("relative", fill ? "" : "inline-block")}>
       <Image
@@ -78,7 +80,7 @@ export function OptimizedImage({
         )}
         sizes={sizes}
         priority={priority}
-        loading={loading}
+        loading={imageLoading}
         placeholder={placeholder}
         blurDataURL={blurDataURL}
         onLoad={handleLoad}
