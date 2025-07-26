@@ -418,11 +418,11 @@ export function Volunteers() {
                 </div>
               </div>
               
-              <CardContent className="p-4 sm:p-6 bg-gradient-to-t from-slate-900/50 to-transparent">
-                <h3 className="font-black text-sm sm:text-base text-white mb-3 group-hover:text-orange-400 transition-colors duration-500 leading-tight min-h-[2.5rem] flex items-center">
-                  <span className="line-clamp-2">{volunteer.name}</span>
+              <CardContent className="p-4 sm:p-6 bg-gradient-to-t from-slate-900/50 to-transparent h-32 flex flex-col justify-center items-center text-center">
+                <h3 className="font-black text-sm sm:text-base text-white mb-3 group-hover:text-orange-400 transition-colors duration-500 leading-tight min-h-[2.5rem] flex items-center justify-center">
+                  <span className="line-clamp-2 text-center">{volunteer.name}</span>
                 </h3>
-                <div className="flex flex-wrap gap-1 sm:gap-2">
+                <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
                   {volunteer.categories.map((category, idx) => (
                     <Badge
                       key={idx}
