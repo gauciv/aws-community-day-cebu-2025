@@ -204,7 +204,7 @@ export function Speakers() {
                   </div>
                   
                   {/* Enhanced crown badge */}
-                  <div className="absolute -top-4 -right-4 transform group-hover:scale-110 transition-transform duration-500"></div>
+                  <div className="absolute -top-4 -right-4 transform group-hover:scale-110 transition-transform duration-500">
                     <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white p-4 rounded-full shadow-xl border-4 border-white/20">
                       <Crown className="w-8 h-8" />
                     </div>
@@ -266,7 +266,7 @@ export function Speakers() {
                     </div>
 
                     {/* Enhanced Floating Icons */}
-                    <div className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-x-2 group-hover:translate-x-0 shadow-lg"></div>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-x-2 group-hover:translate-x-0 shadow-lg">
                       <Star className="w-5 h-5 text-white" />
                     </div>
                     <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-900 transform -translate-x-2 group-hover:translate-x-0 shadow-lg">
