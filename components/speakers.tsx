@@ -191,7 +191,7 @@ export function Speakers() {
                 <div className="absolute inset-2 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-1000 animate-pulse delay-500 scale-105"></div>
                 
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-yellow-400 to-orange-500 shadow-2xl group-hover:shadow-yellow-500/50 transition-all duration-1000 transform group-hover:scale-105">
-                  <div className="relative w-full h-full">
+                  <div className="relative w-full h-full aspect-square">
                     <OptimizedImage
                       src={keynoteSpeaker.image}
                       alt={keynoteSpeaker.name}
@@ -254,7 +254,7 @@ export function Speakers() {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-25 group-hover:opacity-50 transition-opacity duration-700 animate-pulse scale-110"></div>
                     
                     <div className="relative w-full h-full rounded-full overflow-hidden border-3 border-gradient-to-r from-blue-500 to-purple-500 shadow-xl group-hover:shadow-blue-500/40 transition-all duration-700 group-hover:scale-105">
-                      <div className="relative w-full h-full">
+                      <div className="relative w-full h-full aspect-square">
                         <OptimizedImage
                           src={speaker.image}
                           alt={speaker.name}

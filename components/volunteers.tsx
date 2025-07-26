@@ -385,7 +385,7 @@ export function Volunteers() {
             >
               <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
                 {volunteer.image ? (
-                  <div className="relative w-full h-full">
+                  <div className="relative w-full h-full aspect-square">
                     <OptimizedImage
                       src={volunteer.image}
                       alt={volunteer.name}
@@ -395,7 +395,7 @@ export function Volunteers() {
                       loading={index < 10 ? "eager" : "lazy"}
                       priority={index < 4}
                     />
-                  </div>v>
+                  </div>
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 via-yellow-500/20 to-orange-500/20 relative">
                     <span className="text-4xl font-black text-orange-400/70 z-10">
