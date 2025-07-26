@@ -173,17 +173,7 @@ export function About() {
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/8 via-yellow-500/12 to-orange-600/8 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-32 left-1/3 w-80 h-80 bg-gradient-to-r from-blue-500/6 via-purple-500/10 to-indigo-500/8 rounded-full blur-2xl animate-pulse delay-1000"></div>
         
-        {/* Constellation SVGs with hover effects */}
-        <div
-          className="absolute top-16 left-12 w-16 h-16 opacity-30 hover:opacity-60 transition-all duration-500 hover:scale-110 cursor-pointer group"
-        >
-          <img 
-            src="/art-assets/leo.svg" 
-            alt="Leo constellation" 
-            className="w-full h-auto filter drop-shadow-lg group-hover:drop-shadow-orange-500/50"
-          />
-          <div className="absolute inset-0 bg-orange-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        </div>
+
 
         <div
           className="absolute top-32 right-16 w-14 h-14 opacity-25 hover:opacity-55 transition-all duration-500 hover:scale-110 cursor-pointer group"
@@ -334,18 +324,7 @@ export function About() {
                     </div>
                   </div>
 
-                  {/* Progress Bar */}
-                  {isAutoPlaying && (
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-                      <div 
-                        className="h-full bg-gradient-to-r from-orange-500 to-yellow-500 transition-all duration-100 ease-linear"
-                        style={{ 
-                          width: '100%',
-                          animation: 'progress 5s linear infinite'
-                        }}
-                      />
-                    </div>
-                  )}
+
                 </div>
               </div>
             </div>

@@ -101,8 +101,8 @@ export function Navigation() {
              <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 relative">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center justify-center space-x-8 relative flex-1">
             {navItems.map((item) => (
               <button
                 key={item.href}

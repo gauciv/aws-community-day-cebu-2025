@@ -1382,3 +1382,28 @@ html {
 .thumbnail-button.active {
   transform: scale(1.1);
 }
+/* Lightning animation */
+@keyframes lightning {
+  0% {
+    transform: translateX(-100%) translateY(-50%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 1;
+  }
+  21% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 0;
+  }
+}
+
+.animate-lightning {
+  animation: lightning 3s ease-in-out infinite;
+}
