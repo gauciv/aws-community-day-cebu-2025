@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { HelpCircle } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react"
 
 export function FAQ() {
+  const [openItems, setOpenItems] = useState<number[]>([])
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -23,164 +24,393 @@ export function FAQ() {
     return () => observer.disconnect()
   }, [])
 
+  const toggleItem = (index: number) => {
+    setOpenItems((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
+  }
+
   const faqs = [
     {
-      question: "What is AWS Community Day Cebu?",
+      question: "What is AWS Community Day?",
       answer:
-        "AWS Community Day Cebu is a free, community-driven event that brings together AWS enthusiasts, developers, and cloud professionals in Cebu. It features technical sessions, networking opportunities, and hands-on workshops focused on Amazon Web Services technologies.",
+        "AWS Community Day is a free, community-driven event that brings together cloud enthusiasts, developers, and IT professionals to learn about Amazon Web Services. It features technical sessions, workshops, and networking opportunities led by AWS experts and community leaders.",
     },
     {
-      question: "Who can attend this event?",
+      question: "Who should attend this event?",
       answer:
-        "This event is open to everyone! Whether you're a beginner curious about cloud computing, an experienced developer, a student, or a business professional, you're welcome to join. No prior AWS experience is required for most sessions.",
+        "This event is perfect for developers, system administrators, architects, students, IT professionals, startup founders, and anyone interested in cloud computing and AWS services. Whether you're a beginner or an expert, there's something for everyone.",
     },
     {
-      question: "Is registration required?",
+      question: "What's included with my ticket?",
       answer:
-        "Yes, registration is required as we have limited seats available. Registration is completely free, and you can sign up through our official registration link. We recommend registering early to secure your spot.",
+        "General tickets include access to the main event (1:00 PM–7:00 PM) and official merchandise. Builder+ tickets add workshop access (9:00 AM–12:00 PM). VIP tickets include everything plus exclusive dinner invitation and AWS Community Day Cebu polo.",
+    },
+    {
+      question: "Is parking available at the venue?",
+      answer:
+        "Yes, free parking is available on the UP Cebu campus. We recommend arriving early as parking spaces are limited. Alternative transportation options include jeepneys and ride-sharing services like Grab.",
+    },
+    {
+      question: "Will food and beverages be provided?",
+      answer:
+        "Light refreshments are included for all attendees. VIP ticket holders also receive access to the exclusive dinner. There are also several dining options near the UP Cebu campus.",
+    },
+    {
+      question: "Will I receive a certificate of attendance?",
+      answer:
+        "Yes, all registered attendees will receive a digital certificate of attendance after the event. This can be used for professional development records or continuing education requirements.",
+    },
+    {
+      question: "Can I get a refund if I can't attend?",
+      answer:
+        "Tickets are non-refundable but transferable. If you cannot attend, you may transfer your ticket to another person. Please contact our support team for assistance with ticket transfers.",
+    },
+    {
+      question: "Will the sessions be recorded?",
+      answer:
+        "Selected sessions will be recorded and made available to attendees after the event. However, we encourage live attendance for the full experience, including networking and interactive Q&A sessions.",
     },
     {
       question: "What should I bring to the event?",
       answer:
-        "Bring your laptop for hands-on workshops, business cards for networking, a notebook for taking notes, and your enthusiasm to learn! We'll provide refreshments, swag, and all workshop materials.",
+        "Bring your laptop for hands-on workshops, business cards for networking, a notebook for taking notes, and your enthusiasm to learn! We'll provide power outlets and WiFi throughout the venue.",
     },
     {
-      question: "Will there be networking opportunities?",
+      question: "How can I become a sponsor or volunteer?",
       answer:
-        "Absolutely! We have dedicated networking sessions, coffee breaks, and lunch time specifically designed for attendees to connect with fellow AWS enthusiasts, speakers, and industry professionals.",
-    },
-    {
-      question: "Are the sessions recorded?",
-      answer:
-        "Selected sessions may be recorded for later sharing with the community, but we'll always inform speakers and attendees beforehand. Some hands-on workshops and networking sessions won't be recorded to encourage participation.",
-    },
-    {
-      question: "What topics will be covered?",
-      answer:
-        "Topics include serverless computing, AI/ML on AWS, DevOps best practices, cloud security, data analytics, enterprise migration strategies, and modern application development. Check our schedule for detailed session information.",
-    },
-    {
-      question: "Is there a code of conduct?",
-      answer:
-        "Yes, we maintain a strict code of conduct to ensure a welcoming and inclusive environment for all attendees. Harassment, discrimination, or disruptive behavior will not be tolerated. Respect and professionalism are expected from everyone.",
+        "We welcome sponsors and volunteers! For sponsorship opportunities, download our sponsorship primer or contact us at awscloudclubctu@gmail.com. For volunteering, email us at the same address. Both are great ways to support the AWS community in Cebu.",
     },
   ]
 
-  // Generate floating question marks with very transparent opacity
-  const floatingQuestionMarks = Array.from({ length: 15 }, (_, i) => ({
-    id: i,
-    size: Math.random() * 40 + 30, // 30-70px
-    left: Math.random() * 100,
-    top: Math.random() * 100,
-    animationDuration: Math.random() * 20 + 15, // 15-35s
-    animationDelay: Math.random() * 10,
-    animationName: `questionBounceRandom${(i % 18) + 1}`,
-    opacity: Math.random() * 0.08 + 0.03, // Very transparent: 0.03-0.11
-  }))
-
   return (
-    <section id="faq" className="py-12 md:py-20 lg:py-32 relative overflow-hidden hero-gradient-dark">
-      {/* Hero-style constellation background */}
-      <div className="absolute inset-0 constellation-background">
-        <div className="constellation-container">
-          {/* Top section */}
-          <div className="constellation-dot constellation-dot-small constellation-glow animate-twinkle-slow" style={{ top: "8%", left: "12%" }}></div>
-          <div className="constellation-star constellation-star-medium constellation-glow animate-rotate-slow" style={{ top: "15%", right: "10%" }}></div>
-          <div className="constellation-circle constellation-glow animate-pulse-slow" style={{ top: "12%", left: "25%" }}></div>
-
-          {/* Middle section */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow animate-twinkle-delayed" style={{ top: "45%", right: "15%" }}></div>
-          <div className="constellation-star constellation-star-small animate-rotate-reverse" style={{ top: "50%", left: "8%" }}></div>
-          <div className="constellation-circle animate-fade-pulse" style={{ top: "55%", right: "25%" }}></div>
-
-          {/* Bottom section */}
-          <div className="constellation-dot constellation-dot-small animate-bounce-subtle" style={{ bottom: "18%", left: "18%" }}></div>
-          <div className="constellation-star constellation-star-large constellation-glow animate-rotate-slow" style={{ bottom: "25%", right: "12%" }}></div>
-          <div className="constellation-circle constellation-glow animate-pulse-slow" style={{ bottom: "30%", left: "30%" }}></div>
-
-          {/* Connecting lines */}
-          <div className="constellation-line constellation-glow animate-glow-pulse" style={{ top: "28%", left: "20%", width: "35px", transform: "rotate(40deg)" }}></div>
-          <div className="constellation-line animate-fade-pulse" style={{ bottom: "40%", right: "28%", width: "30px", transform: "rotate(-35deg)" }}></div>
-        </div>
-      </div>
-
-      {/* Very transparent floating question marks */}
+    <section id="faq" className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Enhanced Moving Question Marks Background with More Movement */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {floatingQuestionMarks.map((mark) => (
-          <div
-            key={mark.id}
-            className="absolute text-white/10 font-bold question-mark-bounce select-none" // Very transparent
-            style={{
-              fontSize: `${mark.size}px`,
-              left: `${mark.left}%`,
-              top: `${mark.top}%`,
-              animation: `${mark.animationName} ${mark.animationDuration}s ease-in-out infinite`,
-              animationDelay: `${mark.animationDelay}s`,
-              opacity: mark.opacity, // Individual transparency
-            }}
-          >
-            ?
-          </div>
-        ))}
+        {/* Large floating question marks with enhanced movement */}
+        <div
+          className="absolute text-orange-400/12 text-8xl font-bold question-mark-bounce"
+          style={{
+            top: "8%",
+            left: "3%",
+            animation: "questionBounceRandom1 4s ease-in-out infinite",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/15 text-9xl font-bold question-mark-bounce"
+          style={{
+            top: "15%",
+            right: "5%",
+            animation: "questionBounceRandom2 5s ease-in-out infinite 1s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/18 text-6xl font-bold question-mark-bounce"
+          style={{
+            bottom: "20%",
+            left: "8%",
+            animation: "questionBounceRandom3 3.5s ease-in-out infinite 2s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/10 text-7xl font-bold question-mark-bounce"
+          style={{
+            top: "35%",
+            right: "12%",
+            animation: "questionBounceRandom4 6s ease-in-out infinite 0.5s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/20 text-5xl font-bold question-mark-bounce"
+          style={{
+            bottom: "12%",
+            right: "8%",
+            animation: "questionBounceRandom5 4.5s ease-in-out infinite 3s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/8 text-10xl font-bold question-mark-bounce"
+          style={{
+            top: "55%",
+            left: "2%",
+            animation: "questionBounceRandom6 7s ease-in-out infinite 4s",
+          }}
+        >
+          ?
+        </div>
+
+        {/* Additional question marks for more density */}
+        <div
+          className="absolute text-orange-400/14 text-4xl font-bold question-mark-bounce"
+          style={{
+            top: "25%",
+            left: "45%",
+            animation: "questionBounceRandom7 3.5s ease-in-out infinite 1.5s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/16 text-5xl font-bold question-mark-bounce"
+          style={{
+            bottom: "35%",
+            right: "20%",
+            animation: "questionBounceRandom8 5.5s ease-in-out infinite 2.5s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/11 text-6xl font-bold question-mark-bounce"
+          style={{
+            top: "45%",
+            left: "15%",
+            animation: "questionBounceRandom9 4s ease-in-out infinite 3.5s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/13 text-4xl font-bold question-mark-bounce"
+          style={{
+            bottom: "45%",
+            left: "35%",
+            animation: "questionBounceRandom10 6.5s ease-in-out infinite 1s",
+          }}
+        >
+          ?
+        </div>
+
+        {/* More scattered elements with enhanced movement */}
+        <div
+          className="absolute text-orange-400/9 text-3xl font-bold question-mark-bounce"
+          style={{
+            top: "18%",
+            left: "25%",
+            animation: "questionBounceRandom11 3s ease-in-out infinite 2s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/17 text-3xl font-bold question-mark-bounce"
+          style={{
+            bottom: "28%",
+            right: "35%",
+            animation: "questionBounceRandom12 3.5s ease-in-out infinite 0.8s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/12 text-4xl font-bold question-mark-bounce"
+          style={{
+            top: "65%",
+            right: "25%",
+            animation: "questionBounceRandom13 5s ease-in-out infinite 4.2s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/15 text-3xl font-bold question-mark-bounce"
+          style={{
+            top: "75%",
+            left: "20%",
+            animation: "questionBounceRandom14 3.8s ease-in-out infinite 1.8s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/10 text-5xl font-bold question-mark-bounce"
+          style={{
+            top: "5%",
+            left: "60%",
+            animation: "questionBounceRandom15 5.2s ease-in-out infinite 3.2s",
+          }}
+        >
+          ?
+        </div>
+
+        {/* Extra floating question marks with more vigorous movement */}
+        <div
+          className="absolute text-orange-400/8 text-2xl font-bold question-mark-bounce"
+          style={{
+            top: "32%",
+            left: "70%",
+            animation: "questionBounceRandom16 2.8s ease-in-out infinite 2.3s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/14 text-2xl font-bold question-mark-bounce"
+          style={{
+            bottom: "55%",
+            left: "55%",
+            animation: "questionBounceRandom17 3.2s ease-in-out infinite 1.2s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/11 text-3xl font-bold question-mark-bounce"
+          style={{
+            top: "85%",
+            right: "40%",
+            animation: "questionBounceRandom18 4.2s ease-in-out infinite 3.8s",
+          }}
+        >
+          ?
+        </div>
+
+        {/* Additional scattered question marks for enhanced density */}
+        <div
+          className="absolute text-orange-400/13 text-7xl font-bold question-mark-bounce"
+          style={{
+            top: "12%",
+            left: "80%",
+            animation: "questionBounceRandom19 5.8s ease-in-out infinite 2.1s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/9 text-4xl font-bold question-mark-bounce"
+          style={{
+            bottom: "8%",
+            left: "25%",
+            animation: "questionBounceRandom20 4.3s ease-in-out infinite 1.7s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/16 text-6xl font-bold question-mark-bounce"
+          style={{
+            top: "28%",
+            right: "3%",
+            animation: "questionBounceRandom21 6.2s ease-in-out infinite 0.9s",
+          }}
+        >
+          ?
+        </div>
+        <div
+          className="absolute text-orange-400/12 text-3xl font-bold question-mark-bounce"
+          style={{
+            bottom: "62%",
+            right: "8%",
+            animation: "questionBounceRandom22 3.7s ease-in-out infinite 2.8s",
+          }}
+        >
+          ?
+        </div>
+
+        {/* Subtle complementary constellation elements */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-orange-400/20 rounded-full animate-twinkle"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-1 h-1 bg-orange-300/30 rounded-full animate-twinkle-delayed"></div>
+        <div className="absolute top-2/3 left-1/6 w-3 h-3 border border-orange-400/15 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/6 right-1/4 w-1 h-1 bg-orange-400/25 rounded-full animate-float"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500/20 via-yellow-500/15 to-orange-600/20 text-orange-400 border border-orange-500/30 text-sm font-bold mb-8 backdrop-blur-sm shadow-lg shadow-orange-500/10">
-            <HelpCircle className="w-4 h-4 animate-pulse" />
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-sm font-medium mb-6 animate-fade-in">
             Frequently Asked Questions
-            <HelpCircle className="w-4 h-4 animate-pulse" style={{ animationDelay: '0.5s' }} />
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight tracking-tight">
-            Got <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent animate-gradient-shift">Questions?</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 animate-slide-up">
+            Got{" "}
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
+              Questions?
+            </span>
           </h2>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-medium">
-            Find answers to the most common questions about AWS Community Day Cebu. 
-            Can't find what you're looking for? Feel free to reach out to us directly.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-slide-up delay-200">
+            Find answers to common questions about AWS Community Day Cebu 2025. Can&apos;t find what you&apos;re looking
+            for? Contact us directly.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
-            <Accordion type="single" collapsible className="w-full space-y-6">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className={`border border-white/20 rounded-2xl bg-white/5 backdrop-blur-sm px-6 py-2 transition-all duration-500 hover:border-orange-400/30 hover:bg-white/10 ${
-                    isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
-                  }`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <AccordionTrigger className="text-left text-white hover:text-orange-300 transition-colors duration-300 py-6 font-bold text-lg">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-white/90 pb-6 pt-2 text-base leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
+          <div className={`space-y-4 transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+            {faqs.map((faq, index) => (
+              <Card
+                key={index}
+                className={`border-border/50 hover:border-orange-500/30 transition-all duration-500 hover:shadow-lg hover:shadow-orange-500/10 transform hover:scale-[1.02] ${
+                  openItems.includes(index) ? "border-orange-500/40 shadow-lg shadow-orange-500/5" : ""
+                }`}
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animation: isVisible ? "slideInFromBottom 0.6s ease-out forwards" : "none",
+                }}
+              >
+                <CardContent className="p-0">
+                  <button
+                    onClick={() => toggleItem(index)}
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/20 transition-all duration-300 rounded-lg group"
+                  >
+                    <h3 className="text-lg font-semibold text-foreground pr-4 group-hover:text-orange-300 transition-colors duration-300">
+                      {faq.question}
+                    </h3>
+                    <div className={`transition-all duration-300 ${openItems.includes(index) ? "rotate-180" : ""}`}>
+                      {openItems.includes(index) ? (
+                        <ChevronUp className="w-5 h-5 text-orange-400 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-orange-400 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300" />
+                      )}
+                    </div>
+                  </button>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-md rounded-3xl p-12 border border-white/20 shadow-2xl max-w-2xl mx-auto">
-            <h3 className="text-2xl sm:text-3xl font-black text-white mb-4">
-              Still Have <span className="text-orange-400">Questions?</span>
-            </h3>
-            <p className="text-white/90 mb-6">
-              Reach out to our organizing team, and we'll be happy to help!
-            </p>
-            <a
-              href="mailto:organizers@awscommunitydaycebu.com"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 via-orange-600 to-yellow-500 text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-orange-500/30"
-            >
-              <HelpCircle className="w-5 h-5" />
-              Contact Us
-            </a>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      openItems.includes(index) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="px-6 pb-6">
+                      <div className="pt-2 border-t border-border/50">
+                        <p className="text-muted-foreground leading-relaxed animate-fade-in">{faq.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
+
+          {/* Enhanced Contact Card */}
+          <Card className="mt-12 border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-yellow-500/5 hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-500 transform hover:scale-[1.02]">
+            <CardContent className="p-8 text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                <HelpCircle className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">Still have questions?</h3>
+              <p className="text-muted-foreground mb-6">
+                Our team is here to help! Reach out to us for any additional questions or support.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="mailto:awscloudclubctu@gmail.com"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg"
+                >
+                  Email Us
+                </a>
+                <a
+                  href="https://t.me/awscommunitydaycebu"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-orange-500 text-orange-400 rounded-lg hover:bg-orange-500/10 transition-all duration-300 transform hover:scale-105 font-semibold"
+                >
+                  Join Telegram
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

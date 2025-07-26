@@ -1,12 +1,9 @@
-
 "use client"
 
 import { useEffect, useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Crown, ExternalLink, Star } from "lucide-react"
-import { OptimizedImage } from "./ui/optimized-image"
+import { Crown, Star, Sparkles } from "lucide-react"
+import Image from 'next/image'
 
 export function Speakers() {
   const [isVisible, setIsVisible] = useState(false)
@@ -28,119 +25,66 @@ export function Speakers() {
   }, [])
 
   const keynoteSpeaker = {
-    name: "Aldwyn Cabarrubias",
-    title: "Senior Solutions Architect",
-    company: "Amazon Web Services (AWS)",
-    image: "/images/speakers/aldwyn-cabarrubias.jpg",
-    bio: "Aldwyn is a seasoned cloud architect with over 8 years of experience helping organizations transform their infrastructure and applications using AWS services.",
-    topic: "The Future of Cloud Architecture",
+    name: "Raphael Quisumbing",
+    position: "AWS Community Hero | IT & Cloud Advisor | Head of Product Innovation MediaTrack",
+    image: "/images/speakers/raphael-quisumbing.jpg", // Updated image path
     isKeynote: true,
-  }
+};
 
   const speakers = [
     {
-      name: "Cyrus Pastelero",
-      title: "Cloud Solutions Architect",
-      company: "AWS",
-      image: "/images/speakers/cyrus-pastelero.jpeg",
-      bio: "Expert in serverless architectures and cloud-native applications with extensive experience in enterprise migrations.",
-      topic: "Serverless at Scale",
-    },
-    {
       name: "Raphael Jambalos",
-      title: "Senior Software Engineer",
-      company: "Tech Innovators Inc.",
+      position: "AWS Community Hero | Head of Modernization and Security, eCloudValley Technology Philippines",
       image: "/images/speakers/raphael-jambalos.jpg",
-      bio: "Full-stack developer specializing in modern web technologies and cloud integrations.",
-      topic: "Modern Web Development with AWS",
     },
     {
       name: "Joshua Arvin Lat",
-      title: "Chief Technology Officer",
-      company: "NuWorks Interactive Labs",
+      position: "AWS Machine Learning Hero | Chief Technology Officer (CTO) of NuWorks Interactive Labs, Inc",
       image: "/images/speakers/joshua-arvin-lat.jpg",
-      bio: "Technology leader and AWS Community Builder with expertise in machine learning and data analytics.",
-      topic: "AI/ML on AWS",
     },
     {
-      name: "Raphael Quisumbing",
-      title: "DevOps Engineer",
-      company: "Cloud Systems Corp",
-      image: "/images/speakers/raphael-quisumbing.jpg",
-      bio: "DevOps specialist focused on automation, CI/CD, and infrastructure as code using AWS services.",
-      topic: "DevOps Best Practices",
+      name: "Aldwyn Cabarrubias",
+      position: "Senior Ops Engineer at ING Hubs Philippines",
+      image: "/images/speakers/aldwyn-cabarrubias.jpg",
     },
     {
-      name: "Rafael Louie Miguel",
-      title: "Data Engineer",
-      company: "Analytics Pro",
-      image: "/images/speakers/rafael-louie-miguel.jpg",
-      bio: "Data engineering expert specializing in big data processing and analytics solutions on AWS.",
-      topic: "Big Data Analytics",
-    },
-    {
-      name: "Ron Michael Khu",
-      title: "Security Architect",
-      company: "SecureCloud Solutions",
-      image: "/images/speakers/ron-michael-khu.jpeg",
-      bio: "Cybersecurity professional with deep expertise in cloud security and compliance frameworks.",
-      topic: "Cloud Security Essentials",
+      name: "Cyrus Pastelero",
+      position: "Senior Software Engineer | Reap | Certified AWS Solution Architect | Ex-Founder",
+      image: "/images/speakers/cyrus-pastelero.jpeg",
     },
     {
       name: "Andrew Matheu",
-      title: "Solutions Architect",
-      company: "Enterprise Tech",
+      position: "Founder and CEO of TechStart TV",
       image: "/images/speakers/andrew-matheu.jpg",
-      bio: "Solutions architect helping enterprises adopt cloud-first strategies and digital transformation.",
-      topic: "Enterprise Cloud Migration",
     },
     {
       name: "Cleo Credo",
-      title: "Product Manager",
-      company: "Innovation Labs",
+      position: "CTO of Full Scale | Google Developer Expert | Co-lead PizzaPy",
       image: "/images/speakers/cleo-credo.jpg",
-      bio: "Product management expert focusing on cloud-native products and user experience optimization.",
-      topic: "Product Strategy in the Cloud",
+    },
+    {
+      name: "Ron Michael Khu",
+      position: "Java Developer/Sr. Software Architect at LegalMatch | Co-lead PizzaPy | Community Elder CeGnuLug",
+      image: "/images/speakers/ron-michael-khu.jpeg",
+    },
+    {
+      name: "Louie Miguel",
+      position: "Fullstack Engineer/Project Lead @ TutorialsDojo",
+      image: "/images/speakers/rafael-louie-miguel.jpg",
     },
   ]
 
   return (
-    <section id="speakers" className="py-12 md:py-20 lg:py-32 relative overflow-hidden hero-gradient-dark">
-      {/* Hero-style constellation background */}
-      <div className="absolute inset-0 constellation-background">
-        <div className="constellation-container">
-          {/* Top area */}
-          <div className="constellation-star constellation-star-large constellation-glow animate-rotate-slow" style={{ top: "10%", left: "8%" }}></div>
-          <div className="constellation-dot constellation-dot-medium constellation-glow animate-twinkle-slow" style={{ top: "15%", right: "12%" }}></div>
-          <div className="constellation-circle constellation-glow animate-pulse-slow" style={{ top: "8%", right: "25%" }}></div>
-          
-          {/* Middle area */}
-          <div className="constellation-dot constellation-dot-small animate-bounce-subtle" style={{ top: "40%", left: "5%" }}></div>
-          <div className="constellation-star constellation-star-medium constellation-glow animate-rotate-reverse" style={{ top: "50%", right: "8%" }}></div>
-          <div className="constellation-circle animate-fade-pulse" style={{ top: "45%", left: "20%" }}></div>
-          
-          {/* Bottom area */}
-          <div className="constellation-dot constellation-dot-medium constellation-glow animate-twinkle-delayed" style={{ bottom: "15%", left: "12%" }}></div>
-          <div className="constellation-star constellation-star-small animate-rotate-slow" style={{ bottom: "20%", right: "15%" }}></div>
-          <div className="constellation-circle constellation-glow animate-pulse-slow" style={{ bottom: "25%", left: "25%" }}></div>
-          
-          {/* Connecting elements */}
-          <div className="constellation-line constellation-glow animate-glow-pulse" style={{ top: "30%", right: "20%", width: "35px", transform: "rotate(45deg)" }}></div>
-          <div className="constellation-line animate-fade-pulse" style={{ bottom: "35%", left: "18%", width: "40px", transform: "rotate(-30deg)" }}></div>
-        </div>
-      </div>
-
+    <section id="speakers" className="py-12 md:py-20 lg:py-32 bg-muted/30 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500/20 via-yellow-500/15 to-orange-600/20 text-orange-400 border border-orange-500/30 text-sm font-bold mb-8 backdrop-blur-sm shadow-lg shadow-orange-500/10">
-            <Star className="w-4 h-4 animate-twinkle" />
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-sm font-medium mb-6">
             Featured Speakers
-            <Star className="w-4 h-4 animate-twinkle-delayed" />
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight tracking-tight">
-            Learn from <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent animate-gradient-shift">Industry Experts</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Learn from <span className="text-orange-500">Industry Experts</span>
           </h2>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Get insights from leading professionals who are shaping the future of cloud technology and driving
             innovation in the AWS ecosystem.
           </p>
@@ -149,166 +93,97 @@ export function Speakers() {
         {/* Keynote Speaker */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-400 border border-yellow-500/30 text-sm font-bold mb-6 backdrop-blur-sm shadow-lg shadow-yellow-500/10">
-              <Crown className="w-5 h-5 animate-bounce" />
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-400 border border-yellow-500/20 text-sm font-medium mb-4">
+              <Crown className="w-4 h-4 mr-2" />
               Keynote Speaker
-              <Crown className="w-5 h-5 animate-bounce" style={{ animationDelay: '0.5s' }} />
             </div>
-            <h3 className="text-3xl md:text-4xl font-black text-white mb-4">Opening the Future</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground">Opening the Future</h3>
           </div>
 
-          <Card className="max-w-4xl mx-auto bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-md border border-yellow-500/30 shadow-2xl shadow-yellow-500/20 overflow-hidden group hover:scale-105 transition-all duration-700">
-            <CardContent className="p-0">
-              <div className="flex flex-col lg:flex-row">
-                <div className="lg:w-1/2 relative aspect-[4/3] lg:aspect-auto">
-                  <OptimizedImage
-                    src={keynoteSpeaker.image}
+          <div className="max-w-2xl mx-auto">
+            <div className="relative text-center group">
+              {/* Keynote Speaker Enhanced Design */}
+              <div className="relative mx-auto mb-8 w-56 h-56 md:w-64 md:h-64">
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-yellow-400 to-orange-500 shadow-2xl group-hover:shadow-yellow-500/40 transition-all duration-700">
+                  <Image
+                    src={keynoteSpeaker.image || "/placeholder.svg"}
                     alt={keynoteSpeaker.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
+                    sizes="(max-width: 768px) 224px, 256px"
+                    priority={true}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+I/wDPtdd7WVvGvLI2eUZKMuc7+kzxE4PY3T3IQ7EY2jr1CU1RFp5vRc="
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:bg-gradient-to-t lg:from-black/40 lg:to-transparent" />
-                  
-                  {/* Keynote badge */}
-                  <div className="absolute top-6 left-6">
-                    <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold px-4 py-2 shadow-lg">
-                      <Crown className="w-4 h-4 mr-2" />
-                      Keynote
-                    </Badge>
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-yellow-500 text-black p-2 rounded-full shadow-lg">
+                      <Crown className="w-6 h-6" />
+                    </div>
                   </div>
-                </div>
-                
-                <div className="lg:w-1/2 p-8 lg:p-12">
-                  <div className="mb-6">
-                    <h3 className="text-3xl lg:text-4xl font-black text-white mb-2 group-hover:text-orange-300 transition-colors duration-300">
-                      {keynoteSpeaker.name}
-                    </h3>
-                    <p className="text-orange-400 font-bold text-lg mb-2">
-                      {keynoteSpeaker.title}
-                    </p>
-                    <p className="text-white/80 font-medium">
-                      {keynoteSpeaker.company}
-                    </p>
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="text-xl font-bold text-white mb-3">
-                      Topic: <span className="text-orange-400">{keynoteSpeaker.topic}</span>
-                    </h4>
-                    <p className="text-white/90 leading-relaxed">
-                      {keynoteSpeaker.bio}
-                    </p>
-                  </div>
-
-                  <Button
-                    variant="outline"
-                    className="border-orange-400/50 text-orange-400 hover:bg-orange-400/10 backdrop-blur-sm transition-all duration-300 group-hover:scale-105"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Learn More
-                  </Button>
                 </div>
               </div>
-            </CardContent>
-            
-            {/* Enhanced glow effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 via-orange-400/5 to-yellow-400/10 blur-2xl" />
+
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-yellow-500 transition-colors duration-300">
+                {keynoteSpeaker.name}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                {keynoteSpeaker.position}
+              </p>
             </div>
-          </Card>
+          </div>
         </div>
 
-        {/* Regular Speakers Grid */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
-              Our <span className="text-orange-400">Expert Speakers</span>
-            </h3>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Meet the talented professionals who will share their knowledge and insights throughout the day.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {speakers.map((speaker, index) => (
-              <Card
-                key={index}
-                className={`group relative overflow-hidden bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-md border border-white/20 hover:border-orange-400/50 transition-all duration-700 transform hover:scale-105 hover:-translate-y-2 shadow-2xl hover:shadow-orange-500/20 ${
-                  isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"
-                }`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <OptimizedImage
-                    src={speaker.image}
-                    alt={speaker.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Floating decorations */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-orange-400/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-bounce" />
-                </div>
-                
-                <CardContent className="p-6">
-                  <div className="mb-4">
-                    <h3 className="font-bold text-lg text-white mb-2 group-hover:text-orange-300 transition-colors duration-300">
-                      {speaker.name}
-                    </h3>
-                    <p className="text-orange-400 font-semibold text-sm mb-1">
-                      {speaker.title}
-                    </p>
-                    <p className="text-white/70 text-sm">
-                      {speaker.company}
-                    </p>
+        {/* Regular Speakers */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {speakers.map((speaker, index) => (
+            <div
+              key={index}
+              className={`group transition-all duration-1000 ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <div className="relative text-center">
+                {/* Speaker Image with Enhanced Design */}
+                <div className="relative mx-auto mb-6 w-40 h-40 md:w-48 md:h-48">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 animate-pulse"></div>
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-3 border-gradient-to-r from-blue-500 to-purple-500 shadow-xl group-hover:shadow-blue-500/30 transition-all duration-500">
+                    <img
+                      src={speaker.image || "/placeholder.svg"}
+                      alt={speaker.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                   </div>
 
-                  <div className="mb-4">
-                    <Badge className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 text-orange-300 border border-orange-500/30 text-xs">
-                      {speaker.topic}
+                  {/* Floating Icons */}
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
+                    <Star className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 transform -translate-x-2 group-hover:translate-x-0">
+                    <Sparkles className="w-3 h-3 text-white" />
+                  </div>
+                </div>
+
+                {/* Speaker Info */}
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-2xl md:text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2 group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                      {speaker.name}
+                    </h3>
+                    <Badge
+                      variant="outline"
+                      className="text-sm font-medium border-blue-500/30 text-blue-600 bg-blue-500/5 hover:bg-blue-500/10 transition-colors duration-300 mb-3"
+                    >
+                      Expert Speaker
                     </Badge>
                   </div>
 
-                  <p className="text-white/80 text-sm leading-relaxed line-clamp-3">
-                    {speaker.bio}
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base group-hover:text-foreground/80 transition-colors duration-300">
+                    {speaker.position}
                   </p>
-                </CardContent>
-
-                {/* Corner accent */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-orange-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 via-yellow-400/5 to-orange-400/10 rounded-xl blur-xl" />
                 </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-md rounded-3xl p-12 border border-white/20 shadow-2xl">
-            <h3 className="text-3xl sm:text-4xl font-black text-white mb-6">
-              Don't Miss These <span className="text-orange-400">Amazing Sessions</span>
-            </h3>
-            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Reserve your spot now and get ready for an incredible learning experience with these industry leaders.
-            </p>
-            <Button
-              onClick={() => window.open("https://ticketnation.ph/events/aws_community_day_cebu_-_2025", "_blank", "noopener,noreferrer")}
-              size="lg"
-              className="relative bg-gradient-to-r from-orange-500 via-orange-600 to-yellow-500 text-white font-bold px-10 py-4 text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-lg shadow-orange-500/30 border border-orange-400/20 overflow-hidden group"
-            >
-              <span className="relative z-10">Register for Free</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            </Button>
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -830,83 +830,8 @@
     }
   }
 
-  /* Modern smooth bounce animation */
-  @keyframes smoothBounce {
-    0%, 100% {
-      transform: translateY(0) scale(1);
-    }
-    50% {
-      transform: translateY(-8px) scale(1.05);
-    }
-  }
-
-  /* Morphing animation for timer cards */
-  @keyframes morphCard {
-    0% {
-      transform: perspective(1000px) rotateY(0deg) scale(1);
-      border-radius: 1rem;
-    }
-    50% {
-      transform: perspective(1000px) rotateY(90deg) scale(1.1);
-      border-radius: 1.5rem;
-    }
-    100% {
-      transform: perspective(1000px) rotateY(180deg) scale(1);
-      border-radius: 1rem;
-    }
-  }
-
-  /* Floating particles animation */
-  @keyframes floatParticle {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-      opacity: 0.7;
-    }
-    33% {
-      transform: translateY(-10px) rotate(120deg);
-      opacity: 1;
-    }
-    66% {
-      transform: translateY(-5px) rotate(240deg);
-      opacity: 0.8;
-    }
-  }
-
-  /* Shimmer effect for gallery */
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
   .delay-200 {
     animation-delay: 200ms;
-  }
-
-  /* Performance optimizations */
-  .animate-smooth-bounce {
-    animation: smoothBounce 2s ease-in-out infinite;
-  }
-
-  .animate-morph {
-    animation: morphCard 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  .animate-float-particle {
-    animation: floatParticle 3s ease-in-out infinite;
-  }
-
-  .animate-shimmer {
-    animation: shimmer 2s ease-in-out infinite;
-  }
-
-  /* Hardware acceleration for better performance */
-  .hw-accelerate {
-    transform: translateZ(0);
-    will-change: transform;
   }
 
   @keyframes fadeIn {
