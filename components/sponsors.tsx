@@ -21,6 +21,9 @@ export function Sponsors() {
     message: ""
   })
   const [emailStatus, setEmailStatus] = useState<'idle' | 'opening' | 'success'>('idle')
+  const [errors, setErrors] = useState<{[key: string]: string}>({})
+  const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0)
+  const [submissionCount, setSubmissionCount] = useState<number>(0)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,64 +79,124 @@ export function Sponsors() {
   }
 
   const constructEmailBody = () => {
-    const selectedPackageInfo = sponsorshipType && sponsorshipPackage 
-      ? getPackageOptions(sponsorshipType).find(p => p.value === sponsorshipPackage)
-      : null
+    return `Dear AWS Community Day Cebu Team,
 
-    return `Hello AWS Community Day Cebu 2025 Team,
+${formData.message || 'I am interested in becoming a sponsor for AWS Community Day Cebu 2025.'}
 
-I am interested in becoming a sponsor for AWS Community Day Cebu 2025.
-
-COMPANY INFORMATION:
-Company Name: ${formData.company || '[Not provided]'}
-Contact Person: ${formData.contactPerson || '[Not provided]'}
-Email: ${formData.email || '[Not provided]'}
-Phone: ${formData.phone || '[Not provided]'}
-
-SPONSORSHIP DETAILS:
-Sponsorship Type: ${sponsorshipType ? (sponsorshipType === 'national' ? 'National Sponsorship' : 'Local Sponsorship') : '[Not selected]'}
-Package: ${selectedPackageInfo ? `${selectedPackageInfo.icon} ${selectedPackageInfo.label}` : '[Not selected]'}
-
-MESSAGE:
-${formData.message || '[No additional message]'}
-
----
-This inquiry was sent from the AWS Community Day Cebu 2025 website.
-Event Date: September 13, 2025
-Venue: University of the Philippines Cebu Performing Arts Hall
-
-Looking forward to hearing from you!
+Thank you for considering our sponsorship proposal. We look forward to hearing from you soon and potentially partnering with you for this exciting community event.
 
 Best regards,
-${formData.contactPerson || formData.company || 'Potential Sponsor'}`
+
+${formData.contactPerson}
+${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}`
+  }
+
+  const constructEmailSubject = () => {
+    const typeText = sponsorshipType === 'national' ? 'National' : sponsorshipType === 'local' ? 'Local' : ''
+    const packageText = sponsorshipPackage ? getPackageOptions(sponsorshipType).find(p => p.value === sponsorshipPackage)?.label || '' : ''
+    return `AWS Community Day Cebu - ${typeText} ${packageText} Sponsorship Inquiry from ${formData.company}`
+  }
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {}
+    
+    if (!formData.company.trim()) {
+      newErrors.company = 'Company name is required'
+    } else if (formData.company.trim().length < 2) {
+      newErrors.company = 'Company name must be at least 2 characters'
+    }
+    
+    if (!formData.contactPerson.trim()) {
+      newErrors.contactPerson = 'Contact person is required'
+    } else if (formData.contactPerson.trim().length < 2) {
+      newErrors.contactPerson = 'Contact person must be at least 2 characters'
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address'
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required'
+    } else if (formData.phone.trim().length < 10) {
+      newErrors.phone = 'Phone number must be at least 10 characters'
+    }
+    
+    if (!sponsorshipType) {
+      newErrors.sponsorshipType = 'Please select a sponsorship type'
+    }
+    if (!sponsorshipPackage) {
+      newErrors.sponsorshipPackage = 'Please select a sponsorship package'
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required'
+    } else if (formData.message.trim().length < 20) {
+      newErrors.message = 'Message must be at least 20 characters'
+    }
+    
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const isFormValid = () => {
+    return formData.company.trim().length >= 2 && 
+           formData.contactPerson.trim().length >= 2 && 
+           formData.email.trim() && 
+           /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+           formData.phone.trim().length >= 10 && 
+           sponsorshipType && 
+           sponsorshipPackage && 
+           formData.message.trim().length >= 20
   }
 
   const handleSendInquiry = () => {
-    // Validate required fields
-    if (!formData.company.trim() || !formData.email.trim() || !formData.contactPerson.trim()) {
-      alert('Please fill in all required fields (Company Name, Contact Person, and Email Address)')
+    if (!validateForm()) {
       return
     }
 
-    // Set opening status
-    setEmailStatus('opening')
+    // Anti-spam checks
+    const now = Date.now()
+    const timeSinceLastSubmission = now - lastSubmissionTime
+    
+    // Prevent rapid submissions (minimum 30 seconds between submissions)
+    if (timeSinceLastSubmission < 30000 && lastSubmissionTime > 0) {
+      setErrors({ general: 'Please wait 30 seconds before sending another inquiry.' })
+      return
+    }
+    
+    // Limit submissions per session (maximum 3 per session)
+    if (submissionCount >= 3) {
+      setErrors({ general: 'Maximum 3 inquiries per session. Please refresh the page to send more.' })
+      return
+    }
 
-    const subject = `Sponsorship Inquiry - ${formData.company} - AWS Community Day Cebu 2025`
-    const body = constructEmailBody()
-    const mailtoLink = `mailto:awscommunitydaycebu.2025@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    
-    // Open email client
-    window.location.href = mailtoLink
-    
-    // Set success status after a short delay (assuming email client opened)
-    setTimeout(() => {
-      setEmailStatus('success')
+    try {
+      setEmailStatus('opening')
+      setLastSubmissionTime(now)
+      setSubmissionCount(prev => prev + 1)
+
+      const subject = constructEmailSubject()
+      const body = constructEmailBody()
+      const mailtoLink = `mailto:awscommunitydaycebu.2025@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
       
-      // Reset to idle after showing success message
+      window.open(mailtoLink, '_blank')
+      
       setTimeout(() => {
-        setEmailStatus('idle')
-      }, 5000)
-    }, 1000)
+        setEmailStatus('success')
+        setTimeout(() => {
+          setEmailStatus('idle')
+        }, 5000)
+      }, 1000)
+    } catch (error) {
+      console.error('Error opening email client:', error)
+      setEmailStatus('idle')
+      setErrors({ general: 'Failed to open email client. Please try again.' })
+    }
   }
 
   return (
@@ -219,9 +282,9 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                     <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Become a Sponsor</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Quick Email Setup</h3>
                   <p className="text-sm sm:text-base text-gray-300">
-                    Join our amazing sponsors and support the AWS community in Cebu.
+                    Fill out this form for a quick email setup, or draft your own email and send it to <span className="text-orange-400">awscommunitydaycebu.2025@gmail.com</span>
                   </p>
                 </div>
 
@@ -236,9 +299,13 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                       id="company" 
                       placeholder="Your company name" 
                       value={formData.company}
-                      onChange={(e) => handleInputChange('company', e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base" 
+                      onChange={(e) => {
+                        handleInputChange('company', e.target.value)
+                        if (errors.company) setErrors(prev => ({...prev, company: ''}))
+                      }}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base ${errors.company ? 'border-red-500' : ''}`}
                     />
+                    {errors.company && <p className="text-red-400 text-sm mt-1">{errors.company}</p>}
                   </div>
 
                   <div>
@@ -249,9 +316,13 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                       id="contactPerson" 
                       placeholder="Your full name" 
                       value={formData.contactPerson}
-                      onChange={(e) => handleInputChange('contactPerson', e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                      onChange={(e) => {
+                        handleInputChange('contactPerson', e.target.value)
+                        if (errors.contactPerson) setErrors(prev => ({...prev, contactPerson: ''}))
+                      }}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.contactPerson ? 'border-red-500' : ''}`}
                     />
+                    {errors.contactPerson && <p className="text-red-400 text-sm mt-1">{errors.contactPerson}</p>}
                   </div>
                   
                   <div>
@@ -263,69 +334,85 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                       type="email" 
                       placeholder="contact@company.com" 
                       value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                      onChange={(e) => {
+                        handleInputChange('email', e.target.value)
+                        if (errors.email) setErrors(prev => ({...prev, email: ''}))
+                      }}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.email ? 'border-red-500' : ''}`}
                     />
+                    {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                   </div>
 
                   <div>
                     <Label htmlFor="phone" className="text-white font-medium mb-2 block">
-                      Phone Number
+                      Phone Number *
                     </Label>
                     <Input 
                       id="phone" 
                       type="tel" 
                       placeholder="+63 XXX XXX XXXX" 
                       value={formData.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500" 
+                      onChange={(e) => {
+                        handleInputChange('phone', e.target.value)
+                        if (errors.phone) setErrors(prev => ({...prev, phone: ''}))
+                      }}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.phone ? 'border-red-500' : ''}`}
                     />
+                    {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
                   </div>
                   
                   <div>
                     <Label htmlFor="sponsorship-type" className="text-white font-medium mb-2 block">
-                      Sponsorship Type
+                      Sponsorship Type *
                     </Label>
-                    <Select value={sponsorshipType} onValueChange={handleTypeChange}>
-                      <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500">
+                    <Select value={sponsorshipType} onValueChange={(value) => {
+                      handleTypeChange(value)
+                      if (errors.sponsorshipType) setErrors(prev => ({...prev, sponsorshipType: ''}))
+                    }}>
+                      <SelectTrigger className={`bg-white/10 border-white/20 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.sponsorshipType ? 'border-red-500' : ''}`}>
                         <SelectValue placeholder="Select sponsorship type" className="text-white" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-800 border-slate-600">
-                        <SelectItem value="national" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                      <SelectContent className="bg-slate-800 border-slate-600 max-h-60 overflow-y-auto">
+                        <SelectItem value="national" className="text-white hover:bg-slate-700 focus:bg-slate-700 transition-colors duration-200">
                           🌍 National Sponsorship
                         </SelectItem>
-                        <SelectItem value="local" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                        <SelectItem value="local" className="text-white hover:bg-slate-700 focus:bg-slate-700 transition-colors duration-200">
                           🏢 Local Sponsorship
                         </SelectItem>
                       </SelectContent>
                     </Select>
+                    {errors.sponsorshipType && <p className="text-red-400 text-sm mt-1">{errors.sponsorshipType}</p>}
                   </div>
 
                   {/* Always render the package field but with smooth transitions */}
                   <div className={`transition-all duration-300 ease-in-out ${sponsorshipType ? 'opacity-100 max-h-96' : 'opacity-50 max-h-24 pointer-events-none'}`}>
                     <Label htmlFor="sponsorship-package" className="text-white font-medium mb-2 block">
-                      Sponsorship Package
+                      Sponsorship Package *
                     </Label>
                     <Select 
                       value={sponsorshipPackage} 
-                      onValueChange={setSponsorshipPackage}
+                      onValueChange={(value) => {
+                        setSponsorshipPackage(value)
+                        if (errors.sponsorshipPackage) setErrors(prev => ({...prev, sponsorshipPackage: ''}))
+                      }}
                       disabled={!sponsorshipType}
                     >
-                      <SelectTrigger className="bg-white/10 border-white/20 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed">
+                      <SelectTrigger className={`bg-white/10 border-white/20 text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed ${errors.sponsorshipPackage ? 'border-red-500' : ''}`}>
                         <SelectValue placeholder="Select sponsorship package" className="text-white" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-800 border-slate-600">
+                      <SelectContent className="bg-slate-800 border-slate-600 max-h-60 overflow-y-auto">
                         {sponsorshipType && getPackageOptions(sponsorshipType).map((option) => (
                           <SelectItem 
                             key={option.value} 
                             value={option.value} 
-                            className="text-white hover:bg-slate-700 focus:bg-slate-700"
+                            className="text-white hover:bg-slate-700 focus:bg-slate-700 transition-colors duration-200"
                           >
                             {option.icon} {option.label}
                           </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
+                    {errors.sponsorshipPackage && <p className="text-red-400 text-sm mt-1">{errors.sponsorshipPackage}</p>}
                     
                     {/* Package description with smooth transitions */}
                     <div className={`transition-all duration-300 ease-in-out overflow-hidden ${sponsorshipType ? 'max-h-48 mt-3' : 'max-h-0 mt-0'}`}>
@@ -363,26 +450,46 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
                   
                   <div>
                     <Label htmlFor="message" className="text-white font-medium mb-2 block">
-                      Message
+                      Message *
                     </Label>
                     <Textarea
                       id="message"
                       placeholder="Tell us about your sponsorship interests, specific requirements, or any questions you may have..."
                       value={formData.message}
-                      onChange={(e) => handleInputChange('message', e.target.value)}
-                      className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                      onChange={(e) => {
+                        handleInputChange('message', e.target.value)
+                        if (errors.message) setErrors(prev => ({...prev, message: ''}))
+                      }}
+                      className={`min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.message ? 'border-red-500' : ''}`}
                     />
+                    {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
+                    <div className="flex justify-between items-center mt-1">
+                      <p className="text-xs text-gray-400">This message will appear in the email body</p>
+                      <p className={`text-xs ${
+                        formData.message.length < 20 ? 'text-red-400' : 'text-green-400'
+                      }`}>
+                        {formData.message.length} characters (min: 20)
+                      </p>
+                    </div>
                   </div>
                   
+                  {errors.general && (
+                    <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                      <p className="text-red-400 text-sm text-center">{errors.general}</p>
+                    </div>
+                  )}
+
                   <Button 
                     type="button"
                     onClick={handleSendInquiry}
-                    disabled={emailStatus === 'opening'}
+                    disabled={emailStatus === 'opening' || !isFormValid()}
                     className={`w-full font-semibold py-3 sm:py-4 text-sm sm:text-base transform transition-all duration-300 ${
                       emailStatus === 'success' 
                         ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600' 
+                        : !isFormValid()
+                        ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
                         : 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 hover:scale-105 active:scale-95'
-                    } ${emailStatus === 'opening' ? 'opacity-75 cursor-not-allowed' : ''}`}
+                    } ${(emailStatus === 'opening' || !isFormValid()) ? 'opacity-75 cursor-not-allowed' : ''}`}
                   >
                     {emailStatus === 'opening' && <Loader2 className="w-5 h-5 mr-2 animate-spin" />}
                     {emailStatus === 'success' && <CheckCircle className="w-5 h-5 mr-2" />}
@@ -415,8 +522,18 @@ ${formData.contactPerson || formData.company || 'Potential Sponsor'}`
 
                   <div className="text-center">
                     <p className="text-xs text-gray-400">
-                      * Required fields. This will open your email client with pre-filled sponsorship information.
+                      * All fields are required. This will open your email client with pre-filled sponsorship information.
                     </p>
+                    {!isFormValid() && (
+                      <p className="text-xs text-red-400 mt-1">
+                        Please fill in all required fields to send inquiry
+                      </p>
+                    )}
+                    {submissionCount > 0 && (
+                      <p className="text-xs text-orange-400 mt-1">
+                        Inquiries sent this session: {submissionCount}/3
+                      </p>
+                    )}
                   </div>
                 </form>
 
