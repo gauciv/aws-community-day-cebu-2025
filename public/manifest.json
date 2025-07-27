@@ -1,0 +1,21 @@
+{
+  "name": "AWS Community Day Cebu 2025",
+  "short_name": "AWS CD Cebu 2025",
+  "description": "Join us for AWS Community Day Cebu 2025 on September 13, 2025 at University of the Philippines Cebu. Build Beyond Limits with 9 amazing speakers and the AWS community.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#232F3E",
+  "theme_color": "#232F3E",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
