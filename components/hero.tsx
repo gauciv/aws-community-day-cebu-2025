@@ -379,15 +379,15 @@ export function Hero() {
 
           {/* Event Details with mobile-first responsive design */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-4 sm:mb-6 md:mb-8 text-white/90 px-2 sm:px-0">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 animate-float-gentle text-xs sm:text-sm md:text-base">
               <Calendar className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-pulse-subtle flex-shrink-0" />
               <span className="font-semibold whitespace-nowrap">September 13, 2025</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle-delayed text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 animate-float-gentle-delayed text-xs sm:text-sm md:text-base">
               <MapPin className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-pulse-subtle flex-shrink-0" />
-              <span className="font-semibold text-center sm:text-left">UP Cebu Performing Arts Hall</span>
+              <span className="font-semibold">UP Cebu Performing Arts Hall</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-orange-400/30 animate-float-gentle-delayed-2 text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 sm:px-4 py-2 border border-orange-400/30 animate-float-gentle-delayed-2 text-xs sm:text-sm md:text-base">
               <Users className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-pulse-subtle flex-shrink-0" />
               <span className="font-bold text-orange-300 whitespace-nowrap">9 Amazing Speakers</span>
             </div>

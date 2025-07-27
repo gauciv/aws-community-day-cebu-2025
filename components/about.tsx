@@ -221,12 +221,12 @@ export function About() {
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             About the Event
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight px-2 sm:px-0">
-            <span className="block sm:inline">What is</span>{" "}
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent block sm:inline">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-white mb-6 sm:mb-8 tracking-tight px-2 sm:px-0">
+            What is{" "}
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
               AWS Community Day
             </span>
-            <span className="block sm:inline">?</span>
+            ?
           </h2>
           <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 px-3 sm:px-0">
             <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
