@@ -1,9 +1,12 @@
 # Website for AWS Community Day - Cebu Roadshow 2025
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![AWS Community Day Cebu Banner](https://your-image-host.com/banner.png) <div align="center">
+![AWS Community Day Cebu Banner](./public/awscdcebu-banner.png) <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
@@ -17,7 +20,7 @@
 
 Welcome to the official open-source repository for the **AWS Community Day - Cebu Roadshow 2025** website! This project is a collaborative effort by the AWS community, for the community. Our mission is to build a welcoming, informative, and engaging digital home for our event.
 
-**🚀 Live Website:** [`https://main.d3qya03l6igwcl.amplifyapp.com/`](https://main.d3qya03l6igwcl.amplifyapp.com/)
+**🚀 Live Website:** [`Click Me`](https://official.d3qya03l6igwcl.amplifyapp.com)
 
 ---
 
@@ -60,6 +63,7 @@ This website is built with a modern, community-friendly tech stack to ensure a g
 You can get a local copy of the project up and running in two ways:
 
 #### A) Using GitHub Codespaces (Recommended)
+
 This is the fastest way to get started, as it requires no local installation.
 
 1.  Click the **`< > Code`** button on the repository's main page.
@@ -68,6 +72,7 @@ This is the fastest way to get started, as it requires no local installation.
 4.  Once the Codespace loads, the project dependencies will be automatically installed. In the terminal, run `npm run dev` to start the server.
 
 #### B) Local Development
+
 1.  **Fork** the repository.
 2.  **Clone** your fork to your local machine:
     ```sh
@@ -82,10 +87,10 @@ This is the fastest way to get started, as it requires no local installation.
     npm install
     ```
 5.  **Run** the development server:
-    ```sh
+    `sh
     npm run dev
-    ```
-The website will be running at `http://localhost:3000`.
+    `
+    The website will be running at `http://localhost:3000`.
 
 ---
 
@@ -108,11 +113,13 @@ This project is deployed and hosted on **AWS Amplify**. A Continuous Integration
 ---
 
 ### Security
+
 If you discover a security vulnerability, please report it responsibly. For details, please see our **[Security Policy](./SECURITY.md)**.
 
 ---
 
 ### License
+
 This project is licensed under the **MIT License**. See the **[LICENSE](./LICENSE)** file for more details.
 
 ---
@@ -120,6 +127,7 @@ This project is licensed under the **MIT License**. See the **[LICENSE](./LICENS
 ### Acknowledgements
 
 This project is made possible by the passion and dedication of our amazing community.
+
 - **Organizers:** **AWS User Group Philippines - Cebu Chapter**
 - **Sponsors:** `[To be added]`
 - **Contributors:** Thank you to everyone who has contributed!
