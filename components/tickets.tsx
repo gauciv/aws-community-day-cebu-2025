@@ -247,9 +247,15 @@ export function Tickets() {
                   ))}
                 </div>
                 <div className="text-center">
-                  <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 text-sm sm:text-base font-bold px-4 sm:px-6 py-2 shadow-lg">
-                    Save up to ₱200 with early bird pricing until August 30, 2025
-                  </Badge>
+                  <div className="inline-flex flex-col sm:flex-row items-center gap-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-2xl px-4 py-3 shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-4 h-4" />
+                      <span className="text-sm font-bold">Save up to ₱200</span>
+                    </div>
+                    <div className="text-xs opacity-90 text-center">
+                      Early bird until Aug 30, 2025
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -397,12 +403,20 @@ export function Tickets() {
         {/* Enhanced Footer */}
         <div className="text-center">
           <div className="relative inline-block mb-4">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full blur-xl"></div>
-            <Badge className="relative bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 text-lg font-bold px-6 py-3 shadow-xl">
-              {isEarlyBirdActive
-                ? "🎉 Early bird pricing available until August 30, 2025"
-                : "Regular pricing now in effect"}
-            </Badge>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-2xl blur-xl"></div>
+            <div className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-2xl px-6 py-4 shadow-xl">
+              <div className="flex items-center justify-center gap-2">
+                <span className="text-2xl">🎉</span>
+                <div className="text-center">
+                  <div className="text-base sm:text-lg font-bold">
+                    {isEarlyBirdActive ? "Early Bird Special" : "Regular Pricing"}
+                  </div>
+                  <div className="text-sm opacity-90">
+                    {isEarlyBirdActive ? "Available until August 30, 2025" : "Now in effect"}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <p className="text-gray-400 text-lg">
             Powered by <span className="font-bold text-orange-400">TicketNation</span> • All prices are in
