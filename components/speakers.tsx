@@ -65,7 +65,7 @@ export function Speakers() {
     },
     {
       name: "Ron Michael Khu",
-      position: "Java Developer/Sr. Software Architect at LegalMatch | Co-lead PizzaPy | Community Elder CeGnuLug",
+      position: "Sr. Java Developer/Software Architect",
       image: "/images/speakers/ron-michael-khu.jpeg",
     },
     {
