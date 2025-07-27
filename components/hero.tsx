@@ -328,22 +328,22 @@ export function Hero() {
       </div>
 
       {/* Content with subtle entrance animations */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center pt-4 sm:pt-0">
+      <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center pt-2 sm:pt-4 md:pt-0">
         <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0 translate-y-10"}`}>
           {/* Main Title with mobile-first responsive design */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-6 leading-tight tracking-tight animate-text-glow">
-            AWS Community Day
-            <br />
-            <span className="relative inline-block">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-3 sm:mb-4 md:mb-6 leading-tight tracking-tight animate-text-glow px-2 sm:px-0">
+            <span className="block sm:inline">AWS Community Day</span>
+            <br className="hidden sm:block" />
+            <span className="relative inline-block mt-1 sm:mt-0">
               <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent animate-gradient-shift">
                 Cebu 2025
               </span>
-              <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full opacity-60 animate-pulse-glow"></div>
+              <div className="absolute -bottom-0.5 sm:-bottom-1 md:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full opacity-60 animate-pulse-glow"></div>
             </span>
           </h1>
 
           {/* Subtitle with shine effect and crackling lightning */}
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white mb-6 sm:mb-8 tracking-[0.1em] sm:tracking-[0.2em] relative animate-text-shimmer">
+          <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-[0.05em] sm:tracking-[0.1em] md:tracking-[0.2em] relative animate-text-shimmer px-2 sm:px-0">
             <span className="relative z-10">BUILD BEYOND LIMITS</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-sm animate-shimmer-wave"></div>
             
@@ -378,33 +378,33 @@ export function Hero() {
           </div>
 
           {/* Event Details with mobile-first responsive design */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 text-white/90">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle text-sm sm:text-base">
-              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-pulse-subtle" />
-              <span className="font-semibold">September 13, 2025</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-4 sm:mb-6 md:mb-8 text-white/90 px-2 sm:px-0">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center">
+              <Calendar className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-pulse-subtle flex-shrink-0" />
+              <span className="font-semibold whitespace-nowrap">September 13, 2025</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle-delayed text-sm sm:text-base">
-              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-pulse-subtle" />
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 animate-float-gentle-delayed text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center">
+              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-pulse-subtle flex-shrink-0" />
               <span className="font-semibold text-center sm:text-left">UP Cebu Performing Arts Hall</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-orange-400/30 animate-float-gentle-delayed-2 text-sm sm:text-base">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-pulse-subtle" />
-              <span className="font-bold text-orange-300">9 Amazing Speakers</span>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 border border-orange-400/30 animate-float-gentle-delayed-2 text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center">
+              <Users className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-pulse-subtle flex-shrink-0" />
+              <span className="font-bold text-orange-300 whitespace-nowrap">9 Amazing Speakers</span>
             </div>
           </div>
 
           {/* Description with mobile-first responsive design */}
-          <p className="text-base sm:text-lg lg:text-xl text-white/95 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed font-medium animate-fade-in-up px-4 sm:px-0">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 max-w-3xl mx-auto mb-4 sm:mb-6 md:mb-8 leading-relaxed font-medium animate-fade-in-up px-3 sm:px-4 md:px-0">
             Join the AWS community in Cebu for a day of learning, networking, and innovation. Discover the latest in
             cloud computing, connect with fellow developers, and build beyond limits.
           </p>
 
           {/* Enhanced CTA Buttons with mobile-first responsive design */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4 sm:mb-6 md:mb-8 px-3 sm:px-4 md:px-0 max-w-md sm:max-w-none mx-auto">
             <Button
               onClick={handleRegisterClick}
               size="lg"
-              className="relative bg-gradient-to-r from-orange-500 via-orange-600 to-yellow-500 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-lg shadow-orange-500/30 border border-orange-400/20 btn-glow-orange pulse-glow-orange overflow-hidden group animate-button-glow w-full sm:w-auto"
+              className="relative bg-gradient-to-r from-orange-500 via-orange-600 to-yellow-500 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm shadow-lg shadow-orange-500/30 border border-orange-400/20 btn-glow-orange pulse-glow-orange overflow-hidden group animate-button-glow w-full sm:w-auto min-h-[44px] touch-manipulation"
             >
               <span className="relative z-10">Register Now</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -413,7 +413,7 @@ export function Hero() {
               onClick={handleLearnMoreClick}
               size="lg"
               variant="outline"
-              className="relative border-white/40 text-white hover:bg-white/15 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg transition-all duration-300 bg-transparent shadow-lg shadow-white/10 font-semibold glass-card hover:border-orange-400/50 hover:text-orange-300 group overflow-hidden animate-button-glow-secondary w-full sm:w-auto"
+              className="relative border-white/40 text-white hover:bg-white/15 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg transition-all duration-300 bg-transparent shadow-lg shadow-white/10 font-semibold glass-card hover:border-orange-400/50 hover:text-orange-300 group overflow-hidden animate-button-glow-secondary w-full sm:w-auto min-h-[44px] touch-manipulation"
             >
               <span className="relative z-10">Learn More</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-400/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -427,11 +427,11 @@ export function Hero() {
       </div>
 
       {/* Down Arrow Button with enhanced animation */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2">
         <Button
           variant="ghost"
           size="icon"
-          className="text-white/70 hover:text-white hover:bg-white/10 rounded-full w-12 h-12 animate-bounce-gentle border border-white/20 animate-glow-ring"
+          className="text-white/70 hover:text-white hover:bg-white/10 rounded-full w-10 h-10 sm:w-12 sm:h-12 animate-bounce-gentle border border-white/20 animate-glow-ring touch-manipulation"
           onClick={() => {
             document.querySelector("#about")?.scrollIntoView({
               behavior: "smooth",
@@ -439,7 +439,7 @@ export function Hero() {
             })
           }}
         >
-          <ChevronDown className="w-6 h-6 animate-pulse-subtle" />
+          <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse-subtle" />
         </Button>
       </div>
     </section>

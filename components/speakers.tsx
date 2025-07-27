@@ -153,34 +153,32 @@ export function Speakers() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <div className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-4 sm:mb-6 md:mb-8 shadow-lg">
             <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-2 animate-twinkle" />
             Featured Speakers
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">
-            Learn from{" "}
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-tight leading-tight px-2 sm:px-0">
+            <span className="block sm:inline">Learn from</span>{" "}
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent block sm:inline">
               Industry Experts
             </span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-3 sm:px-4 md:px-0">
             Get insights from leading professionals who are shaping the future of cloud technology and driving
             innovation in the AWS ecosystem.
           </p>
         </div>
 
         {/* Enhanced Keynote Speaker */}
-        <div className="mb-24">
-
-
-          <div className="max-w-3xl mx-auto px-4 sm:px-0">
+        <div className="mb-16 sm:mb-20 md:mb-24">
+          <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-0">
             <div className="relative text-center group perspective-1000">
               {/* Enhanced Keynote Speaker Card with mobile-first sizing */}
-              <div className="relative mx-auto mb-8 sm:mb-12 w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80">
+              <div className="relative mx-auto mb-6 sm:mb-8 md:mb-12 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
                 {/* Multiple glowing rings */}
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-1000 animate-pulse scale-110"></div>
-                <div className="absolute inset-2 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-1000 animate-pulse delay-500 scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-full blur-2xl sm:blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-1000 animate-pulse scale-110"></div>
+                <div className="absolute inset-2 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full blur-xl sm:blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-1000 animate-pulse delay-500 scale-105"></div>
                 
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gradient-to-r from-yellow-400 to-orange-500 shadow-2xl group-hover:shadow-yellow-500/50 transition-all duration-1000 transform group-hover:scale-105 next-image-fill-container">
                   <OptimizedImage
@@ -195,32 +193,32 @@ export function Speakers() {
                   />
                   
                   {/* Enhanced crown badge with mobile-first sizing */}
-                  <div className="absolute -top-3 sm:-top-4 -right-3 sm:-right-4 transform group-hover:scale-110 transition-transform duration-500">
-                    <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white p-3 sm:p-4 rounded-full shadow-xl border-4 border-white/20">
-                      <Crown className="w-6 h-6 sm:w-8 sm:h-8" />
+                  <div className="absolute -top-2 sm:-top-3 md:-top-4 -right-2 sm:-right-3 md:-right-4 transform group-hover:scale-110 transition-transform duration-500">
+                    <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white p-2 sm:p-3 md:p-4 rounded-full shadow-xl border-2 sm:border-4 border-white/20">
+                      <Crown className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8" />
                     </div>
                   </div>
 
                   {/* Floating sparkles with mobile-first sizing */}
-                  <div className="absolute top-6 sm:top-8 left-6 sm:left-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
-                    <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 animate-twinkle" />
+                  <div className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
+                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-yellow-400 animate-twinkle" />
                   </div>
-                  <div className="absolute bottom-10 sm:bottom-12 right-6 sm:right-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-400">
-                    <Star className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-twinkle" />
+                  <div className="absolute bottom-8 sm:bottom-10 md:bottom-12 right-4 sm:right-6 md:right-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-400">
+                    <Star className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-twinkle" />
                   </div>
                 </div>
               </div>
 
               {/* Enhanced speaker info with mobile-first responsive design */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-orange-500/20 shadow-2xl group-hover:shadow-orange-500/20 transition-all duration-700">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-4 group-hover:text-yellow-400 transition-colors duration-500 leading-tight">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-orange-500/20 shadow-2xl group-hover:shadow-orange-500/20 transition-all duration-700">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 group-hover:text-yellow-400 transition-colors duration-500 leading-tight">
                   {keynoteSpeaker.name}
                 </h3>
-                <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 text-base sm:text-lg font-bold px-4 sm:px-6 py-2 mb-3 sm:mb-4 shadow-lg">
-                  <Crown className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 text-sm sm:text-base md:text-lg font-bold px-3 sm:px-4 md:px-6 py-1 sm:py-2 mb-3 sm:mb-4 shadow-lg">
+                  <Crown className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   Keynote Speaker
                 </Badge>
-                <p className="text-gray-300 leading-relaxed text-base sm:text-lg group-hover:text-white transition-colors duration-500">
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg group-hover:text-white transition-colors duration-500">
                   {keynoteSpeaker.position}
                 </p>
               </div>
@@ -229,7 +227,7 @@ export function Speakers() {
         </div>
 
         {/* Enhanced Regular Speakers Grid - centered like volunteers */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {speakers.map((speaker, index) => (
             <div
               key={index}
@@ -238,11 +236,11 @@ export function Speakers() {
             >
               <div className="relative text-center h-full">
                 {/* Enhanced Speaker Card with mobile-first padding and equal heights */}
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-3 sm:p-4 border border-white/10 shadow-xl group-hover:shadow-2xl group-hover:shadow-blue-500/20 transition-all duration-700 h-full flex flex-col group-hover:border-orange-500/30 min-h-[200px] sm:min-h-[240px]">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 border border-white/10 shadow-xl group-hover:shadow-2xl group-hover:shadow-blue-500/20 transition-all duration-700 h-full flex flex-col group-hover:border-orange-500/30 min-h-[180px] sm:min-h-[200px] md:min-h-[240px]">
                   
                   {/* Speaker Image - compact like volunteers */}
-                  <div className="relative mx-auto mb-3 sm:mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-lg opacity-25 group-hover:opacity-50 transition-opacity duration-700 animate-pulse scale-110"></div>
+                  <div className="relative mx-auto mb-2 sm:mb-3 md:mb-4 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-36 lg:h-36">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-md sm:blur-lg opacity-25 group-hover:opacity-50 transition-opacity duration-700 animate-pulse scale-110"></div>
                     
                     <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-gradient-to-r from-blue-500 to-purple-500 shadow-lg group-hover:shadow-blue-500/40 transition-all duration-700 group-hover:scale-105 next-image-fill-container">
                       <OptimizedImage
@@ -261,7 +259,7 @@ export function Speakers() {
 
                   {/* Compact Speaker Info with flexible height and text wrapping */}
                   <div className="text-center flex-1 flex flex-col justify-center mt-auto">
-                    <h3 className="text-sm sm:text-base font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 group-hover:from-orange-400 group-hover:via-yellow-400 group-hover:to-orange-400 transition-all duration-500 leading-tight">
+                    <h3 className="text-xs sm:text-sm md:text-base font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:from-orange-400 group-hover:via-yellow-400 group-hover:to-orange-400 transition-all duration-500 leading-tight">
                       {speaker.name}
                     </h3>
                     <p className="text-gray-400 text-xs leading-relaxed group-hover:text-gray-300 transition-colors duration-500 line-clamp-3">

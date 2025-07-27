@@ -201,18 +201,18 @@ export function Tickets() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <div className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-4 sm:mb-6 md:mb-8 shadow-lg">
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2 animate-twinkle" />
             Event Tickets
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">
-            Secure Your{" "}
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-tight leading-tight px-2 sm:px-0">
+            <span className="block sm:inline">Secure Your</span>{" "}
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent block sm:inline">
               Spot Today
             </span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-3 sm:px-4 md:px-0">
             Join 200+ developers, architects, and cloud enthusiasts for an unforgettable day of learning and networking.
             Choose the ticket that works best for you.
           </p>
@@ -220,15 +220,15 @@ export function Tickets() {
 
         {/* Enhanced Early Bird Countdown Timer - Mobile centered */}
         {isEarlyBirdActive && (
-          <div className="max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20 px-4">
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20 px-3 sm:px-4">
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-yellow-500/20 to-orange-500/20 rounded-2xl sm:rounded-3xl blur-2xl group-hover:blur-xl transition-all duration-700"></div>
-              <div className="relative bg-white/5 backdrop-blur-sm border border-orange-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400 animate-pulse" />
-                  <span className="text-orange-400 font-black text-base sm:text-lg lg:text-xl text-center">Early Bird Special Ends In:</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-yellow-500/20 to-orange-500/20 rounded-xl sm:rounded-2xl md:rounded-3xl blur-xl sm:blur-2xl group-hover:blur-xl transition-all duration-700"></div>
+              <div className="relative bg-white/5 backdrop-blur-sm border border-orange-500/30 rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-2xl">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-orange-400 animate-pulse" />
+                  <span className="text-orange-400 font-black text-sm sm:text-base md:text-lg lg:text-xl text-center">Early Bird Special Ends In:</span>
                 </div>
-                <div className="grid grid-cols-4 gap-3 sm:gap-4 lg:gap-6 max-w-lg mx-auto mb-4 sm:mb-6">
+                <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 max-w-sm sm:max-w-md md:max-w-lg mx-auto mb-3 sm:mb-4 md:mb-6">
                   {[
                     { label: "Days", value: timeLeft.days },
                     { label: "Hours", value: timeLeft.hours },
@@ -237,9 +237,9 @@ export function Tickets() {
                   ].map((item, index) => (
                     <div key={index} className="text-center group">
                       <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl sm:rounded-2xl blur-lg opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-                        <div className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 mb-2 sm:mb-3 shadow-xl transform group-hover:scale-105 transition-transform duration-300">
-                          <span className="text-xl sm:text-2xl lg:text-3xl font-black">{item.value.toString().padStart(2, "0")}</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-lg sm:rounded-xl md:rounded-2xl blur-md sm:blur-lg opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <div className="relative bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 lg:p-4 mb-1 sm:mb-2 md:mb-3 shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+                          <span className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black">{item.value.toString().padStart(2, "0")}</span>
                         </div>
                       </div>
                       <span className="text-xs sm:text-sm text-gray-300 font-bold uppercase tracking-wider">{item.label}</span>
@@ -263,11 +263,11 @@ export function Tickets() {
         )}
 
         {/* Enhanced Ticket Cards with mobile-first responsive design */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           {ticketTypes.map((ticket, index) => (
             <div
               key={index}
-              className={`transition-all duration-1000 flex ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"}`}
+              className={`transition-all duration-1000 flex ${isVisible ? "animate-slide-up" : "opacity-0 translate-y-10"} ${ticket.popular ? 'sm:col-span-2 lg:col-span-1' : ''}`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <Card
@@ -286,9 +286,9 @@ export function Tickets() {
                 } rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10`}></div>
 
                 {ticket.popular && (
-                  <div className="absolute -top-3 sm:-top-4 lg:-top-6 left-1/2 transform -translate-x-1/2 z-20">
-                    <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-2 sm:px-3 lg:px-6 py-1 sm:py-1 lg:py-2 text-xs sm:text-sm lg:text-base font-black shadow-xl animate-pulse">
-                      <Star className="w-3 h-3 sm:w-3 sm:h-3 lg:w-4 lg:h-4 mr-1 sm:mr-1 lg:mr-2" />
+                  <div className="absolute -top-2 sm:-top-3 md:-top-4 lg:-top-6 left-1/2 transform -translate-x-1/2 z-20">
+                    <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-2 sm:px-3 md:px-4 lg:px-6 py-1 sm:py-1 lg:py-2 text-xs sm:text-sm md:text-base font-black shadow-xl animate-pulse">
+                      <Star className="w-3 h-3 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1 sm:mr-1 md:mr-2" />
                       Most Popular
                     </Badge>
                   </div>
@@ -296,53 +296,53 @@ export function Tickets() {
 
 
 
-                <CardHeader className="text-center pb-3 sm:pb-4 lg:pb-6 relative p-3 sm:p-4 lg:p-6">
+                <CardHeader className="text-center pb-2 sm:pb-3 md:pb-4 lg:pb-6 relative p-3 sm:p-4 md:p-5 lg:p-6">
                   {/* Floating sparkles */}
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
-                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 animate-twinkle" />
+                  <div className="absolute top-2 sm:top-3 md:top-4 right-2 sm:right-3 md:right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
+                    <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 animate-twinkle" />
                   </div>
 
-                  <div className="mb-3 sm:mb-4 lg:mb-6">
-                    <div className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-3 sm:mb-4 lg:mb-6 rounded-full ${ticket.badgeColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
-                      <ticket.icon className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" />
+                  <div className="mb-2 sm:mb-3 md:mb-4 lg:mb-6">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mx-auto mb-2 sm:mb-3 md:mb-4 lg:mb-6 rounded-full ${ticket.badgeColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
+                      <ticket.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" />
                     </div>
                     {!ticket.popular && (
-                      <Badge className={`${ticket.badgeColor} text-white border-0 mb-3 sm:mb-4 lg:mb-6 text-xs sm:text-sm lg:text-base font-bold px-2 sm:px-3 lg:px-4 py-1 sm:py-1 lg:py-2 shadow-lg`}>
+                      <Badge className={`${ticket.badgeColor} text-white border-0 mb-2 sm:mb-3 md:mb-4 lg:mb-6 text-xs sm:text-sm md:text-base font-bold px-2 sm:px-3 md:px-4 py-1 sm:py-1 md:py-2 shadow-lg`}>
                         {ticket.badge}
                       </Badge>
                     )}
                   </div>
 
-                  <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 lg:mb-4 group-hover:text-orange-400 transition-colors duration-500 leading-tight">
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 lg:mb-4 group-hover:text-orange-400 transition-colors duration-500 leading-tight">
                     {ticket.name}
                   </CardTitle>
 
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3 lg:mb-4">
                     {isEarlyBirdActive ? (
                       <>
-                        <span className="text-2xl sm:text-3xl lg:text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
+                        <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                           {ticket.earlyBirdPrice}
                         </span>
-                        <span className="text-base sm:text-lg lg:text-xl text-gray-400 line-through">{ticket.price}</span>
+                        <span className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 line-through">{ticket.price}</span>
                       </>
                     ) : (
-                      <span className="text-2xl sm:text-3xl lg:text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
+                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                         {ticket.price}
                       </span>
                     )}
                   </div>
 
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-500">
+                  <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-500">
                     {ticket.description}
                   </p>
                 </CardHeader>
 
-                <CardContent className="p-3 sm:p-4 lg:p-6 xl:p-8 flex flex-col h-full">
-                  <ul className="space-y-2 sm:space-y-3 lg:space-y-4 flex-1 mb-4 sm:mb-6 lg:mb-8">
+                <CardContent className="p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 flex flex-col h-full">
+                  <ul className="space-y-2 sm:space-y-3 lg:space-y-4 flex-1 mb-3 sm:mb-4 md:mb-6 lg:mb-8">
                     {ticket.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start gap-2 sm:gap-3 group/item">
-                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-green-400 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300" />
-                        <span className="text-xs sm:text-sm lg:text-base text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-green-400 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300" />
+                        <span className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
                           {feature}
                         </span>
                       </li>
@@ -350,10 +350,10 @@ export function Tickets() {
                   </ul>
 
                   {/* CTA Button - Always aligned at bottom */}
-                  <div className="mt-auto pt-3 sm:pt-4">
+                  <div className="mt-auto pt-2 sm:pt-3 md:pt-4">
                     <Button
                       onClick={handleRegisterClick}
-                      className={`w-full py-3 sm:py-4 font-bold text-sm sm:text-base transition-all duration-500 transform hover:scale-105 active:scale-95 ${
+                      className={`w-full py-3 sm:py-4 font-bold text-sm sm:text-base transition-all duration-500 transform hover:scale-105 active:scale-95 min-h-[44px] touch-manipulation ${
                         ticket.popular
                           ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50"
                           : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm hover:text-white"

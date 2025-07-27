@@ -276,24 +276,24 @@ export function Volunteers() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <div className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-bold mb-4 sm:mb-6 md:mb-8 shadow-lg">
             <Users className="w-3 h-3 sm:w-4 sm:h-4 mr-2 animate-pulse" />
             Our Volunteers
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">
-            Meet Our{" "}
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-tight leading-tight px-2 sm:px-0">
+            <span className="block sm:inline">Meet Our</span>{" "}
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent block sm:inline">
               Amazing Team
             </span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 mb-6 sm:mb-8">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-3 sm:px-4 md:px-0 mb-4 sm:mb-6 md:mb-8">
             Our dedicated volunteers are the heart of AWS Community Day Cebu. Get to know the passionate individuals who
             make this event possible.
           </p>
           
           {/* Search Input */}
-          <div className="max-w-md mx-auto relative">
+          <div className="max-w-xs sm:max-w-sm md:max-w-md mx-auto relative px-3 sm:px-0">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <Input
@@ -301,19 +301,19 @@ export function Volunteers() {
                 placeholder="Search volunteers..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-orange-500/50 focus:ring-orange-500/20"
+                className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder-gray-400 focus:border-orange-500/50 focus:ring-orange-500/20 text-sm sm:text-base min-h-[44px] touch-manipulation"
               />
               {searchTerm && (
                 <button
                   onClick={() => setSearchTerm("")}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
                 >
                   <X className="w-4 h-4" />
                 </button>
               )}
             </div>
             {searchTerm && (
-              <p className="text-sm text-gray-400 mt-2 text-center">
+              <p className="text-xs sm:text-sm text-gray-400 mt-2 text-center">
                 Found {filteredVolunteers.length} volunteer{filteredVolunteers.length !== 1 ? 's' : ''}
               </p>
             )}
@@ -321,7 +321,7 @@ export function Volunteers() {
         </div>
 
         {/* Enhanced Volunteers Grid with mobile-first responsive design */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-6 max-w-7xl mx-auto">
           {displayedVolunteers.map((volunteer, index) => (
             <Card
               key={index}
@@ -337,14 +337,14 @@ export function Volunteers() {
                     alt={volunteer.name}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                    loading={index < 8 ? "eager" : "lazy"}
-                    priority={index < 4}
-                    quality={index < 8 ? 90 : 75}
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
+                    loading={index < 12 ? "eager" : "lazy"}
+                    priority={index < 6}
+                    quality={index < 12 ? 85 : 70}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/20 via-yellow-500/20 to-orange-500/20 relative">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-orange-400/70 z-10">
+                    <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-orange-400/70 z-10">
                       {volunteer.name
                         .split(" ")
                         .map((n) => n[0])
@@ -356,7 +356,7 @@ export function Volunteers() {
                 )}
                 
                 {/* Name overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 p-2">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 p-1 sm:p-2">
                   <h4 className="text-white font-black text-xs sm:text-sm text-center leading-tight tracking-wide uppercase">
                     {volunteer.name}
                   </h4>
@@ -368,12 +368,12 @@ export function Volunteers() {
 
         {/* Enhanced Show More Button with mobile-first responsive design */}
         {hasMore ? (
-          <div className="text-center mt-8 sm:mt-12 lg:mt-16">
+          <div className="text-center mt-6 sm:mt-8 md:mt-12 lg:mt-16">
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-full blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-full blur-lg sm:blur-xl"></div>
               <Button
                 onClick={() => setShowAll(true)}
-                className="relative bg-white/10 backdrop-blur-sm border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-200 hover:scale-105"
+                className="relative bg-white/10 backdrop-blur-sm border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-bold rounded-full shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-200 hover:scale-105 min-h-[44px] touch-manipulation"
               >
                 <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-bounce" />
                 <span className="hidden sm:inline">Show More Volunteers ({filteredVolunteers.length - displayedVolunteers.length} remaining)</span>

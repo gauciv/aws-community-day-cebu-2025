@@ -210,63 +210,63 @@ Phone: ${formData.phone || 'Not provided'}`
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
             <Crown className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             Sponsorship Opportunities
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-            Partner with{" "}
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight px-2 sm:px-0">
+            <span className="block sm:inline">Partner with</span>{" "}
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent block sm:inline">
               AWS Community Day
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed px-3 sm:px-4 md:px-0">
             Join us in building the largest AWS community event in Cebu. Support local developers and showcase your
             commitment to cloud innovation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
           <div className="space-y-4 sm:space-y-6">
             <Card className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-orange-500/20 transition-colors duration-300">
               <CardContent className="p-4 sm:p-6 lg:p-8">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FileText className="w-8 h-8 text-white" />
+                <div className="text-center mb-6 sm:mb-8">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                     Sponsorship Primer
                   </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed">
                     Download our comprehensive sponsorship primer to learn about all available packages, benefits, and
                     opportunities to partner with AWS Community Day Cebu 2025.
                   </p>
                   
                   <Button
                     onClick={handleDownloadPrimer}
-                    className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold px-6 py-3 text-base w-full"
+                    className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold px-4 sm:px-6 py-3 text-sm sm:text-base w-full min-h-[44px] touch-manipulation"
                   >
-                    <Download className="w-5 h-5 mr-2" />
+                    <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Download Sponsorship Primer
                   </Button>
                 </div>
 
-                <div className="space-y-6">
-                  <h4 className="text-xl font-bold text-white flex items-center gap-2">
-                    <Star className="w-5 h-5 text-orange-400" />
+                <div className="space-y-4 sm:space-y-6">
+                  <h4 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                    <Star className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                     Why Sponsor AWS Community Day?
                   </h4>
-                  <div className="grid grid-cols-1 gap-3">
+                  <div className="grid grid-cols-1 gap-2 sm:gap-3">
                     {[
                       "Reach 500+ cloud professionals",
                       "Brand visibility in tech community", 
                       "Networking with industry leaders",
                       "Support local developer ecosystem"
                     ].map((benefit, index) => (
-                      <div key={index} className="flex items-start gap-3">
+                      <div key={index} className="flex items-start gap-2 sm:gap-3">
                         <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300">{benefit}</span>
+                        <span className="text-sm sm:text-base text-gray-300">{benefit}</span>
                       </div>
                     ))}
                   </div>
@@ -278,19 +278,19 @@ Phone: ${formData.phone || 'Not provided'}`
           <div>
             <Card className="border border-white/10 bg-white/5 backdrop-blur-sm">
               <CardContent className="p-4 sm:p-6 lg:p-8 h-full flex flex-col">
-                <div className="text-center mb-6 sm:mb-8 flex-shrink-0">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="text-center mb-4 sm:mb-6 md:mb-8 flex-shrink-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
+                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Quick Email Setup</h3>
-                  <p className="text-sm sm:text-base text-gray-300">
-                    Fill out this form for a quick email setup, or draft your own email and send it to <span className="text-orange-400">awscommunitydaycebu.2025@gmail.com</span>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">Quick Email Setup</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-300">
+                    Fill out this form for a quick email setup, or draft your own email and send it to <span className="text-orange-400 break-all">awscommunitydaycebu.2025@gmail.com</span>
                   </p>
                 </div>
 
                 <div className="flex-1 flex flex-col justify-between">
 
-                <form className="space-y-4 sm:space-y-6">
+                <form className="space-y-3 sm:space-y-4 md:space-y-6">
                   <div>
                     <Label htmlFor="company" className="text-white font-medium mb-2 block text-sm sm:text-base">
                       Company Name *
@@ -303,9 +303,9 @@ Phone: ${formData.phone || 'Not provided'}`
                         handleInputChange('company', e.target.value)
                         if (errors.company) setErrors(prev => ({...prev, company: ''}))
                       }}
-                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base ${errors.company ? 'border-red-500' : ''}`}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm sm:text-base min-h-[44px] touch-manipulation ${errors.company ? 'border-red-500' : ''}`}
                     />
-                    {errors.company && <p className="text-red-400 text-sm mt-1">{errors.company}</p>}
+                    {errors.company && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.company}</p>}
                   </div>
 
                   <div>
@@ -320,7 +320,7 @@ Phone: ${formData.phone || 'Not provided'}`
                         handleInputChange('contactPerson', e.target.value)
                         if (errors.contactPerson) setErrors(prev => ({...prev, contactPerson: ''}))
                       }}
-                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.contactPerson ? 'border-red-500' : ''}`}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 min-h-[44px] touch-manipulation ${errors.contactPerson ? 'border-red-500' : ''}`}
                     />
                     {errors.contactPerson && <p className="text-red-400 text-sm mt-1">{errors.contactPerson}</p>}
                   </div>
@@ -338,7 +338,7 @@ Phone: ${formData.phone || 'Not provided'}`
                         handleInputChange('email', e.target.value)
                         if (errors.email) setErrors(prev => ({...prev, email: ''}))
                       }}
-                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.email ? 'border-red-500' : ''}`}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 min-h-[44px] touch-manipulation ${errors.email ? 'border-red-500' : ''}`}
                     />
                     {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                   </div>
@@ -356,7 +356,7 @@ Phone: ${formData.phone || 'Not provided'}`
                         handleInputChange('phone', e.target.value)
                         if (errors.phone) setErrors(prev => ({...prev, phone: ''}))
                       }}
-                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.phone ? 'border-red-500' : ''}`}
+                      className={`bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 min-h-[44px] touch-manipulation ${errors.phone ? 'border-red-500' : ''}`}
                     />
                     {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
                   </div>
@@ -460,7 +460,7 @@ Phone: ${formData.phone || 'Not provided'}`
                         handleInputChange('message', e.target.value)
                         if (errors.message) setErrors(prev => ({...prev, message: ''}))
                       }}
-                      className={`min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 ${errors.message ? 'border-red-500' : ''}`}
+                      className={`min-h-[100px] sm:min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 touch-manipulation ${errors.message ? 'border-red-500' : ''}`}
                     />
                     {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
                     <div className="flex justify-between items-center mt-1">
@@ -483,7 +483,7 @@ Phone: ${formData.phone || 'Not provided'}`
                     type="button"
                     onClick={handleSendInquiry}
                     disabled={emailStatus === 'opening' || !isFormValid()}
-                    className={`w-full font-semibold py-3 sm:py-4 text-sm sm:text-base transform transition-all duration-300 ${
+                    className={`w-full font-semibold py-3 sm:py-4 text-sm sm:text-base transform transition-all duration-300 min-h-[44px] touch-manipulation ${
                       emailStatus === 'success' 
                         ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600' 
                         : !isFormValid()
@@ -537,7 +537,7 @@ Phone: ${formData.phone || 'Not provided'}`
                   </div>
                 </form>
 
-                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/20 text-center flex-shrink-0">
+                <div className="mt-4 sm:mt-6 md:mt-8 pt-3 sm:pt-4 md:pt-6 border-t border-white/20 text-center flex-shrink-0">
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-gray-300">
                     <Mail className="w-4 h-4 text-orange-400" />
                     <span className="text-xs sm:text-sm break-all sm:break-normal">For inquiries: awscommunitydaycebu.2025@gmail.com</span>

@@ -39,7 +39,7 @@
     --aws-cloud-end: 0 0% 100%;
 
     --navbar-height: 80px;
-    --navbar-height-mobile: 70px;
+    --navbar-height-mobile: 60px;
   }
 
 .dark {
@@ -519,8 +519,8 @@
 
   /* Mobile-first container padding */
   .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
   }
 
   /* Mobile-optimized text spacing */
@@ -536,6 +536,28 @@
   .btn-mobile-full {
     width: 100% !important;
     justify-content: center !important;
+  }
+
+  /* Improve text readability on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Hide scrollbar on mobile for horizontal scrolling elements */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -554,8 +576,8 @@
 
   /* Extra small container padding */
   .container {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
   }
 
   /* Reduce gaps on very small screens */
@@ -565,6 +587,17 @@
 
   .gap-8 {
     gap: 1rem !important;
+  }
+
+  /* Smaller text on very small screens */
+  .text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
   }
 }
 
@@ -624,18 +657,39 @@
   button, .btn, [role="button"] {
     min-height: 44px !important;
     min-width: 44px !important;
+    touch-action: manipulation !important;
   }
 
   /* Increase tap targets */
   .tap-target {
     padding: 0.75rem !important;
+    touch-action: manipulation !important;
   }
 
   /* Improve form inputs on mobile */
   input, textarea, select {
     font-size: 16px !important; /* Prevents zoom on iOS */
     padding: 0.75rem !important;
+    touch-action: manipulation !important;
   }
+
+  /* Improve link tap targets */
+  a {
+    touch-action: manipulation !important;
+  }
+
+  /* Better hover states for touch devices */
+  @media (hover: none) {
+    .hover\:scale-105:hover {
+      transform: none !important;
+    }
+    
+    .group:hover .group-hover\:scale-110 {
+      transform: none !important;
+    }
+  }
+
+  /* Remove conflicting footer styles */
 }
 
   @keyframes gentle-shimmer {
@@ -1261,6 +1315,49 @@
     hyphens: auto;
   }
 
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Scrollbar utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Touch manipulation for better mobile interaction */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Extra small screens (xs breakpoint) */
+  @media (max-width: 475px) {
+    .xs\:text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+    
+    .xs\:text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    
+    .xs\:text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+
   /* Custom Constellation Animations */
 
   /* Image Container Fixes for Next.js Image with fill prop */
@@ -1406,6 +1503,124 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Safe area utilities with device compatibility */
+.pb-safe {
+  padding-bottom: 1rem;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  padding-bottom: max(1rem, constant(safe-area-inset-bottom)); /* iOS 11.0-11.2 */
+}
+
+@media (max-width: 640px) {
+  .pb-safe {
+    padding-bottom: 2rem;
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+    padding-bottom: max(2rem, constant(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 480px) {
+  .pb-safe {
+    padding-bottom: 2.5rem;
+    padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+    padding-bottom: max(2.5rem, constant(safe-area-inset-bottom));
+  }
+}
+
+/* Device-specific fixes */
+@media (max-height: 640px) {
+  .pb-safe {
+    padding-bottom: 1.5rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Ensure proper viewport and footer accessibility */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Mobile viewport fixes */
+@media (max-width: 1024px) {
+  html {
+    height: -webkit-fill-available;
+  }
+  
+  body {
+    min-height: -webkit-fill-available;
+  }
+  
+  footer {
+    padding-bottom: 20px;
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 20px);
+    padding-bottom: max(constant(safe-area-inset-bottom, 0px), 20px);
+  }
+}
+
+/* Landscape orientation fixes */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .pb-safe {
+    padding-bottom: 1rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .pb-safe {
+    padding-bottom: 3rem;
+  }
+}
+
+/* CSS custom properties for dynamic footer */
+:root {
+  --footer-safe-area: 20px;
+  --viewport-height: 100vh;
+}
+
+/* Advanced footer positioning */
+footer {
+  position: relative;
+}
+
+footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-safe-area);
+  pointer-events: none;
+}
+
+/* Intersection observer support */
+.footer-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-hidden {
+  opacity: 0.8;
+  transform: translateY(10px);
 }
 /* Progress bar animation for carousel */
 @keyframes progress {

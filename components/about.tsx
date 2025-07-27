@@ -216,32 +216,32 @@ export function About() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-sm font-medium mb-8 shadow-lg">
-            <Sparkles className="w-4 h-4 mr-2" />
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 backdrop-blur-sm text-orange-400 border border-orange-500/30 text-xs sm:text-sm font-medium mb-6 sm:mb-8 shadow-lg">
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             About the Event
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-8 tracking-tight">
-            What is{" "}
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight px-2 sm:px-0">
+            <span className="block sm:inline">What is</span>{" "}
+            <span className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent block sm:inline">
               AWS Community Day
             </span>
-            ?
+            <span className="block sm:inline">?</span>
           </h2>
-          <div className="max-w-5xl mx-auto space-y-8">
-            <p className="text-xl text-gray-300 leading-relaxed">
+          <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 px-3 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
               AWS Community Days are community-organized cloud education events that feature technical discussions and
               demos by expert AWS users and industry leaders from around the world. These events are designed to educate
               everyone, regardless of their level of AWS knowledge.
             </p>
             <div className="relative p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-orange-500/20 shadow-2xl">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <div className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg">
+              <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2">
+                <div className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg">
                   <Zap className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1" />
                   Join the Movement
                 </div>
               </div>
-              <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed font-semibold">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-semibold pt-2 sm:pt-0">
                 Join <span className="text-orange-400 font-black">200+</span> developers, architects, and cloud enthusiasts in Cebu for an unforgettable day of learning,
                 networking, and innovation. Experience hands-on workshops, inspiring keynotes, and connect with the vibrant
                 AWS community in the Philippines.
@@ -251,12 +251,12 @@ export function About() {
         </div>
 
         {/* Enhanced Photo Gallery */}
-        <div className="mt-20">
-          <div className="text-center mb-8 sm:mb-12">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6">
+        <div className="mt-12 sm:mt-16 md:mt-20">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 md:mb-6 px-2 sm:px-0">
               Community <span className="text-orange-400">Gallery</span>
             </h3>
-            <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto px-3 sm:px-4 md:px-0">
               Moments from our AWS Community events showcasing learning, networking, and innovation
             </p>
           </div>
@@ -266,14 +266,14 @@ export function About() {
           >
 
             {/* Enhanced Carousel with Navigation - Mobile optimized */}
-            <div className="relative mb-6 sm:mb-8 group">
+            <div className="relative mb-4 sm:mb-6 md:mb-8 group">
               <div 
-                className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
+                className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-2xl"
                 onTouchStart={onTouchStart}
                 onTouchMove={onTouchMove}
                 onTouchEnd={onTouchEnd}
               >
-                <div className="aspect-[4/3] sm:aspect-[16/9] relative">
+                <div className="aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] relative">
                   <OptimizedImage
                     src={galleryPhotos[selectedPhoto].src}
                     alt={galleryPhotos[selectedPhoto].alt}
@@ -294,18 +294,18 @@ export function About() {
                   {/* Navigation Arrows - Mobile optimized */}
                   <button
                     onClick={goToPrevious}
-                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
                     aria-label="Previous image"
                   >
-                    <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
+                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </button>
                   
                   <button
                     onClick={goToNext}
-                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
                     aria-label="Next image"
                   >
-                    <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </button>
 
 
@@ -330,13 +330,13 @@ export function About() {
             </div>
 
             {/* Enhanced Thumbnail Navigation - Mobile optimized */}
-            <div className="flex justify-center mb-6 sm:mb-8">
-              <div className="flex gap-1 sm:gap-2 p-1 sm:p-2 bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/10 overflow-x-auto max-w-full">
+            <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
+              <div className="flex gap-1 sm:gap-2 p-1 sm:p-2 bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl border border-white/10 overflow-x-auto max-w-full scrollbar-hide">
                 {galleryPhotos.map((photo, index) => (
                   <button
                     key={photo.id}
                     onClick={() => goToSlide(index)}
-                    className={`relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 ${
+                    className={`relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-md sm:rounded-lg md:rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0 touch-manipulation ${
                       selectedPhoto === index
                         ? "ring-2 ring-orange-500 scale-110 shadow-lg shadow-orange-500/25"
                         : "hover:scale-105 opacity-70 hover:opacity-100"
@@ -348,7 +348,7 @@ export function About() {
                       alt={photo.alt}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 80px"
+                      sizes="(max-width: 640px) 40px, (max-width: 768px) 48px, (max-width: 1024px) 64px, 80px"
                     />
                     {selectedPhoto === index && (
                       <div className="absolute inset-0 bg-orange-500/20 flex items-center justify-center">

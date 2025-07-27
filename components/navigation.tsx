@@ -93,24 +93,24 @@ export function Navigation() {
           ? "bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50 shadow-lg shadow-black/10" 
           : "bg-transparent"
       }`}
-      style={{ minHeight: '70px' }}
+      style={{ minHeight: '60px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-[70px] sm:h-20 lg:h-20">
+        <div className="flex items-center h-[60px] sm:h-[70px] md:h-20 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2">
-               <img src="/aws-logo.svg" alt="AWS Logo" className="h-10 w-10 object-contain" />
+            <Link href="/" className="flex items-center space-x-2 p-2 -m-2 touch-manipulation">
+               <img src="/aws-logo.svg" alt="AWS Logo" className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
             </Link>
           </div>
 
           {/* Desktop Navigation - Absolutely Centered */}
-          <div className="hidden lg:flex items-center justify-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`relative text-gray-300 hover:text-white transition-colors duration-200 font-medium px-3 py-2 ${
+                className={`relative text-gray-300 hover:text-white transition-colors duration-200 font-medium px-3 py-2 min-h-[44px] touch-manipulation ${
                   activeSection === item.id ? "text-orange-400" : ""
                 }`}
               >
@@ -123,7 +123,7 @@ export function Navigation() {
           </div>
 
           {/* CTA Button and Mobile Menu - Right Side */}
-          <div className="flex items-center space-x-4 ml-auto">
+          <div className="flex items-center space-x-2 sm:space-x-4 ml-auto">
             <div className={`transition-all duration-500 ease-out ${
               showRegisterButton 
                 ? 'opacity-100 translate-x-0 scale-100' 
@@ -131,7 +131,7 @@ export function Navigation() {
             }`}>
               <Button
                 onClick={handleRegisterClick}
-                className="hidden sm:inline-flex bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 hover:scale-105 transition-all duration-300 font-semibold shadow-lg hover:shadow-orange-500/25"
+                className="hidden md:inline-flex bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 hover:scale-105 transition-all duration-300 font-semibold shadow-lg hover:shadow-orange-500/25 text-sm px-4 py-2 min-h-[40px] touch-manipulation"
               >
                 Register Now
               </Button>
@@ -141,10 +141,10 @@ export function Navigation() {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden text-gray-300 hover:text-white hover:bg-gray-800"
+              className="lg:hidden text-gray-300 hover:text-white hover:bg-gray-800 w-10 h-10 sm:w-12 sm:h-12 touch-manipulation"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
             </Button>
           </div>
         </div>
@@ -152,7 +152,7 @@ export function Navigation() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t backdrop-blur-md bg-gray-900/95 border-gray-800">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-3 pt-3 pb-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.href}
@@ -160,17 +160,20 @@ export function Navigation() {
                     setIsMobileMenuOpen(false)
                     scrollToSection(item.href)
                   }}
-                  className={`block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200 font-medium rounded-md ${
+                  className={`block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200 font-medium rounded-lg min-h-[44px] touch-manipulation ${
                     activeSection === item.id ? "text-orange-400 bg-gray-800/50" : ""
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="px-3 py-2">
+              <div className="pt-2">
                 <Button
-                  onClick={handleRegisterClick}
-                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    handleRegisterClick()
+                  }}
+                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold py-3 min-h-[44px] touch-manipulation"
                 >
                   Register Now
                 </Button>
