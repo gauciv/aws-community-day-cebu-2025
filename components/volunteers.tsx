@@ -174,7 +174,9 @@ export function Volunteers() {
     { name: "Fabiola Villanueva",
       image: "/images/volunteers/fabiola-villanueva.jpeg"
     },
-    { name: "Andre Salonga" },
+    { name: "Andre Salonga",
+      image: "/images/volunteers/salonga-andre.png"
+    },
     { name: "Cris Villem P. Saniel" },
     { name: "Lev Altair Imetri S. Aguirre" },
     { name: "Charles Vincent Montero" }
