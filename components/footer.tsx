@@ -25,32 +25,18 @@ export function Footer() {
           </div>
 
           {/* Quick Links - Mobile/Tablet */}
-          <div className="grid grid-cols-2 gap-8 max-w-lg mx-auto">
+          <div className="flex justify-center">
             <div>
-              <h4 className="font-bold text-base text-white mb-4">Quick Links</h4>
+              <h4 className="font-bold text-base text-white mb-4 text-center">Quick Links</h4>
               <div className="space-y-3">
-                <Link href="#about" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
+                <Link href="#about" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors text-center">
                   About Event
                 </Link>
-                <Link href="#speakers" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
+                <Link href="#speakers" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors text-center">
                   Speakers
                 </Link>
-                <Link href="#schedule" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
+                <Link href="#schedule" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors text-center">
                   Schedule
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-base text-white mb-4">Legal</h4>
-              <div className="space-y-3">
-                <Link href="/code-of-conduct" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
-                  Code of Conduct
-                </Link>
-                <Link href="/privacy" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
-                  Terms of Service
                 </Link>
               </div>
             </div>
@@ -107,15 +93,6 @@ export function Footer() {
                 </Link>
                 <Link href="#schedule" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
                   Schedule
-                </Link>
-                <Link href="/code-of-conduct" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
-                  Code of Conduct
-                </Link>
-                <Link href="/privacy" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="block text-gray-300 hover:text-orange-400 text-sm transition-colors">
-                  Terms of Service
                 </Link>
               </div>
             </div>
