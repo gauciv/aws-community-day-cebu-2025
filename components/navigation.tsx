@@ -167,17 +167,6 @@ export function Navigation() {
                   {item.label}
                 </button>
               ))}
-              <div className="pt-2">
-                <Button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false)
-                    handleRegisterClick()
-                  }}
-                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:opacity-90 transition-opacity font-semibold py-3 min-h-[44px] touch-manipulation"
-                >
-                  Register Now
-                </Button>
-              </div>
             </div>
           </div>
         )}
