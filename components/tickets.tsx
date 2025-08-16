@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, Clock, Users, CheckCircle, Star, Zap, ExternalLink, Sparkles } from "lucide-react"
+import { Calendar, MapPin, Clock, Users, CheckCircle, Star, Zap, ExternalLink, Sparkles, X } from "lucide-react"
 
 export function Tickets() {
   const [isVisible, setIsVisible] = useState(false)
@@ -82,7 +82,8 @@ export function Tickets() {
       badgeColor: "bg-gradient-to-r from-gray-500 to-gray-600",
       popular: false,
       icon: Users,
-      glowColor: "gray"
+      glowColor: "gray",
+      soldOut: false
     },
     {
       name: "Builder+",
@@ -100,7 +101,8 @@ export function Tickets() {
       badgeColor: "bg-gradient-to-r from-orange-500 to-yellow-500",
       popular: true,
       icon: Zap,
-      glowColor: "orange"
+      glowColor: "orange",
+      soldOut: false
     },
     {
       name: "VIP",
@@ -118,7 +120,8 @@ export function Tickets() {
       badgeColor: "bg-gradient-to-r from-purple-500 to-pink-500",
       popular: false,
       icon: Star,
-      glowColor: "purple"
+      glowColor: "purple",
+      soldOut: true
     },
   ]
 
@@ -272,20 +275,32 @@ export function Tickets() {
             >
               <Card
                 className={`relative border-2 transition-all duration-700 hover:scale-105 w-full flex flex-col group ${
-                  ticket.popular
+                  ticket.soldOut
+                    ? "border-gray-500/30 bg-gray-900/50 opacity-75"
+                    : ticket.popular
                     ? "border-orange-500/50 shadow-2xl shadow-orange-500/30 bg-gradient-to-br from-orange-500/10 via-yellow-500/5 to-orange-500/10"
                     : "border-white/20 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/20 bg-white/5"
                 } backdrop-blur-sm`}
               >
                 {/* Enhanced glow effect */}
                 <div className={`absolute inset-0 bg-gradient-to-r ${
+                  ticket.soldOut ? 'from-gray-500/10 to-gray-600/10' :
                   ticket.glowColor === 'orange' ? 'from-orange-500/20 to-yellow-500/20' :
                   ticket.glowColor === 'blue' ? 'from-blue-500/20 to-cyan-500/20' :
                   ticket.glowColor === 'gray' ? 'from-gray-500/20 to-gray-600/20' :
                   'from-purple-500/20 to-pink-500/20'
                 } rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10`}></div>
 
-                {ticket.popular && (
+                {ticket.soldOut && (
+                  <div className="absolute -top-2 sm:-top-3 md:-top-4 lg:-top-6 left-1/2 transform -translate-x-1/2 z-20">
+                    <Badge className="bg-gradient-to-r from-red-500 to-red-600 text-white border-0 px-2 sm:px-3 md:px-4 lg:px-6 py-1 sm:py-1 lg:py-2 text-xs sm:text-sm md:text-base font-black shadow-xl">
+                      <X className="w-3 h-3 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1 sm:mr-1 md:mr-2" />
+                      SOLD OUT
+                    </Badge>
+                  </div>
+                )}
+
+                {ticket.popular && !ticket.soldOut && (
                   <div className="absolute -top-2 sm:-top-3 md:-top-4 lg:-top-6 left-1/2 transform -translate-x-1/2 z-20">
                     <Badge className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white border-0 px-2 sm:px-3 md:px-4 lg:px-6 py-1 sm:py-1 lg:py-2 text-xs sm:text-sm md:text-base font-black shadow-xl animate-pulse">
                       <Star className="w-3 h-3 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1 sm:mr-1 md:mr-2" />
@@ -306,7 +321,7 @@ export function Tickets() {
                     <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mx-auto mb-2 sm:mb-3 md:mb-4 lg:mb-6 rounded-full ${ticket.badgeColor} flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
                       <ticket.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" />
                     </div>
-                    {!ticket.popular && (
+                    {!ticket.popular && !ticket.soldOut && (
                       <Badge className={`${ticket.badgeColor} text-white border-0 mb-2 sm:mb-3 md:mb-4 lg:mb-6 text-xs sm:text-sm md:text-base font-bold px-2 sm:px-3 md:px-4 py-1 sm:py-1 md:py-2 shadow-lg`}>
                         {ticket.badge}
                       </Badge>
@@ -318,7 +333,11 @@ export function Tickets() {
                   </CardTitle>
 
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2 sm:mb-3 lg:mb-4">
-                    {isEarlyBirdActive ? (
+                    {ticket.soldOut ? (
+                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black text-gray-500 line-through">
+                        {isEarlyBirdActive ? ticket.earlyBirdPrice : ticket.price}
+                      </span>
+                    ) : isEarlyBirdActive ? (
                       <>
                         <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-black bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
                           {ticket.earlyBirdPrice}
@@ -352,20 +371,32 @@ export function Tickets() {
                   {/* CTA Button - Always aligned at bottom */}
                   <div className="mt-auto pt-2 sm:pt-3 md:pt-4">
                     <Button
-                      onClick={handleRegisterClick}
-                      className={`w-full py-3 sm:py-4 font-bold text-sm sm:text-base transition-all duration-500 transform hover:scale-105 active:scale-95 min-h-[44px] touch-manipulation ${
-                        ticket.popular
-                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50"
-                          : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm hover:text-white"
+                      onClick={ticket.soldOut ? undefined : handleRegisterClick}
+                      disabled={ticket.soldOut}
+                      className={`w-full py-3 sm:py-4 font-bold text-sm sm:text-base transition-all duration-500 transform min-h-[44px] touch-manipulation ${
+                        ticket.soldOut
+                          ? "bg-gray-600/50 text-gray-400 border border-gray-600/30 cursor-not-allowed opacity-60"
+                          : ticket.popular
+                          ? "bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 active:scale-95"
+                          : "bg-white/5 text-orange-400 border border-orange-500/30 hover:bg-orange-500/10 hover:border-orange-500/50 backdrop-blur-sm hover:text-white hover:scale-105 active:scale-95"
                       } group/button`}
                     >
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-2 group-hover/button:rotate-12 transition-transform duration-300" />
-                      Register Now
+                      {ticket.soldOut ? (
+                        <>
+                          <X className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                          SOLD OUT
+                        </>
+                      ) : (
+                        <>
+                          <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-2 group-hover/button:rotate-12 transition-transform duration-300" />
+                          Register Now
+                        </>
+                      )}
                     </Button>
                     
                     {/* Additional CTA text for emphasis */}
                     <p className="text-xs text-gray-400 text-center mt-2 group-hover:text-gray-300 transition-colors duration-300">
-                      Secure your spot today!
+                      {ticket.soldOut ? "This ticket type is no longer available" : "Secure your spot today!"}
                     </p>
                   </div>
                 </CardContent>
